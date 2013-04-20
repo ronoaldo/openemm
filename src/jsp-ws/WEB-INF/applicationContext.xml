@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
                
     <!-- Configurer that replaces ${...} placeholders with values from properties files -->
     <!-- (in this case, mail and JDBC related properties) -->
@@ -14,7 +12,16 @@
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
     
-    <bean id="MailingFactory" class="org.agnitas.beans.factory.impl.MailingFactoryImpl" />
+    <bean id="MailingFactory" class="org.agnitas.beans.factory.impl.MailingFactoryImpl"/>
     
-    <bean id="Mailgun" class="org.agnitas.backend.MailgunImpl" scope="singleton" />
+    <bean id="Mailgun" class="org.agnitas.backend.MailgunImpl" scope="singleton"/>
+
+	<bean id="mailgunCache" class="org.agnitas.util.TimeoutLRUMap">
+		<constructor-arg index="0">
+			<value>${mailgun.maxCache}</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>${mailgun.maxCacheTimeMillis}</value>
+		</constructor-arg>
+	</bean>
 </beans>
