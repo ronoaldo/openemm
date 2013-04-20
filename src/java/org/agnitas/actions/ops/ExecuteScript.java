@@ -35,6 +35,7 @@ import org.agnitas.dao.MailingDao;
 import org.agnitas.util.AgnUtils;
 import org.agnitas.util.EventHandler;
 import org.agnitas.util.ScriptHelper;
+import org.apache.struts.action.ActionErrors;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.springframework.context.ApplicationContext;
@@ -47,7 +48,7 @@ import org.springframework.context.ApplicationContext;
 public class ExecuteScript extends ActionOperation implements Serializable {
 
 	static final long serialVersionUID = -2943748993810034889L;
-    
+
 	/**
 	 * Holds the script code.
 	 */
@@ -110,7 +111,7 @@ public class ExecuteScript extends ActionOperation implements Serializable {
         }
 
         if(params.containsKey("scriptResult")) {
-            if(params.get("scriptResult").equals("1") && params.get("errors") == null) {
+            if(params.get("scriptResult").equals("1") && ((ActionErrors) params.get("errors")).isEmpty() ) {
                 result=true;
             }
         }
@@ -127,7 +128,7 @@ public class ExecuteScript extends ActionOperation implements Serializable {
 
 	/**
 	 * Setter for property Script.
-	 * 
+	 *
 	 */
 	public void setScript(String script) {
 		this.script = script;
