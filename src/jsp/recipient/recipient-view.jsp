@@ -108,62 +108,80 @@
             disabled.add("lastname");
 
             if (!disabled.contains(colName.toLowerCase())) {
-                int mode = ((Integer) pageContext.getAttribute("_agnTbl_editable")).intValue();
                 String colDate = new String("column(" + colName + "_DAY_DATE)");
                 String colMonth = new String("column(" + colName + "_MONTH_DATE)");
                 String colYear = new String("column(" + colName + "_YEAR_DATE)");
                 String colLabel = new String("column(" + colName + ")");
-
-                if (((String) pageContext.getAttribute("_agnTbl_data_type")).equals("DATE")) {
-                    switch (mode) {
-                        case 0:
         %>
-        <div class="recipient_detail_form_item">
-            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
-            <html:text property="<%= colDate %>" styleClass="empfaenger_detail_day"/>.
-            <html:text property="<%= colMonth %>" styleClass="empfaenger_detail_month"/>.
-            <html:text property="<%= colYear %>" styleClass="empfaenger_detail_year"/>
-        </div>
-        <% break;
-            case 1: %>
-        <div class="recipient_detail_form_item">
-            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
-            <html:text property="<%= colDate %>" styleClass="empfaenger_detail_day" readonly="true"/>.
-            <html:text property="<%= colMonth %>" styleClass="empfaenger_detail_month" readonly="true"/>.
-            <html:text property="<%= colYear %>" styleClass="empfaenger_detail_year" readonly="true"/>
-        </div>
-        <% break;
-            case 2: %>
-        <html:hidden property="<%= colDate %>"/>
-        <html:hidden property="<%= colMonth %>"/>
-        <html:hidden property="<%= colYear %>"/>
-        <% break;
-        } %>
-        <% } else {
-            switch (mode) {
-                case 0: %>
-        <div class="recipient_detail_form_item">
-            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
-            <html:text styleClass="empfaenger_detail_input_text" property="<%= colLabel %>"
-                       maxlength='<%= (String) pageContext.getAttribute("_agnTbl_data_length") %>'/>
-        </div>
-        <% break;
-            case 1: %>
-        <div class="box_form_item recipient_form_item">
-            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
-            <html:text styleClass="empfaenger_detail_input_text" property="<%= colLabel %>" size="40" readonly="true"/>
-        </div>
-        <% break;
-            case 2: %>
-        <html:hidden property="<%= colLabel %>"/>
-        <% break;
-        } %>
-        <%
-                }
-            } %>
+        <c:choose>
+            <c:when test="${_agnTbl_data_type == 'DATE'}">
+                <c:choose>
+                    <c:when test="${_agnTbl_editable == 0}">
+                        <div class="recipient_detail_form_item">
+                            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
+                            <html:text property="<%= colDate %>" styleClass="empfaenger_detail_day"/>.
+                            <html:text property="<%= colMonth %>" styleClass="empfaenger_detail_month"/>.
+                            <html:text property="<%= colYear %>" styleClass="empfaenger_detail_year"/>
+                        </div>
+                    </c:when>
+                    <c:when test="${_agnTbl_editable == 1}">
+                        <div class="recipient_detail_form_item">
+                            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
+                            <html:text property="<%= colDate %>" styleClass="empfaenger_detail_day" readonly="true"/>.
+                            <html:text property="<%= colMonth %>" styleClass="empfaenger_detail_month" readonly="true"/>.
+                            <html:text property="<%= colYear %>" styleClass="empfaenger_detail_year" readonly="true"/>
+                        </div>
+                    </c:when>
+                    <c:when test="${_agnTbl_editable == 2}">
+                        <html:hidden property="<%= colDate %>"/>
+                        <html:hidden property="<%= colMonth %>"/>
+                        <html:hidden property="<%= colYear %>"/>
+                    </c:when>
+                </c:choose>
+            </c:when>
+            <c:when test="${_agnTbl_data_type == 'VARCHAR'}">
+                <c:choose>
+                    <c:when test="${_agnTbl_editable == 0}">
+                        <div class="recipient_detail_form_item">
+                            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
+                            <html:text styleClass="empfaenger_detail_input_text" property="<%= colLabel %>"
+                                       maxlength='<%= (String) pageContext.getAttribute("_agnTbl_data_length") %>'/>
+                        </div>
+                    </c:when>
+                    <c:when test="${_agnTbl_editable == 1}">
+                        <div class="box_form_item recipient_form_item">
+                            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
+                            <html:text styleClass="empfaenger_detail_input_text" property="<%= colLabel %>" size="40" readonly="true"/>
+                        </div>
+                    </c:when>
+                    <c:when test="${_agnTbl_editable == 2}">
+                        <html:hidden property="<%= colLabel %>"/>
+                    </c:when>
+                </c:choose>
+            </c:when>
+            <c:otherwise>
+                <c:choose>
+                    <c:when test="${_agnTbl_editable == 0}">
+                        <div class="recipient_detail_form_item">
+                            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
+                            <html:text styleClass="empfaenger_detail_input_text" property="<%= colLabel %>" />
+                        </div>
+                    </c:when>
+                    <c:when test="${_agnTbl_editable == 1}">
+                        <div class="box_form_item recipient_form_item">
+                            <label title="<%= (String) pageContext.getAttribute("_agnTbl_shortname") %>"><%= (String) pageContext.getAttribute("_agnTbl_shortname") %>:&nbsp;</label>
+                            <html:text styleClass="empfaenger_detail_input_text" property="<%= colLabel %>" size="40" readonly="true"/>
+                        </div>
+                    </c:when>
+                    <c:when test="${_agnTbl_editable == 2}">
+                        <html:hidden property="<%= colLabel %>"/>
+                    </c:when>
+                </c:choose>
+            </c:otherwise>
+        </c:choose>
+            <% } %>
     </agn:ShowColumnInfo>
 </div>
-
 
 <div class="contentbox_right_column">
     <h3><bean:message key="recipient.Mailinglists"/>:</h3>
