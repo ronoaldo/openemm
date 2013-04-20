@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+version="2.5">
+
+
+    <!-- Spring context -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml /WEB-INF/dataAccessContext.xml /WEB-INF/cronContext.xml /WEB-INF/cms/cmsContext.xml</param-value>
+        <description>spring context</description>
+    </context-param>
+
+
+    <!-- Filters and Mappings (ordered by execution) -->
+
+	<!--  Session Hijacking Prevention -->
+	<filter>
+		<filter-name>SessionHijackingPreventionFilter</filter-name>
+		<filter-class>org.agnitas.web.filter.SessionHijackingPreventionFilter</filter-class>
+		<init-param>
+			<param-name>ip-whitelist</param-name>
+			<param-value>127.0.0.1</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionHijackingPreventionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+    <!-- encode all characters as UTF-8 -->
+    <filter>
+        <filter-name>CharacterEncoding</filter-name>
+        <filter-class>org.agnitas.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+        	<param-name>encoding</param-name>
+        	<param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+	<!--  serialize requests to not confuse Hibernate -->
+    <filter>
+    	<filter-name>SerializeRequestFilter</filter-name>
+    	<filter-class>org.agnitas.web.filter.SerializeRequestFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SerializeRequestFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- makes sure that whole request response cycle uses same Hibernate session -->
+    <filter>
+        <filter-name>OpenSessionInView</filter-name>
+        <filter-class>org.agnitas.web.filter.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>OpenSessionInView</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>OpenSessionInView</filter-name>
+        <url-pattern>/r.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>OpenSessionInView</filter-name>
+        <url-pattern>/g.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>OpenSessionInView</filter-name>
+        <url-pattern>/emm_webservice</url-pattern>
+    </filter-mapping>
+
+	<!-- interceptor for AjaxAnywhere library -->
+    <filter>
+        <filter-name>AjaxAnywhere</filter-name>
+        <filter-class>org.ajaxanywhere.AAFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AjaxAnywhere</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AjaxAnywhere</filter-name>
+        <url-pattern>*.do</url-pattern> <!-- default Struts mapping -->
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AjaxAnywhere</filter-name>
+        <url-pattern>*.htm</url-pattern> <!-- other frameworks mapping-->
+    </filter-mapping>
+
+
+	<!-- OpenEMM Listeners -->
+
+	<!--  load Spring applicationContext -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+	<!--
+		Listener to initialize the extension system
+
+		Note: This listener requires that Springs ContextLoaderListener is loaded before this listener!
+	-->
+	<listener>
+		<listener-class>org.agnitas.emm.extension.listener.ExtensionSystemInitializationContextListener</listener-class>
+	</listener>
+
+	<!-- cleanup session before startup -->
+    <listener>
+    	<listener-class>org.agnitas.util.web.SessionCleanUpListener</listener-class>
+    </listener>
+
+    <!-- cleanup temporary tables after session end -->
+    <listener>
+    	<listener-class>org.agnitas.service.impl.NewImportHttpSessionListener</listener-class>
+    </listener>
+
+	<!-- cleanup the future holder -->
+	<listener>
+		<listener-class>org.agnitas.web.filter.FutureHolderCleanUpListener</listener-class>
+	</listener>
+
+	<!-- Cleanup for the download data -->
+	<listener>
+		<listener-class>org.agnitas.emm.core.download.listener.DownloadDataCleanupSessionListener</listener-class>
+	</listener>
+
+
+	<!--  OpenEMM Servlets and Mappings -->
+
+	<!-- Struts Action servlet -->
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml, /WEB-INF/cms/struts-config-cms.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>validate</param-name>
+            <param-value>true</param-value>
+        </init-param>
+         <init-param>
+            <param-name>chainConfig</param-name>
+            <param-value>org/apache/struts/tiles/chain-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+	<!-- button renderer servlet -->
+    <servlet>
+        <servlet-name>ButtonServlet</servlet-name>
+        <servlet-class>org.agnitas.web.ButtonRender</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ButtonServlet</servlet-name>
+        <url-pattern>/button</url-pattern>
+    </servlet-mapping>
+
+  	<!-- servlets to show components and images -->
+    <servlet>
+        <servlet-name>ShowComponent</servlet-name>
+        <servlet-class>org.agnitas.web.ShowComponent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowComponent</servlet-name>
+        <url-pattern>/sc</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowImage</servlet-name>
+        <servlet-class>org.agnitas.web.ShowImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowImage</servlet-name>
+        <url-pattern>/image</url-pattern>
+    </servlet-mapping>
+
+	<!--  OpenEMM open count servlet -->
+    <servlet>
+        <servlet-name>OpenrateServlet</servlet-name>
+        <servlet-class>org.agnitas.web.OnePixelCount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OpenrateServlet</servlet-name>
+        <url-pattern>/g.html</url-pattern>
+    </servlet-mapping>
+
+	<!-- OpenEMM redirect servlet -->
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>org.agnitas.web.Rdir</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RedirectServlet</servlet-name>
+        <url-pattern>/r.html</url-pattern>
+    </servlet-mapping>
+
+	<!--  heatmap statistic servlet -->
+    <servlet>
+        <servlet-name>EmbeddedClickStatView</servlet-name>
+        <servlet-class>org.agnitas.ecs.backend.web.EmbeddedClickStatView</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmbeddedClickStatView</servlet-name>
+        <url-pattern>/ecs_view</url-pattern>
+    </servlet-mapping>
+
+    <!-- text download servlet -->
+    <servlet>
+       <servlet-name>TextFileDownload</servlet-name>
+       <servlet-class>org.agnitas.web.TextFileDownload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>TextFileDownload</servlet-name>
+       <url-pattern>/file_download</url-pattern>
+    </servlet-mapping>
+
+	<!-- CMS module servlets -->
+    <servlet>
+        <servlet-name>CmsShowImage</servlet-name>
+        <servlet-class>org.agnitas.cms.web.CmsShowImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CmsShowImage</servlet-name>
+        <url-pattern>/cms_image</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CCRShowImage</servlet-name>
+        <servlet-class>org.agnitas.cms.web.CCRShowImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CCRShowImage</servlet-name>
+        <url-pattern>/ccr_image</url-pattern>
+    </servlet-mapping>
+
+	<!-- Axis servlet -->
+    <servlet>
+        <servlet-name>AxisServlet</servlet-name>
+        <servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+            <init-param>
+                <param-name>axis.servicesPath</param-name>
+                <param-value>/</param-value>
+            </init-param>
+    </servlet>
+ 	<servlet-mapping>
+        <servlet-name>AxisServlet</servlet-name>
+        <url-pattern>/cms_services/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AxisServlet</servlet-name>
+        <url-pattern>/emm_webservice</url-pattern>
+    </servlet-mapping>
+
+	<!-- Extension setup servlet -->
+	<servlet>
+		<servlet-name>ExtensionSetupServlet</servlet-name>
+		<servlet-class>org.agnitas.emm.extension.web.ExtensionSetupServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExtensionSetupServlet</servlet-name>
+		<url-pattern>/extensionSetupServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Extension servlet -->
+	<servlet>
+		<servlet-name>ExtensionServlet</servlet-name>
+		<servlet-class>org.agnitas.emm.extension.web.ExtensionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExtensionServlet</servlet-name>
+		<url-pattern>/extensionServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- File download -->
+	<servlet>
+		<servlet-name>FileDownloadServlet</servlet-name>
+		<servlet-class>org.agnitas.emm.core.download.web.FileDownloadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileDownloadServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+
+    <!-- Session Parameters -->
+	<!-- cookies disabled, URL rewriting enabled -->
+    <session-config>
+        <file-store>WEB-INF/sessions</file-store>
+        <enable-cookies>false</enable-cookies>
+        <enable-url-rewriting>true</enable-url-rewriting>
+    </session-config>
+
+    <!-- MIME Mappings -->
+	<!-- Schema format xsd mapped to text format (for Spring WS) -->
+    <mime-mapping>
+        <extension>xsd</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+    <!--  Welcome File -->
+    <welcome-file-list>
+    	<welcome-file>/index.html</welcome-file>
+    </welcome-file-list>
+
+    <!--  Error Pages -->
+    <error-page>
+    	<exception-type>javax.servlet.ServletException</exception-type>
+    	<location>/error.jsp</location>
+    </error-page>
+    <error-page>
+    	<exception-type>java.lang.Exception</exception-type>
+    	<location>/error.jsp</location>
+    </error-page>
+
+	<!--  TAG Library Descriptors -->
+
+    <!-- Struts TLDs -->
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+        <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+    </taglib>
+
+	<!-- AjaxAnywhere TLDs -->
+	 <taglib>
+        <taglib-uri>/WEB-INF/ajaxanywhere.tld</taglib-uri>
+        <taglib-location>/WEB-INF/ajaxanywhere.tld</taglib-location>
+    </taglib>
+
+	<!-- OpenEMM TLD -->
+    <taglib>
+        <taglib-uri>
+            WEB-INF/agnitas-taglib.tld
+        </taglib-uri>
+        <taglib-location>
+            /WEB-INF/agnitas-taglib.tld
+        </taglib-location>
+    </taglib>
+
+</web-app>

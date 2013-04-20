@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:apachesoap="http://xml.apache.org/xml-soap"
+                  xmlns:impl="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:intf="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:tns1="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--WSDL created by Apache Axis version: 1.4
+    Built on Apr 22, 2006 (06:55:48 PDT)-->
+    <wsdl:types>
+        <schema targetNamespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://xml.apache.org/xml-soap"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ContentModule">
+                <sequence>
+                    <element name="companyId" type="xsd:int"/>
+                    <element name="content" nillable="true" type="xsd:string"/>
+                    <element name="description" nillable="true"
+                             type="xsd:string"/>
+                    <element name="id" type="xsd:int"/>
+                    <element name="name" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="CmsTag">
+                <sequence>
+                    <element name="name" nillable="true" type="xsd:string"/>
+                    <element name="type" type="xsd:int"/>
+                    <element name="value" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ContentModuleLocation">
+                <sequence>
+                    <element name="cmTemplateId" type="xsd:int"/>
+                    <element name="contentModuleId" type="xsd:int"/>
+                    <element name="dynName" nillable="true" type="xsd:string"/>
+                    <element name="id" type="xsd:int"/>
+                    <element name="mailingId" type="xsd:int"/>
+                    <element name="order" type="xsd:int"/>
+                    <element name="targetGroupId" type="xsd:int"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://xml.apache.org/xml-soap"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ArrayOf_xsd_anyType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item"
+                             type="xsd:anyType"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://xml.apache.org/xml-soap"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="Vector">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item"
+                             type="xsd:anyType"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </wsdl:types>
+
+    <wsdl:message name="removeMailingBindingFromContentModulesResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModulesResponse">
+
+        <wsdl:part name="getContentModulesReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleResponse">
+
+        <wsdl:part name="getContentModuleReturn" type="tns1:ContentModule"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingsByContentModuleResponse">
+
+        <wsdl:part name="getMailingsByContentModuleReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="addMailingBindingToContentModulesResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="createContentModuleRequest">
+
+        <wsdl:part name="contentModule" type="tns1:ContentModule"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="deleteContentModuleResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="deleteContentModuleRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeContentsForContentModuleResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleContentsRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingBindingResponse">
+
+        <wsdl:part name="getMailingBindingReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="addMailingBindingsRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateContentModuleResponse">
+
+        <wsdl:part name="updateContentModuleReturn" type="xsd:boolean"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="addMailingBindingsResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="addMailingBindingToContentModulesRequest">
+
+        <wsdl:part name="contentModuleIds" type="impl:ArrayOf_xsd_anyType"/>
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateContentModuleRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+        <wsdl:part name="newName" type="xsd:string"/>
+
+        <wsdl:part name="newDescription" type="xsd:string"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingBindingRequest">
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="saveContentModuleContentResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="addCMLocationsResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="removeCMLocationsForMailingRequest">
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="createContentModuleResponse">
+
+        <wsdl:part name="createContentModuleReturn" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingsByContentModuleRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleContentsResponse">
+
+        <wsdl:part name="getContentModuleContentsReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModulesForMailingRequest">
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeMailingBindingsResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="removeMailingBindingFromContentModulesRequest">
+
+        <wsdl:part name="contentModuleIds" type="impl:ArrayOf_xsd_anyType"/>
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModulesForMailingResponse">
+
+        <wsdl:part name="getContentModulesForMailingReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeContentsForContentModuleRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeMailingBindingsRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getAssignedCMsForMailingRequest">
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateCMLocationResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeCMLocationForMailingsByContentModuleRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+        <wsdl:part name="mailingsToDeassign" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="saveContentModuleContentListRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+        <wsdl:part name="tagList" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeCMLocationForMailingsByContentModuleResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="updateCMLocationRequest">
+
+        <wsdl:part name="location" type="tns1:ContentModuleLocation"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeCMLocationsForMailingResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModulesRequest">
+
+        <wsdl:part name="companyId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMLocationsForMailingIdRequest">
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="saveContentModuleContentRequest">
+
+        <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+        <wsdl:part name="tag" type="tns1:CmsTag"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMLocationsForMailingIdResponse">
+
+        <wsdl:part name="getCMLocationsForMailingIdReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="addCMLocationsRequest">
+
+        <wsdl:part name="locations" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="saveContentModuleContentListResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getAssignedCMsForMailingResponse">
+
+        <wsdl:part name="getAssignedCMsForMailingReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:portType name="RemoteContentModuleManager">
+
+        <wsdl:operation name="getContentModule" parameterOrder="id">
+
+            <wsdl:input message="impl:getContentModuleRequest"
+                        name="getContentModuleRequest"/>
+
+            <wsdl:output message="impl:getContentModuleResponse"
+                         name="getContentModuleResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModules" parameterOrder="companyId">
+
+            <wsdl:input message="impl:getContentModulesRequest"
+                        name="getContentModulesRequest"/>
+
+            <wsdl:output message="impl:getContentModulesResponse"
+                         name="getContentModulesResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="deleteContentModule" parameterOrder="id">
+
+            <wsdl:input message="impl:deleteContentModuleRequest"
+                        name="deleteContentModuleRequest"/>
+
+            <wsdl:output message="impl:deleteContentModuleResponse"
+                         name="deleteContentModuleResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="createContentModule"
+                        parameterOrder="contentModule">
+
+            <wsdl:input message="impl:createContentModuleRequest"
+                        name="createContentModuleRequest"/>
+
+            <wsdl:output message="impl:createContentModuleResponse"
+                         name="createContentModuleResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateContentModule"
+                        parameterOrder="id newName newDescription">
+
+            <wsdl:input message="impl:updateContentModuleRequest"
+                        name="updateContentModuleRequest"/>
+
+            <wsdl:output message="impl:updateContentModuleResponse"
+                         name="updateContentModuleResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModuleContents"
+                        parameterOrder="contentModuleId">
+
+            <wsdl:input message="impl:getContentModuleContentsRequest"
+                        name="getContentModuleContentsRequest"/>
+
+            <wsdl:output message="impl:getContentModuleContentsResponse"
+                         name="getContentModuleContentsResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="saveContentModuleContent"
+                        parameterOrder="contentModuleId tag">
+
+            <wsdl:input message="impl:saveContentModuleContentRequest"
+                        name="saveContentModuleContentRequest"/>
+
+            <wsdl:output message="impl:saveContentModuleContentResponse"
+                         name="saveContentModuleContentResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeContentsForContentModule"
+                        parameterOrder="contentModuleId">
+
+            <wsdl:input message="impl:removeContentsForContentModuleRequest"
+                        name="removeContentsForContentModuleRequest"/>
+
+            <wsdl:output message="impl:removeContentsForContentModuleResponse"
+                         name="removeContentsForContentModuleResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingBinding"
+                        parameterOrder="mailingIds contentModuleId">
+
+            <wsdl:input message="impl:getMailingBindingRequest"
+                        name="getMailingBindingRequest"/>
+
+            <wsdl:output message="impl:getMailingBindingResponse"
+                         name="getMailingBindingResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingsByContentModule"
+                        parameterOrder="contentModuleId">
+
+            <wsdl:input message="impl:getMailingsByContentModuleRequest"
+                        name="getMailingsByContentModuleRequest"/>
+
+            <wsdl:output message="impl:getMailingsByContentModuleResponse"
+                         name="getMailingsByContentModuleResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addMailingBindings"
+                        parameterOrder="contentModuleId mailingIds">
+
+            <wsdl:input message="impl:addMailingBindingsRequest"
+                        name="addMailingBindingsRequest"/>
+
+            <wsdl:output message="impl:addMailingBindingsResponse"
+                         name="addMailingBindingsResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeMailingBindings"
+                        parameterOrder="contentModuleId mailingIds">
+
+            <wsdl:input message="impl:removeMailingBindingsRequest"
+                        name="removeMailingBindingsRequest"/>
+
+            <wsdl:output message="impl:removeMailingBindingsResponse"
+                         name="removeMailingBindingsResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addMailingBindingToContentModules"
+                        parameterOrder="contentModuleIds mailingId">
+
+            <wsdl:input message="impl:addMailingBindingToContentModulesRequest"
+                        name="addMailingBindingToContentModulesRequest"/>
+
+            <wsdl:output
+                    message="impl:addMailingBindingToContentModulesResponse"
+                    name="addMailingBindingToContentModulesResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeMailingBindingFromContentModules"
+                        parameterOrder="contentModuleIds mailingId">
+
+            <wsdl:input
+                    message="impl:removeMailingBindingFromContentModulesRequest"
+                    name="removeMailingBindingFromContentModulesRequest"/>
+
+            <wsdl:output
+                    message="impl:removeMailingBindingFromContentModulesResponse"
+                    name="removeMailingBindingFromContentModulesResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getAssignedCMsForMailing"
+                        parameterOrder="mailingId">
+
+            <wsdl:input message="impl:getAssignedCMsForMailingRequest"
+                        name="getAssignedCMsForMailingRequest"/>
+
+            <wsdl:output message="impl:getAssignedCMsForMailingResponse"
+                         name="getAssignedCMsForMailingResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMLocationsForMailingId"
+                        parameterOrder="mailingId">
+
+            <wsdl:input message="impl:getCMLocationsForMailingIdRequest"
+                        name="getCMLocationsForMailingIdRequest"/>
+
+            <wsdl:output message="impl:getCMLocationsForMailingIdResponse"
+                         name="getCMLocationsForMailingIdResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModulesForMailing"
+                        parameterOrder="mailingId">
+
+            <wsdl:input message="impl:getContentModulesForMailingRequest"
+                        name="getContentModulesForMailingRequest"/>
+
+            <wsdl:output message="impl:getContentModulesForMailingResponse"
+                         name="getContentModulesForMailingResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeCMLocationsForMailing"
+                        parameterOrder="mailingId">
+
+            <wsdl:input message="impl:removeCMLocationsForMailingRequest"
+                        name="removeCMLocationsForMailingRequest"/>
+
+            <wsdl:output message="impl:removeCMLocationsForMailingResponse"
+                         name="removeCMLocationsForMailingResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addCMLocations" parameterOrder="locations">
+
+            <wsdl:input message="impl:addCMLocationsRequest"
+                        name="addCMLocationsRequest"/>
+
+            <wsdl:output message="impl:addCMLocationsResponse"
+                         name="addCMLocationsResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="saveContentModuleContentList"
+                        parameterOrder="contentModuleId tagList">
+
+            <wsdl:input message="impl:saveContentModuleContentListRequest"
+                        name="saveContentModuleContentListRequest"/>
+
+            <wsdl:output message="impl:saveContentModuleContentListResponse"
+                         name="saveContentModuleContentListResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateCMLocation" parameterOrder="location">
+
+            <wsdl:input message="impl:updateCMLocationRequest"
+                        name="updateCMLocationRequest"/>
+
+            <wsdl:output message="impl:updateCMLocationResponse"
+                         name="updateCMLocationResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeCMLocationForMailingsByContentModule"
+                        parameterOrder="contentModuleId mailingsToDeassign">
+
+            <wsdl:input
+                    message="impl:removeCMLocationForMailingsByContentModuleRequest"
+                    name="removeCMLocationForMailingsByContentModuleRequest"/>
+
+            <wsdl:output
+                    message="impl:removeCMLocationForMailingsByContentModuleResponse"
+                    name="removeCMLocationForMailingsByContentModuleResponse"/>
+
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <wsdl:binding name="RemoteContentModuleManagerSoapBinding"
+                  type="impl:RemoteContentModuleManager">
+
+        <wsdlsoap:binding style="rpc"
+                          transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="getContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModules">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getContentModulesRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getContentModulesResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="deleteContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="deleteContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="deleteContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="createContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="createContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="createContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="updateContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="updateContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModuleContents">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getContentModuleContentsRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getContentModuleContentsResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="saveContentModuleContent">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="saveContentModuleContentRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="saveContentModuleContentResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeContentsForContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="removeContentsForContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="removeContentsForContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingBinding">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getMailingBindingRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getMailingBindingResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingsByContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getMailingsByContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getMailingsByContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addMailingBindings">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="addMailingBindingsRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="addMailingBindingsResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeMailingBindings">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="removeMailingBindingsRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="removeMailingBindingsResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addMailingBindingToContentModules">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="addMailingBindingToContentModulesRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="addMailingBindingToContentModulesResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeMailingBindingFromContentModules">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="removeMailingBindingFromContentModulesRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="removeMailingBindingFromContentModulesResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getAssignedCMsForMailing">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getAssignedCMsForMailingRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getAssignedCMsForMailingResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMLocationsForMailingId">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getCMLocationsForMailingIdRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getCMLocationsForMailingIdResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModulesForMailing">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getContentModulesForMailingRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getContentModulesForMailingResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeCMLocationsForMailing">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="removeCMLocationsForMailingRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="removeCMLocationsForMailingResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addCMLocations">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="addCMLocationsRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="addCMLocationsResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="saveContentModuleContentList">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="saveContentModuleContentListRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="saveContentModuleContentListResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateCMLocation">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="updateCMLocationRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="updateCMLocationResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeCMLocationForMailingsByContentModule">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input
+                    name="removeCMLocationForMailingsByContentModuleRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output
+                    name="removeCMLocationForMailingsByContentModuleResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <wsdl:service name="RemoteContentModuleManagerService">
+
+        <wsdl:port binding="impl:RemoteContentModuleManagerSoapBinding"
+                   name="RemoteContentModuleManager">
+
+            <wsdlsoap:address
+                    location="http://localhost:8080/services/org/agnitas/cms/utils/dataaccess/mock/RemoteContentModuleManager"/>
+
+        </wsdl:port>
+
+    </wsdl:service>
+
+</wsdl:definitions>

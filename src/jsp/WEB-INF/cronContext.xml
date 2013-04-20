@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the Common Public Attribution
+ * License Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.openemm.org/cpal1.html. The License is based on the Mozilla
+ * Public License Version 1.1 but Sections 14 and 15 have been added to cover
+ * use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+ * the specific language governing rights and limitations under the License.
+ * 
+ * The Original Code is OpenEMM.
+ * The Original Developer is the Initial Developer.
+ * The Initial Developer of the Original Code is AGNITAS AG. All portions of
+ * the code written by AGNITAS AG are Copyright (c) 2007 AGNITAS AG. All Rights
+ * Reserved.
+ * 
+ * Contributor(s): AGNITAS AG. 
+ ********************************************************************************/
+-->
+
+<!--
+  - Application context definition for Agnitas EMM business layer.
+  - Contains bean references to the transaction manager and to the DAOs in
+  - dataAccessContext.xml (see web.xml's "contextConfigLocation").
+  -->
+<beans>
+
+    <!-- ========================= GENERAL DEFINITIONS ========================= -->
+
+	<!-- The placeholders are resolved from jdbc.properties through -->
+	<!-- the PropertyPlaceholderConfigurer in applicationContext.xml -->
+
+    <!-- Scheduler for Date-Based Mailings -->
+    <bean id="Ruler" class="org.agnitas.backend.RulerImpl">
+    </bean>
+    
+    <bean id="dateBasedMailingsJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="Ruler"/>
+        <property name="targetMethod" value="kickOffSimple"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    
+    <bean id="delayedMailingsJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="Ruler"/>
+        <property name="targetMethod" value="kickOffDelayed"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+        
+    <bean id="dateBasedMailingsCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="dateBasedMailingsJob"/>
+        <property name="cronExpression" value="${dateBasedMailings.cronExpression}"/>
+    </bean>
+    
+    <bean id="delayedMailingsCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="delayedMailingsJob"/>
+        <property name="cronExpression" value="${delayedMailings.cronExpression}"/>
+    </bean>
+
+    <bean id="cleanDB" class="org.agnitas.dao.impl.CleanDBDaoImpl">
+    </bean>
+    
+    <bean id="cleanDBJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="cleanDB"/>
+        <property name="targetMethod" value="cleanup"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    
+    <bean id="cleanDBCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="cleanDBJob"/>
+        <property name="cronExpression" value="${cleanDB.cronExpression}"/>
+    </bean>
+    
+	<bean id="loginTrackTableCleanerJobBean" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="org.agnitas.util.quartz.LoginTrackTableCleanerJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="loginTrackDao" value-ref="LoginTrackDao" />
+				<entry key="retentionTime" value="${loginTrackCleaner.retentionTime}" />   		<!-- Retention time for records in days -->
+				<entry key="deleteBlockSize" value="${loginTrackCleaner.deleteBlockSize}" />  	<!-- Max. number of records to be deleted at once -->
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="loginTrackTableCleanerJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="loginTrackTableCleanerJobBean" />
+		<property name="cronExpression" value="${loginTrackCleaner.cronExpression}" />
+	</bean>
+    
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="dateBasedMailingsCronTrigger"/>
+                <ref bean="delayedMailingsCronTrigger"/>
+                <ref bean="cleanDBCronTrigger"/>
+                <ref bean="loginTrackTableCleanerJobTrigger" />
+            </list>
+        </property>
+    </bean>
+        
+</beans>

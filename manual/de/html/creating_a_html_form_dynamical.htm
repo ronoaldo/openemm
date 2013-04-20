@@ -1,0 +1,173 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Formular - Selbstverwaltung für Empfänger &gt; Formulare &gt; Erweiterte Formulargestaltung &gt; HTML-Formular dynamisch erzeugen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="HTML-Formular dynamisch erzeugen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_html_form_dynamical.htm"; }
+  else { parent.quicksync('a8.1.2.8.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="forms___recipient_management.htm">Formular - Selbstverwaltung für Empfänger</a> &gt; <a href="forms.htm">Formulare</a> &gt; <a href="advanced_form_layout.htm">Erweiterte Formulargestaltung</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">HTML-Formular dynamisch erzeugen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="drop_down_list_instead_of_entr.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="advanced_form_layout.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="maintain_recipients_profile_wi.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Bei der Ausgabe eines Empfängerprofils in einem HTML-Formular gibt es nicht nur Texte wie Name oder E-Mail-Adresse, die Sie mit einem Ausgabefeld präsentieren können. Bei Angaben zum Geschlecht ist zum Beispiel eine Auswahlliste viel besser geeignet, und für den Abonnementstatus einer Mailing-Liste ist eine Checkbox (Kontrollkästchen) ideal.</p>
+<p>Wie Sie in einem Eingabeformular Auswahllisten realisieren, zeigt das vorhergehende Kapitel. Bei der Ausgabe eines bestehenden Profils muss aber der richtige Punkt der Auswahlliste markiert sein. Dazu müssen Sie im HTML-Code das Attribut <span style="font-style: italic;">selected</span> in das entsprechende <span style="font-style: italic;">&lt;option&gt;</span>-Tag einfügen. Ähnlich verhält es sich mit einer Checkbox, hier erzeugt das Attribut <span style="font-style: italic;">checked</span> ein Häkchen. Über Skriptbefehle fügen Sie die Attribute an der richtigen Stelle, abhängig vom Empfängerprofil, ein. Das Beispiel für die Anzeige des Mail-Formats in einer Auswahlliste sieht so aus:</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">Mail-Format: &lt;select name="MAILTYPE" size="1"&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;option value="0" #if( $customerData.MAILTYPE == "0" ) selected #end &gt;</span><br>
+<span class="f_BeispieltextQuelltext">Text</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/option&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;option value="1" #if( $customerData.MAILTYPE == "1" ) selected #end &gt;</span><br>
+<span class="f_BeispieltextQuelltext">HTML</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/option&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;option value="2" #if( $customerData.MAILTYPE == "2" ) selected #end &gt;</span><br>
+<span class="f_BeispieltextQuelltext">Offline-HTML</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/option&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/select&gt;&lt;br&gt;</span></p>
+<p>Der Listenpunkt, den der Browser als markiert anzeigt, muss mit dem Attribut <span style="font-style: italic;">selected</span> markiert sein. Die Wenn-Abfrage <span style="font-style: italic;">#if</span> prüft zunächst, ob der im Empfängerprofil gespeicherte Wert zum Listeneintrag passt. Den Wert aus dem Profil rufen Sie mit <span style="font-style: italic;">$customerData.MAILTYPE</span> ab. <span style="font-family: 'Tahoma';">MAILTYPE</span> ist der Name des Feldes, in dem der OpenEMM den E-Mail-Typ (Text, HTML oder Offline-HTML) eines Empfängers speichert. Besteht eine Übereinstimmung, so fügt der Skriptbefehl den Text vor dem abschließenden <span style="font-style: italic;">#end</span> der Wenn-Abfrage in den HTML-Code ein. Aus</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">&lt;option value="2" #if( $customerData.MAILTYPE == "2" ) selected #end &gt;</span></p>
+<p>wird damit zum Beispiel</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">&lt;option value="2" selected &gt;</span></p>
+<p>Das passiert im Beispiel natürlich nur, wenn im Empfängerprofil eine 2 eingetragen ist. Bei einer 1 oder einer 0 entsteht folgendes HTML-Tag:</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">&lt;option value="2"&gt;</span></p>
+<p>Im Endergebnis hat nur das <span style="font-style: italic;">&lt;option&gt;</span>-Tag das Attribut selected, dessen Wert der Angabe im Empfängerprofil entspricht.</p>
+<p>&nbsp;</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

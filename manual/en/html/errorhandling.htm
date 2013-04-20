@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Recipients - Managing customer data &gt; Import function for recipient data &gt; The import assistant &gt; Error handling</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Error handling">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?errorhandling.htm"; }
+  else { parent.quicksync('a4.4.4.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Recipients - Managing customer data</a> &gt; <a href="import_function_for_recipient_.htm">Import function for recipient data</a> &gt; <a href="the_import_assistant.htm">The import assistant</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Error handling</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="selection_of_mailing_lists.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="the_import_assistant.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="importing_the_csv_file.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>In principle, two kinds of error can occur when importing CSV files into the database:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">The import profile chosen does not match the CSV file.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">The CSV file contains errors.</span></td></tr></table></div><p>If the Assistant does not even display the first lines of the CSV file as a preview, the import file chosen does not match the CSV file. This can occur when no information on the column names or on the key column is noted in the import profile. OpenEMM therefore indicates an error and switches directly to the input mask of the selected import profile for correction.</p>
+<div class="p_ImageCaption"><div align="center"><img src="the_assistant_reports_an_error.png" width="368" height="107" border="0" alt="Fig. 4.21: The Assistant reports an error when importing recipient data. The import profile chosen does not match the CSV file."><p style="text-align:center;width:368px"><span class="f_ImageCaption">Fig. 4.21: The Assistant reports an error when importing recipient data. The import profile chosen does not match the CSV file.</span></p></div></div>
+<p>Now switch to the <span style="font-family: 'Tahoma';">Manage columns</span> tab. You can there see that OpenEMM has already read out the column names of  your CSV file and added the import profile as a CSV column. Assign the CSV columns whose information that you want to import – at a minimum the key column – to a database name and accept the changes with <span style="font-family: 'Tahoma';">Save</span>. Then click on the submenu <span style="font-family: 'Tahoma';">Import</span> in the navigation bar, again select your import profile and restart the Assistant via <span style="font-family: 'Tahoma';">Proceed</span>.</p>
+<p>In the second case – the CSV file contains errors – OpenEMM does not switch to the import profile but remains directly in the Assistant. After clicking on the <span style="font-family: 'Tahoma';">Start import</span> button in the import preview, the system carries out a search for errors. This includes a search for erroneous e-mail addresses and wrong numerical values. If discrepancies occur, the system announces those found on the following page, for example with the following output:</p>
+<div class="p_ImageCaption"><div align="center"><img src="produktname_has_discovered.png" width="936" height="292" border="0" alt="Fig. 4.22: OpenEMM has discovered an error in the CSV file. In this example, the key field with the email address is missing for one of the recipients."><p style="text-align:center;width:936px"><span class="f_ImageCaption">Fig. 4.22: OpenEMM has discovered an error in the CSV file. In this example, the key field with the email address is missing for one of the recipients.</span></p></div></div>
+<p>OpenEMM highlights CSV fields containing wrong information in yellow, and requests that you enter the correct data. The corrected information is accepted with <span style="font-family: 'Tahoma';">Save</span>. The search for errors is subsequently restarted to check your corrections. Alternatively, you can <span style="font-family: 'Tahoma';">Ignore</span> errors found. The erroneous information is then not imported.</p>
+<p>If in the import profile you have given an email address in the field <span style="font-family: 'Tahoma';">Email for report</span>, OpenEMM sends a message that can contain the following information:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">A CSV file containing the found and corrected errors A CSV file corresponding to the figure above would consist of two lines. The first line contains individual categories such as gender, last name and email address; the second line contains the data record for the recipient that has the wrong email address.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">A CSV file with the wrong lines that were not imported.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">A report containing import statistics.</span></td></tr></table></div>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

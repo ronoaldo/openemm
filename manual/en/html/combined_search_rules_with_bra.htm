@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Target groups - Dynamic filters &gt; Combined search rules with brackets</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Combined search rules with brackets">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?combined_search_rules_with_bra.htm"; }
+  else { parent.quicksync('a6.4'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="target_groups___dynamic_filter.htm">Target groups - Dynamic filters</a>&nbsp;&gt;</p>
+   <p class="p_Heading2"><span class="f_Heading2">Combined search rules with brackets</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="date_functions.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="target_groups___dynamic_filter.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="create_a_mailing_list_from_a_t.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>In many cases, a single search rule (field – operator – reference value) is not sufficient to define a target group. It is therefore admissible to specify several search rules, linking them with the AND and OR operators as in a normal search. Brackets are also allowed in target group definitions.</p>
+<p>The use of brackets permits the definition of very complex target groups. Mathematical rules apply for bracket processing: <span style="font-weight: bold;">what’s inside brackets will be processed first.</span> Brackets may also be nested. However, this quickly leads to a rather unclear target definition structure.</p>
+<div class="p_ImageCaption"><div align="center"><img src="using_brackets,_you_can_group.png" width="176" height="63" border="0" alt="Fig. 6.4: Using brackets, you can group search rules, controlling the sequence of their processing."><p style="text-align:center;width:176px"><span class="f_ImageCaption">Fig. 6.4: Using brackets, you can group search rules, controlling the sequence of their processing.</span></p></div></div>
+<p>Imagine you have defined various database fields describing recipients’ interests and hobbies (<span style="font-family: 'Tahoma';">INTEREST_CARS</span>, <span style="font-family: 'Tahoma';">INTEREST_TRAVEL</span> i.e. car interest, travel interest etc.) where 0 means not interested and 1 means interested. Now imagine you wanted to send an email containing images to two interest groups only. You need to use the HTML mail format (see chapter "<a href="mailings___sending_out_newslet.htm">Mailings - Sending out newsletters</a>" on mailings). You would need to define the following search rules: <span style="font-family: 'Tahoma';">(INTEREST_CARS =</span> <span style="font-style: italic;">1</span> <span style="font-family: 'Tahoma';">AND INTEREST_TRAVEL =</span> <span style="font-style: italic;">1</span><span style="font-family: 'Tahoma';">) AND (MAILTYPE =</span> <span style="font-style: italic;">1</span> <span style="font-family: 'Tahoma';">OR MAILTYPE =</span> <span style="font-style: italic;">2</span><span style="font-family: 'Tahoma';">)</span>. This will result in a target group containing all recipients who have ticked <span style="font-family: 'Tahoma';">INTEREST_CARS</span> and <span style="font-family: 'Tahoma';">INTEREST_TRAVEL</span> and who requested the HTML (1) or Offline-HTML (2) mail formats.</p>
+<p>It is easiest to define a target group by first jotting down the search rules with required brackets on a piece of paper. To enter the search rules from our example, proceed as follows:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">As described in chapter "<a href="creating_and_managing_target_g.htm">Creating and managing target groups</a>", call up the entry dialog for a new target group and give it a </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> and </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Description</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Select the left bracket </span><span class="f_Zahlen" style="font-family: 'Tahoma';">(</span><span class="f_Zahlen"> from the first drop-down list in the search rule entry line. Select the field </span><span class="f_Zahlen" style="font-family: 'Tahoma';">INTEREST_CARS</span><span class="f_Zahlen"> from the next drop-down list, then the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">=</span><span class="f_Zahlen"> relational operator and </span><span class="f_Zahlen" style="font-style: italic;">1</span><span class="f_Zahlen"> as a reference value. Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> to close the rule.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">In front of the second search rule, an additional drop-down list allows you to select a linking operator (</span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen"> or </span><span class="f_Zahlen" style="font-family: 'Tahoma';">OR</span><span class="f_Zahlen">). Select the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen"> operator. Select the field </span><span class="f_Zahlen" style="font-family: 'Tahoma';">INTEREST_TRAVEL</span><span class="f_Zahlen">, then the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">=</span><span class="f_Zahlen"> relational operator and </span><span class="f_Zahlen" style="font-style: italic;">1</span><span class="f_Zahlen"> as a reference value. In the last drop-down list of the line, select the right bracket </span><span class="f_Zahlen" style="font-family: 'Tahoma';">)</span><span class="f_Zahlen">. Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> to close the rule.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">The third search rule begins with an </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen"> link, followed by a left bracket </span><span class="f_Zahlen" style="font-family: 'Tahoma';">(</span><span class="f_Zahlen"> . Select the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">MAILTYPE</span><span class="f_Zahlen"> field, the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">=</span><span class="f_Zahlen"> relational operator and </span><span class="f_Zahlen" style="font-style: italic;">1</span><span class="f_Zahlen"> as a reference value (HTML). Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> to close the rule.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="the_third_search_rule_is.png" width="940" height="545" border="0" alt="Fig. 6.5: The third search rule is complete. Finish by clicking on Add."><p style="text-align:center;width:940px"><span class="f_ImageCaption">Fig. 6.5: The third search rule is complete. Finish by clicking on Add.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">The fourth search rule starts with the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">OR</span><span class="f_Zahlen"> link and no bracket. Select the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">MAILTYPE</span><span class="f_Zahlen"> field again, the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">=</span><span class="f_Zahlen"> relational operator and </span><span class="f_Zahlen" style="font-style: italic;">2</span><span class="f_Zahlen"> as a reference value (Offline-HTML). Finish the rule with a right bracket. Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> to close the rule.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">6.</span></td><td><span class="f_Zahlen">After entering the four search rules and the relevant brackets, close the target group definition by clicking on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Save</span><span class="f_Zahlen">. The new search rule will now be listed in the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Overview</span><span class="f_Zahlen"> when you click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Target groups</span><span class="f_Zahlen"> in the navigation bar.</span></td></tr></table></div><p><span style="font-weight: bold;">Please note:</span> Complex data bank queries within a target group can extend the processing time considerably. This may lead to loading times in the minute range.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

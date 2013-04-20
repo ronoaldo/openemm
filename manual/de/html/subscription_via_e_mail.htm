@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Verwaltung - Das System konfigurieren &gt; Bounce-Filter &gt; Anwendung: Anmeldung per E-Mail</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Anwendung: Anmeldung per E-Mail">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?subscription_via_e_mail.htm"; }
+  else { parent.quicksync('a10.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="settings___configuring_the_sys.htm">Verwaltung - Das System konfigurieren</a> &gt; <a href="bounce_filter.htm">Bounce-Filter</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Anwendung: Anmeldung per E-Mail</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="bounce_filter.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="bounce_filter.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="automatic_update_of_openemm.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Neben der Anmeldung über ein Webformular unterstützt der OpenEMM auch die Anmeldung per E-Mail. Dabei sendet der Interessent eine E-Mail an eine bestimmte Adresse und dokumentiert damit seinen Anmeldewunsch.</p>
+<p>Zur Bestätigung und Vermeidung von Missbrauch ist die Anmeldung per E-Mail als Double opt-in Anmeldeprozess konzipiert, d.h. der Interessent muss seinen Anmeldewunsch nochmals bestätigen. Dazu wird eine E-Mail mit einem Bestätigungslink an den Anmeldewilligen versendet. Erst nachdem er auf den Bestätigungslink geklickt hat, wird er in die Mailing-Liste aufgenommen.</p>
+<p>Die Einrichtung des Anmeldeprozesses ist eng verwandt mit der Einrichtung eines Bounce-Filters:</p>
+<p>Klicken Sie auf <span style="font-family: 'Tahoma';">Verwaltung</span>, <span style="font-family: 'Tahoma';">Bounce-Filter</span>, <span style="font-family: 'Tahoma';">Neuer Bounce-Filter</span>. Vergeben Sie einen für Sie aussagekräftigen <span style="font-family: 'Tahoma';">Namen</span> und eine <span style="font-family: 'Tahoma';">Beschreibung</span> für die <span style="font-style: italic;">Anmeldung per E-Mail</span>.</p>
+<p>Setzen Sie den Haken bei <span style="font-family: 'Tahoma';">Weiterleitungs-Adresse</span> und geben Sie hier eine E-Mail-Adresse an, unter der sich der Interessent per E-Mail anmelden kann. Wichtig: Damit Anmeldungen vom OpenEMM erkannt werden, muss die Subdomain genutzt werden, die Sie auch für den Newsletterversand nutzen, z.B. <span style="font-style: italic;">newsletterabo@newsletter.firma.de</span>.</p>
+<div class="p_ImageCaption"><div align="center"><img src="einrichtung_der_anmeldung_per_e-mail.png" width="936" height="465" border="0" alt="Abb. 11.7: Einrichtung der Anmeldung per E-Mail"><p style="text-align:center;width:936px"><span class="f_ImageCaption">Abb. 11.7: Einrichtung der Anmeldung per E-Mail</span></p></div></div>
+<p>Setzen Sie anschließend auch den Haken bei <span style="font-family: 'Tahoma';">Als Anmeldeadresse verwenden</span>, damit der OpenEMM erkennt, dass Sie die Anmeldung per E-Mail einrichten möchten. Jetzt definieren Sie, zu welcher Mailing-Liste die Empfänger hinzugefügt werden sollen.</p>
+<p>Aus oben genannten Gründen wird bei der Anmeldung per E-Mail stets ein Double opt-in Prozess verwendet. Sie benötigen daher ein Formular für die Double opt-in Mail. In der Regel haben Sie dieses Formular bereits angelegt, um Anmeldungen über ein Webformular abzuwickeln. In diesem Fall wählen Sie aus der Liste das Formular für die Double opt-in Mail aus. Dadurch wird auch automatisch der Versand der Bestätigungsmail aktiviert. Bei Bedarf finden Sie weitere Informationen zu Formularen in Kapitel "<a href="forms___recipient_management.htm">Formular - Selbstverwaltung für Empfänger</a>".</p>
+<p>In der Übersicht erscheint anschließend der neue Bounce-Filter für die Anmeldung per E-Mail. Die dort angegebene Adresse <span style="font-style: italic;">aml_XX@filter.xx.xx</span> ist für Sie nur dann relevant, wenn Sie bei der Einrichtung unter Weiterleitungsadresse keine Eingabe gemacht haben. In diesem Fall wäre dies Ihre E-Mail-Adresse zur Anmeldung. Aufgrund der etwas kryptischen Anmutung ist es jedoch in jedem Falle vorteilhaft, stattdessen eine Weiterleitungsadresse zu verwenden. In diesem Fall können Sie die hier angegebene Adresse ignorieren.</p>
+<p>Testen Sie die Anmeldung per E-Mail, indem Sie eine E-Mail an die Anmeldeadresse (Weiterleitungsadresse) senden. Melden Sie so testweise einen Empfänger an, der noch nicht in der Mailing-Liste enthalten ist.</p>
+<div class="p_ImageCaption"><div align="center"><img src="der_bounce-filter_zur_anmeldung_per.png" width="936" height="207" border="0" alt="Abb. 11.8: Der Bounce-Filter zur Anmeldung per E-Mail erscheint in der Übersicht"><p style="text-align:center;width:936px"><span class="f_ImageCaption">Abb. 11.8: Der Bounce-Filter zur Anmeldung per E-Mail erscheint in der Übersicht</span></p></div></div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

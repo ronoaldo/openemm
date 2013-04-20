@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+
+    <definition name="base" path="/template.jsp">
+        <put name="license" value="/license.jsp" type="page"/>
+        <put name="head-tag" value="/head-tag.jsp" type="page"/>
+        <put name="tabsmenu" value="/tabsmenu.jsp" type="page"/>
+        <put name="header" value="/header-tiles.jsp" type="page"/>
+        <put name="sidemenu" value="/sidemenu-tiles.jsp" type="page"/>
+        <put name="topmenu" value="/topmenu-tiles.jsp" type="page"/>
+        <put name="messages" value="/messages.jsp" type="page"/>
+        <put name="footer" value="/footer-tiles.jsp" type="page"/>
+    </definition>
+
+    <definition name="action_delete" extends="base">
+        <put name="body" value="/actions/action-delete.jsp" type="page"/>
+        <put name="page-setup" value="/actions/action-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="action_view" extends="base">
+        <put name="body" value="/actions/action-view.jsp" type="page"/>
+        <put name="page-setup" value="/actions/action-view-setup.jsp" type="page"/>
+    </definition>
+    
+    <definition name="user_selfservice" extends="base">
+        <put name="body" value="settings/admin/user_selfservice.jsp" type="page"/>
+        <put name="page-setup" value="settings/admin/user_selfservice-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="campaign_stat" extends="base">
+        <put name="body" value="/campaign/campaign-stat.jsp" type="page"/>
+        <put name="page-setup" value="/campaign/campaign-stat-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="exportwizard_list" extends="base">
+        <put name="body" value="/exportwizard/exportwizard-list.jsp" type="page"/>
+        <put name="page-setup" value="/exportwizard/exportwizard-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="exportwizard_query" extends="base">
+        <put name="body" value="/exportwizard/exportwizard-query.jsp" type="page"/>
+        <put name="page-setup" value="/exportwizard/exportwizard-query-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_attachments" extends="base">
+        <put name="body" value="/mailing/mailing-attachments.jsp" type="page"/>
+        <put name="page-setup" value="/mailing/mailing-attachments-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_components" extends="base">
+        <put name="body" value="/mailing/mailing-components.jsp" type="page"/>
+        <put name="page-setup" value="/mailing/mailing-components-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_content_list" extends="base">
+        <put name="body" value="/mailing/mailing-content-list.jsp" type="page"/>
+        <put name="page-setup" value="/mailing/mailing-content-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_delete" extends="base">
+        <put name="body" value="/mailing/mailing-delete.jsp" type="page"/>
+        <put name="page-setup" value="/mailing/mailing-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_send" extends="base">
+        <put name="body" value="/mailing/mailing-send.jsp" type="page"/>
+        <put name="page-setup" value="/mailing/mailing-send-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="admin_list" extends="base">
+        <put name="body" value="/settings/admin/admin-list.jsp" type="page"/>
+        <put name="page-setup" value="/settings/admin/admin-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="admin_loading" extends="base">
+        <put name="body" value="/settings/admin/admin-loading.jsp" type="page"/>
+        <put name="page-setup" value="/settings/admin/admin-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="blacklist_delete" extends="base">
+        <put name="body" value="/settings/blacklist/blacklist-delete.jsp" type="page"/>
+        <put name="page-setup" value="/settings/blacklist/blacklist-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="blacklist_list" extends="base">
+        <put name="body" value="/settings/blacklist/blacklist-list.jsp" type="page"/>
+        <put name="page-setup" value="/settings/blacklist/blacklist-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailloop_delete" extends="base">
+        <put name="body" value="/settings/mailloop/mailloop-delete.jsp" type="page"/>
+        <put name="page-setup" value="/settings/mailloop/mailloop-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailloop_list" extends="base">
+        <put name="body" value="/settings/mailloop/mailloop-list.jsp" type="page"/>
+        <put name="page-setup" value="/settings/mailloop/mailloop-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailloop_view" extends="base">
+        <put name="body" value="/settings/mailloop/mailloop-view.jsp" type="page"/>
+        <put name="page-setup" value="/settings/mailloop/mailloop-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailloop_loading" extends="base">
+        <put name="body" value="/settings/mailloop/mailloop-loading.jsp" type="page"/>
+        <put name="page-setup" value="/settings/mailloop/mailloop-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="salutation_list" extends="base">
+        <put name="body" value="/settings/salutation/salutation-list.jsp" type="page"/>
+        <put name="page-setup" value="/settings/salutation/salutation-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="salutation_delete" extends="base">
+        <put name="body" value="/settings/salutation/salutation-delete.jsp" type="page"/>
+        <put name="page-setup" value="/settings/salutation/salutation-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="salutation_view" extends="base">
+        <put name="body" value="/settings/salutation/salutation-view.jsp" type="page"/>
+        <put name="page-setup" value="/settings/salutation/salutation-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="salutation_loading" extends="base">
+        <put name="body" value="/settings/salutation/salutation-loading.jsp" type="page"/>
+        <put name="page-setup" value="/settings/salutation/salutation-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_domain" extends="base">
+        <put name="body" value="/stats/stats-domain.jsp" type="page"/>
+        <put name="page-setup" value="/stats/stats-domain-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_ip" extends="base">
+        <put name="body" value="/stats/stats-ip.jsp" type="page"/>
+        <put name="page-setup" value="/stats/stats-ip-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing" extends="base">
+        <put name="body" value="/stats/stats-mailing.jsp" type="page"/>
+        <put name="page-setup" value="/stats/stats-mailing-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_comp_view" extends="base">
+        <put name="body" value="/stats/mailing_comp/stats-mailing-comp-view.jsp" type="page"/>
+        <put name="page-setup" value="/stats/mailing_comp/stats-mailing-comp-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_comp_select" extends="base">
+        <put name="body" value="/stats/mailing_comp/stats-mailing-comp-select.jsp" type="page"/>
+        <put name="page-setup" value="/stats/mailing_comp/stats-mailing-comp-select-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_recipient_select" extends="base">
+        <put name="body" value="/stats/recipient/stats-recipient-select.jsp" type="page"/>
+        <put name="page-setup" value="/stats/recipient/stats-recipient-select-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_recipient_display" extends="base">
+        <put name="body" value="/stats/recipient/stats-recipient-display.jsp" type="page"/>
+        <put name="page-setup" value="/stats/recipient/stats-recipient-display-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="splash_cms" extends="base">
+        <put name="body" value="splash-cms.jsp" type="page"/>
+        <put name="page-setup" value="splash-cms-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="splash_stats" extends="base">
+        <put name="body" value="splash-stats.jsp" type="page"/>
+        <put name="page-setup" value="splash-stats-setup.jsp" type="page"/>
+    </definition>
+
+    <!--batch #2-->
+
+    <definition name="action_list" extends="base">
+        <put name="body" value="actions/action-list.jsp" type="page"/>
+        <put name="page-setup" value="actions/action-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_start" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-start.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-start-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_name" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-name.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-name-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_template" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-template.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-template-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_type" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-type.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-type-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_sendaddress" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-sendaddress.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-sendaddress-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_mailtype" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-mailtype.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-mailtype-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_subject" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-subject.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-subject-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_target" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-target.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-target-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_textmodules" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-textmodules.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-textmodules-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_textmodule" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-textmodule.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-textmodule-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_links" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-links.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-links-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_link" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-link.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-link-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_attachment" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-attachment.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-attachment-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_wizard_finish" extends="base">
+        <put name="body" value="mailing/wizard/mailing-wizard-finish.jsp" type="page"/>
+        <put name="page-setup" value="mailing/wizard/mailing-wizard-finish-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="campaign_view" extends="base">
+        <put name="body" value="campaign/campaign-view.jsp" type="page"/>
+        <put name="page-setup" value="campaign/campaign-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="campaign_list" extends="base">
+        <put name="body" value="campaign/campaign-list.jsp" type="page"/>
+        <put name="page-setup" value="campaign/campaign-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="campaign_splash" extends="base">
+        <put name="body" value="campaign/campaign-splash.jsp" type="page"/>
+        <put name="page-setup" value="campaign/campaign-splash-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_trackablelink_list" extends="base">
+        <put name="body" value="mailing/mailing-trackablelink-list.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-trackablelink-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_trackablelink_view" extends="base">
+        <put name="body" value="mailing/mailing-trackablelink-view.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-trackablelink-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_content_view" extends="base">
+        <put name="body" value="mailing/mailing-content-view.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-content-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_view_base" extends="base">
+        <put name="body" value="mailing/mailing-view-base.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-view-base-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_send_confirm" extends="base">
+        <put name="body" value="mailing/mailing-send-confirm.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-send-confirm-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_list" extends="base">
+        <put name="body" value="mailing/mailing-list.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_send2" extends="base">
+        <put name="body" value="mailing/mailing-send2.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-send2-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_loading" extends="base">
+        <put name="body" value="mailing/mailing-loading.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_preview_select" extends="base">
+        <put name="body" value="mailing/mailing-preview-select.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-preview-select-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailinglist_list" extends="base">
+        <put name="body" value="mailinglists/mailinglist-list.jsp" type="page"/>
+        <put name="page-setup" value="mailinglists/mailinglist-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="admin_view" extends="base">
+        <put name="body" value="settings/admin/admin-view.jsp" type="page"/>
+        <put name="page-setup" value="settings/admin/admin-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="blacklist_loading" extends="base">
+        <put name="body" value="settings/blacklist/blacklist-loading.jsp" type="page"/>
+        <put name="page-setup" value="settings/blacklist/blacklist-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <!--batch #3-->
+
+    <definition name="stats_domain_splash" extends="base">
+        <put name="body" value="stats/stats-domain-splash.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-domain-splash-setup.jsp" type="page"/>
+    </definition>
+<!--
+    <definition name="stats_domain_stats" extends="base">
+        <put name="body" value="stats/stats-domain-stats.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-domain-stats-setup.jsp" type="page"/>
+    </definition>
+// -->
+    <definition name="stats_ip_splash" extends="base">
+        <put name="body" value="stats/stats-ip-splash.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-ip-splash-setup.jsp" type="page"/>
+    </definition>
+<!--
+    <definition name="stats_ip_stats" extends="base">
+        <put name="body" value="stats/stats-ip-stats.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-ip-stats-setup.jsp" type="page"/>
+    </definition>
+// -->
+    <definition name="stats_mailing_bounce" extends="base">
+        <put name="body" value="stats/stats-mailing-bounce.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-bounce-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_open_day" extends="base">
+        <put name="body" value="stats/stats-mailing-open-day.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-open-day-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_open_week" extends="base">
+        <put name="body" value="stats/stats-mailing-open-week.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-open-week-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_stat_bounce" extends="base">
+        <put name="body" value="stats/stats-mailing-stat-bounce.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-stat-bounce-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_stat_day" extends="base">
+        <put name="body" value="stats/stats-mailing-stat-day.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-stat-day-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_stat_opened" extends="base">
+        <put name="body" value="stats/stats-mailing-stat-opened.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-stat-opened-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailing_stat_week" extends="base">
+        <put name="body" value="stats/stats-mailing-stat-week.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-stat-week-setup.jsp" type="page"/>
+    </definition>
+<!--
+    <definition name="stats_mailing_stat" extends="base">
+        <put name="body" value="stats/stats-mailing-stat.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-stat-setup.jsp" type="page"/>
+    </definition>
+// -->
+    <definition name="stats_mailing_stats" extends="base">
+        <put name="body" value="stats/stats-mailing-stats.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailing-stats-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_mailstat_splash" extends="base">
+        <put name="body" value="stats/stats-mailstat-splash.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-mailstat-splash-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="stats_stat_clean_question" extends="base">
+        <put name="body" value="stats/stats-stat-clean-question.jsp" type="page"/>
+        <put name="page-setup" value="stats/stats-stat-clean-question-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="campaign_delete" extends="base">
+        <put name="body" value="campaign/campaign-delete.jsp" type="page"/>
+        <put name="page-setup" value="campaign/campaign-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="exportwizard_delete" extends="base">
+        <put name="body" value="exportwizard/exportwizard-delete.jsp" type="page"/>
+        <put name="page-setup" value="exportwizard/exportwizard-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="exportwizard_savemask" extends="base">
+        <put name="body" value="exportwizard/exportwizard-savemask.jsp" type="page"/>
+        <put name="page-setup" value="exportwizard/exportwizard-savemask-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="exportwizard_view" extends="base">
+        <put name="body" value="exportwizard/exportwizard-view.jsp" type="page"/>
+        <put name="page-setup" value="exportwizard/exportwizard-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_action" extends="base">
+        <put name="body" value="mailing/mailing-action.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-action-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_cancel_generation_deny" extends="base">
+        <put name="body" value="mailing/mailing-cancel-generation-deny.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-cancel-generation-deny-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailing_cancel_generation_question" extends="base">
+        <put name="body" value="mailing/mailing-cancel-generation-question.jsp" type="page"/>
+        <put name="page-setup" value="mailing/mailing-cancel-generation-question-setup.jsp" type="page"/>
+    </definition>
+
+     <!--batch #4-->
+
+    <definition name="settings_profile_field_list" extends="base">
+        <put name="body" value="settings/profile_field/settings-profile-field-list.jsp" type="page"/>
+        <put name="page-setup" value="settings/profile_field/settings-profile-field-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="settings_profile_field_view" extends="base">
+        <put name="body" value="settings/profile_field/settings-profile-field-view.jsp" type="page"/>
+        <put name="page-setup" value="settings/profile_field/settings-profile-field-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="settings_profile_field_delete" extends="base">
+        <put name="body" value="/settings/profile_field/settings-profile-field-delete.jsp" type="page"/>
+        <put name="page-setup" value="/settings/profile_field/settings-profile-field-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="settings_profile_field_delete_error" extends="base">
+        <put name="body" value="/settings/profile_field/settings-profile-field-delete-error.jsp" type="page"/>
+        <put name="page-setup" value="/settings/profile_field/settings-profile-field-delete-error-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="settings_blacklist_error" extends="base">
+        <put name="body" value="/settings/blacklist/settings-blacklist-error.jsp" type="page"/>
+        <put name="page-setup" value="/settings/blacklist/settings-blacklist-error-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="targets_list" extends="base">
+        <put name="body" value="targets/targets-list.jsp" type="page"/>
+        <put name="page-setup" value="targets/targets-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="targets_view" extends="base">
+        <put name="body" value="targets/targets-view.jsp" type="page"/>
+        <put name="page-setup" value="targets/targets-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="targets_delete" extends="base">
+        <put name="body" value="targets/targets-delete.jsp" type="page"/>
+        <put name="page-setup" value="targets/targets-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="targets_new_ml" extends="base">
+        <put name="body" value="targets/targets-new-ml.jsp" type="page"/>
+        <put name="page-setup" value="targets/targets-new-ml-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="targets_delete_recipients" extends="base">
+        <put name="body" value="targets/targets-delete-recipients.jsp" type="page"/>
+        <put name="page-setup" value="targets/targets-delete-recipients-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="userform_list" extends="base">
+        <put name="body" value="userform/userform-list.jsp" type="page"/>
+        <put name="page-setup" value="userform/userform-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="userform_view" extends="base">
+        <put name="body" value="userform/userform-view.jsp" type="page"/>
+        <put name="page-setup" value="userform/userform-view-setup.jsp" type="page"/>
+    </definition>
+
+     <definition name="userform_delete" extends="base">
+        <put name="body" value="userform/userform-delete.jsp" type="page"/>
+        <put name="page-setup" value="userform/userform-delete-setup.jsp" type="page"/>
+    </definition>
+
+     <definition name="recipient_delete" extends="base">
+        <put name="body" value="recipient/recipient-delete.jsp" type="page"/>
+        <put name="page-setup" value="recipient/recipient-delete-setup.jsp" type="page"/>
+    </definition>
+
+     <definition name="recipient_list" extends="base">
+        <put name="body" value="recipient/recipient-list.jsp" type="page"/>
+        <put name="page-setup" value="recipient/recipient-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="recipient_loading" extends="base">
+       <put name="body" value="recipient/recipient-loading.jsp" type="page"/>
+       <put name="page-setup" value="recipient/recipient-loading-setup.jsp" type="page"/>
+   </definition>
+
+    <definition name="recipient_splash" extends="base">
+       <put name="body" value="recipient/recipient-splash.jsp" type="page"/>
+       <put name="page-setup" value="recipient/recipient-splash-setup.jsp" type="page"/>
+   </definition>
+
+    <definition name="recipient_view" extends="base">
+       <put name="body" value="recipient/recipient-view.jsp" type="page"/>
+       <put name="page-setup" value="recipient/recipient-view-setup.jsp" type="page"/>
+   </definition>
+
+    <definition name="settings_admin_delete" extends="base">
+       <put name="body" value="settings/admin/settings-admin-delete.jsp" type="page"/>
+       <put name="page-setup" value="settings/admin/settings-admin-delete-setup.jsp" type="page"/>
+   </definition>
+
+    <definition name="settings_admin_rights" extends="base">
+       <put name="body" value="settings/admin/settings-admin-rights.jsp" type="page"/>
+       <put name="page-setup" value="settings/admin/settings-admin-rights-setup.jsp" type="page"/>
+   </definition>
+
+   <definition name="mailinglists_delete" extends="base">
+       <put name="body" value="mailinglists/mailinglists-delete.jsp" type="page"/>
+       <put name="page-setup" value="mailinglists/mailinglists-delete-setup.jsp" type="page"/>
+   </definition>
+
+    <definition name="mailinglists_view" extends="base">
+        <put name="body" value="mailinglists/mailinglists-view.jsp" type="page"/>
+        <put name="page-setup" value="mailinglists/mailinglists-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailinglists_recipients_delete_view" extends="base">
+        <put name="body" value="mailinglists/mailinglists-recipients-delete-view.jsp" type="page"/>
+        <put name="page-setup" value="mailinglists/mailinglists-recipients-delete-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="mailinglists_confirm_recipients_delete_view" extends="base">
+        <put name="body" value="mailinglists/mailinglists-recipients-confirm-delete-view.jsp" type="page"/>
+        <put name="page-setup" value="mailinglists/mailinglists-recipients-confirm-delete-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="tags_taglibs" extends="base">
+        <put name="body" value="tags/tags-taglibs.jsp" type="page"/>
+        <put name="page-setup" value="tags/tags-taglibs-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="update_update_error" extends="base">
+        <put name="body" value="update/update-update-error.jsp" type="page"/>
+        <put name="page-setup" value="update/update-update-error-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="update_update_question" extends="base">
+        <put name="body" value="update/update-update-question.jsp" type="page"/>
+        <put name="page-setup" value="update/update-update-question-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="update_update" extends="base">
+        <put name="body" value="update/update-update.jsp" type="page"/>
+        <put name="page-setup" value="update/update-update-setup.jsp" type="page"/>
+    </definition>
+
+    <!--batch #6-->
+    <definition name="start" extends="base">
+        <put name="body" value="start-body.jsp" type="page"/>
+        <put name="page-setup" value="start-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="splash_recipients" extends="base">
+        <put name="body" value="splash-recipients.jsp" type="page"/>
+        <put name="page-setup" value="splash-recipients-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="splash_settings" extends="base">
+        <put name="body" value="splash-settings.jsp" type="page"/>
+        <put name="page-setup" value="splash-settings-setup.jsp" type="page"/>
+    </definition>
+    <!--batch #7-->
+    <definition name="cms_cmt_list" extends="base">
+        <put name="body" value="cms/cmt/cms-cmt-list.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmt/cms-cmt-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmt_delete" extends="base">
+        <put name="body" value="cms/cmt/cms-cmt-delete.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmt/cms-cmt-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmt_new" extends="base">
+        <put name="body" value="cms/cmt/cms-cmt-new.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmt/cms-cmt-new-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmt_preview" extends="base">
+        <put name="body" value="cms/cmt/cms-cmt-preview.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmt/cms-cmt-preview-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmt_view" extends="base">
+        <put name="body" value="cms/cmt/cms-cmt-view.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmt/cms-cmt-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmtemplate_view" extends="base">
+        <put name="body" value="cms/cmtemplate/cms-cmtemplate-view.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmtemplate/cms-cmtemplate-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmtemplate_assign_list" extends="base">
+        <put name="body" value="cms/cmtemplate/cms-cmtemplate-assign-list.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmtemplate/cms-cmtemplate-assign-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmtemplate_edit_template" extends="base">
+        <put name="body" value="cms/cmtemplate/cms-cmtemplate-edit-template.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmtemplate/cms-cmtemplate-edit-template-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmtemplate_upload" extends="base">
+        <put name="body" value="cms/cmtemplate/cms-cmtemplate-upload.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmtemplate/cms-cmtemplate-upload-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmtemplate_list" extends="base">
+        <put name="body" value="cms/cmtemplate/cms-cmtemplate-list.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmtemplate/cms-cmtemplate-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmtemplate_delete" extends="base">
+        <put name="body" value="cms/cmtemplate/cms-cmtemplate-delete.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmtemplate/cms-cmtemplate-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_contentmodule_view" extends="base">
+        <put name="body" value="cms/contentmodule/cms-contentmodule-view.jsp" type="page"/>
+        <put name="page-setup" value="cms/contentmodule/cms-contentmodule-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_contentmodule_new" extends="base">
+        <put name="body" value="cms/contentmodule/cms-contentmodule-new-pure.jsp" type="page"/>
+        <put name="page-setup" value="cms/contentmodule/cms-contentmodule-new-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_contentmodule_new_full" extends="base">
+        <put name="body" value="cms/contentmodule/cms-contentmodule-new.jsp" type="page"/>
+        <put name="page-setup" value="cms/contentmodule/cms-contentmodule-new-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_contentmodule_list" extends="base">
+        <put name="body" value="cms/contentmodule/cms-contentmodule-list.jsp" type="page"/>
+        <put name="page-setup" value="cms/contentmodule/cms-contentmodule-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_contentmodule_delete" extends="base">
+        <put name="body" value="cms/contentmodule/cms-contentmodule-delete.jsp" type="page"/>
+        <put name="page-setup" value="cms/contentmodule/cms-contentmodule-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_contentmodule_assign_list" extends="base">
+        <put name="body" value="cms/contentmodule/cms-contentmodule-assign-list.jsp" type="page"/>
+        <put name="page-setup" value="cms/contentmodule/cms-contentmodule-assign-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_mailing_content_editor" extends="base">
+        <put name="body" value="cms/mailing/cms-mailing-content-editor.jsp" type="page"/>
+        <put name="page-setup" value="cms/mailing/cms-mailing-content-editor-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_mailing_text_editor" extends="base">
+        <put name="body" value="cms/mailing/cms-mailing-text-editor.jsp" type="page"/>
+        <put name="page-setup" value="cms/mailing/cms-mailing-text-editor-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmcategory_view" extends="base">
+        <put name="body" value="cms/cmcategory/cms-cmcategory-view.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmcategory/cms-cmcategory-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmcategory_delete" extends="base">
+        <put name="body" value="cms/cmcategory/cms-cmcategory-delete.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmcategory/cms-cmcategory-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="cms_cmcategory_list" extends="base">
+        <put name="body" value="cms/cmcategory/cms-cmcategory-list.jsp" type="page"/>
+        <put name="page-setup" value="cms/cmcategory/cms-cmcategory-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="ecs_ecs" extends="base">
+        <put name="body" value="ecs/ecs-ecs.jsp" type="page"/>
+        <put name="page-setup" value="ecs/ecs-ecs-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="ecs_ecs_errors" extends="base">
+        <put name="body" value="ecs/ecs-ecs-errors.jsp" type="page"/>
+        <put name="page-setup" value="ecs/ecs-ecs-errors-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_start_import" extends="base">
+        <put name="body" value="importwizard/importwizard-start-import.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-start-import-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_edit_error" extends="base">
+        <put name="body" value="importwizard/importwizard-edit-error.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-edit-error-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_loading" extends="base">
+        <put name="body" value="importwizard/importwizard-loading.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_progress" extends="base">
+        <put name="body" value="importwizard/importwizard-progress.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-progress-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_mailing_lists" extends="base">
+        <put name="body" value="importwizard/importwizard-mailing-lists.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-mailing-lists-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_preview" extends="base">
+        <put name="body" value="importwizard/importwizard-preview.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-preview-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_result_page" extends="base">
+        <put name="body" value="importwizard/importwizard-result-page.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/importwizard-result-page-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_profile_view" extends="base">
+        <put name="body" value="importwizard/profile/importwizard-profile-view.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/profile/importwizard-profile-view-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_profile_list" extends="base">
+        <put name="body" value="importwizard/profile/importwizard-profile-list.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/profile/importwizard-profile-list-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_profile_delete" extends="base">
+        <put name="body" value="importwizard/profile/importwizard-profile-delete.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/profile/importwizard-profile-delete-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="importwizard_profile_columns_view" extends="base">
+        <put name="body" value="importwizard/profile/columns/importwizard-profile-columns-view.jsp" type="page"/>
+        <put name="page-setup" value="importwizard/profile/columns/importwizard-profile-columns-view-setup.jsp" type="page"/>
+    </definition>
+
+     <definition name="useractivitylog_loading" extends="base">
+        <put name="body" value="useractivitylog/useractivitylog-loading.jsp" type="page"/>
+        <put name="page-setup" value="useractivitylog/useractivitylog-loading-setup.jsp" type="page"/>
+    </definition>
+
+    <definition name="useractivitylog_list" extends="base">
+        <put name="body" value="useractivitylog/useractivitylog-list.jsp" type="page"/>
+        <put name="page-setup" value="useractivitylog/useractivitylog-list-setup.jsp" type="page"/>
+    </definition>
+    
+    <definition name="extensionInTiles" extends="base">
+    	<put name="body" value="extensionServlet" type="page" />
+    	<put name="page-setup" value="extensionSetupServlet" type="page" />
+    </definition>
+    
+    <definition name="pluginmanager_list_plugins" extends="base">
+        <put name="body" value="pluginmanager/pluginmanager-list.jsp" type="page"/>
+        <put name="page-setup" value="pluginmanager/pluginmanager-list-setup.jsp" type="page"/>
+    </definition>
+    
+    <definition name="pluginmanager_plugin_detail" extends="base">
+        <put name="body" value="pluginmanager/pluginmanager-detail.jsp" type="page"/>
+        <put name="page-setup" value="pluginmanager/pluginmanager-detail-setup.jsp" type="page"/>
+    </definition>
+    
+    <definition name="plugininstaller_select" extends="base">
+    	<put name="body" value="pluginmanager/plugininstaller-select.jsp" type="page"/>
+    	<put name="page-setup" value="pluginmanager/plugininstaller-select-setup.jsp" type="page"/>
+    </definition>
+    
+</tiles-definitions>
+

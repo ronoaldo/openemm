@@ -1,0 +1,155 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Automatischer Mailing-Versand - ein Beispiel &gt; Followup-Mailing anlegen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Followup-Mailing anlegen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_follow_up_mailing.htm"; }
+  else { parent.quicksync('a8.4.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="automatic_mailing___an_example.htm">Automatischer Mailing-Versand - ein Beispiel</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Followup-Mailing anlegen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="automatic_mailing___an_example.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="automatic_mailing___an_example.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="defining_actions3.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Als erstes erzeugen Sie das Mailing, das nur die Kunden erhalten, die es mit dem Klick auf den Link anfordern. Es handelt sich dabei nicht um ein normales Mailing, sondern um ein aktionsgesteuertes Mailing. Dazu sind folgende Arbeitschritte erforderlich:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Rufen Sie in der Navigationsleiste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Mailings</span><span class="f_Zahlen"> auf und dann den Unterpunkt </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Neues Mailing</span><span class="f_Zahlen"> auf. Die Eingabefelder und Auswahllisten füllen Sie wie bei einem normalen Mailing aus. Die einzige Ausnahme ist die Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Mailing-Typ</span><span class="f_Zahlen">: Hier stellen Sie </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Aktionsgesteuertes Mailing</span><span class="f_Zahlen"> ein. Es macht Sinn, den Namen mit dem Wort </span><span class="f_Zahlen" style="font-style: italic;">Event:</span><span class="f_Zahlen"> beginnen zu lassen. Dann wissen Sie später sofort, dass dieses Mailing die Reaktion auf einen Mausklick ist. Klicken Sie abschließend auf die Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Nun fügen Sie im Register </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Inhalt</span><span class="f_Zahlen"> den Text für das Mailing ein. Auch sonst stehen alle Funktionen wie bei normalen Mailings zur Verfügung (siehe Kapitel "<a href="mailings___sending_out_newslet.htm">Mailings - Newsletter versenden</a>"), etwa für Dateianhänge und natürlich auch messbare Links. Im Beispiel werden diese Feinheiten aber nicht benötigt.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Klicken Sie nun das Register </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Versand</span><span class="f_Zahlen"> an. Der Inhaltsbereich zeigt einige Links an, mit denen Sie das Mailing testen können. Ist alles zufriedenstellend gelöst, klicken Sie auf </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Änderungen aktivieren</span><span class="f_Zahlen">. Damit ist das aktionsgesteuerte Mailing sozusagen "scharf geschaltet" und kann von einer Aktion benutzt werden.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="wenn_das_aktionsgesteuerte_mailing_fertig_ist.png" width="936" height="323" border="0" alt="Abb. 8.42: Wenn das aktionsgesteuerte Mailing fertig ist aktivieren Sie es über das Register Versand."><p style="text-align:center;width:936px"><span class="f_ImageCaption">Abb. 8.42: Wenn das aktionsgesteuerte Mailing fertig ist aktivieren Sie es über das Register Versand.</span></p></div></div>
+<p><span style="font-weight: bold;">Achtung:</span> Wenn Sie sich die Details zu einem aktivierten Mailing anzeigen lassen, können bestimmte Angaben nicht mehr verändert werden. Es handelt sich dabei um die Auswahllisten <span style="font-family: 'Tahoma';">Mailing-Liste</span>, <span style="font-family: 'Tahoma';">Zielgruppe</span> und <span style="font-family: 'Tahoma';">Mailing-Typ</span>. Diese deaktivierten Elemente zeigt der OpenEMM in hellgrau. Bei aktionsgesteuerten Mailings müssen Sie das Mailing zunächst deaktivieren. Dazu öffnen Sie das Register <span style="font-family: 'Tahoma';">Versand</span> und klicken auf den Link <span style="font-family: 'Tahoma';">Deaktivieren</span>. Jetzt können Sie die drei Einstellungen anpassen, müssen allerdings danach das Mailing über das Register <span style="font-family: 'Tahoma';">Versand</span> wieder aktivieren.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,219 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Recipients - Managing customer data &gt; Import function for recipient data &gt; Creating a new import profile &gt; Manage columns</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Manage columns">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?managing_fields.htm"; }
+  else { parent.quicksync('a4.4.2.5'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Recipients - Managing customer data</a> &gt; <a href="import_function_for_recipient_.htm">Import function for recipient data</a> &gt; <a href="creating_a_new_import_profile.htm">Creating a new import profile</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Manage columns</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="settings_for_e_mail_and_gender.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="creating_a_new_import_profile.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="managing_a_profile__deleting_a.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>The <span style="font-family: 'Tahoma';">Manage columns</span> function gives you a powerful tool for handling the import of CSV files more flexibly.</p>
+<p>OpenEMM works internally with fixed defined names for database columns such as <span style="font-family: 'Tahoma';">lastname</span>, <span style="font-family: 'Tahoma';">gender</span> and <span style="font-family: 'Tahoma';">email</span>. However many CSV files use other designations, so a mix-up can occur upon import.</p>
+<p>An example: The e-mail address of a CSV file is located under the column header <span style="font-style: italic;">email address</span> instead of the internally used <span style="font-family: 'Tahoma';">email</span>. Normally you would have to first modify the CSV file for import by changing the column name. OpenEMM does this considerably more easily, and once configured can even carry this out fully automatically. Staying with the example: Via the <span style="font-family: 'Tahoma';">Manage columns</span> function, you tell the system to assign the column entry <span style="font-style: italic;">email address</span> to the database column <span style="font-family: 'Tahoma';">email</span>.</p>
+<p>The <span style="font-family: 'Tahoma';">Manage columns</span> function offers further practical features as well as field assignment: You can in addition determine whether certain fields must be mandatory present in a CSV file and optionally assign a standard value for empty fields.</p>
+<div class="p_ImageCaption"><div align="center"><img src="in_the_manage_columns_tab.png" width="937" height="464" border="0" alt="Fig. 4.13: In the Manage Columns tab you define for each column of the CSV a corresponding database column. Double entries are detected by the system (see figure below)."><p style="text-align:center;width:937px"><span class="f_ImageCaption">Fig. 4.13: In the Manage Columns tab you define for each column of the CSV a corresponding database column. Double entries are detected by the system (see figure below).</span></p></div></div>
+<p>In the <span style="font-family: 'Tahoma';">New column</span> input mask, enter the column name that you want to assign to a database column in OpenEMM and confirm your entry with <span style="font-family: 'Tahoma';">Add</span>. This system now shows the column name under CSV column.</p>
+<p><span style="font-weight: bold;">Tip:</span> If you do not have the exact designation of the column names of your CSV file to hand, or want to avoid typing mistakes, OpenEMM offers you a practical, and above all, time-saving alternative. Click on the <span style="font-family: 'Tahoma';">Browse</span> button, tell the system where your CSV file is saved and then confirm this with <span style="font-family: 'Tahoma';">Upload</span>. OpenEMM subsequently reads out the column names of the CSV file and automatically adds them to the tab <span style="font-family: 'Tahoma';">Manage columns</span>.</p>
+<div class="p_ImageCaption"><div align="center"><img src="the_system_automatically_reads_in.png" width="937" height="454" border="0" alt="Fig. 4.14: The system automatically reads in the designations of the CSV columns if you enter the path for the corresponding CSV file."><p style="text-align:center;width:937px"><span class="f_ImageCaption">Fig. 4.14: The system automatically reads in the designations of the CSV columns if you enter the path for the corresponding CSV file.</span></p></div></div>
+<p>In this way you can add the column names of different CSV files to your import profile. By clicking on <span style="font-family: 'Tahoma';">Remove</span> you discard the current CSV file and inform the system where the next CSV file is located via <span style="font-family: 'Tahoma';">Browse</span>. This however does not permit duplicates: You can assign only one CSV field to the same database field.</p>
+<div class="p_ImageCaption"><div align="center"><img src="to_exclude_mix-ups,_each.png" width="882" height="60" border="0" alt="Fig. 4.15: To exclude mix-ups, each CSV field can only be assigned to one database field."><p style="text-align:center;width:882px"><span class="f_ImageCaption">Fig. 4.15: To exclude mix-ups, each CSV field can only be assigned to one database field.</span></p></div></div>
+<p>OpenEMM offers you the following options for each column name that you add to the import profile:</p>
+<p><span style="font-family: 'Tahoma';">DB column</span>: Here you determine to which database column the column name you have entered is to be assigned. If you want to exclude data sorted under the CSV column names, use the standard choice <span style="font-family: 'Tahoma';">--do not import column</span>. Further options are:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:middle;">
+<th valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Database column</span></p>
+</th>
+<th valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Meaning</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">--do not import column</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Excludes the column given from import into OpenEMM.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">lastname</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The last name of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">gender</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The gender of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">title</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The recipient’s title, for example </span><span class="f_TabelleInhalt" style="font-style: italic;">Dr.</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">firstname</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The forename of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">email</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The email address of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">mailtype</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The type of mail that the recipient wants.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-family: 'Tahoma';">Mandatory</span>: With this setting you determine whether the CSV column must be present in the CSV file. Tick the desired table entry.</p>
+<p><span style="font-family: 'Tahoma';">Default value</span>: If a column in your CSV file has no empty fields, you can assign these fields a standard value upon import. An example: The Newsletter format column is assigned the <span style="font-family: 'Tahoma';">mailtype</span> database column. If the recipient has not entered anything here, he will receive the newsletter in HTML format. The value <span style="font-style: italic;">1</span> is therefore entered into the input mask <span style="font-family: 'Tahoma';">Default value</span>. If you have selected a self-defined field with a default value, this value is automatically displayed but you can overwrite or delete it.</p>
+<p>In the <span style="font-family: 'Tahoma';">Manage columns</span> dialog field, you can <span style="font-family: 'Tahoma';">Add</span> and edit any number of column names. To delete an element from the list, click on the delete symbol on the rate of each line. <span style="font-family: 'Tahoma';">Save</span> lets the system note your settings without closing the input mask.</p>
+<p><span style="font-weight: bold;">Please note:</span> To import recipient data successfully, you must assign at least one column in the CSV file to a column in the database. Moreover, the key column must be imported.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

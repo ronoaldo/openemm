@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Formular - Selbstverwaltung für Empfänger &gt; Formulare &gt; Beispiel Formular: Anmeldung mit Double-Opt-In &gt; Anmeldeformular aufrufen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Anmeldeformular aufrufen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?calling_up_the_registration_f2.htm"; }
+  else { parent.quicksync('a8.1.2.5.4'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="forms___recipient_management.htm">Formular - Selbstverwaltung für Empfänger</a> &gt; <a href="forms.htm">Formulare</a> &gt; <a href="example_subscribing_with_doubl.htm">Beispiel Formular: Anmeldung mit Double-Opt-In</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">Anmeldeformular aufrufen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="creating_new_forms.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="example_subscribing_with_doubl.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="sending_the_last_newsletter_ju.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Der Aufruf des Formulars funktioniert wie bei einer normalen Anmeldung mit einem Link:</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">http://company.openemm.org/form.do?agnCI=1&amp;agnFN=DoubleSubscribe</span></p>
+<p>Ihre Company-ID ist <span style="font-style: italic;">1</span>. Hinter <span style="font-style: italic;">agnFN=</span> folgt der Name des Formulars, im Beispiel <span style="font-style: italic;">Anmelden</span>.</p>
+<div class="p_ImageCaption"><div align="center"><img src="das_formular_zur_eingabe_der_neuen.png" width="329" height="263" border="0" alt="Abb. 8.15: Das Formular zur Eingabe der neuen Empfängerdaten."><p style="text-align:center;width:329px"><span class="f_ImageCaption">Abb. 8.15: Das Formular zur Eingabe der neuen Empfängerdaten.</span></p></div></div>
+<p>Der neue Empfänger trägt zunächst seine Daten im Anmeldeformular ein. Mit der Schaltfläche Absenden landen Sie in der Datenbank des OpenEMM. Der Sperrvermerk verhindert, dass Mailings an diesen Empfänger versendet werden, auch wenn er die entsprechende Mailing-Liste abonniert hat. Wenn Sie sich die Details zum neuen Empfänger anzeigen lassen (Rubrik <span style="font-family: 'Tahoma';">Empfänger</span>, <span style="font-family: 'Tahoma';">Übersicht</span>, dann die E-Mail-Adresse des neuen Empfängers anklicken), ist dieser Sperrvermerk bei der abonnierten Mailing-Liste eingetragen.</p>
+<div class="p_ImageCaption"><div align="center"><img src="der_neue_empfaenger_ist_in_der.png" width="473" height="133" border="0" alt="Abb. 8.16: Der neue Empfänger ist in der Datenbank als gesperrt markiert, bis die Freischaltung durch den Link in der E-Mail erfolgt."><p style="text-align:center;width:473px"><span class="f_ImageCaption">Abb. 8.16: Der neue Empfänger ist in der Datenbank als gesperrt markiert, bis die Freischaltung durch den Link in der E-Mail erfolgt.</span></p></div></div>
+<p>Erst wenn der Anwender auf die Bestätigungs-E-Mail reagiert hat, verschwindet die Sperre aus der Datenbank des OpenEMM. Erfolgt die Bestätigung nicht, so löscht der OpenEMM den gesperrten Eintrag nach drei Monaten aus der Datenbank.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

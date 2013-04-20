@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the Common Public Attribution
+ * License Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.openemm.org/cpal1.html. The License is based on the Mozilla
+ * Public License Version 1.1 but Sections 14 and 15 have been added to cover
+ * use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+ * the specific language governing rights and limitations under the License.
+ *
+ * The Original Code is OpenEMM.
+ * The Original Developer is the Initial Developer.
+ * The Initial Developer of the Original Code is AGNITAS AG. All portions of
+ * the code written by AGNITAS AG are Copyright (c) 2007 AGNITAS AG. All Rights
+ * Reserved.
+ *
+ * Contributor(s): AGNITAS AG.
+ ********************************************************************************/
+-->
+
+<!--
+  - Application context definition for Agnitas EMM business layer.
+  - Contains bean references to the transaction manager and to the DAOs in
+  - dataAccessContext.xml (see web.xml's "contextConfigLocation").
+  -->
+<beans>
+	<import resource="cms/cmsContext.xml" />
+
+	<bean id="databaseKeywordList" class="org.agnitas.util.KeywordList">
+		<property name="keywords">
+			<set>
+				<value>ADD</value>
+				<value>ALL</value>
+				<value>ALTER</value>
+				<value>ANALYZE</value>
+				<value>AND</value>
+				<value>AS</value>
+				<value>ASC</value>
+				<value>ASENSITIVE</value>
+				<value>BEFORE</value>
+				<value>BETWEEN</value>
+				<value>BIGINT</value>
+				<value>BINARY</value>
+				<value>BLOB</value>
+				<value>BOTH</value>
+				<value>BY</value>
+				<value>CALL</value>
+				<value>CASCADE</value>
+				<value>CASE</value>
+				<value>CHANGE</value>
+				<value>CHAR</value>
+				<value>CHARACTER</value>
+				<value>CHECK</value>
+				<value>COLLATE</value>
+				<value>COLUMN</value>
+				<value>CONDITION</value>
+				<value>CONSTRAINT</value>
+				<value>CONTINUE</value>
+				<value>CONVERT</value>
+				<value>CREATE</value>
+				<value>CROSS</value>
+				<value>CURRENT_DATE</value>
+				<value>CURRENT_TIME</value>
+				<value>CURRENT_TIMESTAMP</value>
+				<value>CURRENT_USER</value>
+				<value>CURSOR</value>
+				<value>DATABASE</value>
+				<value>DATABASES</value>
+				<value>DAY_HOUR</value>
+				<value>DAY_MICROSECOND</value>
+				<value>DAY_MINUTE</value>
+				<value>DAY_SECOND</value>
+				<value>DEC</value>
+				<value>DECIMAL</value>
+				<value>DECLARE</value>
+				<value>DEFAULT</value>
+				<value>DELAYED</value>
+				<value>DELETE</value>
+				<value>DESC</value>
+				<value>DESCRIBE</value>
+				<value>DETERMINISTIC</value>
+				<value>DISTINCT</value>
+				<value>DISTINCTROW</value>
+				<value>DIV</value>
+				<value>DOUBLE</value>
+				<value>DROP</value>
+				<value>DUAL</value>
+				<value>EACH</value>
+				<value>ELSE</value>
+				<value>ELSEIF</value>
+				<value>ENCLOSED</value>
+				<value>ESCAPED</value>
+				<value>EXISTS</value>
+				<value>EXIT</value>
+				<value>EXPLAIN</value>
+				<value>FALSE</value>
+				<value>FETCH</value>
+				<value>FLOAT</value>
+				<value>FLOAT4</value>
+				<value>FLOAT8</value>
+				<value>FOR</value>
+				<value>FORCE</value>
+				<value>FOREIGN</value>
+				<value>FROM</value>
+				<value>FULLTEXT</value>
+				<value>GRANT</value>
+				<value>GROUP</value>
+				<value>HAVING</value>
+				<value>HIGH_PRIORITY</value>
+				<value>HOUR_MICROSECOND</value>
+				<value>HOUR_MINUTE</value>
+				<value>HOUR_SECOND</value>
+				<value>IF</value>
+				<value>IGNORE</value>
+				<value>IN</value>
+				<value>INDEX</value>
+				<value>INFILE</value>
+				<value>INNER</value>
+				<value>INOUT</value>
+				<value>INSENSITIVE</value>
+				<value>INSERT</value>
+				<value>INT</value>
+				<value>INT1</value>
+				<value>INT2</value>
+				<value>INT3</value>
+				<value>INT4</value>
+				<value>INT8</value>
+				<value>INTEGER</value>
+				<value>INTERVAL</value>
+				<value>INTO</value>
+				<value>IS</value>
+				<value>ITERATE</value>
+				<value>JOIN</value>
+				<value>KEY</value>
+				<value>KEYS</value>
+				<value>KILL</value>
+				<value>LEADING</value>
+				<value>LEAVE</value>
+				<value>LEFT</value>
+				<value>LIKE</value>
+				<value>LIMIT</value>
+				<value>LINES</value>
+				<value>LOAD</value>
+				<value>LOCALTIME</value>
+				<value>LOCALTIMESTAMP</value>
+				<value>LOCK</value>
+				<value>LONG</value>
+				<value>LONGBLOB</value>
+				<value>LONGTEXT</value>
+				<value>LOOP</value>
+				<value>LOW_PRIORITY</value>
+				<value>MATCH</value>
+				<value>MEDIUMBLOB</value>
+				<value>MEDIUMINT</value>
+				<value>MEDIUMTEXT</value>
+				<value>MIDDLEINT</value>
+				<value>MINUTE_MICROSECOND</value>
+				<value>MINUTE_SECOND</value>
+				<value>MOD</value>
+				<value>MODIFIES</value>
+				<value>NATURAL</value>
+				<value>NO_WRITE_TO_BINLOG</value>
+				<value>NOT</value>
+				<value>NULL</value>
+				<value>NUMERIC</value>
+				<value>ON</value>
+				<value>OPTIMIZE</value>
+				<value>OPTION</value>
+				<value>OPTIONALLY</value>
+				<value>OR</value>
+				<value>ORDER</value>
+				<value>OUT</value>
+				<value>OUTER</value>
+				<value>OUTFILE</value>
+				<value>PRECISION</value>
+				<value>PRIMARY</value>
+				<value>PROCEDURE</value>
+				<value>PURGE</value>
+				<value>READ</value>
+				<value>READS</value>
+				<value>REAL</value>
+				<value>REFERENCES</value>
+				<value>REGEXP</value>
+				<value>RELEASE</value>
+				<value>RENAME</value>
+				<value>REPEAT</value>
+				<value>REPLACE</value>
+				<value>REQUIRE</value>
+				<value>RESTRICT</value>
+				<value>RETURN</value>
+				<value>REVOKE</value>
+				<value>RIGHT</value>
+				<value>RLIKE</value>
+				<value>SCHEMA</value>
+				<value>SCHEMAS</value>
+				<value>SECOND_MICROSECOND</value>
+				<value>SELECT</value>
+				<value>SENSITIVE</value>
+				<value>SEPARATOR</value>
+				<value>SET</value>
+				<value>SHOW</value>
+				<value>SMALLINT</value>
+				<value>SONAME</value>
+				<value>SPATIAL</value>
+				<value>SPECIFIC</value>
+				<value>SQL</value>
+				<value>SQL_BIG_RESULT</value>
+				<value>SQL_CALC_FOUND_ROWS</value>
+				<value>SQL_SMALL_RESULT</value>
+				<value>SQLEXCEPTION</value>
+				<value>SQLSTATE</value>
+				<value>SQLWARNING</value>
+				<value>SSL</value>
+				<value>STARTING</value>
+				<value>STRAIGHT_JOIN</value>
+				<value>TABLE</value>
+				<value>TERMINATED</value>
+				<value>THEN</value>
+				<value>TINYBLOB</value>
+				<value>TINYINT</value>
+				<value>TINYTEXT</value>
+				<value>TO</value>
+				<value>TRAILING</value>
+				<value>TRIGGER</value>
+				<value>TRUE</value>
+				<value>UNDO</value>
+				<value>UNION</value>
+				<value>UNIQUE</value>
+				<value>UNLOCK</value>
+				<value>UNSIGNED</value>
+				<value>UPDATE</value>
+				<value>USAGE</value>
+				<value>USE</value>
+				<value>USING</value>
+				<value>UTC_DATE</value>
+				<value>UTC_TIME</value>
+				<value>UTC_TIMESTAMP</value>
+				<value>VALUES</value>
+				<value>VARBINARY</value>
+				<value>VARCHAR</value>
+				<value>VARCHARACTER</value>
+				<value>VARYING</value>
+				<value>WHEN</value>
+				<value>WHERE</value>
+				<value>WHILE</value>
+				<value>WITH</value>
+				<value>WRITE</value>
+				<value>XOR</value>
+				<value>YEAR_MONTH</value>
+				<value>ZEROFILL</value>
+			</set>
+		</property>
+	</bean>
+
+	<!-- ========================= GENERAL DEFINITIONS ========================= -->
+
+	<!-- Configurer that replaces ${...} placeholders with values from properties files -->
+	<!-- (in this case, mail and JDBC related properties) -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:emm.properties</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<value>messages</value>
+		</property>
+	</bean>
+
+	<!-- ========================= BUSINESS OBJECT DEFINITIONS ======================== -->
+
+	<!-- required for some bean def below -->
+	<bean id="TargetRepresentation" class="org.agnitas.target.impl.TargetRepresentationImpl" singleton="false" />
+
+	<bean id="TargetRepresentationFactory" class="org.agnitas.target.impl.TargetRepresentationFactoryImpl" />
+
+	<bean id="TargetNodeFactory" class="org.agnitas.target.impl.TargetNodeFactoryImpl" />
+
+	<bean id="RecipientQueryBuilder" class="org.agnitas.service.RecipientQueryBuilder">
+		<property name="targetDao" ref="TargetDao" />
+	</bean>
+
+	<!-- Beans "TargetNodeString", "TargetNodeDate" and "TargetNodeNumeric" replaced by "TargetNodeFactory" -->
+
+	<bean id="UserForm" class="org.agnitas.beans.impl.UserFormImpl" singleton="false" />
+
+	<bean id="EmmAction" class="org.agnitas.actions.impl.EmmActionImpl" singleton="false" />
+
+	<bean id="Mailinglist" class="org.agnitas.beans.impl.MailinglistImpl" singleton="false" />
+
+	<bean id="TrackableLink" class="org.agnitas.beans.impl.TrackableLinkImpl" singleton="false" />
+
+	<bean id="Mailing" class="org.agnitas.beans.impl.MailingImpl" singleton="false">
+		<property name="components">
+			<map></map>
+		</property>
+		<property name="dynTags">
+			<map></map>
+		</property>
+		<property name="mediatypes">
+			<map></map>
+		</property>
+		<property name="trackableLinks">
+			<map></map>
+		</property>
+		<property name="maildropStatus">
+			<set></set>
+		</property>
+	</bean>
+
+	<bean id="MaildropEntry" class="org.agnitas.beans.impl.MaildropEntryImpl" singleton="false" />
+
+	<bean id="MediatypeEmail" class="org.agnitas.beans.impl.MediatypeEmailImpl" singleton="false" />
+
+	<bean id="Mediatype" class="org.agnitas.beans.impl.MediatypeImpl" singleton="false" />
+
+	<bean id="MailingComponent" class="org.agnitas.beans.impl.MailingComponentImpl" singleton="false" />
+
+	<bean id="DeliveryStat" class="org.agnitas.stat.impl.DeliveryStatImpl" singleton="false">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="DeliveryStatFactory" class="org.agnitas.beans.impl.DeliveryStatFactoryImpl">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="CampaignStatEntry" class="org.agnitas.stat.impl.CampaignStatEntryImpl" singleton="false" />
+
+	<bean id="DomainStat" class="org.agnitas.stat.impl.DomainStatImpl" singleton="false" />
+
+	<bean id="IPStat" class="org.agnitas.stat.impl.IPStatImpl" singleton="false">
+		<property name="dataSource" ref="dataSource" />
+		<property name="targetDao" ref="TargetDao" />
+	</bean>
+
+	<bean id="MailingStat" class="org.agnitas.stat.impl.MailingStatImpl" singleton="false">
+		<property name="dataSource" ref="dataSource" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="mailingStatEntryFactory" ref="MailingStatEntryFactory" />
+		<property name="urlStatEntryFactory" ref="URLStatEntryFactory" />
+	</bean>
+
+	<bean id="MailingStatEntry" class="org.agnitas.stat.impl.MailingStatEntryImpl" singleton="false" />
+
+	<bean id="URLStatEntry" class="org.agnitas.stat.impl.URLStatEntryImpl" singleton="false" />
+
+	<bean id="Mailgun" class="org.agnitas.backend.MailgunImpl" singleton="false" />
+
+	<bean id="DynamicTag" class="org.agnitas.beans.impl.DynamicTagImpl" singleton="false">
+		<property name="dynContent">
+			<map></map>
+		</property>
+	</bean>
+
+	<bean id="DynamicTagContent" class="org.agnitas.beans.impl.DynamicTagContentImpl" singleton="false" />
+
+	<bean id="TagDetails" class="org.agnitas.beans.impl.TagDetailsImpl" singleton="false" />
+
+	<bean id="Recipient" class="org.agnitas.beans.impl.RecipientImpl" singleton="false">
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="bindingEntryFactory" ref="BindingEntryFactory" />
+		<property name="recipientFactory" ref="RecipientFactory" />
+		<property name="columnInfoService" ref="ColumnInfoService" />
+	</bean>
+
+	<bean id="Campaign" class="org.agnitas.beans.impl.CampaignImpl" singleton="false" />
+
+	<bean id="BindingEntry" class="org.agnitas.beans.impl.BindingEntryImpl" singleton="false">
+		<property name="bindingEntryDao" ref="BindingEntryDao" />
+	</bean>
+
+	<bean id="Target" class="org.agnitas.target.impl.TargetImpl" singleton="false">
+		<property name="targetStructure">
+			<ref bean="TargetRepresentation" />
+		</property>
+	</bean>
+
+	<bean id="DatasourceDescription" class="org.agnitas.beans.impl.DatasourceDescriptionImpl" singleton="false" />
+
+	<bean id="Title" class="org.agnitas.beans.impl.TitleImpl" singleton="false" />
+
+	<bean id="ProfileField" class="org.agnitas.beans.impl.ProfileFieldImpl" singleton="false" />
+
+	<bean id="Company" class="org.agnitas.beans.impl.CompanyImpl" singleton="false" />
+
+	<bean id="Mailloop" class="org.agnitas.beans.impl.MailloopImpl" singleton="false" />
+
+	<bean id="Admin" class="org.agnitas.beans.impl.AdminImpl" singleton="false" />
+
+	<bean id="AdminGroup" class="org.agnitas.beans.impl.AdminGroupImpl" singleton="false" />
+
+	<!-- UID handling -->
+
+	<bean id="UID" class="org.agnitas.emm.core.commons.uid.impl.UIDImpl" singleton="false" /> 					<!-- To be removed -->
+
+	<bean id="UIDParser" class="org.agnitas.emm.core.commons.uid.impl.UIDParserImpl">							<!-- To be removed -->
+		<property name="companyCache" ref="companyCache" />
+		<property name="companyDao" ref="CompanyDao" />
+	</bean>
+
+	<bean id="CompanyDaoCache" class="org.agnitas.emm.core.commons.daocache.CompanyDaoCache">
+		<property name="companyDao" ref="CompanyDao" />
+		<property name="cache" ref="companyCache" />
+	</bean>
+
+	<bean id="ExtensibleUIDStringBuilder" class="org.agnitas.emm.core.commons.uid.builder.impl.UID1StringBuilderImpl">
+		<property name="companyDaoCache" ref="CompanyDaoCache" />
+	</bean>
+
+	<bean id="ExtensibleUIDParser" class="org.agnitas.emm.core.commons.uid.parser.impl.UID1ExtensibleUIDParserImpl">
+		<property name="stringBuilder" ref="ExtensibleUIDStringBuilder" />
+		<property name="companyDaoCache" ref="CompanyDaoCache" />
+	</bean>
+
+	<bean id="ExtensibleUIDService" class="org.agnitas.emm.core.commons.uid.impl.ExtensibleUIDServiceImpl">
+		<property name="parser" ref="ExtensibleUIDParser" />
+		<property name="stringBuilder" ref="ExtensibleUIDStringBuilder" />
+	</bean>
+
+	<bean id="ExportPredef" class="org.agnitas.beans.impl.ExportPredefImpl" singleton="false" />
+
+	<bean id="CustomerImportStatus" class="org.agnitas.beans.impl.CustomerImportStatusImpl" singleton="false" />
+
+	<bean id="CharacterEncodingValidator" class="org.agnitas.util.CharacterEncodingValidatorImpl" />
+
+	<!-- Factories -->
+	<bean id="ProfileFieldFactory" class="org.agnitas.beans.factory.impl.ProfileFieldFactoryImpl" singleton="true" />
+
+	<bean id="DynamicTagFactory" class="org.agnitas.beans.factory.impl.DynamicTagFactoryImpl" singleton="true" />
+
+	<bean id="DynamicTagContentFactory" class="org.agnitas.beans.factory.impl.DynamicTagContentFactoryImpl" singleton="true" />
+
+	<bean id="MailingComponentFactory" class="org.agnitas.beans.factory.impl.MailingComponentFactoryImpl" singleton="true" />
+
+	<bean id="RecipientFactory" class="org.agnitas.beans.factory.impl.RecipientFactoryImpl" singleton="true">
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="columnInfoService" ref="ColumnInfoService" />
+	</bean>
+
+	<bean id="PreviewFactory" class="org.agnitas.preview.PreviewFactoryImpl" init-method="createInstance" />
+
+	<bean id="TAGCheckFactory" class="org.agnitas.preview.TAGCheckFactoryImpl" />
+
+	<bean id="targetFactory" class="org.agnitas.target.impl.TargetFactoryImpl">
+		<property name="targetRepresentationFactory" ref="TargetRepresentationFactory" />
+	</bean>
+
+	<bean id="BindingEntryFactory" class="org.agnitas.beans.factory.impl.BindingEntryFactoryImpl" singleton="true">
+		<property name="bindingEntryDao" ref="BindingEntryDao" />
+	</bean>
+
+	<bean id="CampaignFactory" class="org.agnitas.beans.factory.impl.CampaignFactoryImpl" singleton="true" />
+
+	<bean id="CampaignStatEntryFactory" class="org.agnitas.beans.factory.impl.CampaignStatEntryFactoryImpl" singleton="true" />
+
+	<bean id="MailloopFactory" class="org.agnitas.beans.factory.impl.MailloopFactoryImpl" singleton="true" />
+
+	<bean id="UserFormFactory" class="org.agnitas.beans.factory.impl.UserFormFactoryImpl" singleton="true" />
+
+	<bean id="MailingFactory" class="org.agnitas.beans.factory.impl.MailingFactoryImpl" singleton="true" />
+
+	<bean id="MailinglistFactory" class="org.agnitas.beans.factory.impl.MailinglistFactoryImpl" singleton="true" />
+
+	<bean id="MaildropEntryFactory" class="org.agnitas.mailing.beans.impl.MailDropEntryFactoryImpl" singleton="true" />
+
+	<bean id="EmmActionFactory" class="org.agnitas.beans.factory.impl.EmmActionFactoryImpl" singleton="true" />
+
+	<bean id="ActionOperationFactory" class="org.agnitas.beans.factory.impl.ActionOperationFactoryImpl" singleton="true" />
+
+	<bean id="DomainStatFactory" class="org.agnitas.beans.factory.impl.DomainStatFactoryImpl" singleton="true" />
+
+	<bean id="MailingStatFactory" class="org.agnitas.beans.factory.impl.MailingStatFactoryImpl" singleton="true">
+		<property name="dataSource" ref="dataSource" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="mailingStatEntryFactory" ref="MailingStatEntryFactory" />
+		<property name="urlStatEntryFactory" ref="URLStatEntryFactory" />
+	</bean>
+
+	<bean id="MailingStatEntryFactory" class="org.agnitas.beans.factory.impl.MailingStatEntryFactoryImpl" singleton="true" />
+
+	<bean id="URLStatEntryFactory" class="org.agnitas.beans.factory.impl.URLStatEntryFactoryImpl" singleton="true" />
+
+	<bean id="PreviewImageGeneratorFactory" class="org.agnitas.beans.factory.impl.PreviewImageGeneratorFactoryImpl" singleton="true" />
+
+	<!-- Caches -->
+
+	<bean id="mailgunCache" class="org.agnitas.util.TimeoutLRUMap">
+		<constructor-arg index="0">
+			<value>${mailgun.maxCache}</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>${mailgun.maxCacheTimeMillis}</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="imageCache" class="org.agnitas.util.TimeoutLRUMap">
+		<constructor-arg index="0">
+			<value>${hostedImage.maxCache}</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>${hostedImage.maxCacheTimeMillis}</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="companyCache" class="org.agnitas.util.TimeoutLRUMap">
+		<constructor-arg index="0">
+			<value>${company.maxCache}</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>${company.maxCacheTimeMillis}</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- Service definitions -->
+	<bean id="versionControlService" class="org.agnitas.service.impl.VersionControlServiceImpl">
+		<property name="versionControlDao" ref="versionControlDao" />
+	</bean>
+
+	<bean id="ColumnInfoService" class="org.agnitas.service.impl.ColumnInfoServiceImpl">
+		<property name="profileFieldDao" ref="ProfileFieldDao" />
+	</bean>
+
+	<bean id="mailingcontentService" class="org.agnitas.service.impl.MailingContentServiceImpl">
+		<property name="columnInfoService" ref="ColumnInfoService" />
+	</bean>
+
+	<bean id="ConfigService" class="org.agnitas.emm.core.commons.util.ConfigService" singleton="true">
+		<property name="configTableDao" ref="ConfigTableDao" />
+	</bean>
+
+	<!-- DAO definitions -->
+
+	<bean id="ConfigTableDao" class="org.agnitas.emm.core.commons.util.ConfigTableDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="AdminDao" class="org.agnitas.dao.impl.AdminDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+        <property name="companyDao" ref="CompanyDao" />
+        <property name="adminGroupDao" ref="AdminGroupDao" />
+	</bean>
+
+	<bean id="AdminGroupDao" class="org.agnitas.dao.impl.AdminGroupDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="BindingEntryDao" class="org.agnitas.dao.impl.BindingEntryDaoImpl" />
+
+	<bean id="BlacklistDao" class="org.agnitas.dao.impl.BlacklistDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="BlacklistService" class="org.agnitas.emm.core.blacklist.service.impl.BlacklistServiceImpl">
+		<property name="blacklistDao" ref="BlacklistDao" />
+	</bean>
+
+	<bean id="CampaignDao" class="org.agnitas.dao.impl.CampaignDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="campaignStatEntryFactory" ref="CampaignStatEntryFactory" />
+	</bean>
+
+	<bean id="CompanyDao" class="org.agnitas.dao.impl.CompanyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="DynamicTagDao" class="org.agnitas.dao.impl.DynamicTagDaoImpl" />
+
+	<bean id="EmmActionDao" class="org.agnitas.dao.impl.EmmActionDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="ExportPredefDao" class="org.agnitas.dao.impl.ExportPredefDaoImpl" />
+
+	<bean id="LoginTrackDao" class="org.agnitas.dao.impl.LoginTrackDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="MaildropStatusDao" class="org.agnitas.dao.impl.MaildropStatusDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="MailingComponentDao" class="org.agnitas.dao.impl.MailingComponentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="MailingDao" class="org.agnitas.dao.impl.MailingDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="MailinglistDao" class="org.agnitas.dao.impl.MailinglistDaoImpl" />
+
+	<bean id="MailloopDao" class="org.agnitas.dao.impl.MailloopDaoImpl" />
+
+	<bean id="OnepixelDao" class="org.agnitas.dao.impl.OnepixelDaoImpl" />
+
+	<bean id="ProfileFieldDao" class="org.agnitas.dao.impl.ProfileFieldDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="RecipientDao" class="org.agnitas.dao.impl.RecipientDaoImpl" />
+
+	<bean id="TargetDao" class="org.agnitas.dao.impl.TargetDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="targetFactory" ref="targetFactory" />
+	</bean>
+
+	<bean id="TitleDao" class="org.agnitas.dao.impl.TitleDaoImpl" />
+
+	<bean id="TrackableLinkDao" class="org.agnitas.dao.impl.TrackableLinkDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="UserFormDao" class="org.agnitas.dao.impl.UserFormDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="versionControlDao" class="org.agnitas.dao.impl.VersionControlDaoImpl" />
+
+	<bean id="EmmLayoutBaseDao" class="org.agnitas.dao.impl.EmmLayoutBaseDaoImpl" />
+
+	<bean id="pluginDao" class="org.agnitas.emm.extension.dao.impl.PluginDaoImpl">	<!--  Do not remove, this is used by ExtensionSystemInitializationContextListener -->
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- Link checker -->
+
+	<bean id="LinkcheckerDao" class="org.agnitas.dao.impl.LinkcheckerDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="linkcheckService" class="org.agnitas.service.LinkcheckService">
+		<property name="linkcheckerDao" ref="LinkcheckerDao" />
+	</bean>
+
+	<bean id="DocMappingDao" class="org.agnitas.dao.impl.DocMappingDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- Action Operations -->
+
+	<bean id="GetArchiveList" class="org.agnitas.actions.ops.GetArchiveList" singleton="false" />
+
+	<bean id="GetArchiveMailing" class="org.agnitas.actions.ops.GetArchiveMailing" singleton="false" />
+
+	<bean id="ActivateDoubleOptIn" class="org.agnitas.actions.ops.ActivateDoubleOptIn" singleton="false" />
+
+	<bean id="SubscribeCustomer" class="org.agnitas.actions.ops.SubscribeCustomer" singleton="false" />
+
+	<bean id="UnsubscribeCustomer" class="org.agnitas.actions.ops.UnsubscribeCustomer" singleton="false" />
+
+	<bean id="UpdateCustomer" class="org.agnitas.actions.ops.UpdateCustomer" singleton="false" />
+
+	<bean id="GetCustomer" class="org.agnitas.actions.ops.GetCustomer" singleton="false" />
+
+	<bean id="ExecuteScript" class="org.agnitas.actions.ops.ExecuteScript" singleton="false" />
+
+	<bean id="SendMailing" class="org.agnitas.actions.ops.SendMailing" singleton="false" />
+
+	<bean id="ServiceMail" class="org.agnitas.actions.ops.ServiceMail" singleton="false" />
+
+	<bean id="workerExecutorService" class="java.util.concurrent.ScheduledThreadPoolExecutor">
+		<constructor-arg value="10" type="int" />
+	</bean>
+
+	<bean id="futureHolder" class="java.util.concurrent.ConcurrentHashMap" />
+
+	<!-- struts action mappings comeing soon ! -->
+
+	<bean id="onlinehelp.languages" class="java.lang.String">
+		<constructor-arg value="${onlinehelp.languages}" />
+	</bean>
+
+	<bean id="NewImportWizardService" class="org.agnitas.service.impl.NewImportWizardServiceImpl" singleton="false" init-method="initRules">
+		<property name="importRecipientsDao" ref="ImportRecipientsDao" />
+		<property name="importProfileDao" ref="ImportProfileDao" />
+		<property name="importLoggerDao" ref="ImportLoggerDao" />
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="status" ref="CustomerImportStatus" />
+		<property name="blockSize" value="2000" />
+		<property name="validatorRulesXml" value="/org/agnitas/service/csv/validator/validator-rules.xml" />
+	</bean>
+
+	<bean id="UserActivityLogService" class="org.agnitas.service.impl.UserActivityLogServiceImpl" singleton="false" />
+
+	<bean id="ImportRecipientsDao" class="org.agnitas.dao.impl.ImportRecipientsDaoImpl" singleton="false"></bean>
+
+	<bean id="ImportLoggerDao" class="org.agnitas.dao.impl.ImportLoggerDaoImpl" singleton="false"></bean>
+
+	<!-- new import beans -->
+
+	<bean id="ImportProfile" class="org.agnitas.beans.impl.ImportProfileImpl" singleton="false"></bean>
+
+	<bean id="ColumnMapping" class="org.agnitas.beans.impl.ColumnMappingImpl" singleton="false"></bean>
+
+	<bean id="ImportProfileDao" class="org.agnitas.dao.impl.ImportProfileDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+    <bean id="EmbeddedClickStatDao" class="org.agnitas.ecs.backend.dao.impl.EmbeddedClickStatDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+	<bean id="EmbeddedClickStatService" class="org.agnitas.ecs.backend.service.impl.EmbeddedClickStatServiceImpl" singleton="false">
+		<property name="embeddedClickStatDao" ref="EmbeddedClickStatDao" />
+		<property name="previewFactory" ref="PreviewFactory" />
+	</bean>
+
+	<bean id="EcsRecipientsProvider" class="org.agnitas.ecs.service.impl.EcsRecipientsProviderImpl" singleton="false">
+		<property name="recipientDao" ref="RecipientDao" />
+	</bean>
+
+	<bean name="/ecs_stat" class="org.agnitas.ecs.web.EcsMailingStatAction">
+		<property name="recipientsProvider" ref="EcsRecipientsProvider" />
+		<property name="embeddedClickStatDao" ref="EmbeddedClickStatDao" />
+		<property name="mailingDao" ref="MailingDao" />
+	</bean>
+
+	<bean name="/profiledb" class="org.agnitas.web.ProfileFieldAction">
+		<property name="profileFieldFactory" ref="ProfileFieldFactory" />
+		<property name="columnInfoService" ref="ColumnInfoService" />
+		<property name="databaseKeywordList" ref="databaseKeywordList" />
+		<property name="profileFieldDao" ref="ProfileFieldDao" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="workerExecutorService" ref="workerExecutorService" />
+	</bean>
+
+	<bean name="/blacklist" class="org.agnitas.web.BlacklistAction">
+		<property name="blacklistDao" ref="BlacklistDao" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="workerExecutorService" ref="workerExecutorService" />
+		<property name="recipientFactory" ref="RecipientFactory" />
+		<property name="blacklistService" ref="BlacklistService" />
+	</bean>
+
+	<bean name="/recipient" class="org.agnitas.web.RecipientAction">
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="targetRepresentationFactory" ref="TargetRepresentationFactory" />
+		<property name="targetNodeFactory" ref="TargetNodeFactory" />
+		<property name="executorService" ref="workerExecutorService" />
+		<property name="recipientQueryBuilder" ref="RecipientQueryBuilder" />
+		<property name="columnInfoService" ref="ColumnInfoService" />
+		<property name="recipientFactory" ref="RecipientFactory" />
+		<property name="bindingEntryFactory" ref="BindingEntryFactory" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean name="/mailingsend" class="org.agnitas.web.MailingSendAction">
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="mailingComponentDao" ref="MailingComponentDao" />
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="linkcheckService" ref="linkcheckService" />
+		<property name="deliveryStatFactory" ref="DeliveryStatFactory" />
+		<property name="maildropEntryFactory" ref="MaildropEntryFactory" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="tagCheckFactory" ref="TAGCheckFactory" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="previewFactory" ref="PreviewFactory" />
+		<property name="mailingFactory" ref="MailingFactory" />
+		<property name="targetService" ref="targetService" />
+	</bean>
+
+	<bean name="/mailingattachments" class="org.agnitas.web.MailingAttachmentsAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="componentDao" ref="MailingComponentDao" />
+	</bean>
+
+	<bean name="/mcomponents" class="org.agnitas.web.MailingComponentsAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="componentDao" ref="MailingComponentDao" />
+		<property name="linkDao" ref="TrackableLinkDao" />
+	</bean>
+
+	<bean name="/tracklink" class="org.agnitas.web.TrackableLinkAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="actionDao" ref="EmmActionDao" />
+		<property name="linkDao" ref="TrackableLinkDao" />
+	</bean>
+
+	<bean id="imageHelperService" class="org.agnitas.emm.core.imagehelper.ImageHelperService" singleton="false">
+		<property name="configService" ref="ConfigService" />
+	</bean>
+
+	<bean name="/useractivitylog" class="org.agnitas.web.UserActivityLogAction">
+		<property name="adminDao" ref="AdminDao" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="workerExecutorService" ref="workerExecutorService" />
+		<property name="userActivityLogService" ref="UserActivityLogService" />
+	</bean>
+
+	<bean name="/campaign" class="org.agnitas.web.CampaignAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="executorService" ref="workerExecutorService" />
+		<property name="campaignDao" ref="CampaignDao" />
+		<property name="companyDao" ref="CompanyDao" />
+		<property name="campaignFactory" ref="CampaignFactory" />
+		<property name="targetDao" ref="TargetDao" />
+	</bean>
+
+	<bean name="/admin" class="org.agnitas.web.AdminAction">
+		<property name="adminDao" ref="AdminDao" />
+		<property name="adminGroupDao" ref="AdminGroupDao" />
+		<property name="companyDao" ref="CompanyDao" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="executorService" ref="workerExecutorService" />
+	</bean>
+
+	<bean name="/selfservice" class="org.agnitas.web.UserSelfServiceAction">
+		<property name="adminDao" ref="AdminDao" />
+	</bean>
+
+	<bean name="/exportwizard" class="org.agnitas.web.ExportWizardAction">
+		<property name="exportPredefDao" ref="ExportPredefDao" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+	</bean>
+
+	<bean name="/mailloop" class="org.agnitas.web.MailloopAction">
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="mailloopDao" ref="MailloopDao" />
+		<property name="userFormDao" ref="UserFormDao" />
+		<property name="mailloopFactory" ref="MailloopFactory" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="executorService" ref="workerExecutorService" />
+	</bean>
+
+	<bean name="/userform" class="org.agnitas.web.UserFormEditAction">
+		<property name="userFormDao" ref="UserFormDao" />
+		<property name="userFormFactory" ref="UserFormFactory" />
+		<property name="emmActionDao" ref="EmmActionDao" />
+	</bean>
+
+	<bean name="/mailing_compare" class="org.agnitas.web.CompareMailingAction">
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailingDao" ref="MailingDao" />
+	</bean>
+
+	<bean name="/ip_stats" class="org.agnitas.web.IPStatAction">
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="ipStat" ref="IPStat" />
+	</bean>
+
+	<bean name="/recipient_stats" class="org.agnitas.web.RecipientStatAction">
+		<property name="targetDao" ref="TargetDao" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+	</bean>
+
+	<bean name="/mwStart, /mwName, /mwTemplate, /mwType, /mwSendaddress, /mwMailtype, /mwSubject, /mwTarget, /mwTextmodules, /mwTextmodule, /mwLinks, /mwLink, /mwAttachment, /mwFinish" class="org.agnitas.web.MailingWizardAction">
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="mailingFactory" ref="MailingFactory" />
+		<property name="mailingComponentFactory" ref="MailingComponentFactory" />
+		<property name="dynamicTagContentFactory" ref="DynamicTagContentFactory" />
+		<property name="campaignDao" ref="CampaignDao" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="emmActionDao" ref="EmmActionDao" />
+	</bean>
+
+	<bean name="/target" class="org.agnitas.web.TargetAction">
+		<property name="targetDao" ref="TargetDao" />
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="targetRepresentationFactory" ref="TargetRepresentationFactory" />
+		<property name="targetFactory" ref="targetFactory" />
+		<property name="targetNodeFactory" ref="TargetNodeFactory" />
+	</bean>
+
+	<bean name="/mailingbase" class="org.agnitas.web.MailingBaseAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="futureHolder" ref="futureHolder" />
+		<property name="executorService" ref="workerExecutorService" />
+		<property name="campaignDao" ref="CampaignDao" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="characterEncodingValidator" ref="CharacterEncodingValidator" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="tagCheckFactory" ref="TAGCheckFactory" />
+		<property name="mailingFactory" ref="MailingFactory" />
+	</bean>
+
+	<bean name="/action" class="org.agnitas.web.EmmActionAction">
+		<property name="campaignDao" ref="CampaignDao" />
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="emmActionDao" ref="EmmActionDao" />
+		<property name="emmActionFactory" ref="EmmActionFactory" />
+		<property name="actionOperationFactory" ref="ActionOperationFactory" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean name="/domain_stats" class="org.agnitas.web.DomainStatAction">
+		<property name="dataSource" ref="dataSource" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="domainStatFactory" ref="DomainStatFactory" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+	</bean>
+
+	<bean name="/mailing_stat" class="org.agnitas.web.MailingStatAction">
+		<property name="dataSource" ref="dataSource" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="mailingStatFactory" ref="MailingStatFactory" />
+		<property name="mailingStatEntryFactory" ref="MailingStatEntryFactory" />
+		<property name="uRLStatEntryFactory" ref="URLStatEntryFactory" />
+		<property name="recipientDao" ref="RecipientDao" />
+	</bean>
+
+	<bean name="/mailingcontent" class="org.agnitas.cms.web.CmsMailingContentAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="mailingFactory" ref="MailingFactory" />
+		<property name="recipientDao" ref="RecipientDao" />
+		<property name="tagCheckFactory" ref="TAGCheckFactory" />
+		<property name="characterEncodingValidator" ref="CharacterEncodingValidator" />
+		<property name="dynamicTagContentFactory" ref="DynamicTagContentFactory" />
+		<property name="cmsMailingDao" ref="CmsMailingDao" />
+		<property name="classicTemplateGenerator" ref="ClassicTemplateGenerator" />
+		<property name="targetDao" ref="TargetDao" />
+	</bean>
+
+	<bean name="/mailinglist" class="org.agnitas.web.MailinglistAction">
+		<property name="mailingDao" ref="MailingDao" />
+		<property name="targetDao" ref="TargetDao" />
+		<property name="bindingEntryDao" ref="BindingEntryDao" />
+		<property name="mailinglistDao" ref="MailinglistDao" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="mailinglistFactory" ref="MailinglistFactory" />
+        <property name="recipientDao" ref="RecipientDao" />
+	</bean>
+
+	<bean name="/pluginManager" class="org.agnitas.emm.extension.pluginmanager.web.PluginManagerAction" />
+
+	<bean name="/pluginInstallerSelect" class="org.agnitas.emm.extension.pluginmanager.web.PluginInstallerSelectAction" />
+
+	<bean name="/pluginInstallerUpload" class="org.agnitas.emm.extension.pluginmanager.web.PluginInstallerUploadAction" />
+
+	<bean id="targetService" class="org.agnitas.emm.core.target.service.impl.TargetServiceImpl">
+		<property name="targetDao" ref="TargetDao" />
+		<property name="mailingComponentDao" ref="MailingComponentDao" />
+	</bean>
+
+	<bean id="DownloadService" class="org.agnitas.emm.core.download.service.DownloadServiceImpl" />
+</beans>

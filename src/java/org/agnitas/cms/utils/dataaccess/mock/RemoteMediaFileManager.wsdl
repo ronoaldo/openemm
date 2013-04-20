@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mock.dataaccess.utils.cms.agnitas.org" xmlns:intf="http://mock.dataaccess.utils.cms.agnitas.org" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://beans.mock.dataaccess.utils.cms.agnitas.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://beans.mock.dataaccess.utils.cms.agnitas.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="MediaFile">
+    <sequence>
+     <element name="cmTemplateId" type="xsd:int"/>
+     <element name="companyId" type="xsd:int"/>
+     <element name="content" nillable="true" type="soapenc:base64Binary"/>
+     <element name="contentModuleId" type="xsd:int"/>
+     <element name="contentModuleTypeId" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="mediaType" type="xsd:int"/>
+     <element name="mimeType" nillable="true" type="soapenc:string"/>
+     <element name="name" nillable="true" type="soapenc:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:anyType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+   <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPreviewOfContentModuleTypeRequest">
+
+      <wsdl:part name="cmtId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFilesForContentModuleResponse">
+
+      <wsdl:part name="getMediaFilesForContentModuleReturn" type="impl:ArrayOf_xsd_anyType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFileForContentModelAndMediaNameResponse">
+
+      <wsdl:part name="getMediaFileForContentModelAndMediaNameReturn" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removePreviewOfContentModuleTemplateRequest">
+
+      <wsdl:part name="cmTemplateId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMediaFilesForContentModuleIdRequest">
+
+      <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFilesForContentModuleRequest">
+
+      <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeContentModuleImageRequest">
+
+      <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+      <wsdl:part name="mediaName" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFileResponse">
+
+      <wsdl:part name="getMediaFileReturn" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFileRequest">
+
+      <wsdl:part name="id" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removePreviewOfContentModuleRequest">
+
+      <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMediaFileResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getPreviewOfContentModuleTypeResponse">
+
+      <wsdl:part name="getPreviewOfContentModuleTypeReturn" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMediaFilesForCMTemplateIdResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMediaFilesForContentModuleIdResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getPreviewOfContentModuleResponse">
+
+      <wsdl:part name="getPreviewOfContentModuleReturn" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateMediaFileRequest1">
+
+      <wsdl:part name="mediaFile" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="createMediaFileRequest">
+
+      <wsdl:part name="mediaFile" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateMediaFileRequest">
+
+      <wsdl:part name="id" type="xsd:int"/>
+
+      <wsdl:part name="content" type="soapenc:base64Binary"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPreviewOfContentModuleTemplateRequest">
+
+      <wsdl:part name="cmTemplateId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removePreviewOfContentModuleTypeResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMediaFilesForCMTemplateIdRequest">
+
+      <wsdl:part name="cmTemplateId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPreviewOfContentModuleTemplateResponse">
+
+      <wsdl:part name="getPreviewOfContentModuleTemplateReturn" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFilesForContentModuleTemplateRequest">
+
+      <wsdl:part name="cmTemplateId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removePreviewOfContentModuleResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="updateMediaFileResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="removePreviewOfContentModuleTemplateResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="removeContentModuleImageResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getPreviewOfContentModuleRequest">
+
+      <wsdl:part name="contentModuleId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFilesForContentModuleTemplateResponse">
+
+      <wsdl:part name="getMediaFilesForContentModuleTemplateReturn" type="impl:ArrayOf_xsd_anyType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeMediaFileRequest">
+
+      <wsdl:part name="id" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMediaFileForContentModelAndMediaNameRequest">
+
+      <wsdl:part name="cmTemplateId" type="xsd:int"/>
+
+      <wsdl:part name="mediaName" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateMediaFileResponse1">
+
+   </wsdl:message>
+
+   <wsdl:message name="removePreviewOfContentModuleTypeRequest">
+
+      <wsdl:part name="contentModuleTypeId" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="createMediaFileResponse">
+
+      <wsdl:part name="createMediaFileReturn" type="tns1:MediaFile"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RemoteMediaFileManager">
+
+      <wsdl:operation name="createMediaFile" parameterOrder="mediaFile">
+
+         <wsdl:input message="impl:createMediaFileRequest" name="createMediaFileRequest"/>
+
+         <wsdl:output message="impl:createMediaFileResponse" name="createMediaFileResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFile" parameterOrder="id">
+
+         <wsdl:input message="impl:getMediaFileRequest" name="getMediaFileRequest"/>
+
+         <wsdl:output message="impl:getMediaFileResponse" name="getMediaFileResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMediaFile" parameterOrder="id">
+
+         <wsdl:input message="impl:removeMediaFileRequest" name="removeMediaFileRequest"/>
+
+         <wsdl:output message="impl:removeMediaFileResponse" name="removeMediaFileResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMediaFilesForCMTemplateId" parameterOrder="cmTemplateId">
+
+         <wsdl:input message="impl:removeMediaFilesForCMTemplateIdRequest" name="removeMediaFilesForCMTemplateIdRequest"/>
+
+         <wsdl:output message="impl:removeMediaFilesForCMTemplateIdResponse" name="removeMediaFilesForCMTemplateIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeContentModuleImage" parameterOrder="contentModuleId mediaName">
+
+         <wsdl:input message="impl:removeContentModuleImageRequest" name="removeContentModuleImageRequest"/>
+
+         <wsdl:output message="impl:removeContentModuleImageResponse" name="removeContentModuleImageResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFilesForContentModule" parameterOrder="contentModuleId">
+
+         <wsdl:input message="impl:getMediaFilesForContentModuleRequest" name="getMediaFilesForContentModuleRequest"/>
+
+         <wsdl:output message="impl:getMediaFilesForContentModuleResponse" name="getMediaFilesForContentModuleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMediaFilesForContentModuleId" parameterOrder="contentModuleId">
+
+         <wsdl:input message="impl:removeMediaFilesForContentModuleIdRequest" name="removeMediaFilesForContentModuleIdRequest"/>
+
+         <wsdl:output message="impl:removeMediaFilesForContentModuleIdResponse" name="removeMediaFilesForContentModuleIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPreviewOfContentModule" parameterOrder="contentModuleId">
+
+         <wsdl:input message="impl:getPreviewOfContentModuleRequest" name="getPreviewOfContentModuleRequest"/>
+
+         <wsdl:output message="impl:getPreviewOfContentModuleResponse" name="getPreviewOfContentModuleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removePreviewOfContentModule" parameterOrder="contentModuleId">
+
+         <wsdl:input message="impl:removePreviewOfContentModuleRequest" name="removePreviewOfContentModuleRequest"/>
+
+         <wsdl:output message="impl:removePreviewOfContentModuleResponse" name="removePreviewOfContentModuleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPreviewOfContentModuleType" parameterOrder="cmtId">
+
+         <wsdl:input message="impl:getPreviewOfContentModuleTypeRequest" name="getPreviewOfContentModuleTypeRequest"/>
+
+         <wsdl:output message="impl:getPreviewOfContentModuleTypeResponse" name="getPreviewOfContentModuleTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPreviewOfContentModuleTemplate" parameterOrder="cmTemplateId">
+
+         <wsdl:input message="impl:getPreviewOfContentModuleTemplateRequest" name="getPreviewOfContentModuleTemplateRequest"/>
+
+         <wsdl:output message="impl:getPreviewOfContentModuleTemplateResponse" name="getPreviewOfContentModuleTemplateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removePreviewOfContentModuleType" parameterOrder="contentModuleTypeId">
+
+         <wsdl:input message="impl:removePreviewOfContentModuleTypeRequest" name="removePreviewOfContentModuleTypeRequest"/>
+
+         <wsdl:output message="impl:removePreviewOfContentModuleTypeResponse" name="removePreviewOfContentModuleTypeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removePreviewOfContentModuleTemplate" parameterOrder="cmTemplateId">
+
+         <wsdl:input message="impl:removePreviewOfContentModuleTemplateRequest" name="removePreviewOfContentModuleTemplateRequest"/>
+
+         <wsdl:output message="impl:removePreviewOfContentModuleTemplateResponse" name="removePreviewOfContentModuleTemplateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateMediaFile" parameterOrder="id content">
+
+         <wsdl:input message="impl:updateMediaFileRequest" name="updateMediaFileRequest"/>
+
+         <wsdl:output message="impl:updateMediaFileResponse" name="updateMediaFileResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateMediaFile" parameterOrder="mediaFile">
+
+         <wsdl:input message="impl:updateMediaFileRequest1" name="updateMediaFileRequest1"/>
+
+         <wsdl:output message="impl:updateMediaFileResponse1" name="updateMediaFileResponse1"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFilesForContentModuleTemplate" parameterOrder="cmTemplateId">
+
+         <wsdl:input message="impl:getMediaFilesForContentModuleTemplateRequest" name="getMediaFilesForContentModuleTemplateRequest"/>
+
+         <wsdl:output message="impl:getMediaFilesForContentModuleTemplateResponse" name="getMediaFilesForContentModuleTemplateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFileForContentModelAndMediaName" parameterOrder="cmTemplateId mediaName">
+
+         <wsdl:input message="impl:getMediaFileForContentModelAndMediaNameRequest" name="getMediaFileForContentModelAndMediaNameRequest"/>
+
+         <wsdl:output message="impl:getMediaFileForContentModelAndMediaNameResponse" name="getMediaFileForContentModelAndMediaNameResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RemoteMediaFileManagerSoapBinding" type="impl:RemoteMediaFileManager">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createMediaFile">
+
+         <wsdlsoap:operation soapAction="createMediaFile"/>
+
+         <wsdl:input name="createMediaFileRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createMediaFileResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFile">
+
+         <wsdlsoap:operation soapAction="getMediaFile"/>
+
+         <wsdl:input name="getMediaFileRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMediaFileResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMediaFile">
+
+         <wsdlsoap:operation soapAction="removeMediaFile"/>
+
+         <wsdl:input name="removeMediaFileRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeMediaFileResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMediaFilesForCMTemplateId">
+
+         <wsdlsoap:operation soapAction="removeMediaFilesForCMTemplateId"/>
+
+         <wsdl:input name="removeMediaFilesForCMTemplateIdRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeMediaFilesForCMTemplateIdResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeContentModuleImage">
+
+         <wsdlsoap:operation soapAction="removeContentModuleImage"/>
+
+         <wsdl:input name="removeContentModuleImageRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeContentModuleImageResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFilesForContentModule">
+
+         <wsdlsoap:operation soapAction="getMediaFilesForContentModule"/>
+
+         <wsdl:input name="getMediaFilesForContentModuleRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMediaFilesForContentModuleResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeMediaFilesForContentModuleId">
+
+         <wsdlsoap:operation soapAction="removeMediaFilesForContentModuleId"/>
+
+         <wsdl:input name="removeMediaFilesForContentModuleIdRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeMediaFilesForContentModuleIdResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPreviewOfContentModule">
+
+         <wsdlsoap:operation soapAction="getPreviewOfContentModule"/>
+
+         <wsdl:input name="getPreviewOfContentModuleRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPreviewOfContentModuleResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removePreviewOfContentModule">
+
+         <wsdlsoap:operation soapAction="removePreviewOfContentModule"/>
+
+         <wsdl:input name="removePreviewOfContentModuleRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removePreviewOfContentModuleResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPreviewOfContentModuleType">
+
+         <wsdlsoap:operation soapAction="getPreviewOfContentModuleType"/>
+
+         <wsdl:input name="getPreviewOfContentModuleTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPreviewOfContentModuleTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPreviewOfContentModuleTemplate">
+
+         <wsdlsoap:operation soapAction="getPreviewOfContentModuleTemplate"/>
+
+         <wsdl:input name="getPreviewOfContentModuleTemplateRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPreviewOfContentModuleTemplateResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removePreviewOfContentModuleType">
+
+         <wsdlsoap:operation soapAction="removePreviewOfContentModuleType"/>
+
+         <wsdl:input name="removePreviewOfContentModuleTypeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removePreviewOfContentModuleTypeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removePreviewOfContentModuleTemplate">
+
+         <wsdlsoap:operation soapAction="removePreviewOfContentModuleTemplate"/>
+
+         <wsdl:input name="removePreviewOfContentModuleTemplateRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removePreviewOfContentModuleTemplateResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateMediaFile">
+
+         <wsdlsoap:operation soapAction="updateMediaFile"/>
+
+         <wsdl:input name="updateMediaFileRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateMediaFileResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateMediaFile">
+
+         <wsdlsoap:operation soapAction="updateMediaFile"/>
+
+         <wsdl:input name="updateMediaFileRequest1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateMediaFileResponse1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFilesForContentModuleTemplate">
+
+         <wsdlsoap:operation soapAction="getMediaFilesForContentModuleTemplate"/>
+
+         <wsdl:input name="getMediaFilesForContentModuleTemplateRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMediaFilesForContentModuleTemplateResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMediaFileForContentModelAndMediaName">
+
+         <wsdlsoap:operation soapAction="getMediaFileForContentModelAndMediaName"/>
+
+         <wsdl:input name="getMediaFileForContentModelAndMediaNameRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMediaFileForContentModelAndMediaNameResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://mock.dataaccess.utils.cms.agnitas.org" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RemoteMediaFileManagerService">
+
+      <wsdl:port binding="impl:RemoteMediaFileManagerSoapBinding" name="RemoteMediaFileManager">
+
+         <wsdlsoap:address location="http://localhost:8080/services/org/agnitas/cms/utils/dataaccess/mock/RemoteMediaFileManager"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

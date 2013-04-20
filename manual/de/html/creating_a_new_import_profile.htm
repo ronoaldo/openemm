@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Empfänger - Kundendaten pflegen &gt; Importfunktion für Empfängerdaten &gt; Neues Importprofil erstellen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Neues Importprofil erstellen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_new_import_profile.htm"; }
+  else { parent.quicksync('a4.4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Empfänger - Kundendaten pflegen</a> &gt; <a href="import_function_for_recipient_.htm">Importfunktion für Empfängerdaten</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Neues Importprofil erstellen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="import_dialog_structure.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="import_function_for_recipient_.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="determining_the_csv_file_setti.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Wozu benötigt der OpenEMM ein Importprofil? CSV-Dateien stammen häufig aus vielen verschiedenen Quellen und wurden mit den unterschiedlichsten Programmen erstellt. Das Format der Daten ist allerdings in fast allen Fällen identisch. Damit Sie diese Parameter nicht bei jedem Import einer CSV-Datei wieder und wieder von neuem eingeben müssen, bietet der OpenEMM die Möglichkeit, diese Einstellungen in einem Importprofil abzulegen. Einmal angelegt spart Ihnen ein Importprofil sehr viel Zeit. Beim Import von Kundendaten via CSV-Datei genügt es, das passende Importprofil auszuwählen – der OpenEMM erledigt den Upload dann automatisch.</p>
+<p>Ein Importprofil enthält alle erforderlichen Informationen, um eine CSV-Datei zu lesen. Mit diesen Angaben kann der OpenEMM die Felder Ihrer CSV-Datei der richtigen Kategorie wie beispielsweise Name, E-Mail oder Geburtstag zuordnen und die Kundendaten in die Datenbank des OpenEMM übertragen.</p>
+<p>Um ein neues Importprofil zu erstellen, klicken Sie in der Navigationsleiste auf <span style="font-family: 'Tahoma';">Empfänger</span>, <span style="font-family: 'Tahoma';">Import</span> und wechseln Sie auf den Seitenreiter <span style="font-family: 'Tahoma';">Neues Importprofil</span>. Im folgenden Dialog legen Sie den Rahmen Ihres Importprofils fest.</p>
+<div class="p_ImageCaption"><div align="center"><img src="mit_einem_importprofil_legen_sie_im.png" width="935" height="654" border="0" alt="Abb. 4.10: Mit einem Importprofil legen Sie im Detail fest, wie die Software CSV-Dateien beim Import in die Datenbank behandeln soll."><p style="text-align:center;width:935px"><span class="f_ImageCaption">Abb. 4.10: Mit einem Importprofil legen Sie im Detail fest, wie die Software CSV-Dateien beim Import in die Datenbank behandeln soll.</span></p></div></div>
+<p>Vergeben Sie im Feld <span style="font-family: 'Tahoma';">Name</span> eine aussagekräftige Bezeichnung für das neue Importprofil. Je anschaulicher der Name, desto leichter fällt es Ihnen und Dritten anschließend, das geeignete Profil beim Import von CSV-Daten zu wählen.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,55 @@
+<HTML><Head>
+#if(not done)
+<meta http-equiv="refresh" content="1; URL=http://$host:$port/">
+#end
+<Title>Upgrade</Title>
+<style type="text/css">
+<!--
+body {
+    background-color: #E9ECF1;
+    margin: 0;
+}
+ul {
+    margin-left: 210px;
+}
+#message {
+    margin-left: 210px;
+    width: 650px;
+}
+-->
+</style>
+</Head><Body>
+<table width="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" border="0">
+<tr style="background:url(update_header_r.png) repeat-x;"><td width="885"><img src="update_header.png" border="0"></td>
+    <td style="background:url(update_header_r.png);">&nbsp;</td></tr>
+<tr style="background:url(update_middle.png) repeat-y;"><td>
+<Ul>
+#for(r in report)
+<li>
+ #if(r.id == '!')
+  <strong>$r.text</strong>
+ #elif(r.id == '>')
+  &nbsp;&nbsp;&nbsp;<i>$r.text</i>
+ #else
+  $r.text
+ #end
+</li>
+#end
+</Ul>
+<div id="message">
+#if(done)
+<hr>
+ #if(status == 'new')
+  Upgrade completed.
+ #else
+  No new version available.
+ #end
+<a href="http://$host:8080/">--&gt; return to OpenEMM</a>
+#end
+</div>
+    </td>
+    <td style="background-color:#E9ECF1;"></td></tr>
+<tr style="background-color:#E9ECF1;"><td width="885"><img src="update_footer.png" border="0"></td>
+    <td>&nbsp;</td></tr>
+</table>
+</Body></HTML>

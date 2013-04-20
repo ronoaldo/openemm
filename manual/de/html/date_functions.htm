@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Zielgruppen - dynamische Filter &gt; Aufbau der Suchregeln &gt; Datumsfunktionen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Datumsfunktionen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?date_functions.htm"; }
+  else { parent.quicksync('a6.3.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="target_groups___dynamic_filter.htm">Zielgruppen - dynamische Filter</a> &gt; <a href="search_rule_setup.htm">Aufbau der Suchregeln</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Datumsfunktionen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="is_and_null_or_not_null.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="search_rule_setup.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="combined_search_rules_with_bra.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Ein Feld im Benutzerprofil kann auch ein Datum aufnehmen. Speziell für den Umgang mit solchen Datumsangaben stellt der OpenEMM besondere Funktionen bereit. Das folgende Beispiel erzeugt eine Zielgruppe für alle Empfänger, die an einem bestimmten Tag Geburtstag haben.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Rufen Sie in der Navigationsleiste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Zielgruppen</span><span class="f_Zahlen"> und dann </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Neue Zielgruppe</span><span class="f_Zahlen"> auf. Rechts erscheint der Eingabedialog für eine neue Zielgruppe. Tragen Sie </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> und </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Beschreibung</span><span class="f_Zahlen"> ein.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Wählen Sie in der zweiten Auswahlliste das Geburtstagsfeld aus.</span><br>
+<span class="f_Zahlen"> </span><span class="f_Zahlen" style="font-weight: bold;">Achtung:</span><span class="f_Zahlen"> Dieses Feld gibt es standardmäßig nicht, Sie müssen es zunächst selbst anlegen (und natürlich jeweils das Geburtsdatum eintragen). Mehr über selbst definierte Felder finden Sie in Kapitel "<a href="extending_recipients_profiles.htm">Empfängerprofil erweitern</a>". Als Vergleichsoperator belassen Sie das Gleichheitszeichen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Für das aktuelle Datum unterstützt der OpenEMM ein besonderes Schlüsselwort, </span><span class="f_Zahlen" style="font-style: italic;">now()</span><span class="f_Zahlen">. Wenn das System die Regel bearbeitet, so ersetzt es das Schlüsselwort durch das Tagesdatum. Tragen Sie also in das Eingabefeld für den Vergleichswert </span><span class="f_Zahlen" style="font-style: italic;">now()</span><span class="f_Zahlen"> ein. Schließen Sie die Eingabe mit einem Klick auf die Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Hinzufügen</span><span class="f_Zahlen"> ab.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="das_schluesselwort_now_steht_fuer_das.png" width="939" height="491" border="0" alt="Abb. 6.3: Das Schlüsselwort now() steht für das aktuelle Tagesdatum."><p style="text-align:center;width:939px"><span class="f_ImageCaption">Abb. 6.3: Das Schlüsselwort now() steht für das aktuelle Tagesdatum.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Nun erscheint die neue Suchregel unter </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Zielgruppen-Definition</span><span class="f_Zahlen">. Hinter dem Vergleichswert (im Beispiel </span><span class="f_Zahlen" style="font-style: italic;">now()</span><span class="f_Zahlen">) sehen Sie nun eine weitere Auswahlliste für das Datumsformat. </span><span class="f_Zahlen" style="font-family: 'Tahoma';">JJJJMMTT</span><span class="f_Zahlen"> steht für Jahr, Monat und Tag. Das System vergleicht also das gesamte Datum inklusive Jahreszahl. Für den Geburtstag ist das nicht wirklich sinnvoll, denn es ist recht unwahrscheinlich, dass ein Neugeborener noch am selben Tag schon mit E-Mail-Adresse in Ihrer Datenbank steht. Stattdessen wollen Sie die Geburtstagskinder aller Jahre finden. Stellen Sie deshalb in der Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">MMTT</span><span class="f_Zahlen"> ein. Damit vergleicht das System nur Monat und Tag, nicht aber die Jahreszahl.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Schließen Sie die Eingabe mit einem Klick auf die Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> ab.</span></td></tr></table></div><p>Im obigen Beispiel wurde eine Zielgruppe von Empfängern definiert, die heute Geburtstag haben. Doch manchmal ist es sinnvoll, eine Zielgruppe zu erzeugen mit einem Vergleichswert, der sich nicht auf das aktuelle Datum, sondern einen Termin in der Zukunft oder Vergangenheit bezieht. Um diesen Fall anschaulicher zu machen, nachfolgend ein Beispiel für eine Zielgruppe aller Empfänger, die gestern im OpenEMM angelegt wurden:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Das Datum, zu dem ein Empfängerprofil im OpenEMM angelegt wurde, ist im Feld </span><span class="f_Zahlen" style="font-family: 'Tahoma';">creation_date</span><span class="f_Zahlen"> abgelegt. Wählen Sie dieses Feld in der Auswahlliste wie im obigen Beispiel aus. Als Vergleichsoperator verwenden Sie wieder das Gleichheitszeichen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Jetzt müssen Sie einen Ausdruck angeben, der dem OpenEMM anzeigt, dass es nicht um das aktuelle Datum, sondern um ein vergangenes Datum, das einen Tag zurückliegt, geht. Dies geschieht ganz einfach mit dem Ausdruck </span><span class="f_Zahlen" style="font-style: italic;">date_sub(now(), interval 1 day )</span><span class="f_Zahlen">, d.h. Aktuelles Datum minus 1. Gespeichert wird wieder mit einem Klick auf die Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Hinzufügen</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Im nächsten Schritt geht es weiter wie im obigen Beispiel mit Schritt 4.</span></td></tr></table></div><p><span style="font-weight: bold;">Bitte beachten Sie:</span> Wenn Sie eine Zielgruppe anlegen möchten, die ein Datum verwendet, das weiter als zwei Tage in der Vergangenheit liegt, müssen Sie ein leicht verändertes Schlüsselwort in den OpenEMM eingeben. Z.B. gilt für zwei Tage in der Vergangenheit <span style="font-style: italic;">date_sub(now(), interval 2 day )</span>, drei Tage <span style="font-style: italic;">date_sub(now(), interval 3 day )</span> und so weiter. Wie Sie sehen ist das Schema <span style="font-style: italic;">date_sub(now(), interval &lt;n&gt; day )</span>, wobei <span style="font-style: italic;">&lt;n&gt;</span> durch die Anzahl an Tagen ersetzt wird. Wenn Sie auf ein Datum verweisen, das exakt einen Tag, eine Woche, einen Monat oder ein Jahr in der Vergangenheit liegt, kann ein anderes Schema genutzt werden. Dieses sieht so aus: <span style="font-style: italic;">date_sub(now() , interval &lt;n&gt; &lt;expr&gt; ) . </span>Mit den folgenden Werten: <span style="font-style: italic;">DAY</span>, <span style="font-style: italic;">WEEK</span>, <span style="font-style: italic;">MONTH</span>, <span style="font-style: italic;">YEAR</span>.</p>
+<p>Wenn Sie auf ein Datum in der Zukunft verweisen wollen, ist das Schlüsselwort ähnlich. Der einzige Unterschied ist, dass die Vorsilbe <span style="font-style: italic;">sub</span> zu <span style="font-style: italic;">add </span>verändert werden muss. Das Schlüsselwort für morgen ist zum Beispiel <span style="font-style: italic;">date_add(now(), interval 1 day )</span>, der Ausdruck für zehn Tage in der Zukunft <span style="font-style: italic;">date_add(now(), interval 10 day )</span>.</p>
+<p>Für weitere Informationen sehen Sie bitte in die MySQL-Anleitung (MySQL ist die Datenbank, die OpenEMM nutzt.).</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

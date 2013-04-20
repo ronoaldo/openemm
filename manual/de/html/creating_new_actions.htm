@@ -1,0 +1,154 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Formular - Selbstverwaltung für Empfänger &gt; Formulare &gt; Beispiel Formular: Anmeldung mit Double-Opt-In &gt; Neue Aktionen anlegen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Neue Aktionen anlegen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_new_actions.htm"; }
+  else { parent.quicksync('a8.1.2.5.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="forms___recipient_management.htm">Formular - Selbstverwaltung für Empfänger</a> &gt; <a href="forms.htm">Formulare</a> &gt; <a href="example_subscribing_with_doubl.htm">Beispiel Formular: Anmeldung mit Double-Opt-In</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">Neue Aktionen anlegen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="create_an_action_based_mailing.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="example_subscribing_with_doubl.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="creating_new_forms.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Nachdem das Mailing fertig ist, legen Sie die drei Aktionen für das Anmelden und Bestätigen an. Die Aktion zum Anmelden ist im Prinzip wie bei einem normalen Anmeldevorgang in Kapitel "<a href="creating_a_form_to_enter_data.htm">Formular zur Dateneingabe anlegen</a>" aufgebaut. Bei allen drei Aktionen sollten Sie die Option <span style="font-family: 'Tahoma';">nur für Formulare</span> einstellen, das erleichtert Ihnen später die Pflege Ihrer Aktionen.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Legen Sie eine neue Aktion mit dem Namen </span><span class="f_Zahlen" style="font-style: italic;">Double-Opt-In: Anmeldung</span><span class="f_Zahlen"> (oder ähnlich) an. Wichtig ist vor allem, dass der Name eindeutig ist. Aktivieren Sie dabei die Option </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Double-Opt-In verwenden</span><span class="f_Zahlen">.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="diese_aktion_sichert_die_neuen_empfaengerdaten.png" width="934" height="452" border="0" alt="Abb. 8.13: Diese Aktion sichert die neuen Empfängerdaten in der Datenbank, markiert sie aber als gesperrt."><p style="text-align:center;width:934px"><span class="f_ImageCaption">Abb. 8.13: Diese Aktion sichert die neuen Empfängerdaten in der Datenbank, markiert sie aber als gesperrt.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Die zweite Aktion soll das aktionsgesteuerte Mailing auslösen. Erzeugen Sie eine neue Aktion mit dem Namen </span><span class="f_Zahlen" style="font-style: italic;">Double-Opt-In: E-Mail verschicken</span><span class="f_Zahlen">. In der Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Typ</span><span class="f_Zahlen"> wählen Sie den Eintrag </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Aktionsbasiertes Mailing versenden</span><span class="f_Zahlen">. Mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> übergeben Sie die Daten an den OpenEMM.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Nun wählen Sie unter </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Schritte</span><span class="f_Zahlen"> im Bereich </span><span class="f_Zahlen" style="font-family: 'Tahoma';">1</span><span class="f_Zahlen">. </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Versand</span><span class="f_Zahlen"> in der Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Mailing</span><span class="f_Zahlen"> das vorhin definierte Mailing </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Double: Bestätigung</span><span class="f_Zahlen"> aus. Schließen Sie die Aktion mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> ab.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Die dritte Aktion dient zur Bestätigung des Double-Opt-In. Legen Sie wieder eine neue Aktion mit dem Namen</span><span class="f_Zahlen" style="font-style: italic;"> Double-Opt-In: Bestätigung</span><span class="f_Zahlen"> an. In der Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Typ</span><span class="f_Zahlen"> stellen Sie auf </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Double-Opt-In Bestätigung</span><span class="f_Zahlen"> ein. Beenden Sie die Definition mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen">. Damit ist die Definition der Aktionen abgeschlossen.</span></td></tr></table></div>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

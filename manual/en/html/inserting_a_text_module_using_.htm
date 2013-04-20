@@ -1,0 +1,170 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Mailings - Sending out newsletters &gt; Templates - Re-usable text modules &gt; Using text modules &gt; Inserting a text module using AGNITAS-Tags</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Inserting a text module using AGNITAS-Tags">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?inserting_a_text_module_using_.htm"; }
+  else { parent.quicksync('a3.3.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="mailings___sending_out_newslet.htm">Mailings - Sending out newsletters</a> &gt; <a href="templates___re_usable_text_mod.htm">Templates - Re-usable text modules</a> &gt; <a href="using_text_modules.htm">Using text modules</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Inserting a text module using AGNITAS-Tags</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="using_text_modules.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="using_text_modules.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="dynamic_text_module.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>A template works a bit like a form. It consists of areas, entry fields and placeholders. Text entered into a field will then be inserted into the e-mail and sent to the recipient. Any text may be customized, for instance including a personal address. Further information can be found in the mailings chapter "<a href="creating_customized_mailings.htm">Creating customized mailings</a>".</p>
+<p>We promised you flexible templates, didn’t we? The secret lies in linking a template to various text modules for a mailing. Inside the template text, you insert an AGNITAS tag acting as placeholder for a certain text module. You need not define the contents of the text module in the template. This is done later when creating a new mailing. If the content of the text module is to remain the same for multiple newsletters, you can define the contents of the text modules directly in the template and then use this in the mailing. For details, see chapter "<a href="further_details_for_creating_t.htm">Further details for creating templates</a>".</p>
+<p>Let us give you an example. The following text is typed into the <span style="font-family: 'Tahoma';">Text Version</span> field in the new template entry dialog.</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">[agnTITLE type=1]</span><br>
+<span class="f_BeispieltextQuelltext">Welcome to this week’s special offers from your seed catalog!</span><br>
+<span class="f_BeispieltextQuelltext">[agnDYN name="maintext"/]</span><br>
+<span class="f_BeispieltextQuelltext">Yours sincerely</span><br>
+<span class="f_BeispieltextQuelltext">Your Seed Newsletter Service</span></p>
+<p>The first line inserts a customized greeting for the recipient (see chapter " <a href="creating_customized_mailings.htm">Creating customized mailings</a>"). The second line is normal text which the &nbsp;OpenEMMwill insert into the finished email. The secret of templates lies in the third line: <span style="font-style: italic;">[agnDYN name=" maintext "/]</span> inserts the maintext text module into the finished email. The template does not know which text will be inserted here. This is the whole point of templates. You must enter text into that module later under <span style="font-family: 'Tahoma';">Content</span> when creating a new mailing. All text modules defined in the template are listed here in alphabetical respectively numerical order. The remaining lines or blank lines will be integrated by the system into the mailing as is.</p>
+<p><span style="font-weight: bold;">Please note: </span>The AGNITAS tag uses special notation. The right square bracket is precedes by a slash. This shows the OpenEMM that the tag is finished. The following chapter explains why.</p>
+<p>The entries could result in the following email (depending on the recipient and the contents of the <span style="font-style: italic;">maintext</span> text module):</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">Dear Mr Smith</span><br>
+<span class="f_BeispieltextQuelltext">Welcome to this week’s special offers from your seed catalog!</span><br>
+<span class="f_BeispieltextQuelltext">Looking forward to banning your winter boots to the attic and doing some gardening? We can offer you all you need for a colorful garden. This week's special offer: spring flower seeds for your garden! Check out our latest online offers on</span><br>
+<span class="f_BeispieltextQuelltext">http://www.my-company.com/springseed.htm</span><br>
+<span class="f_BeispieltextQuelltext">Yours sincerely</span><br>
+<span class="f_BeispieltextQuelltext">Your Seed Newsletter Service</span></p>
+<p>There is no limit to the number of text modules you may insert. It makes sense to create a unique text module for each special offer (as in the example). To save time and make working with text modules easier, you should select meaningful and explicit names for your text modules.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

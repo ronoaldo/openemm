@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the Common Public Attribution
+ * License Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.openemm.org/cpal1.html. The License is based on the Mozilla
+ * Public License Version 1.1 but Sections 14 and 15 have been added to cover
+ * use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+ * the specific language governing rights and limitations under the License.
+ * 
+ * The Original Code is OpenEMM.
+ * The Original Developer is the Initial Developer.
+ * The Initial Developer of the Original Code is AGNITAS AG. All portions of
+ * the code written by AGNITAS AG are Copyright (c) 2007 AGNITAS AG. All Rights
+ * Reserved.
+ * 
+ * Contributor(s): AGNITAS AG. 
+ ********************************************************************************/
+-->
+
+<hibernate-mapping package="org.agnitas.beans.impl">
+    
+    <import class="MediatypeImpl"/>
+	
+    <class name="org.agnitas.beans.impl.MailingImpl" entity-name="Mailing" table="mailing_tbl">
+	<id name="id" column="mailing_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">mailing_tbl_seq</param></generator>
+        </id>
+        <property name="companyID" column="company_id" type="int" update="false"/>
+        <property name="campaignID" column="campaign_id" type="int"/>
+        <property name="shortname" column="shortname" type="string"/>
+        <property name="description" column="description" type="string"/>
+        <property name="mailingType" column="mailing_type" type="int"/>
+        <property name="isTemplate" column="is_template" type="boolean"/>
+        <property name="needsTarget" column="needs_target" type="boolean"/>
+        <property name="mailTemplateID" column="mailtemplate_id" type="int"/>
+        <property name="mailinglistID" column="mailinglist_id" type="int"/>
+        <property name="deleted" column="deleted" type="int"/>
+        <property name="archived" column="archived" type="int"/>
+        <property name="targetExpression" column="target_expression" type="string"/>
+        <property name="creationDate" column="creation_date" type="timestamp" update="false" insert="true" />
+        <property name="openActionID" column="openaction_id" type="int"/>
+        <property name="clickActionID" column="clickaction_id" type="int"/>
+        <property name="useDynamicTemplate" column="dynamic_template" type="boolean" />
+
+        <map name="mediatypes" table="mailing_mt_tbl" cascade="all">
+            <key column="mailing_id" not-null="true"/>
+            <map-key column="mediatype" type="int"/>
+            <composite-element class="MediatypeImpl">
+                <property name="param" column="param" type="string"/>
+            </composite-element>
+        </map>
+
+        <map name="dynTags" order-by="dyn_name asc" cascade="all,delete-orphan">
+            <key column="mailing_id" not-null="true"/>
+            <map-key column="dyn_name" type="string"/>
+            <one-to-many entity-name="DynamicTagEmbedded"/>
+        </map>
+        
+        <map name="components" order-by="compname asc" cascade="all,delete-orphan">
+            <key column="mailing_id" not-null="true"/>
+            <map-key column="compname" type="string"/>
+            <one-to-many entity-name="MailingComponentEmbedded"/>
+        </map>
+        
+        <map name="trackableLinks" order-by="shortname, full_url asc" cascade="all,delete-orphan">
+            <key column="mailing_id" not-null="true"/>
+            <map-key column="full_url" type="string"/>
+            <one-to-many entity-name="TrackableLinkEmbedded"/>
+        </map>
+        
+        <set name="maildropStatus" order-by="senddate desc, status_field desc" cascade="all,delete-orphan">
+            <key column="mailing_id" not-null="true"/>
+            <one-to-many entity-name="MaildropEntryEmbedded"/>
+        </set>
+    </class>
+    
+    <class name="org.agnitas.beans.impl.MailingComponentImpl" entity-name="MailingComponentEmbedded" table="component_tbl">
+        <id name="id" column="component_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">component_tbl_seq</param></generator>
+        </id>
+        <property name="mailingID" column="mailing_id" type="int" not-null="true" insert="false" update="false"/>
+        <property name="companyID" column="company_id" type="int" update="false"/>
+        <property name="componentName" column="compname" type="string" insert="false" update="false"/>
+        <property name="type" column="comptype" type="int"/>
+        <property name="emmBlock" column="emmblock" type="string"/>
+        <property name="binaryBlock" column="binblock" type="binary"/>
+        <property name="mimeType" column="mtype" type="string"/>
+        <property name="targetID" column="target_id" type="int"/>
+        <property name="urlID" column="url_id" type="int"/> 
+    </class>
+    
+    <class name="org.agnitas.beans.impl.DynamicTagImpl" entity-name="DynamicTagEmbedded" table="dyn_name_tbl">
+        <id name="id" column="dyn_name_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">dyn_name_tbl_seq</param></generator>
+        </id>
+        <property name="mailingID" column="mailing_id" not-null="true" insert="false" update="false"/>
+        <property name="companyID" column="company_id" type="int" update="false"/>
+        <property name="dynName" column="dyn_name" type="string" not-null="true" insert="false" update="false"/>
+        <map name="dynContent" order-by="dyn_order asc" cascade="all,delete-orphan">
+            <key column="dyn_name_id" not-null="true"/>
+            <map-key column="dyn_order" type="string"/>
+            <one-to-many entity-name="DynamicTagContentEmbedded"/>
+        </map>
+    </class>
+    
+    <class name="org.agnitas.beans.impl.TrackableLinkImpl" entity-name="TrackableLinkEmbedded" table="rdir_url_tbl">
+        <id name="id" column="url_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">rdir_url_tbl_seq</param></generator>
+        </id>
+        <property name="companyID" column="company_id" type="integer" update="false"/>
+        <property name="mailingID" column="mailing_id" type="integer" insert="false" update="false"/>
+        <property name="actionID" column="action_id" type="integer"/>
+        <property name="usage" column="measure_type" type="integer"/>
+        <property name="relevance" column="relevance" type="integer"/>
+        <property name="shortname" column="shortname" type="string"/>
+        <property name="fullUrl" column="full_url" type="string" insert="false" update="false"/>
+    </class>
+    
+    <class name="org.agnitas.beans.impl.DynamicTagContentImpl" entity-name="DynamicTagContentEmbedded" table="dyn_content_tbl">
+        <id name="id" column="dyn_content_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">dyn_content_tbl_seq</param></generator>
+        </id>
+        <property name="companyID" column="company_id" type="int" update="false"/>
+        <property name="dynNameID" column="dyn_name_id" not-null="true" insert="false" update="false"/>
+        <property name="dynContent" column="dyn_content" type="string"/>
+        <property name="dynOrder" column="dyn_order" type="int" insert="false" update="false"/>
+        <property name="targetID" column="target_id" type="int"/>
+    </class>
+    
+    <class name="org.agnitas.beans.impl.MaildropEntryImpl" entity-name="MaildropEntryEmbedded" table="maildrop_status_tbl">
+        <id name="id" column="status_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">maildrop_status_tbl_seq</param></generator>
+        </id>
+        <property name="companyID" column="company_id" type="int" update="false"/>
+        <property name="mailingID" column="mailing_id" not-null="true" insert="false" update="false"/>
+        <property name="status" column="status_field" type="char" not-null="true"/>
+        <property name="sendDate" column="senddate" type="timestamp"/>
+        <property name="stepping" column="step" type="int"/>
+        <property name="blocksize" column="blocksize" type="int"/>
+        <property name="genDate" column="gendate" type="timestamp"/>
+        <property name="genChangeDate" column="genchange" type="timestamp"/>
+        <property name="genStatus" column="genstatus" type="int"/>
+    </class>
+    	
+</hibernate-mapping>

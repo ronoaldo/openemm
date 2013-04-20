@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Recipients - Managing customer data &gt; Searching for recipients &gt; Searching for fields &gt; Combining search rules</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Combining search rules">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?combining_search_rules.htm"; }
+  else { parent.quicksync('a4.3.1.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Recipients - Managing customer data</a> &gt; <a href="searching_for_recipients.htm">Searching for recipients</a> &gt; <a href="searching_for_fields.htm">Searching for fields</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Combining search rules</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="drop_down_list_for_relational_.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="searching_for_fields.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="searching_for_mailing_lists.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Many searches cannot be performed using just one search rule. The OpenEMM allows you to combine any number of search rules . Search rules are linked with the <span style="font-family: 'Tahoma';">AND</span> and <span style="font-family: 'Tahoma';">OR</span> operators. If, for instance, one of the additional fields defined in the recipient profile is <span style="font-style: italic;">AGE_YEARS</span> and you wanted to list all recipients aged 20 to 30 and having a GMX e-mail address (<span style="font-style: italic;">@gmx.de</span>, <span style="font-style: italic;">@gmx.net</span> etc.), you would need to define three search rules:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">EMAIL</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-family: 'Tahoma';">LIKE</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-style: italic;">%@gmx.%</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">AND</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-family: 'Tahoma';">AGE_YEARS</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-family: 'Tahoma';">&gt;</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-style: italic;">19</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">AND AGE_YEARS &lt;</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-style: italic;">31</span></td></tr></table></div><p>The GMX search rule contains two % wildcards. GMX allows you to select your own country ID like <span style="font-style: italic;">.de</span> or <span style="font-style: italic;">.net</span>. The search rule filters all e-mail addresses containing the character string <span style="font-style: italic;">@gmx.</span>. To specify the search, proceed as follows:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">By clicking on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Recipient</span><span class="f_Zahlen"> and </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Overview</span><span class="f_Zahlen"> in the navigation bar, call up the overview.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Open the input mask for </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Advanced Search</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">The first search rule checks the e-mail address. In the Search for recipients drop-down list below </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Advanced search</span><span class="f_Zahlen">, select the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">EMAIL</span><span class="f_Zahlen"> field. Select the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">LIKE</span><span class="f_Zahlen"> operator. As a reference value, enter </span><span class="f_Zahlen" style="font-style: italic;">%@gmx.%</span><span class="f_Zahlen"> into the field at the end of the line.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">By clicking on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> button you can now apply the search rule. The &nbsp;OpenEMMwill now display the e-mail search rule above the drop-down lists with their entry fields.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">The search rule line now features an additional drop-down list. The selections </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen"> and </span><span class="f_Zahlen" style="font-family: 'Tahoma';">OR</span><span class="f_Zahlen"> determine how the OpenEMM links the search rules.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="three_combined_search_rules_display.png" width="940" height="536" border="0" alt="Fig. 4.8: Three combined search rules display only a single recipient."><p style="text-align:center;width:940px"><span class="f_ImageCaption">Fig. 4.8: Three combined search rules display only a single recipient.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">6.</span></td><td><span class="f_Zahlen">The second search rule checks whether the recipient is older than 19 (i.e., at least 20). In the first drop-down list, select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen">. As a field, select the user-defined </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AGE_YEARS</span><span class="f_Zahlen"> (details on user-defined fields can be found in chapter "<a href="extending_recipients_profiles.htm">Extending recipient's profiles</a>"). Select the “greater than” relational operator (</span><span class="f_Zahlen" style="font-family: 'Tahoma';">&gt;</span><span class="f_Zahlen">). The reference value is </span><span class="f_Zahlen" style="font-style: italic;">19</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">7.</span></td><td><span class="f_Zahlen">By clicking on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> button you can now apply the second search rule. The second search rule and the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen"> link now appear above the drop-down lists.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">8.</span></td><td><span class="f_Zahlen">The third search rule filters recipients whose age is less than 31 (i.e., no more than 30). Select the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AND</span><span class="f_Zahlen"> operator and the field </span><span class="f_Zahlen" style="font-family: 'Tahoma';">AGE_YEARS</span><span class="f_Zahlen">. Select the “less than” relational operator (</span><span class="f_Zahlen" style="font-family: 'Tahoma';">&lt;</span><span class="f_Zahlen">) and the reference value </span><span class="f_Zahlen" style="font-style: italic;">31</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">9.</span></td><td><span class="f_Zahlen">Clicking on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> button again adds the third search rule.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">10.</span></td><td><span class="f_Zahlen">The recipient list now displays only those profiles matching all search rules selected.</span></td></tr></table></div><p><span style="font-weight: bold;">Note:</span> You will receive the same results with the comparison operators <span style="font-family: 'Tahoma';">&gt;= 20</span> or <span style="font-family: 'Tahoma';">&lt;= 30</span>.</p>
+<p>If you want to delete a search rule, click on the <span style="font-family: 'Tahoma';">Delete</span> button behind that rule. In order to delete all search rules, click on the <span style="font-family: 'Tahoma';">Overview</span> tab.</p>
+<p><span style="font-weight: bold;">Please note:</span> This will cause OpenEMM to delete all search rules in the selected overview.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

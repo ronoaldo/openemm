@@ -1,0 +1,422 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Appendix A: AGNITAS-Tags</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Appendix A: AGNITAS-Tags">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?appendix_a_agnitas_tags.htm"; }
+  else { parent.quicksync('a11'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   &raquo;No topics above this level&laquo;
+   </p>
+   <p class="p_Heading1"><span class="f_Heading1">Appendix A: AGNITAS-Tags</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="deactivating_and_uninstalling_.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="produktname___the_basics.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><img src="btn_next_d.gif" border="0">
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>The OpenEMM system allows you to integrate the following special AGNITAS personalization tags: these are simply entered in a template or a text module and replaced accordingly prior to mailing. This allows you to customize and personalize each single mailing using information contained in your database. Tags can help you address a recipient personally or customize part or all of your mailing according to recipients’ known fields of special interest. You should note, however, that in contrast to the normal HTML tags, these AGNITAS personalization tags do not have to be closed by an end tag: there is no bracket system as with the dynamic content tags (see chapter "<a href="dynamic_content_generation.htm">Dynamic content generation</a>"). The empty columns are intentionally left blank.</p>
+<p><span style="font-weight: bold;">Please note:</span> Profile fields in #-Tags can now be encrypted with the <span style="font-style: italic;">##MD5:&lt;FIELDNAME&gt;##</span> add-on.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<th valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">AGNITAS tags</span></p>
+</th>
+<th valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Contents displayed</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; height:51px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; height:51px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnCUSTOMERID]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the recipient's user-id.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnDATE]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the current date.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDATE type="&lt;type&gt;" language="&lt;lang&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;type&gt;</span><span class="f_TabelleInhalt">: Enter the following values &nbsp;for the format:</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt"> = Example: </span><span class="f_TabelleInhalt" style="font-style: italic;">3.4.2001</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> = Example: </span><span class="f_TabelleInhalt" style="font-style: italic;">04/03/2001</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> = Example: Tuesday</span><span class="f_TabelleInhalt" style="font-style: italic;">, 3. April 2001</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">3</span><span class="f_TabelleInhalt"> = Example: </span><span class="f_TabelleInhalt" style="font-style: italic;">2001-04-03</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">&lt;lang&gt;</span><span class="f_TabelleInhalt">: With this optional addition you can change the language.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">en</span><span class="f_TabelleInhalt"> stands e.g. for englisch, </span><span class="f_TabelleInhalt" style="font-style: italic;">de</span><span class="f_TabelleInhalt"> for german (view ISO 639-1). The standard value is German.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">[agnDATE type=2 language="de"]</span><span class="f_TabelleInhalt">: Donnerstag, 28. Januar 2010</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">[agnDATE type=2 language="en"]</span><span class="f_TabelleInhalt">: Thursday, 28. January 2010</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span class="f_TabelleInhalt" style="font-style: italic;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt">&nbsp;</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnDB]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Inserts the contents from one of the fields from the Profile database.</p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDB column="&lt;databasefield&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;databasefield&gt;</span><span class="f_TabelleInhalt">: The name of the according profile column in the data base. (e.g. </span><span class="f_TabelleInhalt" style="font-style: italic;">SHOE_SIZE</span><span class="f_TabelleInhalt">)</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDB column="SHOE_SIZE"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Attention:</span><span class="f_TabelleInhalt"> If you want to use the field in a trackable link, write #</span><span class="f_TabelleInhalt" style="font-style: italic;">#SHOW_SIZE##.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnDVALUE]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Defines the place of the corresponding agnDYN.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDVALUE name="&lt;placeholder&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;placeholder&gt;</span><span class="f_TabelleInhalt">: Enter a placeholder name of the agnDYN definition.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> Insert the text of module "Introduction". </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDVALUE name="Introduction"]</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnDYN]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts a text component in a mailing.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDYN name="&lt;placeholder&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;placeholder&gt;</span><span class="f_TabelleInhalt">: Enter a placeholder name which is used for a text module.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> Insert module "Introduction". </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnDYN name="Einleitung"/]</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnEMAIL]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the recipient’s e-mail address.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnFIRSTNAME]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the recipient’s first name.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnFORM]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts a working link of a form. The named form must exist under Sites &amp; Actions.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnFORM name="&lt;form_name&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;form_name&gt;</span><span class="f_TabelleInhalt">: Enter the form name.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> Create link to opt-out site "unsubscribe". </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnFORM name="unsubscribe"/]</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnIMAGE]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the image by that name from the mailing’s graphical components.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnIMAGE name="&lt;picture_name&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;picture_name&gt;</span><span class="f_TabelleInhalt">: Enter the name of the picture (can be found under Picture components).</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Attention:</span><span class="f_TabelleInhalt"> Don't enter the file name of the picture. Use the name you assigned in the Picture components tab.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnIMGLINK]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Embedding the Picture with the declared name and a link from the graphic-components of the mailing.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnIMGLINK name="&lt;picture_name&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;picture_name&gt;</span><span class="f_TabelleInhalt">: Enter the name of the picture (can be found under Picture components).</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnIMGLINK name="grafik.gif"]</span><span class="f_TabelleInhalt"> will be the HTML code. </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;a href="##yourlink##"&gt;&lt;img src="grafik.gif" border=0&gt;&lt;/a&gt;</span><span class="f_TabelleInhalt">.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Attention:</span><span class="f_TabelleInhalt"> The picture and the link have to be under Picture components.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnLABEL]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Creates a placeholder for a onelined text (e.g. headlines oder link-text) in a module of the content manager.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnLABEL name="&lt;placeholder&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;placeholder&gt;</span><span class="f_TabelleInhalt">: Enter the name of the placeholder, e.g. </span><span class="f_TabelleInhalt" style="font-style: italic;">headline</span><span class="f_TabelleInhalt">.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnLABEL name="headline"]</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnLASTNAME]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the recipient’s last name.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnLINK]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Creates a placeholder for a link in a module of the content manager.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnLINK name="&lt;placeholder&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;placeholder&gt;</span><span class="f_TabelleInhalt">: Enter the name of the placeholder, e.g. </span><span class="f_TabelleInhalt" style="font-style: italic;">link</span><span class="f_TabelleInhalt">.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnLINK name="link"]</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnPROFILE]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the link of the form profile. This form has to be created.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnPROFILE]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;a href="[agnPROFILE]&gt;Profil data&lt;/a&gt;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnSUBSCRIBERCOUNT]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the number of mailing recipients.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnTEXT]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Creates a placeholder for a multiline text in a module of the content manager.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTEXT name="&lt;placeholdername&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;flaceholdername&gt;</span><span class="f_TabelleInhalt">: Enter the &nbsp;name of the placeholder, e.g. </span><span class="f_TabelleInhalt" style="font-style: italic;">Description</span><span class="f_TabelleInhalt">.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTEXT name="Description"]</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnTITLE]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts a complete title into the newsletter, where </span><span class="f_TabelleInhalt" style="font-style: italic;">x</span><span class="f_TabelleInhalt"> is replaced by </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> or </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> to result in one of the following forms of address:</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLE type="&lt;type&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;type&gt;</span><span class="f_TabelleInhalt">: Choose a display form, the number will be saved under forms of salutation as ID.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> The following default types can be chosen:</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLE type=1]</span><span class="f_TabelleInhalt"> produces: Dear Mrs/Mr Last Name</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLE type=2]</span><span class="f_TabelleInhalt"> produces: Dear Mrs/Mr Last Name</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLEFULL type=2]</span><span class="f_TabelleInhalt"> produces: Dear Mrs/Mr First Name Last Name</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Please note:</span><span class="f_TabelleInhalt"> You may of course define personalized forms of address (see chapter "<a href="types_of_address.htm">Forms of salutation</a>"). You simply replace </span><span class="f_TabelleInhalt" style="font-style: italic;">x</span><span class="f_TabelleInhalt"> by the ID of your chosen form of address:</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLE type=164]</span><span class="f_TabelleInhalt"> produces: the form of address characterized by the ID 164.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnTITLEFIRST]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Puts the title with first name in the newsletter.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLEFIRST type="&lt;type&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;type&gt;</span><span class="f_TabelleInhalt">: Chose your preferred form of salutation by naming its ID.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLEFIRST type=2] produces</span><span class="f_TabelleInhalt">: Dear Stefan</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnTITLEFULL]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Works like </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLE]</span><span class="f_TabelleInhalt"> but uses first- and last name.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLEFULL type="&lt;type&gt;"]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Parameter:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;type&gt;</span><span class="f_TabelleInhalt">: Chose your preferred form of salutation by naming its ID.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnTITLEFULL type=1] produces</span><span class="f_TabelleInhalt">: Dear &nbsp;Mister Dr. Heinz Mustermann.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">[agnUNSUBSCRIBE]</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inserts the link of the form </span><span class="f_TabelleInhalt" style="font-style: italic;">unsubscribe</span><span class="f_TabelleInhalt">. This form has to be created.</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Syntax:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">[agnUNSUBSRIBE]</span></p>
+<p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-weight: bold;">Example:</span><span class="f_TabelleInhalt"> </span><span class="f_TabelleInhalt" style="font-style: italic;">&lt;a href="[agnUNSUBSRIBE]"&gt;Unsubsribe&lt;/a&gt;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">&nbsp;</span></p>
+</td>
+<td valign="top" width="677" style="width:677px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-style: italic;">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

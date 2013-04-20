@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the Common Public Attribution
+ * License Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.openemm.org/cpal1.html. The License is based on the Mozilla
+ * Public License Version 1.1 but Sections 14 and 15 have been added to cover
+ * use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+ * the specific language governing rights and limitations under the License.
+ * 
+ * The Original Code is OpenEMM.
+ * The Original Developer is the Initial Developer.
+ * The Initial Developer of the Original Code is AGNITAS AG. All portions of
+ * the code written by AGNITAS AG are Copyright (c) 2007 AGNITAS AG. All Rights
+ * Reserved.
+ * 
+ * Contributor(s): AGNITAS AG. 
+ ********************************************************************************/
+-->
+        
+<hibernate-mapping package="org.agnitas.beans">
+	
+    <class name="org.agnitas.beans.impl.AdminImpl" entity-name="Admin" table="admin_tbl">
+	<id name="adminID" column="admin_id" type="integer" unsaved-value="0">
+            <generator class="native"><param name="sequence">admin_tbl_seq</param></generator>
+        </id>
+        <property name="username" type="string"/>
+        <property name="passwordHash" column="pwd_hash" type="binary"/>
+        <property name="companyID" column="company_id" type="integer" insert="false" update="false"/>
+        <many-to-one name="company" column="company_id" entity-name="Company" update="false" cascade="none" lazy="false"/>
+        <property name="fullname" column="fullname" type="string"/>
+        <property name="adminLang" column="admin_lang" type="string"/>
+        <property name="adminCountry" column="admin_country" type="string"/>
+        <property name="adminLangVariant" column="admin_lang_variant" type="string"/>
+        <property name="adminTimezone" column="admin_timezone" type="string"/>
+        <property name="defaultImportProfileID" column="default_import_profile_id" type="integer"/>
+        <property name="creationDate" column="creation_date" type="timestamp" update="false" insert="true" />
+        <many-to-one name="group" column="admin_group_id" entity-name="AdminGroup" not-null="false" cascade="none" lazy="false"/>
+        <property name="layoutID" column="layout_id" type="int"/>
+        <set name="adminPermissions" table="admin_permission_tbl" lazy="false">
+            <key column="admin_id" not-null="true"/>
+            <element column="security_token" type="string"/>
+        </set>
+        <property name="preferredListSize" column="preferred_list_size" lazy="false" />
+    </class>
+    	
+</hibernate-mapping>

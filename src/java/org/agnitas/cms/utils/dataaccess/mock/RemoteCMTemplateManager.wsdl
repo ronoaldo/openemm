@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:apachesoap="http://xml.apache.org/xml-soap"
+                  xmlns:impl="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:intf="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:tns1="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--WSDL created by Apache Axis version: 1.4
+    Built on Apr 22, 2006 (06:55:48 PDT)-->
+    <wsdl:types>
+        <schema targetNamespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xml.apache.org/xml-soap"/>
+            <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="CMTemplate">
+                <sequence>
+                    <element name="companyId" type="xsd:int"/>
+                    <element name="content" nillable="true" type="xsd:base64Binary"/>
+                    <element name="description" nillable="true" type="xsd:string"/>
+                    <element name="id" type="xsd:int"/>
+                    <element name="name" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xml.apache.org/xml-soap"/>
+            <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ArrayOf_xsd_anyType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item"
+                             type="xsd:anyType"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://xml.apache.org/xml-soap"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="Vector">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item"
+                             type="xsd:anyType"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </wsdl:types>
+
+    <wsdl:message name="getMailingWithCmsContentResponse">
+
+        <wsdl:part name="getMailingWithCmsContentReturn" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeMailingBindingsRequest">
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateContentResponse">
+
+        <wsdl:part name="updateContentReturn" type="xsd:boolean"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeTextVersionResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplatesRequest">
+
+        <wsdl:part name="companyId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeTextVersionRequest">
+
+        <wsdl:part name="adminId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplateRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingBindingArrayWrapperResponse">
+
+        <wsdl:part name="getMailingBindingArrayWrapperReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="addMailingBindingsResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingWithCmsContentRequest">
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+        <wsdl:part name="companyId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplateForMailingResponse">
+
+        <wsdl:part name="getCMTemplateForMailingReturn" type="tns1:CMTemplate"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplatesSortByNameRequest">
+
+        <wsdl:part name="companyId" type="xsd:int"/>
+
+        <wsdl:part name="sortDirection" type="xsd:string"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="addMailingBindingsRequest">
+
+        <wsdl:part name="cmTemplateId" type="xsd:int"/>
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="saveTextVersionResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getTextVersionResponse">
+
+        <wsdl:part name="getTextVersionReturn" type="xsd:string"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="deleteCMTemplateRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplateForMailingRequest">
+
+        <wsdl:part name="mailingId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplatesResponse">
+
+        <wsdl:part name="getCMTemplatesReturn" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateContentRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+        <wsdl:part name="content" type="xsd:base64Binary"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingBindingWrapperResponse">
+
+        <wsdl:part name="getMailingBindingWrapperReturn" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingBindingWrapperRequest">
+
+        <wsdl:part name="cmTemplate" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="createCMTemplateResponse">
+
+        <wsdl:part name="createCMTemplateReturn" type="tns1:CMTemplate"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplatesSortByNameResponse">
+
+        <wsdl:part name="getCMTemplatesSortByNameReturn" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateCMTemplateResponse">
+
+        <wsdl:part name="updateCMTemplateReturn" type="xsd:boolean"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateCMTemplateRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+        <wsdl:part name="name" type="xsd:string"/>
+
+        <wsdl:part name="description" type="xsd:string"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="deleteCMTemplateResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getTextVersionRequest">
+
+        <wsdl:part name="adminId" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="saveTextVersionRequest">
+
+        <wsdl:part name="adminId" type="xsd:int"/>
+
+        <wsdl:part name="text" type="xsd:string"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getCMTemplateResponse">
+
+        <wsdl:part name="getCMTemplateReturn" type="tns1:CMTemplate"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="createCMTemplateRequest">
+
+        <wsdl:part name="template" type="tns1:CMTemplate"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getMailingBindingArrayWrapperRequest">
+
+        <wsdl:part name="mailingIds" type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="removeMailingBindingsResponse">
+
+    </wsdl:message>
+
+    <wsdl:portType name="RemoteCMTemplateManager">
+
+        <wsdl:operation name="createCMTemplate" parameterOrder="template">
+
+            <wsdl:input message="impl:createCMTemplateRequest"
+                        name="createCMTemplateRequest"/>
+
+            <wsdl:output message="impl:createCMTemplateResponse"
+                         name="createCMTemplateResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplate" parameterOrder="id">
+
+            <wsdl:input message="impl:getCMTemplateRequest" name="getCMTemplateRequest"/>
+
+            <wsdl:output message="impl:getCMTemplateResponse"
+                         name="getCMTemplateResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplates" parameterOrder="companyId">
+
+            <wsdl:input message="impl:getCMTemplatesRequest"
+                        name="getCMTemplatesRequest"/>
+
+            <wsdl:output message="impl:getCMTemplatesResponse"
+                         name="getCMTemplatesResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplatesSortByName"
+                        parameterOrder="companyId sortDirection">
+
+            <wsdl:input message="impl:getCMTemplatesSortByNameRequest"
+                        name="getCMTemplatesSortByNameRequest"/>
+
+            <wsdl:output message="impl:getCMTemplatesSortByNameResponse"
+                         name="getCMTemplatesSortByNameResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="deleteCMTemplate" parameterOrder="id">
+
+            <wsdl:input message="impl:deleteCMTemplateRequest"
+                        name="deleteCMTemplateRequest"/>
+
+            <wsdl:output message="impl:deleteCMTemplateResponse"
+                         name="deleteCMTemplateResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateCMTemplate" parameterOrder="id name description">
+
+            <wsdl:input message="impl:updateCMTemplateRequest"
+                        name="updateCMTemplateRequest"/>
+
+            <wsdl:output message="impl:updateCMTemplateResponse"
+                         name="updateCMTemplateResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateContent" parameterOrder="id content">
+
+            <wsdl:input message="impl:updateContentRequest" name="updateContentRequest"/>
+
+            <wsdl:output message="impl:updateContentResponse"
+                         name="updateContentResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addMailingBindings"
+                        parameterOrder="cmTemplateId mailingIds">
+
+            <wsdl:input message="impl:addMailingBindingsRequest"
+                        name="addMailingBindingsRequest"/>
+
+            <wsdl:output message="impl:addMailingBindingsResponse"
+                         name="addMailingBindingsResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplateForMailing" parameterOrder="mailingId">
+
+            <wsdl:input message="impl:getCMTemplateForMailingRequest"
+                        name="getCMTemplateForMailingRequest"/>
+
+            <wsdl:output message="impl:getCMTemplateForMailingResponse"
+                         name="getCMTemplateForMailingResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeMailingBindings" parameterOrder="mailingIds">
+
+            <wsdl:input message="impl:removeMailingBindingsRequest"
+                        name="removeMailingBindingsRequest"/>
+
+            <wsdl:output message="impl:removeMailingBindingsResponse"
+                         name="removeMailingBindingsResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingBindingWrapper" parameterOrder="cmTemplate">
+
+            <wsdl:input message="impl:getMailingBindingWrapperRequest"
+                        name="getMailingBindingWrapperRequest"/>
+
+            <wsdl:output message="impl:getMailingBindingWrapperResponse"
+                         name="getMailingBindingWrapperResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingBindingArrayWrapper" parameterOrder="mailingIds">
+
+            <wsdl:input message="impl:getMailingBindingArrayWrapperRequest"
+                        name="getMailingBindingArrayWrapperRequest"/>
+
+            <wsdl:output message="impl:getMailingBindingArrayWrapperResponse"
+                         name="getMailingBindingArrayWrapperResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getTextVersion" parameterOrder="adminId">
+
+            <wsdl:input message="impl:getTextVersionRequest"
+                        name="getTextVersionRequest"/>
+
+            <wsdl:output message="impl:getTextVersionResponse"
+                         name="getTextVersionResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeTextVersion" parameterOrder="adminId">
+
+            <wsdl:input message="impl:removeTextVersionRequest"
+                        name="removeTextVersionRequest"/>
+
+            <wsdl:output message="impl:removeTextVersionResponse"
+                         name="removeTextVersionResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="saveTextVersion" parameterOrder="adminId text">
+
+            <wsdl:input message="impl:saveTextVersionRequest"
+                        name="saveTextVersionRequest"/>
+
+            <wsdl:output message="impl:saveTextVersionResponse"
+                         name="saveTextVersionResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingWithCmsContent"
+                        parameterOrder="mailingIds companyId">
+
+            <wsdl:input message="impl:getMailingWithCmsContentRequest"
+                        name="getMailingWithCmsContentRequest"/>
+
+            <wsdl:output message="impl:getMailingWithCmsContentResponse"
+                         name="getMailingWithCmsContentResponse"/>
+
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <wsdl:binding name="RemoteCMTemplateManagerSoapBinding"
+                  type="impl:RemoteCMTemplateManager">
+
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="createCMTemplate">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="createCMTemplateRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="createCMTemplateResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplate">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getCMTemplateRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getCMTemplateResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplates">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getCMTemplatesRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getCMTemplatesResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplatesSortByName">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getCMTemplatesSortByNameRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getCMTemplatesSortByNameResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="deleteCMTemplate">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="deleteCMTemplateRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="deleteCMTemplateResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateCMTemplate">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="updateCMTemplateRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="updateCMTemplateResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateContent">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="updateContentRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="updateContentResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="addMailingBindings">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="addMailingBindingsRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="addMailingBindingsResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getCMTemplateForMailing">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getCMTemplateForMailingRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getCMTemplateForMailingResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeMailingBindings">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="removeMailingBindingsRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="removeMailingBindingsResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingBindingWrapper">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getMailingBindingWrapperRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getMailingBindingWrapperResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingBindingArrayWrapper">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getMailingBindingArrayWrapperRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getMailingBindingArrayWrapperResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getTextVersion">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getTextVersionRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getTextVersionResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="removeTextVersion">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="removeTextVersionRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="removeTextVersionResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="saveTextVersion">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="saveTextVersionRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="saveTextVersionResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getMailingWithCmsContent">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getMailingWithCmsContentRequest">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getMailingWithCmsContentResponse">
+
+                <wsdlsoap:body namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                               use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <wsdl:service name="RemoteCMTemplateManagerService">
+
+        <wsdl:port binding="impl:RemoteCMTemplateManagerSoapBinding"
+                   name="RemoteCMTemplateManager">
+
+            <wsdlsoap:address
+                    location="http://localhost:8080/services/org/agnitas/cms/utils/dataaccess/mock/RemoteCMTemplateManager"/>
+
+        </wsdl:port>
+
+    </wsdl:service>
+
+</wsdl:definitions>

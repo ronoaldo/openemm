@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Target groups - Dynamic filters &gt; Search rule setup &gt; List split using MOD</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="List split using MOD">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?list_split_using_mod.htm"; }
+  else { parent.quicksync('a6.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="target_groups___dynamic_filter.htm">Target groups - Dynamic filters</a> &gt; <a href="search_rule_setup.htm">Search rule setup</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">List split using MOD</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="search_rule_setup.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="search_rule_setup.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="is_and_null_or_not_null.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>In some cases it may be useful to select only a fraction of the recipients selected for a particular target group. For instance, you may want to test the success of a mailing by sending it to one tenth of customers only. The OpenEMM calls this type of selection a list split. The system uses the customer ID (<span style="font-family: 'Tahoma';">CUSTOMER_ID</span> field) in connection with the <span style="font-family: 'Tahoma';">MOD</span> operator (modulo function). The OpenEMM assigns customer IDs at random for each new entry into the recipient database. They are therefore not consecutive numbers, but numbers in a statistically equal distribution (for practical applications).</p>
+<p>You may remember the modulo function from your maths class. It calculates the residual from a division by a whole number. Let us take an example. 87 MOD 10 results in 7. First, you divide 87 by 10, which results in 8 (without decimal places). 8 times 10 is 80, 87 minus 80 is 7 which is the calculated residual.</p>
+<p>Now, the MOD operator of the OpenEMM selects recipients whose modulo residual matches the rule specified. By entering 5 into the last field of the search rule, you select all customer IDs with a modulo residual of 5. In other words, you select one fifth of all addresses available. The number 10 selects one tenth of addresses, and the digit 3 allows you to select one third. If you wanted to highlight one thousandth of your addresses only, you would need to enter the value 1,000.</p>
+<p>One big advantage of the MOD method is the repeatability of the result. Each time you apply a MOD rule to the database, the same recipients are filtered by the OpenEMM, since a recipient’s customer ID never changes. This is important if you are planning a multi-stage mailing where your target group receives several emails.</p>
+<p>The following example shows a selection with 5 as the modulo value:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">In the navigation bar, select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Target groups</span><span class="f_Zahlen">, then </span><span class="f_Zahlen" style="font-family: 'Tahoma';">New target group</span><span class="f_Zahlen">. To the right, the entry dialog for a new target group is displayed.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Fill in the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> and </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Description</span><span class="f_Zahlen">. You may want to choose a name that alludes to the MOD function application; you will then find your target group more easily at a later stage.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Under </span><span class="f_Zahlen" style="font-family: 'Tahoma';">New rule</span><span class="f_Zahlen"> select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">customer_id</span><span class="f_Zahlen"> from the second drop-down list. This is the customer ID that the OpenEMM automatically assigns to each new recipient. The relational operator drop-down list should be set to </span><span class="f_Zahlen" style="font-family: 'Tahoma';">MOD</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Now enter </span><span class="f_Zahlen" style="font-style: italic;">5</span><span class="f_Zahlen"> into the reference value box. Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> to close the rule.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="this_is_how_you_create.png" width="937" height="479" border="0" alt="Fig. 6.2: This is how you create a new modulo rule with the factor 5."><p style="text-align:center;width:937px"><span class="f_ImageCaption">Fig. 6.2: This is how you create a new modulo rule with the factor 5.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">The system now displays the rule under </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Target group definition</span><span class="f_Zahlen">. Behind the modulo value, there is a new drop-down list for a relational operator, followed by an entry box. The first part of the search rule results in the residual value. The last entry field is used to select which residual value should be calculated. To select one fifth of all recipients the value </span><span class="f_Zahlen" style="font-family: 'Tahoma';">=</span><span class="f_Zahlen"> </span><span class="f_Zahlen" style="font-style: italic;">0</span><span class="f_Zahlen"> suffices. This will select all recipients whose CUSTOMER_ID is divisible by 5.</span><br>
+<span class="f_Zahlen">Entering </span><span class="f_Zahlen" style="font-style: italic;">4</span><span class="f_Zahlen"> here will also select one fifth of recipients, but only those whose residual is 4. In other words, you can select a different fifth of your target group by changing the residual.</span></td></tr></table></div>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

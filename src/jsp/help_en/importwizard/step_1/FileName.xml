@@ -1,0 +1,5 @@
+<HelpBalloon>
+	<title>File name of the csv file</title>	
+		<content><![CDATA[The File name entry field is used to enter the name under which your csv file is saved on your hard disk. You can either enter the file name by hand - although this may be a rather long-winded process - or you can use the Browse button. At a click of the mouse the Windows selection dialog is called up. Select the required csv file and click on the Open button. The window closes automatically and the source folder of the selected file is entered into the File name entry field.]]>	
+	</content>
+</HelpBalloon>

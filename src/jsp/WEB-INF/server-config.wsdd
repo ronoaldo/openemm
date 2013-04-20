@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+<service name="urn:agnitas-webservice" provider="java:RPC">
+  <responseFlow>
+   <handler type="java:org.agnitas.webservice.LogHandler"/>
+  </responseFlow>
+  <parameter name="allowedMethods" value="*"/>
+  <parameter name="className" value="org.agnitas.webservice.EmmWebservice"/>
+      <typeMapping
+        xmlns:ns="urn:agnitas-webservice"
+        qname="ns:StringArrayType"
+        type="java:org.agnitas.webservice.StringArrayType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="urn:agnitas-webservice"
+        qname="ns:SubscriberData"
+        type="java:org.agnitas.webservice.SubscriberData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="urn:agnitas-webservice"
+        qname="ns:LinkData"
+        type="java:org.agnitas.webservice.LinkData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+ </service>
+
+    <globalConfiguration>
+        <parameter name="sendMultiRefs" value="true"/>
+        <parameter name="disablePrettyXML" value="true"/>
+        <parameter name="adminPassword" value="admin"/>
+
+        <parameter name="dotNetSoapEncFix" value="true"/>
+        <parameter name="enableNamespacePrefixOptimization" value="false"/>
+        <parameter name="sendXMLDeclaration" value="true"/>
+        <parameter name="sendXsiTypes" value="true"/>
+        <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+        <requestFlow>
+            <handler type="java:org.apache.axis.handlers.JWSHandler">
+                <parameter name="scope" value="session"/>
+            </handler>
+            <handler type="java:org.apache.axis.handlers.JWSHandler">
+                <parameter name="scope" value="request"/>
+                <parameter name="extension" value=".jwr"/>
+            </handler>
+        </requestFlow>
+    </globalConfiguration>
+
+    <service name="RemoteCMTemplateManager" provider="java:RPC" style="rpc" use="literal">
+        <parameter name="wsdlTargetNamespace" value="http://mock.dataaccess.utils.cms.agnitas.org"/>
+        <parameter name="wsdlServiceElement" value="RemoteCMTemplateManagerService"/>
+        <parameter name="schemaUnqualified" value="http://xml.apache.org/xml-soap,http://mock.dataaccess.utils.cms.agnitas.org,http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+        <parameter name="wsdlServicePort" value="RemoteCMTemplateManager"/>
+        <parameter name="className" value="org.agnitas.cms.webservices.CMTemplateService"/>
+        <parameter name="wsdlPortType" value="RemoteCMTemplateManager"/>
+        <parameter name="typeMappingVersion" value="1.2"/>
+        <operation name="createCMTemplate" qname="operNS:createCMTemplate"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="createCMTemplateReturn"
+                   returnType="rtns:CMTemplate" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                   soapAction="">
+            <parameter qname="template" type="tns:CMTemplate"
+                       xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+        </operation>
+        <operation name="getCMTemplate" qname="operNS:getCMTemplate"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getCMTemplateReturn"
+                   returnType="rtns:CMTemplate" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                   soapAction="">
+            <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="getCMTemplates" qname="operNS:getCMTemplates"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getCMTemplatesReturn"
+                   returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnItemQName="item" soapAction="">
+            <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="getCMTemplatesSortByName" qname="operNS:getCMTemplatesSortByName"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="getCMTemplatesSortByNameReturn" returnType="rtns:ArrayOf_xsd_anyType"
+                   xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="">
+            <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="sortDirection" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="deleteCMTemplate" qname="operNS:deleteCMTemplate"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="updateCMTemplate" qname="operNS:updateCMTemplate"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="updateCMTemplateReturn"
+                   returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="">
+            <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="name" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="description" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="updateContent" qname="operNS:updateContent"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="updateContentReturn"
+                   returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="">
+            <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="content" type="tns:base64Binary" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="addMailingBindings" qname="operNS:addMailingBindings"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="cmTemplateId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType"
+                       xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+        </operation>
+        <operation name="getCMTemplateForMailing" qname="operNS:getCMTemplateForMailing"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="getCMTemplateForMailingReturn" returnType="rtns:CMTemplate"
+                   xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="removeMailingBindings" qname="operNS:removeMailingBindings"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType"
+                       xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+        </operation>
+        <operation name="getMailingBindingWrapper" qname="operNS:getMailingBindingWrapper"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="getMailingBindingWrapperReturn" returnType="rtns:ArrayOf_xsd_anyType"
+                   xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="">
+            <parameter qname="cmTemplate" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="getMailingBindingArrayWrapper" qname="operNS:getMailingBindingArrayWrapper"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="getMailingBindingArrayWrapperReturn" returnType="rtns:ArrayOf_xsd_anyType"
+                   xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="">
+            <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType"
+                       xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+        </operation>
+        <operation name="getTextVersion" qname="operNS:getTextVersion"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getTextVersionReturn"
+                   returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="">
+            <parameter qname="adminId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="removeTextVersion" qname="operNS:removeTextVersion"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="adminId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="saveTextVersion" qname="operNS:saveTextVersion"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="adminId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="text" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="getMailingWithCmsContent" qname="operNS:getMailingWithCmsContent"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="getMailingWithCmsContentReturn" returnType="rtns:ArrayOf_xsd_anyType"
+                   xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="">
+            <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType"
+                       xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+            <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <parameter name="allowedMethods"
+                   value="getCMTemplates removeTextVersion getMailingWithCmsContent saveTextVersion addMailingBindings updateCMTemplate getCMTemplateForMailing getMailingBindingWrapper deleteCMTemplate getCMTemplatesSortByName createCMTemplate updateContent removeMailingBindings getCMTemplate getMailingBindingArrayWrapper getTextVersion"/>
+
+        <arrayMapping
+                xmlns:ns="http://mock.dataaccess.utils.cms.agnitas.org"
+                qname="ns:ArrayOf_xsd_anyType"
+                type="java:java.lang.Object[]"
+                innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+                encodingStyle=""
+                />
+        <typeMapping
+                xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                qname="ns:CMTemplate"
+                type="java:org.agnitas.cms.webservices.generated.CMTemplate"
+                serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+                deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+                encodingStyle=""
+                />
+    </service>
+
+
+    <service name="RemoteContentModuleTypeManager" provider="java:RPC" style="rpc" use="literal">
+        <parameter name="wsdlTargetNamespace" value="http://mock.dataaccess.utils.cms.agnitas.org"/>
+        <parameter name="wsdlServiceElement" value="RemoteContentModuleTypeManagerService"/>
+        <parameter name="schemaUnqualified"
+                   value="http://xml.apache.org/xml-soap,http://mock.dataaccess.utils.cms.agnitas.org"/>
+        <parameter name="wsdlServicePort" value="RemoteContentModuleTypeManager"/>
+        <parameter name="className" value="org.agnitas.cms.webservices.ContentModuleTypeService"/>
+        <parameter name="wsdlPortType" value="RemoteContentModuleTypeManager"/>
+        <parameter name="typeMappingVersion" value="1.2"/>
+        <operation name="getContentModuleType" qname="operNS:getContentModuleType"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModuleTypeReturn"
+                   returnType="rtns:ContentModuleType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org"
+                   soapAction="">
+            <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="getContentModuleTypes" qname="operNS:getContentModuleTypes"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModuleTypesReturn"
+                   returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnItemQName="item" soapAction="">
+            <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+            <parameter qname="includePublic" type="tns:boolean" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="deleteContentModuleType" qname="operNS:deleteContentModuleType"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="">
+            <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        </operation>
+        <operation name="createContentModuleType" qname="operNS:createContentModuleType"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="createContentModuleTypeReturn" returnType="rtns:int"
+                   xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="">
+            <parameter qname="moduleType" type="tns:ContentModuleType"
+                       xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org"/>
+        </operation>
+        <operation name="updateContentModuleType" qname="operNS:updateContentModuleType"
+                   xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org"
+                   returnQName="updateContentModuleTypeReturn" returnType="rtns:boolean"
+                   xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="">
+            <parameter qname="moduleType" type="tns:ContentModuleType"
+                       xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org"/>
+        </operation>
+        <parameter name="allowedMethods"
+                   value="updateContentModuleType getContentModuleTypes createContentModuleType deleteContentModuleType getContentModuleType"/>
+
+        <typeMapping
+                xmlns:ns="http://mock.dataaccess.utils.cms.agnitas.org"
+                qname="ns:ContentModuleType"
+                type="java:org.agnitas.cms.webservices.generated.ContentModuleType"
+                serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+                deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+                encodingStyle=""
+                />
+        <arrayMapping
+                xmlns:ns="http://mock.dataaccess.utils.cms.agnitas.org"
+                qname="ns:ArrayOf_xsd_anyType"
+                type="java:java.lang.Object[]"
+                innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+                encodingStyle=""
+                />
+    </service>
+
+    <service name="RemoteContentModuleManager" provider="java:RPC" style="rpc" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://mock.dataaccess.utils.cms.agnitas.org"/>
+      <parameter name="wsdlServiceElement" value="RemoteContentModuleManagerService"/>
+      <parameter name="schemaUnqualified" value="http://xml.apache.org/xml-soap,http://mock.dataaccess.utils.cms.agnitas.org,http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      <parameter name="wsdlServicePort" value="RemoteContentModuleManager"/>
+      <parameter name="className" value="org.agnitas.cms.webservices.ContentModuleService"/>
+      <parameter name="wsdlPortType" value="RemoteContentModuleManager"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getContentModule" qname="operNS:getContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModuleReturn" returnType="rtns:ContentModule" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getContentModule" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getContentModules" qname="operNS:getContentModules" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModulesReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getContentModules" >
+        <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteContentModule" qname="operNS:deleteContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="deleteContentModule" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="createContentModule" qname="operNS:createContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="createContentModuleReturn" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="createContentModule" >
+        <parameter qname="contentModule" type="tns:ContentModule" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="updateContentModule" qname="operNS:updateContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="updateContentModuleReturn" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="updateContentModule" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="newName" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="newDescription" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="newCategoryId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getContentModuleContents" qname="operNS:getContentModuleContents" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModuleContentsReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getContentModuleContents" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="saveContentModuleContent" qname="operNS:saveContentModuleContent" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="saveContentModuleContent" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="tag" type="tns:CmsTag" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="removeContentsForContentModule" qname="operNS:removeContentsForContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeContentsForContentModule" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMailingBinding" qname="operNS:getMailingBinding" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getMailingBindingReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getMailingBinding" >
+        <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMailingsByContentModule" qname="operNS:getMailingsByContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getMailingsByContentModuleReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getMailingsByContentModule" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addMailingBindings" qname="operNS:addMailingBindings" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="addMailingBindings" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+      </operation>
+      <operation name="removeMailingBindings" qname="operNS:removeMailingBindings" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeMailingBindings" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="mailingIds" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+      </operation>
+      <operation name="addMailingBindingToContentModules" qname="operNS:addMailingBindingToContentModules" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="addMailingBindingToContentModules" >
+        <parameter qname="contentModuleIds" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+        <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeMailingBindingFromContentModules" qname="operNS:removeMailingBindingFromContentModules" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeMailingBindingFromContentModules" >
+        <parameter qname="contentModuleIds" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+        <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAssignedCMsForMailing" qname="operNS:getAssignedCMsForMailing" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getAssignedCMsForMailingReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getAssignedCMsForMailing" >
+        <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCMLocationsForMailingId" qname="operNS:getCMLocationsForMailingId" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getCMLocationsForMailingIdReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getCMLocationsForMailingId" >
+        <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getContentModulesForMailing" qname="operNS:getContentModulesForMailing" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModulesForMailingReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getContentModulesForMailing" >
+        <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeCMLocationsForMailing" qname="operNS:removeCMLocationsForMailing" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeCMLocationsForMailing" >
+        <parameter qname="mailingId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addCMLocations" qname="operNS:addCMLocations" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="addCMLocations" >
+        <parameter qname="locations" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+      </operation>
+      <operation name="saveContentModuleContentList" qname="operNS:saveContentModuleContentList" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="saveContentModuleContentList" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="tagList" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+      </operation>
+      <operation name="updateCMLocation" qname="operNS:updateCMLocation" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="updateCMLocation" >
+        <parameter qname="location" type="tns:ContentModuleLocation" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="removeCMLocationForMailingsByContentModule" qname="operNS:removeCMLocationForMailingsByContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeCMLocationForMailingsByContentModule" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="mailingsToDeassign" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" itemQName="item"/>
+      </operation>
+      <operation name="createContentModuleCategory" qname="operNS:createContentModuleCategory" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="createContentModuleCategoryReturn" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="createContentModuleCategory" >
+        <parameter qname="category" type="tns:ContentModuleCategory" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="updateContentModuleCategory" qname="operNS:updateContentModuleCategory" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="updateContentModuleCategory" >
+        <parameter qname="category" type="tns:ContentModuleCategory" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="getContentModuleCategory" qname="operNS:getContentModuleCategory" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModuleCategoryReturn" returnType="rtns:ContentModuleCategory" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getContentModuleCategory" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="deleteContentModuleCategory" qname="operNS:deleteContentModuleCategory" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="deleteContentModuleCategory" >
+        <parameter qname="categoryId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllCMCategories" qname="operNS:getAllCMCategories" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getAllCMCategoriesReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getAllCMCategories" >
+        <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getContentModulesForCategory" qname="operNS:getContentModulesForCategory" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getContentModulesForCategoryReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="item" soapAction="getContentModulesForCategory" >
+        <parameter qname="companyId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="categoryId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getMailingsByContentModule getAssignedCMsForMailing deleteContentModuleCategory getCMLocationsForMailingId updateCMLocation getContentModuleCategory getContentModule getMailingBinding getContentModules createContentModuleCategory saveContentModuleContentList addMailingBindingToContentModules getContentModulesForMailing getContentModuleContents removeCMLocationForMailingsByContentModule getAllCMCategories updateContentModuleCategory addMailingBindings saveContentModuleContent createContentModule addCMLocations removeContentsForContentModule updateContentModule removeMailingBindingFromContentModules removeCMLocationsForMailing removeMailingBindings getContentModulesForCategory deleteContentModule"/>
+
+      <typeMapping
+        xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:CmsTag"
+        type="java:org.agnitas.cms.webservices.generated.CmsTag"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:ContentModuleLocation"
+        type="java:org.agnitas.cms.webservices.generated.ContentModuleLocation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:ContentModule"
+        type="java:org.agnitas.cms.webservices.generated.ContentModule"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:ContentModuleCategory"
+        type="java:org.agnitas.cms.webservices.generated.ContentModuleCategory"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+  </service>
+
+<!-- Services from RemoteMediaFileManagerService WSDL service -->
+
+<service name="RemoteMediaFileManager" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://mock.dataaccess.utils.cms.agnitas.org"/>
+      <parameter name="wsdlServiceElement" value="RemoteMediaFileManagerService"/>
+      <parameter name="schemaUnqualified" value="http://xml.apache.org/xml-soap,http://mock.dataaccess.utils.cms.agnitas.org,http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      <parameter name="wsdlServicePort" value="RemoteMediaFileManager"/>
+      <parameter name="className" value="org.agnitas.cms.webservices.MediaFileService"/>
+      <parameter name="wsdlPortType" value="RemoteMediaFileManager"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="createMediaFile" qname="operNS:createMediaFile" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="createMediaFileReturn" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="createMediaFile" >
+        <parameter qname="mediaFile" type="tns:MediaFile" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="getMediaFile" qname="operNS:getMediaFile" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getMediaFileReturn" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getMediaFile" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeMediaFile" qname="operNS:removeMediaFile" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeMediaFile" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeMediaFilesForCMTemplateId" qname="operNS:removeMediaFilesForCMTemplateId" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeMediaFilesForCMTemplateId" >
+        <parameter qname="cmTemplateId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeContentModuleImage" qname="operNS:removeContentModuleImage" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeContentModuleImage" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="mediaName" type="tns:string" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </operation>
+      <operation name="getMediaFilesForContentModule" qname="operNS:getMediaFilesForContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getMediaFilesForContentModuleReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemType="tns2:anyType" xmlns:tns2="http://www.w3.org/2001/XMLSchema" soapAction="getMediaFilesForContentModule" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeMediaFilesForContentModuleId" qname="operNS:removeMediaFilesForContentModuleId" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removeMediaFilesForContentModuleId" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPreviewOfContentModule" qname="operNS:getPreviewOfContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getPreviewOfContentModuleReturn" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getPreviewOfContentModule" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removePreviewOfContentModule" qname="operNS:removePreviewOfContentModule" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removePreviewOfContentModule" >
+        <parameter qname="contentModuleId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPreviewOfContentModuleType" qname="operNS:getPreviewOfContentModuleType" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getPreviewOfContentModuleTypeReturn" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getPreviewOfContentModuleType" >
+        <parameter qname="cmtId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPreviewOfContentModuleTemplate" qname="operNS:getPreviewOfContentModuleTemplate" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getPreviewOfContentModuleTemplateReturn" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getPreviewOfContentModuleTemplate" >
+        <parameter qname="cmTemplateId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removePreviewOfContentModuleType" qname="operNS:removePreviewOfContentModuleType" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removePreviewOfContentModuleType" >
+        <parameter qname="contentModuleTypeId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removePreviewOfContentModuleTemplate" qname="operNS:removePreviewOfContentModuleTemplate" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="removePreviewOfContentModuleTemplate" >
+        <parameter qname="cmTemplateId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateMediaFile" qname="operNS:updateMediaFile" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="updateMediaFile" >
+        <parameter qname="id" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="content" type="tns:base64Binary" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </operation>
+      <operation name="updateMediaFile" qname="operNS:updateMediaFile" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="updateMediaFile" >
+        <parameter qname="mediaFile" type="tns:MediaFile" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="getMediaFilesForContentModuleTemplate" qname="operNS:getMediaFilesForContentModuleTemplate" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getMediaFilesForContentModuleTemplateReturn" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemType="tns2:anyType" xmlns:tns2="http://www.w3.org/2001/XMLSchema" soapAction="getMediaFilesForContentModuleTemplate" >
+        <parameter qname="cmTemplateId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMediaFileForContentModelAndMediaName" qname="operNS:getMediaFileForContentModelAndMediaName" xmlns:operNS="http://mock.dataaccess.utils.cms.agnitas.org" returnQName="getMediaFileForContentModelAndMediaNameReturn" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="getMediaFileForContentModelAndMediaName" >
+        <parameter qname="cmTemplateId" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="mediaName" type="tns:string" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </operation>
+      <parameter name="allowedMethods" value="updateMediaFile getPreviewOfContentModuleType removeMediaFilesForContentModuleId removePreviewOfContentModule createMediaFile getMediaFileForContentModelAndMediaName getPreviewOfContentModule removePreviewOfContentModuleTemplate removeMediaFile removeContentModuleImage getMediaFilesForContentModuleTemplate getMediaFile getMediaFilesForContentModule removePreviewOfContentModuleType removeMediaFilesForCMTemplateId getPreviewOfContentModuleTemplate"/>
+
+      <typeMapping
+        xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:MediaFile"
+        type="java:org.agnitas.cms.webservices.generated.MediaFile"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+    <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+    <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+    <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+
+    <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
+        <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>
+        <parameter name="serviceName" value="SOAPMonitorService"/>
+        <parameter name="namespace" value="http://tempuri.org/wsdl/2001/12/SOAPMonitorService-impl.wsdl"/>
+        <parameter name="portName" value="Demo"/>
+    </handler>
+    <transport name="http">
+        <requestFlow>
+            <handler type="URLMapper"/>
+            <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+
+            <!--comment following line for REMOVING wsdl spying via SOAPMonitor-->
+            <handler type="soapmonitor"/>
+        </requestFlow>
+        <responseFlow>
+            <!--comment following line for REMOVING wsdl spying via SOAPMonitor-->
+            <handler type="soapmonitor"/>
+        </responseFlow>
+        <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+        <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+        <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+        <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+        <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+        <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+    </transport>
+    <transport name="local">
+        <responseFlow>
+            <handler type="LocalResponder"/>
+        </responseFlow>
+    </transport>
+
+</deployment>

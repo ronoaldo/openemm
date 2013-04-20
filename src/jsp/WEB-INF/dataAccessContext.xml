@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the Common Public Attribution
+ * License Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.openemm.org/cpal1.html. The License is based on the Mozilla
+ * Public License Version 1.1 but Sections 14 and 15 have been added to cover
+ * use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+ * the specific language governing rights and limitations under the License.
+ *
+ * The Original Code is OpenEMM.
+ * The Original Developer is the Initial Developer.
+ * The Initial Developer of the Original Code is AGNITAS AG. All portions of
+ * the code written by AGNITAS AG are Copyright (c) 2007 AGNITAS AG. All Rights
+ * Reserved.
+ *
+ * Contributor(s): AGNITAS AG.
+ ********************************************************************************/
+-->
+
+<!--
+  - Application context definition for Agnitas EMM data access layer.
+  - Accessed by business layer objects defined in "applicationContext.xml"
+  -->
+<beans>
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- The placeholders are resolved from jdbc.properties through -->
+	<!-- the PropertyPlaceholderConfigurer in applicationContext.xml -->
+
+	<bean id="dataSource" class="org.agnitas.dao.EnhBasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+                <property name="maxActive" value="${jdbc.maxCount}"/>
+                <property name="maxWait" value="${jdbc.maxWait}"/>
+                <property name="testOnBorrow" value="false"/>
+                <property name="testOnReturn" value="true"/>
+                <property name="connectionProperties">
+                    <props>
+                        <prop key="SetBigStringTryClob">true</prop>
+                    </props>
+                </property>
+	</bean>
+
+        <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+            <property name="dataSource">
+                <ref bean="dataSource"/>
+            </property>
+            <property name="mappingResources">
+                <list>
+                    <value>mappings/target.hbm.xml</value>
+                    <value>mappings/company.hbm.xml</value>
+                    <value>mappings/admin.hbm.xml</value>
+                    <value>mappings/admingroup.hbm.xml</value>
+                    <value>mappings/dynamictag.hbm.xml</value>
+                    <value>mappings/dynamictagcontent.hbm.xml</value>
+                    <value>mappings/mailing.hbm.xml</value>
+                    <value>mappings/mailingcomponent.hbm.xml</value>
+                    <value>mappings/title.hbm.xml</value>
+                    <value>mappings/datasourcedescription.hbm.xml</value>
+                    <value>mappings/userform.hbm.xml</value>
+                    <value>mappings/action.hbm.xml</value>
+                    <value>mappings/mailinglist.hbm.xml</value>
+                    <value>mappings/trackablelink.hbm.xml</value>
+                    <value>mappings/exportpredef.hbm.xml</value>
+                    <value>mappings/mailloop.hbm.xml</value>
+                    <value>mappings/profilefield.hbm.xml</value>
+                </list>
+            </property>
+            <property name="hibernateProperties">
+                <props>
+                    <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+                    <prop key="hibernate.show_sql">true</prop>
+                    <prop key="hibernate.jdbc.use_streams_for_binary">true</prop>
+                </props>
+            </property>
+        </bean>
+
+	<!-- Transaction manager for a single JDBC DataSource -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+</beans>

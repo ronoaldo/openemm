@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Actions &gt; Forms - Recipient management &gt; Forms &gt; Example form: Amend a profile &gt; Creating a new action</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Creating a new action">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_new_action.htm"; }
+  else { parent.quicksync('a8.1.2.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Actions</a> &gt; <a href="forms___recipient_management.htm">Forms - Recipient management</a> &gt; <a href="forms.htm">Forms</a> &gt; <a href="example_form_for_a_user_profil.htm">Example form: Amend a profile</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">Creating a new action</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="example_form_for_a_user_profil.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="example_form_for_a_user_profil.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="creating_a_form_to_display_dat.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>To start, you will create two actions. The first action will call up the customer’s user profile. This is necessary so that user profile data may be called up using defined variables in the script commands. The second action saves the amended data in OpenEMM’s database after the user has sent off the form.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Click on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Actions</span><span class="f_Zahlen"> section and then on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">New action</span><span class="f_Zahlen"> sub-menu.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Select a meaningful </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> in the entry dialog, e.g. </span><span class="f_Zahlen" style="font-style: italic;">Load user data</span><span class="f_Zahlen">. This is important, because is helps you find the corresponding action quickly in the drop-down lists. The same applies to the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Description</span><span class="f_Zahlen"> box.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">The </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Usage</span><span class="f_Zahlen"> drop-down list should be set to </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Only for forms</span><span class="f_Zahlen">. This tells OpenEMM to display that particular action only in drop-down lists relating to forms and not for trackable links. This makes it easier to define new forms and mailings.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">The </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Type</span><span class="f_Zahlen"> drop-down list is used to specify what the action should do. Select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Load recipient-data</span><span class="f_Zahlen"> and click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen">. This tells the system that each time the form is opened, the user’s profile record should be loaded. Data is now available for amendment or processing.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="the_action_loads_a_customer.png" width="932" height="303" border="0" alt="Fig. 8.3: The action loads a customer’s database record."><p style="text-align:center;width:932px"><span class="f_ImageCaption">Fig. 8.3: The action loads a customer’s database record.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Save the action by clicking on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Save</span><span class="f_Zahlen"> button.</span></td></tr></table></div><p>Using the <span style="font-family: 'Tahoma';">Type</span> drop-down list and the <span style="font-family: 'Tahoma';">Add</span> button, the action can be extended by further steps. For the purposes of our example, however, it is enough to load the required data.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">For the second action, create a new action as described above, naming it </span><span class="f_Zahlen" style="font-style: italic;">Save user</span><span class="f_Zahlen">. The exact name is not a problem; all you need to do is select a name that means something to you. The </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Usage</span><span class="f_Zahlen"> drop-down list should be set to </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Only for forms</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Subscribe</span><span class="f_Zahlen"> as the action type. Later, you want to include profile data in the OpenEMM’s database, just like any new subscription.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Save</span><span class="f_Zahlen"> to store your entries.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">There are several options for Subscribing in OpenEMM. Checking </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Use double-opt-in</span><span class="f_Zahlen"> causes OpenEMM to send a confirmation email to the address stored which the recipient must confirm by clicking on a link. Further information and a full example for this feature can be found in chapter "<a href="example_subscribing_with_doubl.htm">Example: Subscribing with double opt-in</a>".</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="several_settings_are_available_to.png" width="937" height="453" border="0" alt="Fig. 8.4: Several settings are available to tell OpenEMM what to do in case of a new subscription."><p style="text-align:center;width:937px"><span class="f_ImageCaption">Fig. 8.4: Several settings are available to tell OpenEMM what to do in case of a new subscription.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">The second option, </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Check for duplicate records</span><span class="f_Zahlen">, checks on new registration whether or not the subscriber already features in the database. When saving amendments to an existing profile, this is only important when a customer enters a new email address. In this case, OpenEMM checks whether or not the address is already registered in the database. If the email address is unchanged, this duplicate check does not take place. You should therefore always check this option.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">6.</span></td><td><span class="f_Zahlen">Since no changes were made, entering settings for the action is now completed.</span></td></tr></table></div><p>Now check the overview for two actions called <span style="font-family: 'Tahoma';">Load user data</span> and <span style="font-family: 'Tahoma';">Save user</span> (unless you selected different names for your actions).</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

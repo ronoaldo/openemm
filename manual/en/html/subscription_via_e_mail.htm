@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Administration - Configuring the system &gt; Bounce-Filter &gt; Subscription via e-mail</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Subscription via e-mail">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?subscription_via_e_mail.htm"; }
+  else { parent.quicksync('a10.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="settings___configuring_the_sys.htm">Administration - Configuring the system</a> &gt; <a href="bounce_filter.htm">Bounce-Filter</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Subscription via e-mail</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="bounce_filter.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="bounce_filter.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="automatic_update_of_openemm.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>The OpenEMM supports not just the subscription on a website (which is the standard way) but also the subscription via email. The person who wants to subscribe can send an email to a pre-defined address, which starts (and documents) the subscription process.</p>
+<p>For security reasons, the subscription via email is always combined with a double-opt-in email. To ensure that it is not possible to subscribe someone else, the subscription has to be confirmed. An email will be sent to the new recipient with a confirmation link that has to be clicked. Only by clicking the confirmation link, the new recipient will be included in the mailing list.</p>
+<p>The setup to offer subscription via email is closely related the setup of a bounce filter.</p>
+<p>Click on <span style="font-family: 'Tahoma';">Administration</span>, <span style="font-family: 'Tahoma';">Bounce filters</span>, <span style="font-family: 'Tahoma';">New bounce filter</span>. Choose a <span style="font-family: 'Tahoma';">Name</span> and <span style="font-family: 'Tahoma';">Description</span> e.g. <span style="font-style: italic;">Subscription via email</span>.</p>
+<p>Activate <span style="font-family: 'Tahoma';">Forward incoming emails</span>. Choose the address for incoming subscriptions per email. OpenEMM has to recognize incoming subscriptions, so please use the same subdomain that is also used for the newsletter, e.g. <span style="font-style: italic;">newsletterabo@newsletter.company.com</span>.</p>
+<div class="p_ImageCaption"><div align="center"><img src="creating_a_subscription_per_email.png" width="938" height="694" border="0" alt="Fig. 11.8: Creating a subscription per e-mail."><p style="text-align:center;width:938px"><span class="f_ImageCaption">Fig. 11.8: Creating a subscription per e-mail.</span></p></div></div>
+<p>Check the box <span style="font-family: 'Tahoma';">Use for subscribe address</span>. Choose the specific mailing list for new recipients.</p>
+<p>Subscription via email will always be a double-opt-in process. For this reasons, a form for a double-opt-in mail is needed, that you choose next. In most cases you can simply choose your previously designed form for subscriptions via your website. The double-opt-in-mail is now activated. Click on <span style="font-family: 'Tahoma';">Save</span>. If necessary you find more information about forms in chapter "<a href="forms___recipient_management.htm">Forms - Recipient management</a>".</p>
+<p>The new bounce filter for registration per email subsequently appears in the overview. The address <span style="font-style: italic;">aml_XX@filter.xx.xx</span> is only relevant to you if you have not entered a forwarding address when setting up. In this case, it would be your email address for registration. Due to its somewhat cryptic appearance, it is in any case advantageous to use a forwarding address instead of this one. In this case, therefore, you can ignore the address given here.</p>
+<p>You can now test the new feature by sending an e-mail to your subscription address. Be sure to write from an address, which is not yet included in the mailing list.</p>
+<div class="p_ImageCaption"><div align="center"><img src="the_bounce-filter_subscription_via.png" width="937" height="207" border="0" alt="Fig. 11.9: The Bounce-Filter Subscription via email is in the overview."><p style="text-align:center;width:937px"><span class="f_ImageCaption">Fig. 11.9: The Bounce-Filter Subscription via email is in the overview.</span></p></div></div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

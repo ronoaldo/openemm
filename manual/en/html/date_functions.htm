@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Target groups - Dynamic filters &gt; Search rule setup &gt; Date functions</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Date functions">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?date_functions.htm"; }
+  else { parent.quicksync('a6.3.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="target_groups___dynamic_filter.htm">Target groups - Dynamic filters</a> &gt; <a href="search_rule_setup.htm">Search rule setup</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Date functions</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="is_and_null_or_not_null.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="search_rule_setup.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="combined_search_rules_with_bra.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>One field in the user profile can be used to store a date. The OpenEMM provides several special functions which use a date. The following example creates a target group for all recipients whose birthday is on a specific day.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">In the navigation bar, select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Target groups</span><span class="f_Zahlen">, then </span><span class="f_Zahlen" style="font-family: 'Tahoma';">New target group</span><span class="f_Zahlen">. To the right, the entry dialog for a new target group is displayed. Fill in the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> and </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Description</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Select the birthday field in the second drop-down list.</span><br>
+<span class="f_Zahlen" style="font-weight: bold;">Please note:</span><span class="f_Zahlen"> This is not a standard field. You must create it yourself (and enter birthdays, of course). You will find more information on user-defined fields in chapter "<a href="extending_recipients_profiles.htm">Extending recipient's profiles</a>". The relational operator should be the “equals” sign.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">For the current date, the OpenEMM supports the special keyword </span><span class="f_Zahlen" style="font-style: italic;">now()</span><span class="f_Zahlen">. When processing the rule, the system replaces the keyword by the current date. Enter </span><span class="f_Zahlen" style="font-style: italic;">now()</span><span class="f_Zahlen"> into the reference value entry field. Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen"> to close the rule.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="the_keyword_now_represents_the.png" width="939" height="495" border="0" alt="Fig. 6.3: The keyword now() represents the current date."><p style="text-align:center;width:939px"><span class="f_ImageCaption">Fig. 6.3: The keyword now() represents the current date.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">A new search rule is displayed under </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Target group definition</span><span class="f_Zahlen">. Behind the reference value (</span><span class="f_Zahlen" style="font-style: italic;">now()</span><span class="f_Zahlen"> in our example) you will see further drop-down lists for the date format . </span><span class="f_Zahlen" style="font-family: 'Tahoma';">YYYYMMDD</span><span class="f_Zahlen"> represents year, month, day. The system compares the whole date including the year. This is not very practical when looking for birthdays, because it is rather improbably that a new-born baby will already be in your database from birth with an email address. You do want to find people on their birthdays, however. You should therefore select the date format </span><span class="f_Zahlen" style="font-family: 'Tahoma';">MMDD</span><span class="f_Zahlen">. This will cause the system to compare the month and day, but not the year.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Save</span><span class="f_Zahlen"> to close the field.</span></td></tr></table></div><p>In the above example a target group of recipients was defined whose birthdays are today. However it sometimes makes sense to create a target group with a comparative value that is not related to the current date but a point in the future or the past. To make this case clearer, there follows an example for a target group of all recipients who were created yesterday in OpenEMM:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">The date on which a recipient profile was created in OpenEMM is stored in the field </span><span class="f_Zahlen" style="font-family: 'Tahoma';">creation_date</span><span class="f_Zahlen">. Select this field in the selection list as in the example above. As comparison operator, again use the equal to character.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">You must know enter an expression that shows OpenEMM that it is not the current date that is being dealt with, but a date in the past, namely one day ago. You do this simply with the expression </span><span class="f_Zahlen" style="font-style: italic;">date_sub(now(), interval 1 day )</span><span class="f_Zahlen">, i.e. current date minus 1. &nbsp;This is again saved by clicking on the button </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Add</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">The next step continues in the same way as for step 4 of the example above.</span></td></tr></table></div><p><span style="font-weight: bold;">Please note:</span> If you want to create a target-group using a date that is further in the past than one day, you have to show it to the OpenEMM by using a slightly different keyword. E.g. two days in the past would be <span style="font-style: italic;">date_sub(now(), interval 2 day )</span>, three days <span style="font-style: italic;">date_sub(now(), interval 3 day )</span> and so on. As you can see, this is a pattern, <span style="font-style: italic;">date_sub(now(), interval&lt;n&gt; day )</span> , where <span style="font-style: italic;">&lt;n&gt;</span> has to be replaced by the number of days. If you are referring to a date that is exactly one day, one week, one month, or one year in the past, another pattern can be used. This is how looks: <span style="font-style: italic;">date_sub(now() , interval &lt;n&gt; &lt;expr&gt; )</span> with the following values to be uses: <span style="font-style: italic;">DAY</span>, <span style="font-style: italic;">WEEK</span>, <span style="font-style: italic;">MONTH</span>, <span style="font-style: italic;">YEAR</span>.</p>
+<p>If you want to refer to a date in the future instead of one in the past, the keywords are quite similar. The only difference is that the syllable <span style="font-style: italic;">sub</span> has to be changed to <span style="font-style: italic;">add</span>. The keyword for tomorrow is for example <span style="font-style: italic;">date_add(now(), interval 1 day )</span>, the expression for 10 days in the future is <span style="font-style: italic;">date_add(now(), interval 10 day )</span>.</p>
+<p>For further information please have a look at the MySQL manual (MySQL is the database OpenEMM uses).</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

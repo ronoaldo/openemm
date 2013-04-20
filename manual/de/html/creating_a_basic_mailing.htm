@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Automatischer Mailing-Versand - ein Beispiel &gt; Basis-Mailing anlegen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Basis-Mailing anlegen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_basic_mailing.htm"; }
+  else { parent.quicksync('a8.4.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="automatic_mailing___an_example.htm">Automatischer Mailing-Versand - ein Beispiel</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Basis-Mailing anlegen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="defining_actions3.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="automatic_mailing___an_example.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="content_manager.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Im letzten Arbeitsschritt gestalten Sie nun das Basis-Mailing. Es ist ein normales Mailing, das aber (mindestens einen) messbaren Link enthält, der die vorhin definierte Aktion auslöst. Dazu sind folgende Arbeitsschritte erforderlich:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Entwerfen Sie wie in Kapitel "<a href="mailings___sending_out_newslet.htm">Mailings - Newsletter versenden</a>" beschrieben ein normales Mailing. Dabei stehen Ihnen sämtliche dort beschriebenen Optionen zur Verfügung.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Nachdem Sie das Mailing mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> erzeugt haben, rufen Sie das Register </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Inhalt</span><span class="f_Zahlen"> auf. In den Text des Mailings fügen Sie eine gültige Web-Adresse als messbaren Link ein. Dazu reicht es bei einer Text-Mail, die Adresse in der Form </span><span class="f_Zahlen" style="font-style: italic;">http://...</span><span class="f_Zahlen"> einzufügen. Achten Sie darauf, dass es sich um eine gültige Web-Adresse handelt, sonst erhalten die Empfänger später beim Anklicken im E-Mail-Programm eine Fehlermeldung im Browser.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="in_den_text_des_mailings_bauen.png" width="938" height="532" border="0" alt="Abb. 8.44: In den Text des Mailings bauen Sie einen Link zum Anklicken ein."><p style="text-align:center;width:938px"><span class="f_ImageCaption">Abb. 8.44: In den Text des Mailings bauen Sie einen Link zum Anklicken ein.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Nachdem Sie den Link eingefügt haben, wechseln Sie zum Register </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Messbare Links</span><span class="f_Zahlen">. Hier ist in der Übersicht der gerade definierte Link aufgeführt. Klicken Sie den Link an, um die Details dazu anzuzeigen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Der Eingabedialog für messbare Links ist einfach aufgebaut: Geben Sie eine knappe </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Beschreibung</span><span class="f_Zahlen"> ein. Die Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Messbar</span><span class="f_Zahlen"> können Sie auf der Einstellung </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Text- und HTML</span><span class="f_Zahlen">-Version belassen. Nur in der unteren Auswahlliste Aktion wählen Sie die im letzten Kapitel definierte Aktion </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Sonder-Mailing Reisen</span><span class="f_Zahlen"> aus.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="verknuepfen_sie_den_link_aus_dem.png" width="934" height="306" border="0" alt="Abb. 8.45: Verknüpfen Sie den Link aus dem Basis-Mailing mit der Aktion."><p style="text-align:center;width:934px"><span class="f_ImageCaption">Abb. 8.45: Verknüpfen Sie den Link aus dem Basis-Mailing mit der Aktion.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Sichern Sie abschließend die Änderungen mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen">. Damit ist das Mailing bereits fertig gestellt und Sie können es wie in Kapitel "<a href="testing_and_sending_a_mailing.htm">Mailing testen und versenden</a>" beschrieben testen und dann versenden.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="so_kommt_das_fertige_basis-mailing.png" width="552" height="438" border="0" alt="Abb. 8.46: So kommt das fertige Basis-Mailing bei den Empfängern Ihres Newsletters an (hier Pegasus Mail)."><p style="text-align:center;width:552px"><span class="f_ImageCaption">Abb. 8.46: So kommt das fertige Basis-Mailing bei den Empfängern Ihres Newsletters an (hier Pegasus Mail).</span></p></div></div>
+<p class="p_ImageCaption"><span class="f_ImageCaption">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

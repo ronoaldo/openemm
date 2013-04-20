@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Verwaltung - Das System konfigurieren &gt; Benutzer &gt; Benutzer anlegen und Passwort ändern</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Benutzer anlegen und Passwort ändern">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_new_user_and_changi.htm"; }
+  else { parent.quicksync('a10.2.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="settings___configuring_the_sys.htm">Verwaltung - Das System konfigurieren</a> &gt; <a href="users.htm">Benutzer</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">Benutzer anlegen und Passwort ändern</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="what_are_users_.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="users.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="assigning_user_rights2.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Für jeden Account erstellen Sie individuelle Benutzer mit spezifischen Benutzerrechten. Jeder Account muss mindestens einen Benutzer haben, der sich anmeldet, wenn der OpenEMM registriert wird (siehe Kapitel "<a href="starting_the_produktname.htm">Aufruf des OpenEMM</a>").</p>
+<p>Den Eingabedialog für neue Benutzer rufen Sie auf zwei Wegen auf:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte"> Direkt aus der Detailansicht des Benutzers mit dem </span><span class="f_Punkte" style="font-family: 'Tahoma';">Neuer Benutzer</span><span class="f_Punkte"> Seitenreiter.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Über die Navigationsleiste und den Unterpunkt </span><span class="f_Punkte" style="font-family: 'Tahoma';">Benutzer</span><span class="f_Punkte"> bei </span><span class="f_Punkte" style="font-family: 'Tahoma';">Verwaltung</span><span class="f_Punkte">. Dann wählen Sie im Inhaltsbereich das Register </span><span class="f_Punkte" style="font-family: 'Tahoma';">Neuer Benutzer</span><span class="f_Punkte"> an.</span></td></tr></table></div><p>Im Eingabedialog füllen Sie die Eingabefelder mit den passenden Daten auf. Bei <span style="font-family: 'Tahoma';">Name</span> tragen Sie Vor- und Nachname des Benutzers und bei <span style="font-family: 'Tahoma';">Firma</span> <span class="f_Comment">den Firmennamen</span> ein. Bei <span style="font-family: 'Tahoma';">E-Mail-Adresse</span> können Sie die Adresse des Benutzers hinterlegen. Der <span style="font-family: 'Tahoma';">Benutzer-Name</span> ist dagegen der Begriff, mit dem sich der Benutzer beim Login des OpenEMM anmeldet. Er sollte keine Leer- oder Sonderzeichen enthalten, Ziffern sind dagegen erlaubt.</p>
+<div class="p_ImageCaption"><div align="center"><img src="zum_mandanten_legen_sie_einen_neuen.png" width="934" height="549" border="0" alt="Abb. 11.&lt;%VER_EIN++%&gt;: Zum Mandanten legen Sie einen neuen Benutzer an."><p style="text-align:center;width:934px"><span class="f_ImageCaption">Abb. 11.&lt;%VER_EIN++%&gt;: Zum Mandanten legen Sie einen neuen Benutzer an.</span></p></div></div>
+<p>Bei <span style="font-family: 'Tahoma';">Passwort</span> tragen Sie das gewünschte Passwort ein. Aus Sicherheitsgründen zeigt der Web-Browser statt der Buchstaben (oder Ziffern) nur Sternchen an. Damit ein Vertippen ausgeschlossen ist, geben Sie das Passwort bei <span style="font-family: 'Tahoma';">Bestätigen</span> erneut ein.</p>
+<p>Außerdem werden folgende Daten über Auswahllisten abgefragt:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">Benutzer-Gruppe</span><span class="f_Punkte">: Folgende Benutzergruppen sind vordefiniert: </span><span class="f_Punkte" style="font-family: 'Tahoma';">Redakteur</span><span class="f_Punkte">, </span><span class="f_Punkte" style="font-family: 'Tahoma';">Techniker</span><span class="f_Punkte">, </span><span class="f_Punkte" style="font-family: 'Tahoma';">Datenverwalter</span><span class="f_Punkte">, </span><span class="f_Punkte" style="font-family: 'Tahoma';">Analytiker</span><span class="f_Punkte">, </span><span class="f_Punkte" style="font-family: 'Tahoma';">Manager</span><span class="f_Punkte">, </span><span class="f_Punkte" style="font-family: 'Tahoma';">Administrator</span><span class="f_Punkte">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">Sprache</span><span class="f_Punkte">: Es kann zwischen der deutschen, englischen, französischen, chinesischen, spanischen, portugiesischen und holländischen Version gewählt werden.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">Zeitzone</span><span class="f_Punkte">: Falls sich der Benutzer in einer anderen Zeitzone befindet, kann diese individuell eingestellt werden.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">Listenlänge:</span><span class="f_Punkte"> In Ihren Benutzerrechten können Sie festlegen, wie viele Datensätze auf einer Seite in Listen dargestellt werden sollen. Dies betrifft Listen wie Empfänger-Übersicht und Mailing-Übersicht.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-family: 'Tahoma';">Mandant</span><span class="f_Punkte">: Hier wird der Benutzerzugang dem jeweiligen Mandanten-Account zugeordnet.</span></td></tr></table></div><p>Haben Sie alle Eingaben gemacht, klicken Sie auf die Schaltfläche <span style="font-family: 'Tahoma';">Anlegen</span>. Sobald der neue Benutzer angelegt ist, zeigt der OpenEMM eine Übersicht über alle bisher im System eingetragenen Benutzer.</p>
+<div class="p_ImageCaption"><div align="center"><img src="alle_benutzer_aller_mandanten_sind_in.png" width="934" height="190" border="0" alt="Abb. 11.2: Alle Benutzer aller Mandanten sind in einer Übersicht zusammengefasst."><p style="text-align:center;width:934px"><span class="f_ImageCaption">Abb. 11.2: Alle Benutzer aller Mandanten sind in einer Übersicht zusammengefasst.</span></p></div></div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

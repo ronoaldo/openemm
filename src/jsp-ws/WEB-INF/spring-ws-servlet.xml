@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd">
+
+	<import resource="spring-ws-common.xml" />
+
+	<!-- Service Request/Response Marshalling -->
+	<oxm:jaxb2-marshaller id="marshaller" contextPath="org.agnitas.emm.springws.jaxb" />
+
+	<bean id="emmservices" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition">
+        <property name="schemaCollection">
+        	<bean class="org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection">
+        		<property name="xsds">
+        			<list>
+        				<value>OpenEmm.xsd</value>
+        			</list>
+        		</property>
+        	</bean>
+        </property>
+        <property name="portTypeName" value="${portTypeName}"/>
+        <property name="locationUri" value="${wsdlLocationUri}"/>
+        <property name="targetNamespace" value="http://agnitas.org/ws/definitions"/>
+    </bean>
+	
+    <import resource="spring-ws-mapping-openemm.xml" />
+
+	<bean id="payloadMapping"
+		class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+		<property name="endpointMap" ref="endpointMap" />
+		<property name="interceptors">
+			<list>
+        		<bean class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor"/>
+        		<ref bean="wsSecurityInterceptor" />
+<!--
+        		<bean id="validatingInterceptor"
+						class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+					<property name="schema" value="OpenEmm.xsd" />
+					<property name="addValidationErrorDetail" value="true" />
+					<property name="validateRequest" value="true" />
+					<property name="validateResponse" value="true" />
+				</bean>
+-->
+        	</list>
+    	</property>
+	</bean>
+    
+</beans>

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Content Manager &gt; CM-Schablonen &gt; CM-Schablonen bearbeiten</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="CM-Schablonen bearbeiten">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?editing_cm_templates.htm"; }
+  else { parent.quicksync('a9.4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="content_manager.htm">Content Manager</a> &gt; <a href="cm_templates.htm">CM-Schablonen</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">CM-Schablonen bearbeiten</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="show_available_cm_templates.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="cm_templates.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="uploading_new_cm_templates.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Jede CM-Schablone können Sie nachträglich bearbeiten und damit jederzeit Ihren Anforderungen anpassen. Eine Liste aller verfügbaren CM-Schablonen rufen Sie auf, indem Sie im Hauptmenü des OpenEMM hintereinander den <span style="font-family: 'Tahoma';">Mailings</span> und <span style="font-family: 'Tahoma';">Content Manager</span> auswählen. Klicken Sie anschließend bei der gewünschten CM-Schablone auf das <span style="font-family: 'Tahoma';">Bearbeiten</span>-Symbol.</p>
+<p>Der OpenEMM stellt die CM-Schablone nun in einem neuen Fenster dar. In der Standardansicht &nbsp;listet der OpenEMM Name und Beschreibung der Schablone auf und stellt sie in einer Voransicht dar. Mit einem Klick auf den Button <span style="font-family: 'Tahoma';">Bearbeiten </span>können Sie den Schablonen-Inhalt anpassen. Über Button <span style="font-family: 'Tahoma';">Mailing zuweisen</span> weisen Sie die CM-Schablone einem Mailing zu. In Kapitel "<a href="using_cm_templates_in_mailings.htm">CM-Schablonen in Mailings einsetzen</a>" lesen Sie, wie das funktioniert.</p>
+<div class="p_ImageCaption"><div align="center"><img src="den_inhalt_jeder_cm-schablone_koennen.png" width="936" height="860" border="0" alt="Abb. 10.17: Den Inhalt jeder CM-Schablone können Sie direkt bearbeiten."><p style="text-align:center;width:936px"><span class="f_ImageCaption">Abb. 10.17: Den Inhalt jeder CM-Schablone können Sie direkt bearbeiten.</span></p></div></div>
+<p>In der Textbox <span style="font-family: 'Tahoma';">Schablonen-Inhalt</span> sehen Sie nun den Inhalt der CM-Schablone und können diesen ganz nach Wunsch anpassen. Direkt unter diesem Eingabefeld können können Sie die Schablone wahlweise auch um Bilder ergänzen oder bestehende Bilder ersetzen.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Bild ändern: Der </span>OpenEMM<span class="f_Punkte"> listet unter dem Eingabefeld mit dem Schablonen-Inhalt sämtliche darin eingebundenen Bilder auf. Um ein bestehendes Bild zu ändern, setzen Sie ein Häkchen bei </span><span class="f_Punkte" style="font-family: 'Tahoma';">Bearbeiten</span><span class="f_Punkte"> und geben Sie anschließend unter </span><span class="f_Punkte" style="font-family: 'Tahoma';">Import</span><span class="f_Punkte"> oder </span><span class="f_Punkte" style="font-family: 'Tahoma';">Externe Grafik-Komponente</span><span class="f_Punkte"> den entsprechenden Pfad an. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Wollen Sie das Bild aus der CM-Schablone entfernen, klicken Sie auf </span><span class="f_Punkte" style="font-family: 'Tahoma';">Löschen</span><span class="f_Punkte">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Bild hinzufügen: Um der CM-Schablone ein neues Bild hinzuzufügen, setzen Sie dafür zunächst ein Häkchen bei </span><span class="f_Punkte" style="font-family: 'Tahoma';">Hinzufügen</span><span class="f_Punkte">, vergeben Sie einen Namen und teilen Sie dem </span>OpenEMM<span class="f_Punkte"> anschließend unter </span><span class="f_Punkte" style="font-family: 'Tahoma';">Import</span><span class="f_Punkte"> oder </span><span class="f_Punkte" style="font-family: 'Tahoma';">Externe Grafik-Komponente</span><span class="f_Punkte"> den entsprechenden Pfad an. Geben Sie im Feld </span><span class="f_Punkte" style="font-family: 'Tahoma';">Name</span><span class="f_Punkte"> den Namen an, den Sie im Quellcode bei dem zugehörigen Tag </span><span class="f_Punkte" style="font-style: italic;">agnIMAGE</span><span class="f_Punkte"> verwendet haben. Vergessen Sie nicht, im Quelltext ein agnIMAGE-Tag mit dem gleichen Namen anzulegen, damit der </span>OpenEMM<span class="f_Punkte"> das neue Bild zuordnen kann. (Wenn das Tag vom </span>OpenEMM<span class="f_Punkte"> bereits in einen Pfad in der Art </span><span class="f_Punkte" style="font-style: italic;">/cms_image?fid=4711</span><span class="f_Punkte"> umgewandelt wurde, überschreiben Sie den Code einfach wieder mit dem agnIMAGE-Tag.)</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="ueber_diese_eingabemaske_aendern_sie_bilder.png" width="936" height="272" border="0" alt="Abb. 10.18: Über diese Eingabemaske ändern Sie Bilder in einer CM-Schablone oder fügen neue Bilder hinzu."><p style="text-align:center;width:936px"><span class="f_ImageCaption">Abb. 10.18: Über diese Eingabemaske ändern Sie Bilder in einer CM-Schablone oder fügen neue Bilder hinzu.</span></p></div></div>
+<p>Mit einem Klick auf <span style="font-family: 'Tahoma';">Speichern</span> übernehmen Sie alle Änderungen an der CM-Schablone.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

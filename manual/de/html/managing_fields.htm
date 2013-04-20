@@ -1,0 +1,219 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Empfänger - Kundendaten pflegen &gt; Importfunktion für Empfängerdaten &gt; Neues Importprofil erstellen &gt; Felder verwalten</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Felder verwalten">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?managing_fields.htm"; }
+  else { parent.quicksync('a4.4.2.5'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Empfänger - Kundendaten pflegen</a> &gt; <a href="import_function_for_recipient_.htm">Importfunktion für Empfängerdaten</a> &gt; <a href="creating_a_new_import_profile.htm">Neues Importprofil erstellen</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Felder verwalten</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="settings_for_e_mail_and_gender.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="creating_a_new_import_profile.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="managing_a_profile__deleting_a.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Mit der Funktion <span style="font-family: 'Tahoma';">Felder verwalten</span> steht Ihnen ein mächtiges Werkzeug zur Verfügung, um den Import von CSV-Dateien noch flexibler zu handhaben.</p>
+<p>Der OpenEMM arbeitet intern mit fest definierten Namen für Datenbank-Spalten wie <span style="font-family: 'Tahoma';">LASTNAME</span>, <span style="font-family: 'Tahoma';">GENDER</span> und <span style="font-family: 'Tahoma';">EMAIL</span>, also Nachname, Geschlecht und E-Mail-Adresse. Allerdings verwenden viele CSV-Dateien andere Bezeichnungen, sodaß es beim Import zu Verwechslungen kommen könnte.</p>
+<p>Ein Beispiel: Die E-Mail-Adressen eines CSV-Files stehen unter der Spaltenüberschrift <span style="font-style: italic;">eMAIL-Adresse</span> statt wie das intern verwendete <span style="font-family: 'Tahoma';">EMAIL</span>. Normalerweise müssten Sie die CSV-Datei nun erst für den Import anpassen, indem Sie den Spaltennamen anpassen. Mit dem OpenEMM geht das jedoch wesentlich komfortabler und einmal konfiguriert sogar vollautomatisch. Um beim Beispiel zu blieben: Über die Funktion <span style="font-family: 'Tahoma';">Felder verwalten</span> weisen Sie das System an, den in der CSV-Datei enthaltenen Spalteneintrag <span style="font-style: italic;">eMAIL-Adresse</span> der Datenbank-Spalte <span style="font-family: 'Tahoma';">EMAIL</span> zuzuordnen.</p>
+<p>Die Funktion <span style="font-family: 'Tahoma';">Felder verwalten</span> bietet Ihnen neben der Felderzuweisung noch weitere praktische Features: Sie können zusätzlich festlegen, ob bestimmte Felder zwingend in einer CSV-Datei vorhanden sein müssen und optional einen Standardwert für leere Felder vergeben.</p>
+<div class="p_ImageCaption"><div align="center"><img src="im_seitenreiter_felder_verwalten_legen_sie.png" width="939" height="493" border="0" alt="Abb. 4.13: Im Seitenreiter Felder verwalten legen Sie für jede Spalte einer CSV-Datei die entsprechende Datenbank-Spalte fest. Eine doppelte Zuordnung wie in diesem Beispiel wird vom System erkannt (siehe Abbildung weiter unten)."><p style="text-align:center;width:939px"><span class="f_ImageCaption">Abb. 4.13: Im Seitenreiter Felder verwalten legen Sie für jede Spalte einer CSV-Datei die entsprechende Datenbank-Spalte fest. Eine doppelte Zuordnung wie in diesem Beispiel wird vom System erkannt (siehe Abbildung weiter unten).</span></p></div></div>
+<p>Tragen Sie in die Eingabemaske <span style="font-family: 'Tahoma';">Neues Feld</span> den Spaltennamen ein, den Sie einer Datenbank-Spalte des OpenEMM zuordnen wollen und bestätigen Sie Ihre Eingabe mit <span style="font-family: 'Tahoma';">Hinzufügen</span>. Das System zeigt den Spaltennamen nun unter <span style="font-family: 'Tahoma';">CSV-Spalte</span> an.</p>
+<p><span style="font-weight: bold;">Tipp:</span> Wenn Sie die genauen Bezeichnungen der Spaltennamen Ihrer CSV-Datei nicht parat haben oder Schreibfehler vermeiden wollen, steht Ihnen dazu im OpenEMM eine praktische und vor allem Zeit sparende Alternative zur Verfügung. Klicken Sie auf die Schaltfläche <span style="font-family: 'Tahoma';">Durchsuchen</span>, teilen Sie dem System den Speicherort Ihrer CSV-Datei mit und bestätigen Sie diesen anschließend mit <span style="font-family: 'Tahoma';">Upload</span>. Der OpenEMM liest daraufhin die Spaltennamen der CSV-Datei aus und fügt sie dem Seitenreiter OpenEMM automatisch hinzu.</p>
+<div class="p_ImageCaption"><div align="center"><img src="die_bezeichnungen_der_csv-spalten_liest.png" width="937" height="478" border="0" alt="Abb. 4.14: Die Bezeichnungen der CSV-Spalten liest das System automatisch ein, wenn Sie den Pfad der passenden CSV-Datei angeben."><p style="text-align:center;width:937px"><span class="f_ImageCaption">Abb. 4.14: Die Bezeichnungen der CSV-Spalten liest das System automatisch ein, wenn Sie den Pfad der passenden CSV-Datei angeben.</span></p></div></div>
+<p>Auf diese Weise können Sie Ihrem Importprofil die Spaltennamen unterschiedlicher CSV-Dateien hinzufügen. Mit einem Klick auf <span style="font-family: 'Tahoma';">Entfernen</span> verwerfen Sie die aktuelle CSV-Datei und teilen dem System über <span style="font-family: 'Tahoma';">Durchsuchen</span> den Speicherort des nächsten CSV-Files mit. Dubletten sind dabei jedoch nicht zugelassen: Sie können nur genau ein CSV-Feld dem gleichen Datenbank-Feld zuordnen.</p>
+<div class="p_ImageCaption"><div align="center"><img src="um_verwechslungen_auszuschliessen_laesst_sich_jedes.png" width="860" height="89" border="0" alt="Abb. 4.15: Um Verwechslungen auszuschließen, lässt sich jedes CSV-Feld nur genau einem Datenbank-Feld zuweisen."><p style="text-align:center;width:860px"><span class="f_ImageCaption">Abb. 4.15: Um Verwechslungen auszuschließen, lässt sich jedes CSV-Feld nur genau einem Datenbank-Feld zuweisen.</span></p></div></div>
+<p>Für jeden Spaltennamen, den Sie dem Importprofil hinzufügen, bietet Ihnen der OpenEMM folgende Optionen an:</p>
+<p><span style="font-family: 'Tahoma';">DB-Spalte</span>: Hier legen Sie fest, welcher Datenbank-Spalte der von Ihnen angegebene Spaltenname zugeordnet werden soll. Wollen Sie die unter dem &nbsp;CSV-Spaltennamen sortierten Daten vom Import ausschließen, verwenden Sie die Standardauswahl <span style="font-family: 'Tahoma';">Spalte nicht importieren</span>. Weitere Optionen sind:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:middle;">
+<th valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Datenbankspalte</span></p>
+</th>
+<th valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Bedeutung</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">Spalte nicht importieren</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Schließt die angebene Spalte vom Import in den OpenEMM aus</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">lastname</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Nachname des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">gender</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Das Geschlecht des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">title</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Titel des Empfängers, zum Beispiel </span><span class="f_TabelleInhalt" style="font-style: italic;">Dr.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">firstname</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Vorname des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">email</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Die E-Mail-Adresse des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="263" style="width:263px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">mailtype</span></p>
+</td>
+<td valign="middle" width="680" style="width:680px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Mail-Typ, den der Empfänger wünscht</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-family: 'Tahoma';">Pflicht</span>: Über diese Einstellung legen Sie fest, ob die CSV-Spalte zwingend in der CSV-Datei vorhanden sein muss. Setzen Sie dazu ein Häkchen beim gewünschten Tabelleneintrag.</p>
+<p><span style="font-family: 'Tahoma';">Standardwert</span>: Soll eine Spalte Ihrer CSV-Datei keine leeren Stellen enthalten, können Sie den entsprechenden Feldern beim Import einen Standardwert vergeben. Ein Beispiel: Die Spalte Newsletter-Format wird der Datenbank-Spalte <span style="font-family: 'Tahoma';">mailtype</span> zugewiesen. Fehlt bei einem Empfänger eine Angabe darüber, soll dieser den Newsletter grundsätzlich im HTML-Format erhalten. In die Eingabemaske <span style="font-family: 'Tahoma';">Standardwert</span> wird deshalb der Wert <span style="font-style: italic;">1</span> eingetragen. Haben Sie ein selbstdefiniertes Feld mit einem Vorgabewert gewählt, wird dieser Wert automatisch angezeigt, kann aber von Ihnen überschrieben oder gelöscht werden.</p>
+<p>Sie können im Dialogfeld <span style="font-family: 'Tahoma';">Felder verwalten</span> beliebige weitere Spaltennamen <span style="font-family: 'Tahoma';">Hinzufügen</span> und bearbeiten. Um ein Element aus der Liste zu löschen, klicken Sie auf das rechts neben jeder Zeile stehende Löschen-Symbol. Mit <span style="font-family: 'Tahoma';">Speichern</span> merkt sich das System Ihre Einstellungen ohne dabei die Eingabemaske zu schließen.</p>
+<p><span style="font-weight: bold;">Bitte beachten Sie:</span> Um die Empfängerdaten erfolgreich importieren zu können, müssen Sie mindestens eine Spalte in der CSV-Datei einer Spalte in der Datenbank zuweisen. Darüber hinaus muss die Schlüsselspalte importiert werden.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

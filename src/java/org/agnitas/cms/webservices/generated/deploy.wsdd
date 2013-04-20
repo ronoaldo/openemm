@@ -1,0 +1,63 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RemoteMediaFileManagerService WSDL service -->
+
+  <service name="RemoteMediaFileManager" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://mock.dataaccess.utils.cms.agnitas.org"/>
+      <parameter name="wsdlServiceElement" value="RemoteMediaFileManagerService"/>
+      <parameter name="schemaQualified" value="http://mock.dataaccess.utils.cms.agnitas.org,http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      <parameter name="wsdlServicePort" value="RemoteMediaFileManager"/>
+      <parameter name="className" value="org.agnitas.cms.webservices.generated.RemoteMediaFileManagerSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="RemoteMediaFileManager"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="createMediaFile" qname="createMediaFile" returnQName="retNS:createMediaFileReturn" xmlns:retNS="http://mock.dataaccess.utils.cms.agnitas.org" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="" >
+        <parameter qname="pns:mediaFile" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:MediaFile" xmlns:tns="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+      </operation>
+      <operation name="getMediaFile" qname="getMediaFile" returnQName="retNS:getMediaFileReturn" xmlns:retNS="http://mock.dataaccess.utils.cms.agnitas.org" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeMediaFilesForCMTemplateId" qname="removeMediaFilesForCMTemplateId" soapAction="" >
+        <parameter qname="pns:cmTemplateId" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeContentModuleImage" qname="removeContentModuleImage" soapAction="" >
+        <parameter qname="pns:contentModuleId" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mediaName" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMediaFilesForContentModule" qname="getMediaFilesForContentModule" returnQName="retNS:getMediaFilesForContentModuleReturn" xmlns:retNS="http://mock.dataaccess.utils.cms.agnitas.org" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://mock.dataaccess.utils.cms.agnitas.org" returnItemQName="tns:item" xmlns:tns="http://mock.dataaccess.utils.cms.agnitas.org" soapAction="" >
+        <parameter qname="pns:contentModuleId1" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeMediaFilesForContentModuleId" qname="removeMediaFilesForContentModuleId" soapAction="" >
+        <parameter qname="pns:contentModuleId2" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPreviewOfContentModule" qname="getPreviewOfContentModule" returnQName="retNS:getPreviewOfContentModuleReturn" xmlns:retNS="http://mock.dataaccess.utils.cms.agnitas.org" returnType="rtns:MediaFile" xmlns:rtns="http://beans.mock.dataaccess.utils.cms.agnitas.org" soapAction="" >
+        <parameter qname="pns:cmId" xmlns:pns="http://mock.dataaccess.utils.cms.agnitas.org" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="removeContentModuleImage removeMediaFilesForContentModuleId getMediaFile getMediaFilesForContentModule createMediaFile getPreviewOfContentModule removeMediaFilesForCMTemplateId"/>
+
+      <typeMapping
+        xmlns:ns="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:MediaFile"
+        type="java:org.agnitas.cms.webservices.generated.MediaFile"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://mock.dataaccess.utils.cms.agnitas.org"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

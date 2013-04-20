@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:apachesoap="http://xml.apache.org/xml-soap"
+                  xmlns:impl="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:intf="http://mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:tns1="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--WSDL created by Apache Axis version: 1.4
+    Built on Apr 22, 2006 (06:55:48 PDT)-->
+    <wsdl:types>
+        <schema targetNamespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://xml.apache.org/xml-soap"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ContentModuleType">
+                <sequence>
+                    <element name="companyId" type="xsd:int"/>
+                    <element name="content" nillable="true" type="xsd:string"/>
+                    <element name="description" nillable="true"
+                             type="xsd:string"/>
+                    <element name="id" type="xsd:int"/>
+                    <element name="isPublic" type="xsd:boolean"/>
+                    <element name="name" nillable="true" type="xsd:string"/>
+                    <element name="readOnly" type="xsd:boolean"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://xml.apache.org/xml-soap"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ArrayOf_xsd_anyType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item"
+                             type="xsd:anyType"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://xml.apache.org/xml-soap"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://beans.mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://mock.dataaccess.utils.cms.agnitas.org"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="Vector">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="item"
+                             type="xsd:anyType"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </wsdl:types>
+
+    <wsdl:message name="createContentModuleTypeResponse">
+
+        <wsdl:part name="createContentModuleTypeReturn" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="deleteContentModuleTypeRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleTypesRequest">
+
+        <wsdl:part name="companyId" type="xsd:int"/>
+
+        <wsdl:part name="includePublic" type="xsd:boolean"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleTypeRequest">
+
+        <wsdl:part name="id" type="xsd:int"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="createContentModuleTypeRequest">
+
+        <wsdl:part name="moduleType" type="tns1:ContentModuleType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleTypesResponse">
+
+        <wsdl:part name="getContentModuleTypesReturn"
+                   type="impl:ArrayOf_xsd_anyType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateContentModuleTypeRequest">
+
+        <wsdl:part name="moduleType" type="tns1:ContentModuleType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="deleteContentModuleTypeResponse">
+
+    </wsdl:message>
+
+    <wsdl:message name="getContentModuleTypeResponse">
+
+        <wsdl:part name="getContentModuleTypeReturn"
+                   type="tns1:ContentModuleType"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="updateContentModuleTypeResponse">
+
+        <wsdl:part name="updateContentModuleTypeReturn" type="xsd:boolean"/>
+
+    </wsdl:message>
+
+    <wsdl:portType name="RemoteContentModuleTypeManager">
+
+        <wsdl:operation name="getContentModuleType" parameterOrder="id">
+
+            <wsdl:input message="impl:getContentModuleTypeRequest"
+                        name="getContentModuleTypeRequest"/>
+
+            <wsdl:output message="impl:getContentModuleTypeResponse"
+                         name="getContentModuleTypeResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModuleTypes"
+                        parameterOrder="companyId includePublic">
+
+            <wsdl:input message="impl:getContentModuleTypesRequest"
+                        name="getContentModuleTypesRequest"/>
+
+            <wsdl:output message="impl:getContentModuleTypesResponse"
+                         name="getContentModuleTypesResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="deleteContentModuleType" parameterOrder="id">
+
+            <wsdl:input message="impl:deleteContentModuleTypeRequest"
+                        name="deleteContentModuleTypeRequest"/>
+
+            <wsdl:output message="impl:deleteContentModuleTypeResponse"
+                         name="deleteContentModuleTypeResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="createContentModuleType"
+                        parameterOrder="moduleType">
+
+            <wsdl:input message="impl:createContentModuleTypeRequest"
+                        name="createContentModuleTypeRequest"/>
+
+            <wsdl:output message="impl:createContentModuleTypeResponse"
+                         name="createContentModuleTypeResponse"/>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateContentModuleType"
+                        parameterOrder="moduleType">
+
+            <wsdl:input message="impl:updateContentModuleTypeRequest"
+                        name="updateContentModuleTypeRequest"/>
+
+            <wsdl:output message="impl:updateContentModuleTypeResponse"
+                         name="updateContentModuleTypeResponse"/>
+
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <wsdl:binding name="RemoteContentModuleTypeManagerSoapBinding"
+                  type="impl:RemoteContentModuleTypeManager">
+
+        <wsdlsoap:binding style="rpc"
+                          transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="getContentModuleType">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getContentModuleTypeRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getContentModuleTypeResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getContentModuleTypes">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="getContentModuleTypesRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="getContentModuleTypesResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="deleteContentModuleType">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="deleteContentModuleTypeRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="deleteContentModuleTypeResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="createContentModuleType">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="createContentModuleTypeRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="createContentModuleTypeResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+        <wsdl:operation name="updateContentModuleType">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="updateContentModuleTypeRequest">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="updateContentModuleTypeResponse">
+
+                <wsdlsoap:body
+                        namespace="http://mock.dataaccess.utils.cms.agnitas.org"
+                        use="literal"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <wsdl:service name="RemoteContentModuleTypeManagerService">
+
+        <wsdl:port binding="impl:RemoteContentModuleTypeManagerSoapBinding"
+                   name="RemoteContentModuleTypeManager">
+
+            <wsdlsoap:address
+                    location="http://localhost:8080/services/org/agnitas/cms/utils/dataaccess/mock/RemoteContentModuleTypeManager"/>
+
+        </wsdl:port>
+
+    </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,5 @@
+<HelpBalloon>
+	<title>Dateiname der CSV-Datei</title>	
+		<content><![CDATA[Das Eingabefeld Dateiname ist f&uuml;r den Dateinamen der CSV-Datei vorgesehen, unter dem sie auf Ihrer Festplatte gespeichert ist. Entweder Sie tragen den Dateinamen samt Pfad von Hand ein (dies kann allerdings oft sehr umst&auml;ndlich sein), oder Sie nutzen die Schaltfl&auml;che Durchsuchen. Ein Mausklick &ouml;ffnet den typischen Dateiauswahldialog von Windows. W&auml;hlen Sie die CSV-Datei aus und best&auml;tigen Sie mit der Schaltfl&auml;che Öffnen. Das Auswahlfenster schließt sich automatisch und im Eingabefeld Dateiname erscheint der Pfad zu der ausgew&auml;hlten Datei auf Ihrem Datentr&auml;ger.]]>	
+	</content>
+</HelpBalloon>

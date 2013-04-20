@@ -1,0 +1,225 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Empfänger - Kundendaten pflegen &gt; Importfunktion für Empfängerdaten &gt; Neues Importprofil erstellen &gt; Behandlung von Dubletten</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Behandlung von Dubletten">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?handling_with_duplicates.htm"; }
+  else { parent.quicksync('a4.4.2.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Empfänger - Kundendaten pflegen</a> &gt; <a href="import_function_for_recipient_.htm">Importfunktion für Empfängerdaten</a> &gt; <a href="creating_a_new_import_profile.htm">Neues Importprofil erstellen</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Behandlung von Dubletten</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="determining_the_process_settin.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="creating_a_new_import_profile.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="settings_for_e_mail_and_gender.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Beim Import neuer Empfänger kann es vorkommen, dass manche Empfänger bereits in der Datenbank des OpenEMM vorhanden sind. Doppelte Empfänger sollten in der Datenbank aber nicht vorhanden sein, sie würden zum Beispiel einen Newsletter zweimal erhalten. Auch die Auswertung von Rückmeldungen bei Marketingaktionen verfälschen solche Karteileichen. Deshalb prüft die Importfunktion auf doppelte Einträge. In der Voreinstellung verhindert die Importfunktion so doppelte E-Mail-Adressen. In Einzelfällen kann es sinnvoll sein, andere Felder des Empfängerprofils für die Dublettenprüfung heranzuziehen. Über mehrere Auswahllisten steuern Sie, wie das System dabei vorgeht.</p>
+<p><span style="font-family: 'Tahoma';">Schlüsselspalte für Dubletten-Erkennung und Aktualisierungen</span>: <span class="f_Import_KeyColumn">Wichtig ist, anhand welchen Kriteriums das System eine Adresse als Doppelgänger einstuft. Beim E-Mail-Versand macht es Sinn, die E-Mail-Adresse als Kriterium zu verwenden. Das ist auch die Standardeinstellung. Damit kann es zwar passieren, dass sich ein Empfänger mit mehreren E-Mail-Adressen anmeldet, solche Doppelmeldungen kann eine Automatik aber nicht entdecken. Diese Einstellung gilt auch für die Aktualisierung von Empfängerprofilen. Die Auswahlliste enthält sämtliche vordefinierten und selbst definierten Felder der Profildatenbank.</span> Sämtliche Auswahlkriterien im Überblick:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:middle;">
+<th valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Schlüsselspalte</span></p>
+</th>
+<th valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Bedeutung</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">creation_date</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Das Datum, an dem der Empfänger in die Datenbank eingetragen wurde</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">customer_id</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Die Kundennummer vergibt der </span>OpenEMM<span class="f_TabelleInhalt"> automatisch für jeden neu angelegten Empfänger. Diese ID ist einmalig im System; ein bestimmter Empfänger ist eindeutig über die </span><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">CUSTOMER_ID</span><span class="f_TabelleInhalt"> zu identifizieren</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">datasource_id</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Kennziffer der Datenquelle, aus der die Empfängerdaten importiert wurden. Beim Einlesen von CSV-Daten über die Importfunktion weist der </span>OpenEMM<span class="f_TabelleInhalt"> automatisch eine ID zu (siehe Kapitel "<a href="import_function_for_recipient_.htm">Importfunktion für Empfängerdaten</a>")</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">email</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Die E-Mail-Adresse des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">firstname</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Vorname des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">gender</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Geschlecht des Empfängers. Der </span>OpenEMM<span class="f_TabelleInhalt"> verwendet Zahlen zur Kennzeichnung des Geschlechts: Eine </span><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt"> steht für männlich, eine </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> steht für weiblich. Mit der Ziffer </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> sind alle Empfänger markiert, bei denen kein Geschlecht festgelegt wurde.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">lastname</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Nachname des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">mailtype</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Mail-Typ, den der Empfänger wünscht. In der CSV-Datei steht dabei eine </span><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt">, </span><span class="f_TabelleInhalt" style="font-style: italic;">txt</span><span class="f_TabelleInhalt"> oder </span><span class="f_TabelleInhalt" style="font-style: italic;">text</span><span class="f_TabelleInhalt"> für Text, eine </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> oder </span><span class="f_TabelleInhalt" style="font-style: italic;">html</span><span class="f_TabelleInhalt"> für HTML und eine </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> für Offline-HTML</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">change_date</span></p>
+</td>
+<td valign="top" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Das letzte Datum, an dem die Daten des Empfängers in die Datenbank geändert wurden.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">title</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Titel des Empfängers, zum Beispiel </span><span class="f_TabelleInhalt" style="font-style: italic;">Dr.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-family: 'Tahoma';">Dublettenabgleich</span>: <span class="f_Import_Duplicates">Über diese Auswahlliste entscheiden Sie, wie der OpenEMM bei der Prüfung nach Dubletten vorgeht.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Mit der Option </span><span class="f_Punkte" style="font-family: 'Tahoma';">Nur innerhalb neuer Daten</span><span class="f_Punkte"> schließen Sie lediglich aus, dass innerhalb der zu importierenden Daten Dubletten vorkommen. Bei Dubletten innerhalb der CSV-Datei wird der erste Eintrag in die Datenbank übernommen. So ist sichergestellt, dass neue Empfänger nur einmal importiert werden, auch wenn sie mehrmals in der CSV-Datei enthalten sind. Diese Prüfung ist im Dublettenabgleich </span><span class="f_Punkte" style="font-family: 'Tahoma';">Komplett</span><span class="f_Punkte"> ebenfalls enthalten.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Die Einstellung </span><span class="f_Punkte" style="font-family: 'Tahoma';">Komplett</span><span class="f_Punkte"> prüft zwei Dinge: Erstens, ob ein neuer Empfänger bereits in der Datenbank eingetragen ist. Und zweitens, ob innerhalb der neuen Empfänger ein Eintrag mehrfach vorkommt. Wie erkannte Dubletten behandelt werden, hängt von Ihrer Wahl unter </span><span class="f_Punkte" style="font-family: 'Tahoma';">Import-Modus</span><span class="f_Punkte"> (Kap. "<a href="determining_the_process_settin.htm">Festlegen der Prozess-Einstellungen</a>") ab. </span><span class="f_Punkte" style="font-family: 'Tahoma';">Nur neue Empfänger hinzufügen</span><span class="f_Punkte"> ignoriert bestehende Empfänger, dass heißt diese werden auch nicht laut den Daten aus der CSV-Datei aktualisiert. Eine zusätzliche Aktualisierung bereits bestehender Empfänger findet statt, wenn Sie den Import-Modus </span><span class="f_Punkte" style="font-family: 'Tahoma';">Neue Empfänger hinzufügen und bestehende aktualisieren</span><span class="f_Punkte"> gewählt haben.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Die Einstellung </span><span class="f_Punkte" style="font-family: 'Tahoma';">Kein Abgleich</span><span class="f_Punkte">: Alle Empfänger werden importiert. Es findet keine Überprüfung auf Dubletten innerhalb der Importdatei statt. Ebenso wird nicht überprüft, ob ein Empfänger bereits in der Datenbank vorhanden ist. Dies kann dazu führen, dass ein Empfänger mit einer E-Mail-Adresse mehrmals in der Datenbank enthalten ist.</span><br>
+<span class="f_Punkte" style="font-weight: bold;">Bitte beachten Sie:</span><span class="f_Punkte"> Die Einstellung </span><span class="f_Punkte" style="font-family: 'Tahoma';">Kein Abgleich</span><span class="f_Punkte"> führt in der Kombination mit dem Modus </span><span class="f_Punkte" style="font-family: 'Tahoma';">Nur bestehende Empfänger aktualisieren</span><span class="f_Punkte"> dazu, dass keine Empfänger importiert werden.</span></td></tr></table></div>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

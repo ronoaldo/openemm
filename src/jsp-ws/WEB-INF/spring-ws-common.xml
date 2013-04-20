@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:annotation-config/>
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:emm-ws.properties</value>
+            </list>
+        </property>
+    </bean>
+	
+	<bean id="wsSecurityInterceptor"
+        class="org.springframework.ws.soap.security.xwss.XwsSecurityInterceptor">
+        <property name="policyConfiguration" value="classpath:securityPolicy.xml"/>
+        <property name="callbackHandlers">
+            <ref bean="springSecurityHandler"/>
+        </property>
+    </bean>
+
+	<bean id="springSecurityHandler" class="org.agnitas.emm.springws.security.SpringDigestPasswordValidationCallbackHandler">
+        <property name="userDetailsService" ref="userDetailsService"/>
+    </bean>
+    
+    <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="usersByUsernameQuery" value="${usersByUsernameQuery}" />
+		<property name="authoritiesByUsernameQuery" value="${authoritiesByUsernameQuery}" />
+	</bean>
+
+    <bean id="objectFactory" class="org.agnitas.emm.springws.jaxb.ObjectFactory" />
+    
+    <bean id="abstractEndpoint" abstract="true">
+		<property name="marshaller" ref="marshaller"></property>
+		<property name="unmarshaller" ref="marshaller"></property>
+    </bean>
+</beans>

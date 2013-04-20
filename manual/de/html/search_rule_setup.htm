@@ -1,0 +1,293 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Zielgruppen - dynamische Filter &gt; Aufbau der Suchregeln</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Aufbau der Suchregeln">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?search_rule_setup.htm"; }
+  else { parent.quicksync('a6.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="target_groups___dynamic_filter.htm">Zielgruppen - dynamische Filter</a>&nbsp;&gt;</p>
+   <p class="p_Heading2"><span class="f_Heading2">Aufbau der Suchregeln</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="creating_and_managing_target_g.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="target_groups___dynamic_filter.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="list_split_using_mod.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Eine Zielgruppe definieren Sie mit Hilfe von Suchregeln. Eine Suchregel besteht aus einem Feldnamen in der Empfängerdatenbank, einem Vergleichsoperator und einem Vergleichswert. Die Suchregel <span style="font-family: 'Tahoma';">GENDER</span> <span style="font-family: 'Tahoma';">=</span> <span style="font-style: italic;">1</span> filtert zum Beispiel alle Empfängerinnen heraus (<span style="font-style: italic;">0</span> = männlich, <span style="font-style: italic;">1</span> = weiblich, <span style="font-style: italic;">2</span> = unbekannt). Wie das funktioniert, lesen Sie ausführlich in Kapitel "<a href="searching_for_fields.htm">Suchen nach Feldern</a>". Die nachfolgende Tabelle listet die erlaubten Vergleichsoperatoren auf:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:middle;">
+<th valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Vergleichsoperator</span></p>
+</th>
+<th valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Bedeutung</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">=</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt ist mit dem Vergleichswert identisch. Als Vergleichswert dürfen Sie eine Zahl oder einen Text angeben.</span><br>
+<span class="f_TabelleInhalt" style="font-weight: bold;">Bitte beachten Sie:</span><span class="f_TabelleInhalt"> Bei der Benutzung des Gleichheitsoperators muss der Vergleichswert dem vorhandenen Feldinhalt exakt entsprechen. Groß- und Kleinschreibung werden aber nicht unterschieden: </span><span class="f_TabelleInhalt" style="font-style: italic;">Axel</span><span class="f_TabelleInhalt"> ist identisch mit </span><span class="f_TabelleInhalt" style="font-style: italic;">axel</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">&lt;&gt;</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Feldinhalt und Vergleichswert sind verschieden (ungleich). Als Vergleichswert dürfen Sie eine Zahl oder einen Text angeben.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">&gt;</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt ist größer als der Vergleichswert. Als Vergleichswert dürfen Sie eine Zahl oder einen Text angeben. Bei Text gilt die alphabetische Reihenfolge, </span><span class="f_TabelleInhalt" style="font-style: italic;">b</span><span class="f_TabelleInhalt"> ist also größer als </span><span class="f_TabelleInhalt" style="font-style: italic;">a</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">&lt;</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt ist kleiner als der Vergleichswert. Als Vergleichswert dürfen Sie eine Zahl oder einen Text angeben. Bei Text gilt die alphabetische Reihenfolge, </span><span class="f_TabelleInhalt" style="font-style: italic;">a</span><span class="f_TabelleInhalt"> ist also kleiner als </span><span class="f_TabelleInhalt" style="font-style: italic;">b</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">MOD</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Modulo-Operator, Erklärung siehe Kapitel "<a href="list_split_using_mod.htm">List-Splits mit MOD</a>"</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">IS</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Inhaltsprüfung, Erklärung siehe Kapitel "<a href="is_and_null_or_not_null.htm">IS und NULL oder NOT NULL</a>"</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">LIKE</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt entspricht einem Vergleichstext mit Wildcards (siehe Kapitel "<a href="drop_down_list_for_relational_.htm">Auswahlliste für Vergleichsoperatoren</a>").</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">NOT LIKE</span></p>
+</td>
+<td valign="middle" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt entspricht nicht dem Vergleichstext mit Wildcards (siehe Kapitel "<a href="drop_down_list_for_relational_.htm">Auswahlliste für Vergleichsoperatoren</a>").</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">&lt;=</span></p>
+</td>
+<td valign="top" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt ist kleiner als der Vergleichswert oder gleich. Als Vergleichswert dürfen Sie eine Zahl oder einen Text angeben. Bei Text gilt die alphabetische Reihenfolge, </span><span class="f_TabelleInhalt" style="font-style: italic;">b</span><span class="f_TabelleInhalt"> ist also größer als </span><span class="f_TabelleInhalt" style="font-style: italic;">a</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="235" style="width:235px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">&gt;=</span></p>
+</td>
+<td valign="top" width="708" style="width:708px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Feldinhalt ist größer als der Vergleichswert oder gleich. Als Vergleichswert dürfen Sie eine Zahl oder einen Text angeben. Bei Text gilt die alphabetische Reihenfolge, </span><span class="f_TabelleInhalt" style="font-style: italic;">a</span><span class="f_TabelleInhalt"> ist also kleiner als </span><span class="f_TabelleInhalt" style="font-style: italic;">b</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>Der OpenEMM verwendet eine Reihe vordefinierter Felder für die Empfängerdatenbank. Auf diese internen Felder und selbst definierten Felder (siehe Kapitel "<a href="extending_recipients_profiles.htm">Empfängerprofil erweitern</a>") greifen Sie in einer Suchregel zu. Die folgende Tabelle listet alle internen Felder auf, die bei Suchregeln in Zielgruppen erlaubt sind.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:middle;">
+<th valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Internes Feld</span></p>
+</th>
+<th valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Bedeutung</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">CREATION_DATE</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Das Datum, an dem der Empfänger in die Datenbank eingetragen wurde.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">CUSTOMER_ID</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Die Kundennummer vergibt der OpenEMM automatisch für jeden neu angelegten Empfänger. Diese ID ist einmalig im System; ein bestimmter Empfänger ist eindeutig über die CUSTOMER_ID zu identifizieren.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">DATASOURCE_ID</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Kennziffer der Datenquelle, aus der die Empfängerdaten importiert wurden. Beim Einlesen von CSV-Daten über die Importfunktion weist der OpenEMM jedem Empfängerprofil automatisch eine ID zu (siehe Kapitel "<a href="import_function_for_recipient_.htm">Importfunktion für Empfängerdaten</a>").</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">EMAIL</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">E-Mail-Adresse des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">FIRSTNAME</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Vorname des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">GENDER</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Geschlecht des Empfängers. Der OpenEMM verwendet Zahlen zur Kennzeichnung des Geschlechts: Eine </span><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt"> steht für männlich, eine </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> steht für weiblich. Mit der Ziffer </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> sind alle Empfänger markiert, bei denen kein Geschlecht festgelegt wurde.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">LASTNAME</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Nachname des Empfängers</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">MAILTYPE</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Der Mail-Typ, den der Empfänger wünscht. Eine </span><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt"> steht für Text, eine </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> für HTML, eine </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> für Offline-HTML.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">CHANGE_DATE</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Das Datum der letzten Änderung am Empfängerprofil.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="200" style="width:200px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">TITLE</span></p>
+</td>
+<td valign="middle" width="743" style="width:743px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Titel des Empfängers (</span><span class="f_TabelleInhalt" style="font-style: italic;">Dr.</span><span class="f_TabelleInhalt"> etc.)</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

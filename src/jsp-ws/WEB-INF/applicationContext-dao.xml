@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="BindingEntryDao" class="org.agnitas.dao.impl.BindingEntryDaoImpl" />
+
+    <bean id="BindingEntry" class="org.agnitas.beans.impl.BindingEntryImpl" scope="prototype">
+        <property name="bindingEntryDao" ref="BindingEntryDao" />
+    </bean>
+
+	<bean id="BlacklistDao" class="org.agnitas.dao.impl.BlacklistDaoImpl">
+    	<property name="dataSource" ref="dataSource"/>
+    </bean>
+	
+	<bean id="CompanyDao" class="org.agnitas.dao.impl.CompanyDaoImpl" />
+
+	<bean id="DynamicTag" class="org.agnitas.beans.impl.DynamicTagImpl" scope="prototype">
+        <property name="dynContent">
+            <map></map>
+        </property>
+    </bean>
+    
+    <bean id="DynamicTagContent" class="org.agnitas.beans.impl.DynamicTagContentImpl" scope="prototype" />
+
+	<bean id="DynamicTagContentDao" class="org.agnitas.dao.impl.DynamicTagContentDaoImpl">
+    	<property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="DynamicTagDao" class="org.agnitas.dao.impl.DynamicTagDaoImpl"/>
+	
+    <bean id="MailingDao" class="org.agnitas.dao.impl.MailingDaoImpl">
+    	<property name="dataSource" ref="dataSource"/>
+    </bean>
+
+	<bean id="Mailing" class="org.agnitas.beans.impl.MailingImpl" scope="prototype">
+        <property name="components">
+            <map>
+            </map>
+        </property>
+        <property name="dynTags">
+            <map></map>
+        </property>
+        <property name="mediatypes">
+            <map></map>
+        </property>
+        <property name="trackableLinks">
+            <map></map>
+        </property>
+        <property name="maildropStatus">
+            <set></set>
+        </property>
+    </bean>
+    
+    <bean id="MailingComponent" class="org.agnitas.beans.impl.MailingComponentImpl" scope="prototype" />
+    
+    <bean id="MailingComponentDao" class="org.agnitas.dao.impl.MailingComponentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="MailinglistDao" class="org.agnitas.dao.impl.MailinglistDaoImpl"/>
+	
+	<bean id="MaildropEntryFactory" class="org.agnitas.mailing.beans.impl.MailDropEntryFactoryImpl" />
+
+	<bean id="Mediatype" class="org.agnitas.beans.impl.MediatypeImpl" scope="prototype" />
+
+	<bean id="MediatypeEmail" class="org.agnitas.beans.impl.MediatypeEmailImpl" scope="prototype" />
+	
+    <bean id="ProfileFieldDao" class="org.agnitas.dao.impl.ProfileFieldDaoImpl">
+    	<property name="dataSource" ref="dataSource" />
+    	<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+	 
+	<bean id="Recipient" class="org.agnitas.beans.impl.RecipientImpl" scope="prototype">
+<!--        <property name="recipientDao" ref="RecipientDao" />-->
+<!--        <property name="bindingEntryFactory" ref="BindingEntryFactory" />-->
+<!--        <property name="recipientFactory" ref="RecipientFactory" />-->
+        <property name="columnInfoService" ref="ColumnInfoService" />
+    </bean>
+	
+    <bean id="RecipientDao" class="org.agnitas.dao.impl.RecipientDaoImpl" />
+    
+    <bean id="TargetDao" class="org.agnitas.dao.impl.TargetDaoImpl">
+    	<property name="dataSource" ref="dataSource" />
+    	<property name="sessionFactory" ref="sessionFactory" />
+    	<property name="targetFactory" ref="targetFactory" />
+    </bean>
+    
+   	<bean id="targetFactory" class="org.agnitas.target.impl.TargetFactoryImpl">
+        <property name="targetRepresentationFactory" ref="TargetRepresentationFactory" />
+    </bean>
+    
+    <bean id="TargetRepresentationFactory" class="org.agnitas.target.impl.TargetRepresentationFactoryImpl" />
+    
+    <bean id="TagDetails" class="org.agnitas.beans.impl.TagDetailsImpl" scope="prototype" />
+    
+    <bean id="TrackableLink" class="org.agnitas.beans.impl.TrackableLinkImpl" scope="prototype" />
+	 
+</beans>

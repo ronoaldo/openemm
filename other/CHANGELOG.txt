@@ -1,0 +1,410 @@
+OpenEMM 2013 (8.10.380.hf13.0.066)
+2013-01-22
+
+New features in release 2013
+----------------------------
+Usability:
+- context sensitive help pages
+- clicking on user name in upper left corner opens dialog box to change user settings
+- easier editing of target groups
+- parameters of OpenEMM forms are handled case-insensitively - no more need for capital letters
+- several minor changes to improve the usability of OpenEMM's GUI
+
+Mailings:
+- default actions for mail openings and link clicks
+- bulk-update / bulk upload for HTML image components
+- non-trackable links can not accidentally be appended with actions
+- link checker only on demand (separate button)
+- new dynamic templates type applies changes of template to depending mailings automatically
+- improved heatmap statistics (clickmap)
+- new tags agnFORM, agnPROFILE and agnUNSUBSCRIBE to create form links, profile links and unsubscribe links
+- minor configuration improvements for FCKeditor:
+  - if FCKeditor is called for templates or mailings without templates, tags HTML, HEAD, TITLE are either preserved or added
+  - update to last version of FCKeditor 2.x
+
+Recipients:
+- up to 8 user defined columns in recipient list
+- email address search uses LIKE by default
+- new option to delete all recipients of a certain mailing list
+- recipient view got a delete button
+- search handles email, first name and last name case-insensitively
+- export wizard allows export of unbound recipients (new checkbox "no mailinglist")
+- export wizard allows filtering by change_date or creation_date of customer data or by timestamp of bindings to mailinglists
+- maximum number of recipients for recipient list to limit DB load
+  - company_tbl.max_recipients, property "maxRecipients", default: 10,000
+- new date format "dd.MM.yyyy HH:mm:ss" for import wizard
+
+Forms:
+- possibility to define target URLs instead of a success and error form
+
+Actions:
+- list of actions shows names of linked forms on mouse-over
+- error messages and logging (3 log levels) for action scripts to simplify debugging
+
+Administration:
+- plugin manager to install, activate, deactivate and remove plugins which extend functionality of OpenEMM
+- new selection for user activity log to show only logins/logouts or to show everything but logins/logouts
+
+Backend:
+- multi-mailqueue backend to boost mail output
+- new WS-API 2.0 with 42 webservice methods
+- support of external filters for sendmail emulation
+- mailings triggered by webservices are generated not instantly but 3 hours before sending to allow cancelation up to that point in time
+
+Plugins:
+- plugin to export mailing statistics as CSV file
+- Javadoc documentation for DAO and Action classes to ease their use by plugins
+
+Security:
+- better detection of HTML tag injection
+- some security improvements to better prevent session hijacking and SQL injections
+
+Other:
+- new format types 6, 7 and 8 for tag agnDATE
+- new permission "settings.open" to expand all collapsed boxes
+  -> INSERT INTO `admin_group_permission_tbl` (`admin_group_id`, `security_token`) VALUES (4, 'settings.open');
+- new permission "mailing.linkcheck.deactivate" to remove button to activate link checker
+  -> INSERT INTO `admin_group_permission_tbl` (`admin_group_id`, `security_token`) VALUES (4, 'mailing.linkcheck.deactivate');
+- obsolete database tables customer_1_tbl_seq, customer_import_status_tbl, customer_import_errors_tbl, emm_layout_tbl and log_tbl removed from database
+- new Spanish translation of GUI (contributor: Mario Mokarram)
+- logging of OpenEMM form parameters in system log
+
+
+Bugfixes in release 2013
+------------------------
+GUI:
+- user name in upper left corner is always "Agnitas admin"
+- correct target page for some cancel buttons
+
+Mailings:
+- integrating images in HTML editor works for IE9 too
+- preview 1280x1024 now shows horizontal scrollbar
+
+CMS:
+- empty lines and spaces are no longer added at the end of text areas in content modules
+- wrong use of some tags in CMS is now detected and leads to error message
+
+Recipients:
+- error message by import wizard if email address is longer than the database field
+
+Statistics
+- download of hardbounce file works even if bounces addresses contain very special characters
+
+Backend:
+- after restart of OpenEMM unfinished mailings are detected properly to send out the remaining mails
+- webservice method updateCustomer no longer overwrites datasource ID
+
+Other:
+- Tomcat encodes form parameters in links as UTF-8 (instead of using default encoding ISO-8859-1)
+- prevent Tomcat from double deployment of OpenEMM
+
+
+
+New features in release 2011
+----------------------------
+GUI
+- all-new graphical user interface with lots of usability improvements
+- table-less HTML layout based on DIV containers and CSS for easy layout modifications
+- bulk delete functionality for many lists
+- Italian translation (contributor: Alessandro Castrucci of Iamboo)
+- update of Portuguese (Brazilian) translation (contributor: Jorge Quintao of NetSol Ltda)
+
+Mailings
+- usability of editing CM template based mailings has been improved
+- content of text version for CM template based mailings can be edited in content tab
+- validator for correct use of AGN tags in templates and mailing content ("tag inspector")
+- sending of attachments can be limited to target groups
+- validator for mailing links ("link checker")
+- support of Japanese character set ISO-2022-JP
+- new field "description" for components like images
+
+CMS
+- possibility to create custom categories, to sort content modules into
+- charset selector for upload of CM templates
+- editor for CM templates
+- content modules editable with HTML editor
+- content modules accept mailto links for placeholders defined by tag agnLINK in the underlying content module type
+- general speed up due to various performance improvements
+
+Recipients
+- introduced fine-grained set of permissions for import wizard
+- import profile allows mapping of more than one phrase to each gender value (like "Sir, Mr")
+- auto-mapping of CSV file columns to database columns is case-insensitive
+- import wizard displays status bar to indicate progress of import
+- when an error occurs during import of a CSV file the error message indicates the number of the line in the file
+- import offers download of files with duplicates in last step and indicates whether duplicates occured in file or database
+- the final report of the import wizard can be downloaded as file
+
+Target Groups
+- target group table shows creation and change date of each target group to ease their administration
+
+Actions
+- new script action "findLastNewsletter" accepts mailinglistID as parameter
+
+Settings
+- new admin log shows activities of all OpenEMM users and user log shows all own activities
+
+Other
+- web container Resin replaced by Tomcat
+- removed obsolete logging in log_tbl
+
+
+Bugfixes in Release 2011
+------------------------
+GUI
+- finetuning of layout and button positions
+
+Mailings
+- nice warning message when trying to send a mailing to a deleted target group
+- Attachments are no longer replaced with emtpy files of the same name.
+
+CMS
+- Preview of CM type and content module thumbnails works again
+- Warning when you try to create a content module without defining a module type first
+
+Campaigns
+- selection of target group is no longer ignored in campaign statistics
+
+Recipients
+- Detail page of recipients is able to show status "waiting for Double-opt-in confirmation"
+- Detail page of recipient shows blacklist status is recipient is blacklisted
+- clean-up of permissions to select import modes in import profiles
+
+Target Groups
+- length of SQL statement created internally from target group expression is checked to prevent database overflow
+
+Statistics
+- After sending out a mailing the status of how many mails have been sent is updated
+- List of hard bounces can be downloaded
+
+Settings
+- New profile fields of all types possible
+- Page to create or add new bounce filters works again
+- online update uses new layout too (with next update)
+
+Backend
+- after sending out a mailing you get no more notification mails from OpenEMM mentioning problems with sender address
+
+Database
+- custom database fields named like keywords of MySQL are no longer permitted to prevent corrupt SQL statements
+
+
+
+New features in Release 6.2
+---------------------------
+Mailings
+- when editing a CM-template based mailing the right bar shows only removed content modules to speed up performance
+- global setting of follow-up action for link clicks
+- speed of mailing delivery can be trottled with parameters blocksize and stepping
+- property attachment.maxSize in file emm.properties defines maximum size of email attachments
+
+CMS
+- list of CM templates for mailing assignment shows mailing descriptions instead of mailing IDs
+
+Other
+- online update preserves old settings in emm.properties and cms.properties
+- improved speed of database
+
+
+Bugfixes in Release 6.2
+-----------------------
+Mailings
+- Mailing wizard does not create an exception after step 2
+- save button for content is no longer missing after mailing was sent but content can not be changed
+- Mailing can now be archived after being sent
+- Image browser of FCK editor works with Internet Explorer (contributor: inteco)
+
+Recipients
+- after deleting the content of a custom field in a recipient profile the content is no longer reset to its default value
+- setting a filter in the recipient overview and clicking on "Update" instead of "Add" does not result in a misleading error message
+- Import wizard no longer shows a mailinglist error even if the real cause for the error is different
+- Import digests backslash characters in data fields
+
+Target groups
+- empty target groups are no longer storable and do not lead to error when selected in recipient list
+
+CMS
+- Assigning of a content module to more than one mailing at the same time works flawlessly now
+
+
+
+New features in Release 6.1
+---------------------------
+GUI
+- some optical improvements for left navigation, buttons and messages
+
+Recipients
+- checkbox in import profile to define handling of multiple duplicates
+- improved speed of import process
+- maillists in import view sorted alphabetically
+- entries in dropdown box of DB field mapping for import profiles sorted alphabetically
+
+Target groups
+- deleted target groups used by a mailing are listed as deleted, preview of mailing works, sending does not
+- target group statistic now shows users bound to no mailing list too
+
+
+Bugfixes in Release 6.1
+-----------------------
+Mailings
+- images in CM template based mailings are replaced reliably
+- CM template based mailings can be copied without being converted to classic mailings
+- Actions bound to links in CM template based mailings are no longer lost after sending
+- Status in tab "Send Mailing" is updated after admin mail is sent
+- offline HTML for CM template based mailings works
+- send time is calculated and displayed correctly for all time zones
+
+Recipients
+- import sequence is changed to prevent imported data despite skipping the process before selecting a maillist
+- gender field must not be mapped for import profile in import wizard
+- gender mapping based on custom values defined in import profile works for new recipients
+- bindings of existing recipients remain unchanged in import mode "add only"
+- characters ' and ` in import files can no longer cause exceptions
+- when email is used as key field for duplicate check in import profile content is handled case insensitively
+- import considers custom fields of type numeric and date no longer as mandatory even if the don't are
+
+Statistics
+- Recipient statistic shows unduplicated recipients instead of number of bindings
+
+CMS
+- a replaced image in a content module is now always replaced in the sent mailing
+- Actions bound to links in CM template based mailings are not lost after sending
+
+
+
+New features in Release 6.0.1
+-----------------------------
+Recipients
+- new selection option "Waiting for user confirmation" (Double opt-in)
+
+Statistics
+- statistic for opened mailings shows when mailing was opened for the first time, not last time
+
+
+Bugfixes in Release 6.0.1
+-------------------------
+Usability
+- sort icon for table columns does not overlap with column head caption in Firefox
+
+Mailings
+- tab "trackable links" in mailing menu lists all links of the mailing in any case
+
+Recipients
+- Import works when key column defined in import profile does not exist in import file
+
+Forms
+- forms will be prefilled correctly with existing user data from database
+- no exception after existing form has been deleted
+
+Backend
+- Mail generation recovery works even if process takes longer
+
+Database
+- CMS demo database is accessible from OpenEMM by default
+
+
+
+New features in Release 6.0
+---------------------------
+Usability
+- several lists with slideable column width
+- visual confirmation for lots of operations
+- context sensitive online help for wizards
+- French translation of online help (contributor: Jaques Gripekoven of Dmoon)
+- button render servlet supports UTF8 character sets
+
+Mailings
+- mailing list table allow adjustable list size
+- tracking pixel to detect opened HTML mails is set by default
+- content block names starting with numbers are sorted by numbers in content tab
+- click statistics embedded in HTML mails (heatmap)
+
+Recipients
+- new and improved import wizard with profile management
+- new import wizard accepts mailtypes "txt", "text" and "html"
+- new import wizard shows default values for customer fields
+- import mode "add only" requires selection of mail list
+
+Target groups
+- operators '<=' and '>=' added (sponsor: lokalisten media gmbh)
+
+Actions
+- new action "Send service email" to send single mails
+
+Statistics
+- mailing statistics tables allow adjustable list size
+
+Content manager
+- new content management module using CM templates, module types and content modules
+
+Webservices
+- new methods to create and delete mailing lists (contributor: Robert Kromkamp)
+
+Backend
+- if OpenEMM crashes during generation of a mailing, the mailing is recovered after restart of OpenEMM
+- database settings changeable via emm.properties
+- added rule in bav.rule for Exim4 on Debian (contributor: Martin Kálen)
+
+Security
+- limitation for failed logins + temporary lock out
+
+Other
+- language support for "Chinese simplified" (contributor: Geraldine Lin)
+- stale pending subscribers can be cleaned from DB automatically
+- cleaned and documented configuration file emm.properties
+- online update shows content of UPDATE.txt after upgrade
+
+
+Bugfixes in Release 6.0
+-----------------------
+Mailings
+- mailing wizard can be started with MS Internet Explorer
+- Send time is displayed correctly if hours or minutes < 10
+- mailtrack data for action based mail are written to DB in any case
+- list of trackable links is automatically cleaned from obsolete links
+- target group can be assigned in step 7 of mailing wizard
+- more than one content module can be assigned to a CM template based mailing at the same time
+
+Recipients
+- Recipient filter is no longer lost on pages > 1 of multi page results
+- after an import new recipients can still be entered via "New recipient"
+- new import wizard writes creation date for new recipients
+- new import wizard saves missing gender as unknown instead of male
+- new import wizard evaluates properties recipient.maxRows and import.maxRows
+
+Target groups
+- date algebra for target groups now supports date_add() and date_sub()
+- view of already saved target group shows correct operators now
+
+Statistics
+- detail statistic page for opened mails shows correct domain names in any case
+
+Settings (Source: SourceForge, BugID: 2888657)
+- blacklist permission is enabled by default
+- Profile fields of type date accept default values now (format: YYYY-MM-DD)
+
+Webservices
+- method newEmailMailingWithReply initializes template correctly
+- method insertContent no longer generates Exception
+- revised EmmCreateWSDL.cmd to better find Java installation
+- template is not reset when a new mailing using this template is created via webservices
+- method newEmailMailing no longer deletes emailSender or mailinglistID parameter (contributor: Martin Kalén)
+- method updateSubscriber accepts null values like method addSubscriber (contributor: Martin Kalén)
+- lower case date parameters are accepted in webservice methods now (contributor: Robert Kromkamp)
+
+Backend
+- authentication over SMTP no longer fails on server which rely on strict protocol sequence (contributor: Martin Kalén)
+- bounce address validator bav supports IPv6
+- property jdbc.url in emm.properties will not be overwritten (Windows version only)
+
+Database
+- custom fields of type date can be filled by forms
+- temporary tables (TMP_CRT_*) will be deleted from database reliably
+- Umlauts in subscription and profile forms are not converted to HTML entities
+
+Other
+- no error messages when navigating menu items templates and recipients with limited user rights
+- improved Windows install script to find latest MySQL installation (contributor: Martin Kalén)
+
+
+If you find bugs, please report them by email to bugs@openemm.org. Make sure to include a detailed bug description, the name and version of your linux distribution and the version of your copy of OpenEMM.

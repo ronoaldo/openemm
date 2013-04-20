@@ -1,0 +1,225 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Recipients - Managing customer data &gt; Import function for recipient data &gt; Creating a new import profile &gt; Handling with duplicates</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Handling with duplicates">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?handling_with_duplicates.htm"; }
+  else { parent.quicksync('a4.4.2.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="recipients___managing_customer.htm">Recipients - Managing customer data</a> &gt; <a href="import_function_for_recipient_.htm">Import function for recipient data</a> &gt; <a href="creating_a_new_import_profile.htm">Creating a new import profile</a>&nbsp;&gt;</p>
+   <p class="p_Heading4"><span class="f_Heading4">Handling with duplicates</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="determining_the_process_settin.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="creating_a_new_import_profile.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="settings_for_e_mail_and_gender.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>When importing new recipients, it is possible that some are already in the OpenEMM database. The database, however, should not contain a duplicate of a recipient, since that recipient would, for example, receive a newsletter twice. These ‘dead’ entries also falsify the evaluation of responses to marketing campaigns. The import system therefore checks for duplicate entries. As preset, the import function prevents duplicate e-mail addresses. In individual cases it may make sense to use other recipient profile fields to check for duplicates. You can control how the system carries this out through several selection lists.</p>
+<p><span style="font-family: 'Tahoma';">Key-Column for Duplicate-Check and Updates</span>: <span class="f_Import_KeyColumn">It is important to understand which criteria the system uses to classify an address as a duplicate. When sending e-mails, it makes sense to use the e-mail address as a criterion. That is also the standard setting. It is possible that a recipient registers with multiple e-mail addresses, but these kinds of double registration cannot be discovered automatically. This setting also applies to the updating of recipients profiles. The selection list contains all predefined and self-defined fields of the profile database. All selection criteria at a glance:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 19px 0px;"><table width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:middle;">
+<th valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Key column</span></p>
+</th>
+<th valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleUeberschrift"><span class="f_TabelleUeberschrift">Meaning</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">creation_date</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The date on which the recipient was entered into the database.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">customer_id</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">OpenEMM automatically assigns a customer number for each newly created recipient. This ID is unique in the system; a specific recipient can be uniquely identified via the </span><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">CUSTOMER_ID</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">datasource_id</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">Code number of the data source from which the recipient data was imported When importing CSV data using the import function, OpenEMM automatically assigns an ID (see chapter "<a href="import_function_for_recipient_.htm">Import function for recipient data</a>").</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">email</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The e-mail address of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">firstname</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The forename of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">gender</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The gender of the recipient. OpenEMM uses numbers to mark the gender: </span><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt"> means male, </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> means female. The number </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> is used to designate all recipients who do not have a gender defined.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">lastname</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The last name of the recipient.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">mailtype</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The type of mail that the recipient wants. In the CSV file, </span><span class="f_TabelleInhalt" style="font-style: italic;">0</span><span class="f_TabelleInhalt">, </span><span class="f_TabelleInhalt" style="font-style: italic;">txt</span><span class="f_TabelleInhalt"> or </span><span class="f_TabelleInhalt" style="font-style: italic;">text</span><span class="f_TabelleInhalt"> represents text, </span><span class="f_TabelleInhalt" style="font-style: italic;">1</span><span class="f_TabelleInhalt"> or </span><span class="f_TabelleInhalt" style="font-style: italic;">html</span><span class="f_TabelleInhalt"> represents HTML and </span><span class="f_TabelleInhalt" style="font-style: italic;">2</span><span class="f_TabelleInhalt"> represents off-line HTML.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">change_date</span></p>
+</td>
+<td valign="top" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The last date on which the data for the recipient was changed in the database.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td valign="middle" width="234" style="width:234px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt" style="font-family: 'Tahoma';">title</span></p>
+</td>
+<td valign="middle" width="709" style="width:709px; border: solid 1px #000000;"><p class="p_TabelleInhalt"><span class="f_TabelleInhalt">The recipient’s title, for example </span><span class="f_TabelleInhalt" style="font-style: italic;">Dr.</span><span class="f_TabelleInhalt">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-family: 'Tahoma';">Check for duplicate records</span>: <span class="f_Import_Duplicates">You use this selection list to decide how OpenEMM checks for duplicates.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">With the option </span><span class="f_Punkte" style="font-family: 'Tahoma';">only within new data</span><span class="f_Punkte"> you only exclude the occurrence of duplicates in the data to be imported. For duplicates within the CSV file, the first entry is imported into the database. This ensures that new recipients are only imported once even if they are contained several times in the CSV file. This check is also contained in the </span><span class="f_Punkte" style="font-family: 'Tahoma';">complete</span><span class="f_Punkte"> duplicate comparison.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">The </span><span class="f_Punkte" style="font-family: 'Tahoma';">complete</span><span class="f_Punkte"> setting checks two things: Firstly, whether a new recipient has already been entered into the database. Secondly, whether an entry occurs more than once within the new recipient. How recognized duplicates are handled depends on your selection under </span><span class="f_Punkte" style="font-family: 'Tahoma';">Mode</span><span class="f_Punkte"> (Chap. "<a href="determining_the_process_settin.htm">Determining the process settings</a>"). </span><span class="f_Punkte" style="font-family: 'Tahoma';">Add new recipients only</span><span class="f_Punkte"> ignores existing recipients, i.e. these are not updated with the data from the CSV file. An additional update of existing recipients takes place if you have selected the import mode </span><span class="f_Punkte" style="font-family: 'Tahoma';">Add new recipients and update existing recipients</span><span class="f_Punkte">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">The </span><span class="f_Punkte" style="font-family: 'Tahoma';">no check</span><span class="f_Punkte"> setting: All recipients are imported. There is no check for duplicates within the import file. Equally, no check is made as to whether a recipient already exists in the database. This can lead to a recipient with one e-mail address being contained several times in the database.</span><br>
+<span class="f_Punkte" style="font-weight: bold;">Please note:</span><span class="f_Punkte"> The setting </span><span class="f_Punkte" style="font-family: 'Tahoma';">no check</span><span class="f_Punkte"> in combination with the mode </span><span class="f_Punkte" style="font-family: 'Tahoma';">Only update existing recipients</span><span class="f_Punkte"> leads to the import of no data.</span></td></tr></table></div>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

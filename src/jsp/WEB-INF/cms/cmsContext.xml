@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the Common Public Attribution
+ * License Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.openemm.org/cpal1.html. The License is based on the Mozilla
+ * Public License Version 1.1 but Sections 14 and 15 have been added to cover
+ * use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be
+ * consistent with Exhibit B.
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+ * the specific language governing rights and limitations under the License.
+ *
+ * The Original Code is OpenEMM.
+ * The Original Developer is the Initial Developer.
+ * The Initial Developer of the Original Code is AGNITAS AG. All portions of
+ * the code written by AGNITAS AG are Copyright (c) 2009 AGNITAS AG. All Rights
+ * Reserved.
+ *
+ * Contributor(s): AGNITAS AG.
+ ********************************************************************************/
+-->
+
+<!--
+  - EMM CMS module context definition
+  -->
+<beans>
+
+    <bean id="propertyConfigurerCMS" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:emm.properties</value>
+                <value>classpath:cms.properties</value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
+    <!-- definition of EMM CMS datasource-->
+    <bean id="cmsDataSource" class="org.agnitas.dao.EnhBasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${cmsdb.driverClassName}"/>
+        <property name="url" value="${cmsdb.url}"/>
+        <property name="username" value="${cmsdb.username}"/>
+        <property name="password" value="${cmsdb.password}"/>
+        <property name="maxActive" value="${cmsdb.maxCount}"/>
+        <property name="maxWait" value="${cmsdb.maxWait}"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="true"/>
+        <property name="connectionProperties">
+            <props>
+                <prop key="SetBigStringTryClob">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="CmsMailingDao" class="org.agnitas.cms.dao.impl.CmsMailingDaoImpl"/>
+    <bean id="CMTemplateDao" class="org.agnitas.cms.dao.impl.CMTemplateDaoImpl"/>
+    <bean id="MediaFileDao" class="org.agnitas.cms.dao.impl.MediaFileDaoImpl"/>
+    <bean id="ContentModuleTypeDao" class="org.agnitas.cms.dao.impl.ContentModuleTypeDaoImpl"/>
+    <bean id="ContentModuleDao" class="org.agnitas.cms.dao.impl.ContentModuleDaoImpl"/>
+
+    <!--  Work with webservices-->
+<!--
+    <bean id="CMTemplateManager" class="org.agnitas.cms.utils.dataaccess.RemoteCMTemplateManager">
+        <property name="portUrl" value="${cms.ccr.url}/cms_services/RemoteCMTemplateManager"/>
+    </bean>
+
+    <bean id="ContentModuleTypeManager" class="org.agnitas.cms.utils.dataaccess.RemoteContentModuleTypeManager">
+        <property name="portUrl" value="${cms.ccr.url}/cms_services/RemoteContentModuleTypeManager"/>
+    </bean>
+
+    <bean id="ContentModuleManager" class="org.agnitas.cms.utils.dataaccess.RemoteContentModuleManager">
+        <property name="portUrl" value="${cms.ccr.url}/cms_services/RemoteContentModuleManager"/>
+    </bean>
+
+    <bean id="MediaFileManager" class="org.agnitas.cms.utils.dataaccess.RemoteMediaFileManager">
+        <property name="portUrl" value="${cms.ccr.url}/cms_services/RemoteMediaFileManager"/>
+    </bean>
+-->
+     <bean id="ClassicTemplateGenerator" class="org.agnitas.cms.utils.ClassicTemplateGenerator" singleton="false">
+        <property name="contenModuleManager" ref="ContentModuleManager"/>
+        <property name="cmTemplateManager" ref="CMTemplateManager"/>
+        <property name="mediaFileManager" ref="MediaFileManager"/>
+        <property name="imageUrlPattern" value="/cms_image?fid="/>
+        <property name="mailingDao" ref="MailingDao"/>
+        <property name="dynamicTagFactory" ref="DynamicTagFactory"/>
+        <property name="dynamicTagContentFactory" ref="DynamicTagContentFactory"/>
+        <property name="mailingComponentFactory" ref="MailingComponentFactory"/>
+    </bean>
+
+
+    <!-- Work without webservices -->
+    <bean id="CMTemplateManager" class="org.agnitas.cms.utils.dataaccess.LocalCMTemplateManager">
+        <constructor-arg ref="CMTemplateDao"/>
+    </bean>
+    <bean id="MediaFileManager" class="org.agnitas.cms.utils.dataaccess.LocalMediaFileManager">
+        <constructor-arg ref="MediaFileDao"/>
+    </bean>
+    <bean id="ContentModuleTypeManager" class="org.agnitas.cms.utils.dataaccess.LocalContentModuleTypeManager">
+        <constructor-arg ref="ContentModuleTypeDao"/>
+    </bean>
+    <bean id="ContentModuleManager" class="org.agnitas.cms.utils.dataaccess.LocalContentModuleManager">
+        <constructor-arg ref="ContentModuleDao"/>
+    </bean>
+
+</beans>

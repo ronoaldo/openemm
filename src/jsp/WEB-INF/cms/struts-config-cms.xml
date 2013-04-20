@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <!-- ========== Form Bean Definitions =================================== -->
+    <form-beans type="org.apache.struts.action.ActionFormBean">
+        <form-bean name="cmTemplateForm" type="org.agnitas.cms.web.forms.CMTemplateForm"/>
+        <form-bean name="contentModuleTypeForm" type="org.agnitas.cms.web.forms.ContentModuleTypeForm"/>
+        <form-bean name="contentModuleForm" type="org.agnitas.cms.web.forms.ContentModuleForm"/>
+        <form-bean name="contentModuleCategoryForm" type="org.agnitas.cms.web.forms.ContentModuleCategoryForm"/>
+    </form-beans>
+
+
+    <!-- ========== Action Mapping Definitions ============================== -->
+    <action-mappings type="org.apache.struts.action.ActionMapping">
+
+        <action path="/cms_cmtemplate" type="org.agnitas.cms.web.CMTemplateAction" name="cmTemplateForm" scope="session" input="cms_cmtemplate_view">
+            <forward name="list" path="cms_cmtemplate_list"/>
+            <forward name="pure_preview" path="/cms/cmtemplate/cms-cmtemplate-pure-preview.jsp"/>
+            <forward name="delete" path="cms_cmtemplate_delete"/>
+            <forward name="view" path="cms_cmtemplate_view"/>
+            <forward name="upload" path="cms_cmtemplate_upload"/>
+            <forward name="assign_list" path="cms_cmtemplate_assign_list"/>
+            <forward name="edit_template" path="cms_cmtemplate_edit_template"/>
+        </action>
+
+        <action path="/cms_cmt" type="org.agnitas.cms.web.ContentModuleTypeAction" name="contentModuleTypeForm" scope="session" input="cms_cmt_view">
+            <forward name="list" path="cms_cmt_list"/>
+            <forward name="pure_preview" path="/cms/cmt/cms-cmt-pure-preview.jsp"/>
+            <forward name="delete" path="cms_cmt_delete"/>
+            <forward name="view" path="cms_cmt_view"/>
+            <forward name="preview" path="cms_cmt_preview"/>
+            <forward name="new" path="cms_cmt_new"/>
+        </action>
+
+        <action path="/cms_contentmodule" type="org.agnitas.cms.web.ContentModuleAction" name="contentModuleForm" scope="session" input="cms_contentmodule_view">
+            <forward name="list" path="cms_contentmodule_list"/>
+            <forward name="view" path="cms_contentmodule_view"/>
+            <forward name="new" path="cms_contentmodule_new_full"/>
+            <forward name="pure_preview" path="/cms/contentmodule/cms-contentmodule-pure-preview.jsp"/>
+            <forward name="delete" path="cms_contentmodule_delete"/>
+            <forward name="assign_list" path="cms_contentmodule_assign_list"/>
+            <forward name="mailing_content" path="/mailingcontent.do?action=7"/>
+        </action>
+
+        <action path="/cms_cmcategory" type="org.agnitas.cms.web.ContentModuleCategoryAction" name="contentModuleCategoryForm" scope="session" input="cms_cmcategory_view">
+            <forward name="list" path="cms_cmcategory_list"/>
+            <forward name="view" path="cms_cmcategory_view"/>
+            <forward name="new" path="cms_cmcategory_view"/>
+            <forward name="delete" path="cms_cmcategory_delete"/>
+        </action>
+
+    </action-mappings>
+
+    <!-- ============ Resource Bundle Definition ============================ -->
+    <message-resources parameter="cmsmessages" key="cmsbundle"/>
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+    </plug-in>
+
+</struts-config>

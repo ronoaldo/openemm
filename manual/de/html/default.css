@@ -1,0 +1,434 @@
+/* Text Styles */
+hr { color: #000000}
+body, table, tr, th /* Normal */
+{
+ font-size: 11pt;
+ font-family: 'Times New Roman';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_Adresse /* Adresse */
+{
+}
+span.f_Aufzaehlungen /* Aufzählungen */
+{
+}
+span.f_BeispieltextQuelltext /* BeispieltextQuelltext */
+{
+ font-style: italic;
+}
+span.f_Bild /* Bild */
+{
+}
+span.f_ClImport_AnalysingCSV /* ClImport_AnalysingCSV */
+{
+}
+span.f_ClImport_AnalysingErrors /* ClImport_AnalysingErrors */
+{
+}
+span.f_ClImport_Assigning /* ClImport_Assigning */
+{
+}
+span.f_ClImport_Charset /* ClImport_Charset */
+{
+}
+span.f_ClImport_Duplicates /* ClImport_Duplicates */
+{
+}
+span.f_ClImport_Extended /* ClImport_Extended */
+{
+}
+span.f_ClImport_Filename /* ClImport_Filename */
+{
+}
+span.f_ClImport_KeyColumn /* ClImport_KeyColumn */
+{
+}
+span.f_ClImport_MailingLists /* ClImport_MailingLists */
+{
+}
+span.f_ClImport_Mode /* ClImport_Mode */
+{
+}
+span.f_ClImport_NullValues /* ClImport_NullValues */
+{
+}
+span.f_ClImport_Seperators /* ClImport_Seperators */
+{
+}
+span.f_ClImport_Textrecognition /* ClImport_Textrecognition */
+{
+}
+span.f_CodeExample /* Code Example */
+{
+ font-size: 8pt;
+ font-family: 'Courier New';
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 16pt;
+ font-family: 'Arial';
+ font-weight: bold;
+}
+span.f_Heading2 /* Heading2 */
+{
+ font-size: 14pt;
+ font-family: 'Arial';
+ font-weight: bold;
+}
+span.f_Heading3 /* Heading3 */
+{
+ font-size: 12pt;
+ font-family: 'Arial';
+ font-weight: bold;
+}
+span.f_Heading4 /* Heading4 */
+{
+ font-family: 'Arial';
+ font-weight: bold;
+}
+span.f_Heading5 /* Heading5 */
+{
+ font-family: 'Arial';
+ font-weight: bold;
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 10pt;
+}
+span.f_Import_Charset /* Import_Charset */
+{
+}
+span.f_Import_Date /* Import_Date */
+{
+}
+span.f_Import_Duplicates /* Import_Duplicates */
+{
+}
+span.f_Import_KeyColumn /* Import_KeyColumn */
+{
+}
+span.f_Import_MailType /* Import_MailType */
+{
+}
+span.f_Import_Mode /* Import_Mode */
+{
+}
+span.f_Import_NullValues /* Import_NullValues */
+{
+}
+span.f_Import_Report /* Import_Report */
+{
+}
+span.f_Import_Separators /* Import_Separators */
+{
+}
+span.f_Import_TextRecognition /* Import_TextRecognition */
+{
+}
+span.f_Import_UpdateDuplicates /* Import_UpdateDuplicates */
+{
+}
+span.f_Kapitelueberschrift /* Kapitelüberschrift */
+{
+ font-weight: bold;
+}
+span.f_Mailing_Archive /* Mailing_Archive */
+{
+}
+span.f_Mailing_Followup_Mailing /* Mailing_Followup_Mailing */
+{
+}
+span.f_Mailing_Followup_Type /* Mailing_Followup_Type */
+{
+}
+span.f_Mailing_ListSplit /* Mailing_ListSplit */
+{
+}
+span.f_Mailing_MailingList /* Mailing_MailingList */
+{
+}
+span.f_Mailing_MediaType /* Mailing_MediaType */
+{
+}
+span.f_Mailing_Picture_Link /* Mailing_Picture_Link */
+{
+}
+span.f_Mailing_Type /* Mailing_Type */
+{
+}
+span.f_Notes /* Notes */
+{
+}
+span.f_Punkte /* Punkte */
+{
+}
+span.f_Recipient_Search /* Recipient_Search */
+{
+}
+span.f_Tabelle /* Tabelle */
+{
+}
+span.f_TabelleInhalt /* Tabelle Inhalt */
+{
+}
+span.f_TabelleUeberschrift /* Tabelle Überschrift */
+{
+ font-weight: bold;
+}
+span.f_Wizard_1Step /* Wizard_1Step */
+{
+}
+span.f_Wizard_2Step_Template /* Wizard_2Step_Template */
+{
+}
+span.f_Wizard_3Step_Type /* Wizard_3Step_Type */
+{
+}
+span.f_Wizard_4Step_Sender /* Wizard_4Step_Sender */
+{
+}
+span.f_Wizard_5Step_Format /* Wizard_5Step_Format */
+{
+}
+span.f_Wizard_6Step_Subject /* Wizard_6Step_Subject */
+{
+}
+span.f_Wizard_8Step_1_Content /* Wizard_8Step_1_Content */
+{
+}
+span.f_Wizard_8Step_2_Content /* Wizard_8Step_2_Content */
+{
+}
+span.f_Wizard_8Step_2_TargetGroup /* Wizard_8Step_2_TargetGroup */
+{
+}
+span.f_Zahlen /* Zahlen */
+{
+}
+span.f_Zwischenueberschrift /* Zwischenüberschrift */
+{
+ font-weight: bold;
+}
+span.f_zzzHelpBalloon /* zzzHelpBalloon */
+{
+}
+/* Paragraph styles */
+p /* Normal */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 19px 0px;
+}
+.p_Adresse /* Adresse */
+{
+ text-align: center;
+ margin: 0px 0px 0px 0px;
+}
+.p_Aufzaehlungen /* Aufzählungen */
+{
+ margin: 0px 0px 8px 0px;
+}
+.p_BeispieltextQuelltext /* BeispieltextQuelltext */
+{
+ margin: 0px 19px 19px 19px;
+}
+.p_Bild /* Bild */
+{
+}
+.p_ClImport_AnalysingCSV /* ClImport_AnalysingCSV */
+{
+}
+.p_ClImport_AnalysingErrors /* ClImport_AnalysingErrors */
+{
+}
+.p_ClImport_Assigning /* ClImport_Assigning */
+{
+}
+.p_ClImport_Charset /* ClImport_Charset */
+{
+}
+.p_ClImport_Duplicates /* ClImport_Duplicates */
+{
+}
+.p_ClImport_Extended /* ClImport_Extended */
+{
+}
+.p_ClImport_Filename /* ClImport_Filename */
+{
+}
+.p_ClImport_KeyColumn /* ClImport_KeyColumn */
+{
+}
+.p_ClImport_MailingLists /* ClImport_MailingLists */
+{
+}
+.p_ClImport_Mode /* ClImport_Mode */
+{
+}
+.p_ClImport_NullValues /* ClImport_NullValues */
+{
+}
+.p_ClImport_Seperators /* ClImport_Seperators */
+{
+}
+.p_ClImport_Textrecognition /* ClImport_Textrecognition */
+{
+}
+.p_CodeExample /* Code Example */
+{
+ white-space: nowrap;
+ margin: 0px 0px 0px 0px;
+}
+.p_Comment /* Comment */
+{
+}
+.p_Heading1 /* Heading1 */
+{
+ margin: 19px 0px 19px 0px;
+}
+.p_Heading2 /* Heading2 */
+{
+ margin: 19px 0px 19px 0px;
+}
+.p_Heading3 /* Heading3 */
+{
+ margin: 19px 0px 19px 0px;
+}
+.p_Heading4 /* Heading4 */
+{
+ margin: 19px 0px 19px 0px;
+}
+.p_Heading5 /* Heading5 */
+{
+}
+.p_ImageCaption /* Image Caption */
+{
+ text-align: center;
+}
+.p_Import_Charset /* Import_Charset */
+{
+}
+.p_Import_Date /* Import_Date */
+{
+}
+.p_Import_Duplicates /* Import_Duplicates */
+{
+}
+.p_Import_KeyColumn /* Import_KeyColumn */
+{
+}
+.p_Import_MailType /* Import_MailType */
+{
+}
+.p_Import_Mode /* Import_Mode */
+{
+}
+.p_Import_NullValues /* Import_NullValues */
+{
+}
+.p_Import_Report /* Import_Report */
+{
+}
+.p_Import_Separators /* Import_Separators */
+{
+}
+.p_Import_TextRecognition /* Import_TextRecognition */
+{
+}
+.p_Import_UpdateDuplicates /* Import_UpdateDuplicates */
+{
+}
+.p_Kapitelueberschrift /* Kapitelüberschrift */
+{
+ line-height: 2.0;
+}
+.p_Mailing_Archive /* Mailing_Archive */
+{
+}
+.p_Mailing_Followup_Mailing /* Mailing_Followup_Mailing */
+{
+}
+.p_Mailing_Followup_Type /* Mailing_Followup_Type */
+{
+}
+.p_Mailing_ListSplit /* Mailing_ListSplit */
+{
+}
+.p_Mailing_MailingList /* Mailing_MailingList */
+{
+}
+.p_Mailing_MediaType /* Mailing_MediaType */
+{
+}
+.p_Mailing_Picture_Link /* Mailing_Picture_Link */
+{
+}
+.p_Mailing_Type /* Mailing_Type */
+{
+}
+.p_Notes /* Notes */
+{
+}
+.p_Punkte /* Punkte */
+{
+ margin: 0px 0px 8px 0px;
+}
+.p_Recipient_Search /* Recipient_Search */
+{
+}
+.p_Tabelle /* Tabelle */
+{
+ margin: 0px 0px 0px 0px;
+}
+.p_TabelleInhalt /* Tabelle Inhalt */
+{
+ margin: 0px 0px 0px 0px;
+}
+.p_TabelleUeberschrift /* Tabelle Überschrift */
+{
+ margin: 0px 0px 0px 0px;
+}
+.p_Wizard_1Step /* Wizard_1Step */
+{
+}
+.p_Wizard_2Step_Template /* Wizard_2Step_Template */
+{
+}
+.p_Wizard_3Step_Type /* Wizard_3Step_Type */
+{
+}
+.p_Wizard_4Step_Sender /* Wizard_4Step_Sender */
+{
+}
+.p_Wizard_5Step_Format /* Wizard_5Step_Format */
+{
+}
+.p_Wizard_6Step_Subject /* Wizard_6Step_Subject */
+{
+}
+.p_Wizard_8Step_1_Content /* Wizard_8Step_1_Content */
+{
+}
+.p_Wizard_8Step_2_Content /* Wizard_8Step_2_Content */
+{
+}
+.p_Wizard_8Step_2_TargetGroup /* Wizard_8Step_2_TargetGroup */
+{
+}
+.p_Zahlen /* Zahlen */
+{
+ margin: 0px 0px 8px 0px;
+}
+.p_Zwischenueberschrift /* Zwischenüberschrift */
+{
+}
+.p_zzzHelpBalloon /* zzzHelpBalloon */
+{
+}

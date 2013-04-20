@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Zielgruppen - dynamische Filter &gt; Aufbau der Suchregeln &gt; List-Splits mit MOD</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="List-Splits mit MOD">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?list_split_using_mod.htm"; }
+  else { parent.quicksync('a6.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="target_groups___dynamic_filter.htm">Zielgruppen - dynamische Filter</a> &gt; <a href="search_rule_setup.htm">Aufbau der Suchregeln</a>&nbsp;&gt;</p>
+   <p class="p_Heading3"><span class="f_Heading3">List-Splits mit MOD</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="search_rule_setup.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="search_rule_setup.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="is_and_null_or_not_null.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>In manchen Fällen ist es sinnvoll, nur einen Bruchteil der Empfänger für eine Zielgruppe zu selektieren. Sie könnten beispielsweise den Erfolg einer Mailing-Aktion erst einmal mit einem Zehntel der fraglichen Kunden ausprobieren. Der OpenEMM nennt eine solche Auswahl List-Split. Dafür nutzt das System die Kundennummern (Feld <span style="font-family: 'Tahoma';">CUSTOMER_ID</span>) in Verbindung mit dem Operator <span style="font-family: 'Tahoma';">MOD</span> (Modulo-Funktion). Die Kundennummer weist der OpenEMM automatisch jedem neuen Eintrag in der Empfängerdatenbank zufällig zu. Es handelt sich also nicht um laufende Nummern, sondern um statistisch gleich verteilte Zahlen (für praktische Anwendungen).</p>
+<p>Die Modulo-Funktion ist Ihnen vielleicht aus dem Mathematikunterricht noch bekannt. Sie liefert den Restwert, der bei einer Division durch eine ganze Zahl entsteht. Ein Beispiel: 87 MOD 10 liefert als Ergebnis 7. Dazu teilen Sie zunächst 87 durch 10, ohne Nachkommastellen ergibt das 8. 87 minus 80 (8 mal 10) ergibt einen Rest von 7.</p>
+<p>Der MOD-Operator des OpenEMM selektiert nun die Empfänger, deren Modulo-Restwert der Vorgabe entspricht. Wenn Sie im letzten Feld der Suchregel eine 5 eintragen, so wählen Sie damit alle Kundennummern aus, deren Modulo-Wert 5 ist. Anders gesagt: Sie wählen damit ein Fünftel der gesamten Adressen aus. Mit dem Wert 10 ergibt sich ein Zehntel, mit 3 ein Drittel. Sie können aber auch nur ein Tausendstel aller Adressen markieren (Wert 1000).</p>
+<p>Ein großer Vorteil dieser MOD-Methode ist die Wiederholbarkeit des Ergebnisses. Immer wenn Sie eine MOD-Regel auf die Empfängerdatenbank anwenden, filtert der OpenEMM dieselben Empfänger heraus. Denn die Kundennummer der Empfänger verändert sich nicht. Das ist wichtig, wenn Sie ein mehrstufiges Mailing planen, bei dem die Zielgruppe mehrere E-Mails erhalten soll.</p>
+<p>Das folgende Beispiel zeigt die Eingabe mit einem Modulo-Wert von 5:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Rufen Sie in der Navigationsleiste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Zielgruppen</span><span class="f_Zahlen"> und dann </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Neue Zielgruppe</span><span class="f_Zahlen"> auf. Rechts erscheint der Eingabedialog für eine neue Zielgruppe.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Tragen Sie </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> und </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Beschreibung</span><span class="f_Zahlen"> ein. Geben Sie am besten schon beim Namen an, dass eine MOD-Funktion zum Einsatz kommt. So finden Sie später die Zielgruppe leichter.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Unter </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Neue Regel</span><span class="f_Zahlen"> stellen Sie in der zweiten Auswahlliste das Feld </span><span class="f_Zahlen" style="font-family: 'Tahoma';">CUSTOMER_ID</span><span class="f_Zahlen"> ein. Das ist die Kundennummer, die der OpenEMM automatisch jedem neuen Empfänger zuteilt. In der Auswahlliste für den Vergleichsoperator stellen Sie auf </span><span class="f_Zahlen" style="font-family: 'Tahoma';">MOD</span><span class="f_Zahlen"> ein.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Tragen Sie nun im Eingabefeld für den Vergleichswert die Zahl </span><span class="f_Zahlen" style="font-style: italic;">5</span><span class="f_Zahlen"> ein. Schließen Sie die Regel mit einem Klick auf die Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Hinzufügen</span><span class="f_Zahlen"> ab.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="so_legen_sie_eine_modulo-regel.png" width="934" height="479" border="0" alt="Abb. 6.2: So legen Sie eine Modulo-Regel mit dem Faktor 5 an."><p style="text-align:center;width:934px"><span class="f_ImageCaption">Abb. 6.2: So legen Sie eine Modulo-Regel mit dem Faktor 5 an.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Jetzt zeigt das System die bestehende Suchregel unter </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Zielgruppen-Definition</span><span class="f_Zahlen"> an. Hinter dem Modulo-Wert ist nun eine weitere Auswahlliste für einen Vergleichsoperator eingeblendet, gefolgt von einem Eingabefeld. Der erste Teil der Suchregel bildet den Restwert. Im letzten Eingabefeld legen Sie fest, welcher Restwert selektiert werden soll. Um ein Fünftel der Empfänger zu selektieren ist die Vorgabe </span><span class="f_Zahlen" style="font-family: 'Tahoma';">= </span><span class="f_Zahlen" style="font-style: italic;">0</span><span class="f_Zahlen"> ausreichend. Damit erfassen Sie alle Empfänger, deren CUSTOMER_ID glatt durch 5 teilbar ist.</span><br>
+<span class="f_Zahlen">Mit einem Zahlenwert von </span><span class="f_Zahlen" style="font-style: italic;">4</span><span class="f_Zahlen"> erfassen Sie ebenfalls ein Fünftel. Allerdings sind es nur die Empfänger mit einem Restwert von 4. Mit dieser Methode sprechen Sie also jeweils ein "anderes" Fünftel der Zielgruppe an.</span></td></tr></table></div>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

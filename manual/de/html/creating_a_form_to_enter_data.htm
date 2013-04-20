@@ -1,0 +1,184 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Formular - Selbstverwaltung für Empfänger &gt; Formulare &gt; Beispiel Formular: Anmeldung &gt; Formular zur Dateneingabe anlegen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Formular zur Dateneingabe anlegen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_form_to_enter_data.htm"; }
+  else { parent.quicksync('a8.1.2.4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="forms___recipient_management.htm">Formular - Selbstverwaltung für Empfänger</a> &gt; <a href="forms.htm">Formulare</a> &gt; <a href="example_opt_in_form.htm">Beispiel Formular: Anmeldung</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">Formular zur Dateneingabe anlegen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="creating_a_new_action2.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="example_opt_in_form.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="creating_a_form_to_save_data2.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Das Formular zur Dateneingabe gleicht weitgehend dem Formular zur Änderung eines Profils aus dem letzten Kapitel. Es gibt allerdings ein paar Unterschiede:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Sie müssen unbedingt die Angaben zum Geschlecht (also die Anrede), zum Mail-Typ und die E-Mail-Adresse eingeben sowie eine Mailing-Liste abonnieren. Sonst akzeptiert der OpenEMM die neue Adresse nicht.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Da es den Benutzer noch nicht gibt, fehlt im HTML-Code des Erfolgs-Formulars das versteckte Eingabefeld zur Benutzer-ID (agnUID). Diese Benutzer-ID erzeugt das System automatisch beim Speichern der neuen Benutzerdaten.</span></td></tr></table></div><p>Legen Sie über die Navigationsleiste ein neues Formular an. Es dient nur dazu, über Eingabefelder die relevanten Daten des neuen Empfängers einzusammeln. Dann reicht es die Verarbeitung an ein Skript auf dem OpenEMM-Server weiter. Aktionen spielen dabei keine Rolle.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Tragen Sie einen sprechende Bezeichnung wie </span><span class="f_Zahlen" style="font-style: italic;">Anmelden</span><span class="f_Zahlen"> bei </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> ein. Da dieser Name später Teil des Links zum Aufruf des Formulars wird, sollten Sie auf Leerzeichen, Umlaute und andere Sonderzeichen verzichten. Die </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Beschreibung</span><span class="f_Zahlen"> sollte kurz den Zweck des Formulars umreißen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Das Eingabefeld Erfolgs-Formular nimmt den HTML-Code auf, der im Browser ein Formular mit den entsprechenden Eingabefeldern anzeigt. Wie der Code aufgebaut sein muss, lesen Sie im nächsten Abschnitt.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Im Eingabefeld </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Fehler-Formular</span><span class="f_Zahlen"> tragen Sie den Text ein, den die Anwender bei einem Fehlschlag der Aktion sehen. Nach dem Sichern mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> ist das Formular fertig gestellt.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="das_formular_zum_anmelden_besteht_vor.png" width="938" height="883" border="0" alt="Abb. 8.10: Das Formular zum Anmelden besteht vor allem aus dem HTML-Code zur Anzeige des Web-Formulars."><p style="text-align:center;width:938px"><span class="f_ImageCaption">Abb. 8.10: Das Formular zum Anmelden besteht vor allem aus dem HTML-Code zur Anzeige des Web-Formulars.</span></p></div></div>
+<p>Der HTML-Code für das Anmeldeformular ähnelt dem zum Ändern eines bestehenden Profils, es gibt aber einige Unterschiede. So fehlt etwa die Benutzer-ID, dafür sind andere Angaben zwingend erforderlich. Das folgende Beispiel geht davon aus, dass sich Empfänger für einen Newsletter anmelden, der ohne personalisierte Anrede immer im HTML-Format verschickt wird. Natürlich können Sie diese Einstellungen auch den Benutzern überlassen. Wie Sie dazu vorgehen, lesen Sie in Kapitel "<a href="advanced_form_layout.htm">Erweiterte Formulargestaltung</a>".</p>
+<p>Im Beispiel sieht der HTML-Code so aus:</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">&lt;form action="form.do" method=post&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;input type="hidden" name="agnCI" value="XX"&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;input type="hidden" name="agnFN" value="ProfilSpeichern"&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;select name="GENDER" size="1"&gt;</span><br>
+<span style="width:29px">&nbsp;</span><span class="f_BeispieltextQuelltext">&lt;option value="2" checked&gt;unbekannt</span><br>
+<span style="width:29px">&nbsp;</span><span class="f_BeispieltextQuelltext">&lt;option value="1"&gt;Frau</span><br>
+<span style="width:29px">&nbsp;</span><span class="f_BeispieltextQuelltext">&lt;option value="0"&gt;Herr</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/select&gt;&lt;br&gt;</span><br>
+<span class="f_BeispieltextQuelltext">Vorname: &lt;input type="text" name="FIRSTNAME" value=""&gt;&lt;br&gt;</span><br>
+<span class="f_BeispieltextQuelltext">Nachname: &lt;input type="text" name="LASTNAME" value=""&gt;&lt;br&gt;</span><br>
+<span class="f_BeispieltextQuelltext">E-Mail-Adresse: &lt;input type="text" name="EMAIL" value=""&gt;&lt;br&gt;</span><br>
+<span class="f_BeispieltextQuelltext">Format:</span><br>
+<span class="f_BeispieltextQuelltext">&lt;select name="MAILTYPE" size="1"&gt;</span><br>
+<span style="width:29px">&nbsp;</span><span class="f_BeispieltextQuelltext">&lt;option value="2"&gt;Offline-HTML</span><br>
+<span style="width:29px">&nbsp;</span><span class="f_BeispieltextQuelltext">&lt;option value="1" checked&gt;HTML</span><br>
+<span style="width:29px">&nbsp;</span><span class="f_BeispieltextQuelltext">&lt;option value="0"&gt;Text</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/select&gt;&lt;br&gt;</span><br>
+<span class="f_BeispieltextQuelltext">Newsletter abonnieren: &lt;input type="checkbox" name="agnSUBSCRIBE" value="1"&gt;Ja&lt;br&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;input type="hidden" name="agnMAILINGLIST" value="XX"&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;input type="submit" value="Anmelden"&gt;</span><br>
+<span class="f_BeispieltextQuelltext">&lt;/form&gt;</span></p>
+<p>Die ersten drei Zeilen entsprechen dem Formular zur Anzeige eines bestehenden Profils. Sie definieren das Skript, das auf dem OpenEMM-Server die Eingaben auswertet, legen die Kundennummer (<span style="font-style: italic;">agnCI </span>ist immer 1 in OpenEMM) fest, die Sie auf der Seite der Formularübersicht finden, und das Formular, das anschließend aufgerufen wird (im Beispiel <span style="font-style: italic;">ProfilSpeichern</span>). Eine genaue Erläuterung der Optionen finden Sie in Kapitel "<a href="creating_a_form_to_display_dat.htm">Formular zum Anzeigen anlegen</a>". Ab Zeile vier erzeugt der HTML-Code Eingabefelder für die Empfängerdaten.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-style: italic;">&lt;select name=“GENDER“&gt; ... &lt;/select&gt;</span><span class="f_Punkte">: Diese Auswahl bedient das Feld </span><span class="f_Punkte" style="font-family: 'Tahoma';">GENDER</span><span class="f_Punkte"> in der Datenbank und ermöglicht es dem Anwender seine Anrede festzulegen. Im OpenEMM steht eine </span><span class="f_Punkte" style="font-style: italic;">0</span><span class="f_Punkte"> für männlich, eine </span><span class="f_Punkte" style="font-style: italic;">1</span><span class="f_Punkte"> für weiblich, eine </span><span class="f_Punkte" style="font-style: italic;">2</span><span class="f_Punkte"> legt eine geschlechtsneutrale Anrede fest.</span><br>
+<span class="f_Punkte" style="font-weight: bold;">Hinweis:</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-style: italic;">&lt;input type="hidden" value="2" name="GENDER"&gt;&lt;br&gt;</span><span class="f_Punkte">: Das versteckte Eingabefeld legt das Geschlecht des Empfängers (engl. gender), also seine Anrede fest. Mit </span><span class="f_Punkte" style="font-style: italic;">type=“hidden“</span><span class="f_Punkte"> übertragen Sie das Geschlecht, ohne das der Anwender eine Auswahl treffen kann. Dies bietet sich bei einer Anmeldung an, in der nur die E-Mail-Adresse erfasst wird. Im Beispiel ist deshalb beim Attribut </span><span class="f_Punkte" style="font-style: italic;">value</span><span class="f_Punkte"> eine </span><span class="f_Punkte" style="font-style: italic;">2</span><span class="f_Punkte"> (unbekannt) eingetragen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte" style="font-style: italic;">&lt;select name=“MAILTYPE“&gt; …. &lt;/select&gt;</span><span class="f_Punkte">: Die Auswahl </span><span class="f_Punkte" style="font-style: italic;">MAILTYPE</span><span class="f_Punkte"> bestimmt, in welchem Format der Empfänger die E-Mails erhalt wird. Eine </span><span class="f_Punkte" style="font-style: italic;">0</span><span class="f_Punkte"> steht für Text, eine </span><span class="f_Punkte" style="font-style: italic;">1</span><span class="f_Punkte"> für HTML, eine </span><span class="f_Punkte" style="font-style: italic;">2</span><span class="f_Punkte"> für Offline-HTML</span><br>
+<span class="f_Punkte" style="font-weight: bold;">Hinweis:</span><span class="f_Punkte"> </span><span class="f_Punkte" style="font-style: italic;">&lt;input type="hidden" value="1" name="MAILTYPE"&gt;&lt;br&gt;</span><span class="f_Punkte">: Bei dieser Variante ist eine </span><span class="f_Punkte" style="font-style: italic;">1</span><span class="f_Punkte"> für HTML-Format fest eingetragen. Die Auswahl kann vom Anwender nicht beeinflusst werden.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Die Eingabefelder für Vorname (</span><span class="f_Punkte" style="font-style: italic;">FIRSTNAME</span><span class="f_Punkte">), Nachname (</span><span class="f_Punkte" style="font-style: italic;">LASTNAME</span><span class="f_Punkte">) und E-Mail-Adresse (</span><span class="f_Punkte" style="font-style: italic;">EMAIL</span><span class="f_Punkte">) erscheinen im Formular leer (Attribut </span><span class="f_Punkte" style="font-style: italic;">value=""</span><span class="f_Punkte">). Hier muss der neue Empfänger seine persönlichen Daten eintragen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Für die zu abonnierende Mailing-Liste sind zwei Formularelemente erforderlich. Das ist notwendig, weil jedes Formularelement in HTML immer nur einen Wert speichern kann. Das erste Elemente, eine Checkbox, bestimmt, ob die Mailing-Liste abonniert wird, oder nicht. Das zweite Element ist ein verstecktes Feld, das die interne Kennziffer der Mailing-Liste enthält. Sie können diese ID leicht feststellen, wenn Sie die Übersicht Ihrer Mailing-Listen aufrufen. Die MailinglistID steht neben der gewünschten Mailing-Liste. Sie wird automatisch vergeben. Im Beispiel ist es die </span><span class="f_Punkte" style="font-style: italic;">526</span><span class="f_Punkte">.</span><br>
+<span class="f_Punkte">Die Verbindung zwischen beiden Elementen stellt der OpenEMM automatisch her. Wenn Sie mehrere Mailing-Listen eintragen wollen, benötigen Sie jeweils zwei Formularelemente. Diese nummerieren Sie einfach, etwa </span><span class="f_Punkte" style="font-style: italic;">agnSUBSCRIBE2</span><span class="f_Punkte"> und </span><span class="f_Punkte" style="font-style: italic;">agnMAILINGLIST2</span><span class="f_Punkte"> etc.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 11pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Punkte">Die vorletzte Zeile zeigt die typische Schaltfläche zum Absenden eines Formulars an. Die letzte Zeile beschließt die Formulardefinition in HTML.</span></td></tr></table></div><p>Das HTML-Formular können Sie mit Tabellen etc. natürlich schöner formatieren. Das Beispiel setzt nur ein paar Zeilenumbrüche (<span style="font-style: italic;">&lt;br&gt;</span>) ein, damit die wesentlichen Bestandteile deutlich werden.</p>
+<div class="p_ImageCaption"><div align="center"><img src="das_schmucklose_beispielformular_zur_anmeldung_eines.png" width="291" height="247" border="0" alt="Abb. 8.11: Das schmucklose Beispielformular zur Anmeldung eines neuen Empfängers - die Gestaltung ist in der Praxis ganz Ihnen überlassen, Sie können es völlig in das Layout Ihrer Site integrieren."><p style="text-align:center;width:291px"><span class="f_ImageCaption">Abb. 8.11: Das schmucklose Beispielformular zur Anmeldung eines neuen Empfängers - die Gestaltung ist in der Praxis ganz Ihnen überlassen, Sie können es völlig in das Layout Ihrer Site integrieren.</span></p></div></div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

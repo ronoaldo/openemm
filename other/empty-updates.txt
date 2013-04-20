@@ -1,0 +1,8 @@
+#
+# This file contains a list of version without a database update
+# (this is required to keep update process in sync)
+#
+5.4.0rc2-5.4.0
+2011_RC1-2011_RC2
+2011_RC2-2011
+2013 RC1-2013 RC2

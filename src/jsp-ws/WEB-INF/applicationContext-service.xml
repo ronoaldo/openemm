@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                        http://www.springframework.org/schema/aop 
+                        http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+    <!-- openemm applicationContext.xml part -->
+    <bean id="ColumnInfoService" class="org.agnitas.service.impl.ColumnInfoServiceImpl">
+        <property name="profileFieldDao" ref="ProfileFieldDao" />
+    </bean>
+    
+    <import resource="applicationContext-dao.xml" />
+    <!-- openemm ws part -->
+    <context:annotation-config />
+    
+    <aop:aspectj-autoproxy/>
+    
+    <bean id="modelValidator" class="org.agnitas.emm.core.validator.ModelValidator">
+        <constructor-arg type="java.lang.String" value="validator-rules.xml" />
+        <constructor-arg type="java.lang.String" value="validator-messages" />
+    </bean>
+    
+    <bean id="bindingService" class="org.agnitas.emm.core.binding.service.impl.BindingServiceImpl" />
+    
+    <bean id="blacklistService" class="org.agnitas.emm.core.blacklist.service.impl.BlacklistServiceImpl">
+        <property name="blacklistDao" ref="BlacklistDao" />
+    </bean>
+    
+    <bean id="componentService" class="org.agnitas.emm.core.component.service.impl.ComponentServiceImpl" />
+
+    <bean id="dynamicTagContentService" class="org.agnitas.emm.core.dyncontent.service.impl.DynamicTagContentServiceImpl" />
+    
+    <bean id="dynamicTagNameService" class="org.agnitas.emm.core.dynname.service.impl.DynamicTagNameServiceImpl" />
+
+    <bean id="mailinglistService" class="org.agnitas.emm.core.mailinglist.service.impl.MailinglistServiceImpl" />
+    
+    <bean id="mailingService" class="org.agnitas.emm.core.mailing.service.impl.MailingServiceImpl" />
+
+    <bean id="recipientService" class="org.agnitas.emm.core.recipient.service.impl.RecipientServiceImpl" />
+
+</beans>

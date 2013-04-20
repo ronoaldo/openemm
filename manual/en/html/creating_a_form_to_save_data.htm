@@ -1,0 +1,156 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Actions &gt; Forms - Recipient management &gt; Forms &gt; Example form: Amend a profile &gt; Creating a form to save data</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Creating a form to save data">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_form_to_save_data.htm"; }
+  else { parent.quicksync('a8.1.2.3.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Actions</a> &gt; <a href="forms___recipient_management.htm">Forms - Recipient management</a> &gt; <a href="forms.htm">Forms</a> &gt; <a href="example_form_for_a_user_profil.htm">Example form: Amend a profile</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">Creating a form to save data</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="creating_a_form_to_display_dat.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="example_form_for_a_user_profil.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="calling_up_a_form.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>As soon as a subscriber confirms changes made in the previous form by clicking <span style="font-family: 'Tahoma';">Submit</span>, a script on the OpenEMM server evaluates data from the individual entry fields. The script reads both visible and hidden fields. It is intended to save all data read in the database. This is what a second form will do. The name of the form is already specified within the first form:</p>
+<p class="p_BeispieltextQuelltext"><span class="f_BeispieltextQuelltext">&lt;input type="hidden" name="agnFN" value="SaveProfile"&gt;:</span></p>
+<p>You will therefore need to create a new form named <span style="font-style: italic;">SaveProfile</span>.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">In the navigation bar, click on the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Forms</span><span class="f_Zahlen"> button and then on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">New form</span><span class="f_Zahlen">. In the Name field, enter SaveProfile (or the name you gave the first form in your HTML code). Under </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Description</span><span class="f_Zahlen">, enter a short description to the effect that the form saves data read from another form. This will make it easier to manage forms if you have many of them.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">In the top </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Action</span><span class="f_Zahlen"> drop-down list, select </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Save user</span><span class="f_Zahlen"> as the action type. This is the action you defined previously in chapter "<a href="creating_a_new_action.htm">Creating a new action</a>". If you gave the action a different name, you will have to select that from the drop-down list.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">In our example, the entry box </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Success form</span><span class="f_Zahlen"> only takes a short message confirming that the changed data submitted were saved, e.g. </span><span class="f_Zahlen" style="font-style: italic;">Your profile has been saved!</span><span class="f_Zahlen"> or words to that effect. What you write here and how you format it – for instance with HTML tags – is up to you; you could also include a link to your company website.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">In our example, the text in the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Error form</span><span class="f_Zahlen"> field is also very short. In practice, you should include at least an email address or a phone number customers can call in case of queries.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">The bottom </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Action</span><span class="f_Zahlen"> drop-down list is set to </span><span class="f_Zahlen" style="font-family: 'Tahoma';">No action</span><span class="f_Zahlen"> in our example. You could, for example, select to send the subscriber an email confirming the changes made to his or her customer data record. This action must have been defined in the </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Actions</span><span class="f_Zahlen"> section.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">6.</span></td><td><span class="f_Zahlen">Click on </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Save</span><span class="f_Zahlen"> to store your entries in OpenEMM.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="the_form_causes_changes_in.png" width="935" height="881" border="0" alt="Fig. 8.7: The form causes changes in the customer data record read from the previous form to be saved in the database."><p style="text-align:center;width:935px"><span class="f_ImageCaption">Fig. 8.7: The form causes changes in the customer data record read from the previous form to be saved in the database.</span></p></div></div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>

@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Sites &amp; Aktionen &gt; Formular - Selbstverwaltung für Empfänger &gt; Formulare &gt; Beispiel Formular: Ändern eines Profils &gt; Neue Aktionen anlegen</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+   <meta name="description" content="Neue Aktionen anlegen">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+   <!-- This line forces IE8 into IE7 mode, safer until IE8 is better known -->
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+   <link type="text/css" href="default.css" rel="stylesheet">
+   <link type="text/css" href="custom.css" rel="stylesheet">
+   <script type="text/javascript" src="nsh.js"></script>
+
+<script type="text/javascript">   
+// Toggle Toggler 
+
+var toggleCount=false;
+var switchState;
+
+function toggleToggles() {
+
+    if (!toggleCount) {
+     toggleCount = true;
+     HMToggleExpandAll(true);
+     switchState = true;
+     }
+   
+     else if (switchState) {
+        HMToggleExpandAll(false);
+        switchState = false;
+        }
+        
+     else  {
+        HMToggleExpandAll(true);
+        switchState = true;
+        } 
+    }
+</script>
+   
+<!-- non-scrolling headers for CHM and browser-based help, local styles-->
+<style TYPE="text/css" media="screen"> 
+   body {    
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+} 
+    #idheaderbg  {
+    background: #A4C8E4; 
+}
+
+   #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+   #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+   #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+   #callout-table a {text-decoration: none; color: blue;}
+   #callout-table a:visited {text-decoration: none; color: blue;}
+   #overview-table a {text-decoration: none; color: black;}
+   #overview-table a:visited {text-decoration: none; color: black;}
+   #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}
+   </style>
+   
+<style TYPE="text/css" MEDIA="print">
+<!--
+/* Hide navigation links and add space between header
+     and text in the printed version. Not valid for eBooks. */
+#idnav { display:none;	 }
+.topichead { padding: 5px 5px 20px 5px; }
+-->
+</style>   
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_new_action.htm"; }
+  else { parent.quicksync('a8.1.2.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+<!--ZOOMSTOP-->
+
+<div id="idheader">
+<div id="idheaderbg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" 
+       style="margin: 0px;">
+
+  <tr valign="bottom">
+    <td align="left" valign="bottom" class="topichead">
+   <p class="crumbs" id="idnav"><b>Navigation:</b>&nbsp;
+   
+   <a href="sites__actions.htm">Sites &amp; Aktionen</a> &gt; <a href="forms___recipient_management.htm">Formular - Selbstverwaltung für Empfänger</a> &gt; <a href="forms.htm">Formulare</a> &gt; <a href="example_form_for_a_user_profil.htm">Beispiel Formular: Ändern eines Profils</a>&nbsp;&gt;</p>
+   <p class="p_Heading5"><span class="f_Heading5">Neue Aktionen anlegen</span></p>
+
+    </td>
+    <td align="right" width="120" valign="middle" class="topichead" id="idnav">
+    
+     <a href="example_form_for_a_user_profil.htm"
+        onmouseover="document.images.prev.src='btn_prev_h.gif'" 
+        onmouseout="document.images.prev.src='btn_prev_n.gif'"
+        ><img name=prev src="btn_prev_n.gif" border=0 alt="Previous page"
+        ></a><a href="example_form_for_a_user_profil.htm"
+        onmouseover="document.images.main.src='btn_home_h.gif'" 
+        onmouseout="document.images.main.src='btn_home_n.gif'"><img name=main src="btn_home_n.gif" border=0 alt="Return to chapter overview"
+        ></a><a href="creating_a_form_to_display_dat.htm"
+        onmouseover="document.images.next.src='btn_next_h.gif'" 
+        onmouseout="document.images.next.src='btn_next_n.gif'"><img name=next src="btn_next_n.gif" border=0 alt="Next page"
+        ></a>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="height: 3px; background: url(header_bg_shadow.gif)"></td></tr>
+</table>
+</div>
+
+<!-- The following code displays Expand All/Collapse All links  below the header in topics containing toggles -->
+  
+
+</div>  
+
+
+
+<div id="idcontent"><div id="innerdiv"> 
+<!--ZOOMRESTART-->
+<p>Als erste Aufgabe erzeugen Sie zwei Aktionen. Die erste ruft das Profil des Kunden auf. Das ist notwendig, damit Sie über die vordefinierten Variablen der Skriptsprache auf die Daten zugreifen können. Die zweite sichert nach dem Absenden des ersten Formulars die geänderten Daten in der Datenbank des OpenEMM.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Rufen Sie in der Rubrik </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Aktionen</span><span class="f_Zahlen"> das Untermenü </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Neue Aktion</span><span class="f_Zahlen"> auf.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">Tragen Sie bei </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Name</span><span class="f_Zahlen"> eine sprechende Bezeichnung ein, etwa </span><span class="f_Zahlen" style="font-style: italic;">Empfänger laden</span><span class="f_Zahlen">. Das ist wichtig, damit Sie später die Aktion in den Auswahllisten des OpenEMM schnell finden. Dasselbe gilt für das Eingabefeld </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Beschreibung</span><span class="f_Zahlen">.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">In der Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Verwendung</span><span class="f_Zahlen"> stellen Sie auf </span><span class="f_Zahlen" style="font-family: 'Tahoma';">nur für Formulare</span><span class="f_Zahlen"> ein. Damit bestimmen Sie, dass der OpenEMM die Aktion nur in Verbindung mit Formularen anzeigt, nicht aber bei messbaren Links. Das erleichtert die Definition neuer Formulare und Mailings.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Die Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Typ</span><span class="f_Zahlen"> legt fest, was die Aktion tun soll. Wählen Sie den Eintrag </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Empfängerdaten laden </span><span class="f_Zahlen">und klicken sie auf </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Hinzufügen</span><span class="f_Zahlen">. Damit lädt das System beim Aufruf des Formulars die Daten des betroffenen Benutzers. Sie stehen dann für die weitere Verarbeitung zur Verfügung.</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="die_aktion_laedt_die_profildaten_eines.png" width="936" height="304" border="0" alt="Abb. 8.3: Die Aktion lädt die Profildaten eines Empfängers."><p style="text-align:center;width:936px"><span class="f_ImageCaption">Abb. 8.3: Die Aktion lädt die Profildaten eines Empfängers.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> sichern Sie die neue Aktion.</span></td></tr></table></div><p>Sie könnten nun über die Auswahlliste <span style="font-family: 'Tahoma';">Typ</span> und die Schaltfläche <span style="font-family: 'Tahoma';">Hinzufügen</span> weitere Schritte in die Aktion einfügen. Für das Beispiel genügt aber der bereits definierte Schritt zum Laden des Profils.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_Zahlen">Für die zweite Aktion legen Sie wieder - wie oben beschrieben - eine Aktion an, die Sie </span><span class="f_Zahlen" style="font-style: italic;">Empfänger speichern</span><span class="f_Zahlen"> nennen. Der exakte Name spielt keine Rolle, er muss nur eindeutig sein. Bei </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Verwendung</span><span class="f_Zahlen"> stellen Sie wieder auf </span><span class="f_Zahlen" style="font-family: 'Tahoma';">nur für Formulare</span><span class="f_Zahlen"> ein.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_Zahlen">In der Auswahlliste </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Typ</span><span class="f_Zahlen"> aktivieren Sie die Option </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Anmelden</span><span class="f_Zahlen">. Denn wie bei einer Anmeldung eines neuen Empfängers wollen Sie die Profildaten in die Datenbank des OpenEMM übernehmen.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_Zahlen">Übergeben Sie die Aktion mit der Schaltfläche </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Speichern</span><span class="f_Zahlen"> an das System.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">4.</span></td><td><span class="f_Zahlen">Für den Arbeitsschritt </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Anmelden</span><span class="f_Zahlen"> bietet der OpenEMM zusätzliche Optionen an. Über </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Double-Opt-In</span><span class="f_Zahlen"> </span><span class="f_Zahlen" style="font-family: 'Tahoma';">verwenden</span><span class="f_Zahlen"> versenden Sie eine Rückmeldung an die angegebene E-Mail-Adresse, die der Empfänger mit einem Klick auf einen Link bestätigen muss. Ein komplettes Beispiel zu diesem Vorgang finden Sie in Kapitel "<a href="example_subscribing_with_doubl.htm">Beispiel: Anmeldung mit Double-Opt-In</a>".</span></td></tr></table></div><div class="p_ImageCaption"><div align="center"><img src="fuer_den_schritt_anmelden_regeln_zusaetzliche.png" width="940" height="454" border="0" alt="Abb. 8.4: Für den Schritt Anmelden regeln zusätzliche Einstellungen die Vorgehensweise des OpenEMM."><p style="text-align:center;width:940px"><span class="f_ImageCaption">Abb. 8.4: Für den Schritt Anmelden regeln zusätzliche Einstellungen die Vorgehensweise des OpenEMM.</span></p></div></div>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">5.</span></td><td><span class="f_Zahlen">Die zweite Option </span><span class="f_Zahlen" style="font-family: 'Tahoma';">Dublettenabgleich</span><span class="f_Zahlen"> prüft bei einer Neuanmeldung eines Empfängers, ob er bereits in der Datenbank vorhanden ist. Beim Speichern eines bereits vorhandenen Profils spielt die Einstellung nur dann eine Rolle, wenn der Kunden seine E-Mail-Adresse ändert. Dann prüft der OpenEMM, ob diese Adresse nicht schon vorhanden ist. Bleibt die E-Mail-Adresse unverändert, so findet keine Prüfung statt. Lassen Sie diese Option deshalb eingeschaltet.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 8px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 11pt; font-family: 'Times New Roman'; color: #000000;">6.</span></td><td><span class="f_Zahlen">Da Sie keine Änderungen mehr vorgenommen haben, ist die Eingabe der Aktion nun abgeschlossen.</span></td></tr></table></div><p>Jetzt müssen in der Übersichtsliste der Aktionen zwei Einträge mit den Namen <span style="font-family: 'Tahoma';">Empfänger laden</span> und <span style="font-family: 'Tahoma';">Empfänger speichern</span> vorhanden sein (falls Sie nicht andere Namen verwendet haben).</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript"> 
+<!-- 
+var lastSlashPos = document.URL.lastIndexOf("/") >
+document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") :
+document.URL.lastIndexOf("\\");
+if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4
+).toLowerCase() != "~hh" )
+{
+    nsrInit();
+}
+--> 
+</script> 
+</body>
+</html>
