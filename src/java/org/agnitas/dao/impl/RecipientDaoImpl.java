@@ -175,11 +175,11 @@ public class RecipientDaoImpl implements RecipientDao {
 
             return customerID;
         }
-        
+
         if( logger.isDebugEnabled()) {
         	logger.debug("new customerID: "+ customerID);
         }
-        
+
         // Oracle: put customerID in SQL statement at first
         // (MySQL: no customerID available, yet)
       	if(AgnUtils.isOracleDB()) {
@@ -219,7 +219,7 @@ public class RecipientDaoImpl implements RecipientDao {
 								if ( AgnUtils.isOracleDB() ) {
 									appendValue = "to_date('"+ aFormat1.format(day) +"."+aFormat1.format(month)+"."+aFormat2.format(year)+" "+ aFormat1.format(hour)+":"+aFormat1.format(minute)+":"+aFormat1.format(second)+"', 'DD.MM.YYYY HH24:MI:SS')";
 								} else {
-									appendValue = "STR_TO_DATE('"+ aFormat1.format(day) +"-"+aFormat1.format(month)+"-"+aFormat2.format(year)+" "+ aFormat1.format(hour)+":"+aFormat1.format(minute)+":"+aFormat1.format(second)+"', '%d-%m-%Y %h:%i:%s')";
+									appendValue = "STR_TO_DATE('"+ aFormat1.format(day) +"-"+aFormat1.format(month)+"-"+aFormat2.format(year)+" "+ aFormat1.format(hour)+":"+aFormat1.format(minute)+":"+aFormat1.format(second)+"', '%d-%m-%Y %H:%i:%s')";
 								}
 								appendColumn = aColumn;
 								appendIt = true;
@@ -332,7 +332,7 @@ public class RecipientDaoImpl implements RecipientDao {
         	try {
         		JdbcTemplate tmpl = new JdbcTemplate((DataSource)this.applicationContext.getBean("dataSource"));
         		tmpl.execute(insertCust.toString());
-        		
+
         		if( logger.isDebugEnabled()) {
         			logger.debug("insertCust: "+insertCust.toString());
         		}
@@ -391,7 +391,7 @@ public class RecipientDaoImpl implements RecipientDao {
         	if( logger.isInfoEnabled()) {
         		logger.info("updateInDB: creating new customer");
         	}
-        	
+
             if(this.insertNewCust(cust) == 0) {
                 result = false;
             }
@@ -428,7 +428,7 @@ public class RecipientDaoImpl implements RecipientDao {
     								if (AgnUtils.isOracleDB()) {
                                         appendValue = aColumn.toLowerCase() + "=to_date('"+ aFormat1.format(day) +"."+aFormat1.format(month)+"."+aFormat2.format(year)+" "+ aFormat1.format(hour)+":"+aFormat1.format(minute)+":"+aFormat1.format(second)+"', 'DD.MM.YYYY HH24:MI:SS')";
                                     } else {
-                                    	appendValue = aColumn.toLowerCase() + "=STR_TO_DATE('"+ aFormat1.format(day) +"-"+aFormat1.format(month)+"-"+aFormat2.format(year)+" "+ aFormat1.format(hour)+":"+aFormat1.format(minute)+":"+aFormat1.format(second)+"', '%d-%m-%Y %h:%i:%s')";
+                                    	appendValue = aColumn.toLowerCase() + "=STR_TO_DATE('"+ aFormat1.format(day) +"-"+aFormat1.format(month)+"-"+aFormat2.format(year)+" "+ aFormat1.format(hour)+":"+aFormat1.format(minute)+":"+aFormat1.format(second)+"', '%d-%m-%Y %H:%i:%s')";
                                     }
                                     appendIt = true;
                                 } else {
@@ -489,11 +489,11 @@ public class RecipientDaoImpl implements RecipientDao {
                 updateCust.append(" WHERE customer_id=" + cust.getCustomerID());
                 try {
                     JdbcTemplate tmpl = new JdbcTemplate((DataSource)this.applicationContext.getBean("dataSource"));
-                    
+
                     if( logger.isInfoEnabled()) {
                     	logger.info("updateInDB: " + updateCust.toString());
                     }
-                    
+
                     tmpl.execute(updateCust.toString());
 
                     if(cust.getCustParameters("DATASOURCE_ID") != null) {
@@ -566,11 +566,11 @@ public class RecipientDaoImpl implements RecipientDao {
                 if(aType.equalsIgnoreCase("VARCHAR") || aType.equalsIgnoreCase("CHAR")) {
                 	getCust = "SELECT customer_id FROM customer_" + cust.getCompanyID() + "_tbl cust WHERE cust." + SafeString.getSQLSafeString(col, 30) + "='" + SafeString.getSQLSafeString(value) + "'";
                 }
-                
+
                 if( logger.isInfoEnabled()) {
                 	logger.info("RecipientDaoImpl:findByKeyColumn: "+getCust);
                 }
-                
+
                 JdbcTemplate tmpl = new JdbcTemplate((DataSource)this.applicationContext.getBean("dataSource"));
                 // cannot use queryForInt, because of possible existing doublettes
                 @SuppressWarnings("unchecked")
@@ -693,11 +693,11 @@ public class RecipientDaoImpl implements RecipientDao {
         try {
             Statement stmt = con.createStatement();
             ResultSet rset = stmt.executeQuery(getCust);
-            
+
             if( logger.isInfoEnabled()) {
             	logger.info("getCustomerDataFromDb: "+getCust);
             }
-            
+
             if(rset.next()) {
                 ResultSetMetaData aMeta = rset.getMetaData();
 
@@ -883,7 +883,7 @@ public class RecipientDaoImpl implements RecipientDao {
      * @return the int value or the default value in case of an exception
      * @param column Column-Name
      * @param defaultValue Value to be returned in case of exception
-     * 
+     *
      * TODO: Method not used. Remove it, when nobody misses it (Support team?)
     private int extractInt(String column, int defaultValue, Recipient cust) {
 		try {
@@ -893,7 +893,7 @@ public class RecipientDaoImpl implements RecipientDao {
 		}
 	}
     */
- 
+
 	@Override
 	public String getField(String selectVal, int recipientID, int companyID)	{
 		JdbcTemplate jdbc = new JdbcTemplate((DataSource)this.applicationContext.getBean("dataSource"));
@@ -927,7 +927,7 @@ public class RecipientDaoImpl implements RecipientDao {
 		if( logger.isInfoEnabled()) {
 			logger.info("getAllMailingLists: " + sql);
 		}
-		
+
 		try	{
 			@SuppressWarnings("unchecked")
 			List<Map<String, Object>> list = jdbc.queryForList(sql, new Object[]{new Integer(customerID)});
@@ -1014,7 +1014,7 @@ public class RecipientDaoImpl implements RecipientDao {
 	 * Retrieves new Datasource-ID for newly imported Subscribers
 	 *
 	 * @return new Datasource-ID or 0
-	 * 
+	 *
 	 * TODO: Method not used, remove when nobody misses it (Support team?)
 	private DatasourceDescription getNewDatasourceDescription(int companyID, String description) {
 		HibernateTemplate tmpl = new HibernateTemplate((SessionFactory)applicationContext.getBean("sessionFactory"));
@@ -1079,7 +1079,7 @@ public class RecipientDaoImpl implements RecipientDao {
 			int page, int rownums, int previousFullListSize) throws IllegalAccessException, InstantiationException {
 		return getRecipientList(columns, sqlStatementForCount, null, sqlStatementForRows, null, sort, direction, page, rownums, previousFullListSize);
 	}
-	
+
 	@Override
 	public PaginatedListImpl<DynaBean> getRecipientList(Set<String> columns, String sqlStatementForCount, Object[] parametersForsCount, String sqlStatementForRows, Object[] parametersForsRows, String sort, String direction,
 			int page, int rownums, int previousFullListSize) throws IllegalAccessException, InstantiationException {
@@ -1130,7 +1130,7 @@ public class RecipientDaoImpl implements RecipientDao {
 		PaginatedListImpl<DynaBean> paginatedList = new PaginatedListImpl<DynaBean>(result, totalRows, rownums, page, sort, direction);
 		return paginatedList;
 	}
-	
+
 	/*
 	 * TODO: Method is not used. Remove, when nobody misses it (Support team?)
 	private String getUpperSort(List<String> charColumns, String sort) {
@@ -1316,13 +1316,13 @@ public class RecipientDaoImpl implements RecipientDao {
             String email = (String) map.get("email");
             String firstName = (String) map.get("firstname");
             String lastName = (String) map.get("lastname");
-            
+
             if( firstName == null)
             	firstName = "";
-            
+
             if( lastName == null)
             	lastName = "";
-            
+
             result.put(id, firstName + " " + lastName + " &lt;" + email + "&gt;");
         }
         return result;
@@ -1389,11 +1389,11 @@ public class RecipientDaoImpl implements RecipientDao {
             System.err.println("Exception:" + e);
             System.err.println(AgnUtils.getStackTrace(e));
         }
-        
+
         if( logger.isDebugEnabled()) {
         	logger.debug("new customerID: "+ customerID);
         }
-        
+
         return customerID;
     }
 
@@ -1409,23 +1409,23 @@ public class RecipientDaoImpl implements RecipientDao {
 		}
 		sb.setCharAt(sb.length() - 1, ')');
 		String where = sb.toString();
-		
+
 		sb = new StringBuilder("DELETE FROM customer_");
 		sb.append(companyID);
 		sb.append("_binding_tbl ");
 		sb.append(where);
 		String bindingQuery = sb.toString();
-		
+
 		sb = new StringBuilder("DELETE FROM customer_");
 		sb.append(companyID);
 		sb.append("_tbl ");
 		sb.append(where);
 		String customerQuery = sb.toString();
-		
+
 		JdbcTemplate tmpl = new JdbcTemplate((DataSource) this.applicationContext.getBean("dataSource"));
 		tmpl.batchUpdate(new String[] {bindingQuery, customerQuery});
 	}
-	
+
 	@Override
 	public boolean exist(int customerId, int companyId) {
 		JdbcTemplate jdbc = new JdbcTemplate((DataSource)this.applicationContext.getBean("dataSource"));
