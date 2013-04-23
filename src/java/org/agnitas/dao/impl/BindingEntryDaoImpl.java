@@ -342,8 +342,8 @@ public class BindingEntryDaoImpl implements BindingEntryDao {
 		@SuppressWarnings("unchecked")
 		List<Map<String, Object>> list = jdbc.queryForList(sql, new Object[] {recipientID});
 
-		if (list.size() > 0) {
-			Map<String, Object> map = (Map<String, Object>) list.get(0);
+		for (int i = 0; i < list.size(); i++) {
+			Map<String, Object> map = (Map<String, Object>) list.get(i);
 
 			BindingEntry entry = (BindingEntry) applicationContext.getBean("BindingEntry");
 			entry.setCustomerID(recipientID);
