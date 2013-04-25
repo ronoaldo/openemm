@@ -9,9 +9,115 @@
 		<relativePath>../</relativePath>
 	</parent>
 
-	<artifactId>openemm-backend-parent</artifactId>
+	<artifactId>openemm-backend</artifactId>
 	<packaging>pom</packaging>
 
 	<name>openemm-backend-parent</name>
-	<description>Root project for all backend module builds</description>
+	<description>Backend module builds</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<configuration>
+							<target name="compile-backend">
+								<property name="target" value="${project.build.directory}/${project.build.finalName}" />
+								<property name="native.src" value="${project.build.directory}/../src/main/native" />
+								<property name="generated.src" value="${project.build.directory}/generated-sources" />
+								<property name="resources" value="${project.build.directory}/../src/main/resources" />
+								<property name="scripts" value="${project.build.scriptSourceDirectory}" />
+
+								<echo message="Building backend ..." />
+								<echo message=" => target=${target}" />
+								<echo message=" => scripts=${scripts}" />
+								<echo message=" => resources=${resources}" />
+								<echo message=" => native.src=${native.src}" />
+								<echo message=" => generated.src=${generated.src}" />
+
+								<copy todir="${generated.src}">
+									<fileset dir="${resources}/contrib" />
+								</copy>
+								<copy todir="${generated.src}">
+									<filelist dir="${scripts}" files="make_backend.sh" />
+								</copy>
+								<copy todir="${generated.src}/src/c">
+									<fileset dir="${native.src}" />
+								</copy>
+
+								<replace file="${generated.src}/make_backend.sh" token="$OE_HOME" value="${target}" />
+								<replace file="${generated.src}/make_backend.sh" token="$SRC" value="${generated.src}" />
+								<replace file="${generated.src}/src/c/xmlback/GNUmakefile" token="$(HOME)" value="${target}" />
+								<chmod file="${generated.src}/make_backend.sh" perm="a+x" verbose="true" />
+								<exec executable="./make_backend.sh" dir="${generated.src}" />
+
+								<copy todir="${target}/bin">
+									<fileset  dir="${scripts}/control" />
+									<filelist dir="${generated.src}/src/c/bav" files="bav"/>
+									<filelist dir="${generated.src}/src/c/tools" files="qctrl,smctrl,updater"/>
+									<filelist dir="${generated.src}/src/c/xmlback" files="xmlback"/>
+									<fileset  dir="${scripts}/tomcat/bin" />
+								</copy>
+								<delete>
+									<filelist dir="${target}/bin" files="config.bat,openemm.py,setup.bat,start.bat,update.bat" />
+								</delete>
+								<copy todir="${target}/bin/scripts">
+									<fileset dir="${scripts}/process" />
+									<filelist dir="${generated.src}/src/c/bav" files="bavwrap" />
+									<filelist dir="${scripts}/lib" files="agn.py,aps.py,config.sh" />
+								</copy>
+								<move todir="${target}/conf/semu">
+									<fileset dir="${target}/bin/scripts/semu" />
+								</move>
+								<move todir="${target}/USR_SHARE" file="${target}/bin/scripts/upgrade-postproc.sh" />
+								<exec executable="ln" dir="${target}/bin/scripts">
+									<arg line="-s bavwrap filter_or_forward" />
+								</exec>
+								<exec executable="ln" dir="${target}/bin/scripts">
+									<arg line="-s bavwrap is_no_systemmail" />
+								</exec>
+								<exec executable="ln" dir="${target}/bin/scripts">
+									<arg line="-s bavwrap scan_and_unsubscribe" />
+								</exec>
+								<delete dir="${target}/bin/scripts/upgrade" />
+
+								<delete>
+									<filelist dir="${target}/conf" files="context.xml,logging.properties,server.xml" />
+								</delete>
+								<copy todir="${target}/conf">
+									<fileset dir="${scripts}/tomcat/conf"/>
+								</copy>
+
+								<copy todir="${target}/conf/bav">
+									<fileset dir="${scripts}/data" />
+								</copy>
+								<copy todir="${target}/conf/upgrade">
+									<fileset dir="${scripts}/process/upgrade" />
+								</copy>
+
+								<mkdir dir="${target}/var/lock" />
+								<mkdir dir="${target}/var/log" />
+								<mkdir dir="${target}/var/run" />
+								<mkdir dir="${target}/var/spool/bav" />
+								<mkdir dir="${target}/var/spool/filter" />
+								<mkdir dir="${target}/var/spool/log" />
+								<mkdir dir="${target}/var/spool/ADMIN" />
+								<mkdir dir="${target}/var/spool/ARCHIVE" />
+								<mkdir dir="${target}/var/spool/DELETED" />
+								<mkdir dir="${target}/var/spool/META" />
+								<mkdir dir="${target}/var/spool/QUEUE" />
+								<mkdir dir="${target}/var/spool/RECOVER" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
