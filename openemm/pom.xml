@@ -3,16 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.agnitas.openemm</groupId>
-		<artifactId>openemm-parent</artifactId>
+		<groupId>org.openemm</groupId>
+		<artifactId>openemm</artifactId>
 		<version>2013.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
 
-	<artifactId>openemm</artifactId>
+	<artifactId>openemm-webapp</artifactId>
 	<packaging>war</packaging>
 
-	<name>openemm</name>
+	<name>OpenEMM Web Application</name>
 
 	<dependencies>
 		<!-- Servlet API -->

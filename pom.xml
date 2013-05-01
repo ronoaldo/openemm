@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.agnitas.openemm</groupId>
-	<artifactId>openemm-parent</artifactId>
+	<groupId>org.openemm</groupId>
+	<artifactId>openemm</artifactId>
 	<version>2013.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>openemm-parent</name>
+	<name>OpenEMM</name>
 	<url>http://www.openemm.org/</url>
 
 	<properties>
@@ -15,10 +15,10 @@
 	</properties>
 
 	<modules>
-		<module>manual</module>
 		<module>openemm</module>
 		<module>openemm-ws</module>
 		<module>openemm-backend</module>
+		<module>manual</module>
 	</modules>
 
 	<build>

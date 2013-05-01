@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.agnitas.openemm</groupId>
-		<artifactId>openemm-parent</artifactId>
+		<groupId>org.openemm</groupId>
+		<artifactId>openemm</artifactId>
 		<version>2013.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
@@ -12,20 +12,53 @@
 	<artifactId>openemm-backend</artifactId>
 	<packaging>pom</packaging>
 
-	<name>openemm-backend-parent</name>
-	<description>Backend module builds</description>
+	<name>OpenEMM Backend</name>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/assemble/bin.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.7</version>
 				<executions>
 					<execution>
+						<id>check-build-stamp</id>
 						<phase>compile</phase>
 						<configuration>
-							<target name="compile-backend">
-								<property name="target" value="${project.build.directory}/${project.build.finalName}" />
+							<target name="check-build-stamp">
+								<available property="native.build.stamp" file="${project.build.directory}/build/.build-stamp" />
+								<echo message="Build stamp present, skipping module build (${native.build.stamp})" />
+							</target>
+							<exportAntProperties>true</exportAntProperties>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>compile-backend</id>
+						<phase>compile</phase>
+						<configuration>
+							<target name="compile-backend" unless="native.build.stamp">
+								<property name="target" value="${project.build.directory}/build" />
 								<property name="native.src" value="${project.build.directory}/../src/main/native" />
 								<property name="generated.src" value="${project.build.directory}/generated-sources" />
 								<property name="resources" value="${project.build.directory}/../src/main/resources" />
@@ -110,6 +143,9 @@
 								<mkdir dir="${target}/var/spool/META" />
 								<mkdir dir="${target}/var/spool/QUEUE" />
 								<mkdir dir="${target}/var/spool/RECOVER" />
+
+								<!-- Speed up repackaging build -->
+								<touch file="${target}/.build-stamp" />
 							</target>
 						</configuration>
 						<goals>

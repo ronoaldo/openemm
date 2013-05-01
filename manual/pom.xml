@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.agnitas.openemm</groupId>
-		<artifactId>openemm-parent</artifactId>
+		<groupId>org.openemm</groupId>
+		<artifactId>openemm</artifactId>
 		<version>2013.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
@@ -12,7 +12,7 @@
 	<artifactId>openemm-manual</artifactId>
 	<packaging>war</packaging>
 
-	<name>openemm-manual</name>
+	<name>OpenEMM User Manual Application</name>
 	
 	<build>
 		<plugins>
