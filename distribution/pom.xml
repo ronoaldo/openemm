@@ -19,25 +19,26 @@
 			<groupId>org.openemm</groupId>
 			<artifactId>openemm-webapp</artifactId>
 			<version>2013.1-SNAPSHOT</version>
-			<classifier>war</classifier>
+			<type>war</type>
 		</dependency>
 		<dependency>
 			<groupId>org.openemm</groupId>
 			<artifactId>openemm-ws</artifactId>
 			<version>2013.1-SNAPSHOT</version>
-			<classifier>war</classifier>
+			<type>war</type>
 		</dependency>
 		<dependency>
 			<groupId>org.openemm</groupId>
 			<artifactId>openemm-backend</artifactId>
 			<version>2013.1-SNAPSHOT</version>
+			<type>zip</type>
 			<classifier>bin</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.openemm</groupId>
 			<artifactId>openemm-manual</artifactId>
 			<version>2013.1-SNAPSHOT</version>
-			<classifier>war</classifier>
+			<type>war</type>
 		</dependency>
 	</dependencies>
 

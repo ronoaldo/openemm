@@ -19,6 +19,7 @@
 		<module>openemm-ws</module>
 		<module>openemm-backend</module>
 		<module>manual</module>
+		<module>distribution</module>
 	</modules>
 
 	<build>

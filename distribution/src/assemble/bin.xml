@@ -11,17 +11,16 @@
 	<dependencySets>
 		<dependencySet>
 			<includes>
-				<include>org.openemm:openemm-webapp:*:war</include>
-				<include>org.openemm:openemm-ws:*:war</include>
-				<include>org.openemm:openemm-manual:*:war</include>
+				<include>org.openemm:openemm-webapp:war</include>
+				<include>org.openemm:openemm-ws:war</include>
+				<include>org.openemm:openemm-manual:war</include>
 			</includes>
 			<outputDirectory>/</outputDirectory>
 			<unpack>false</unpack>
 		</dependencySet>
-
 		<dependencySet>
 			<includes>
-				<include>org.openemm:openemm-backend:*:bin</include>
+				<include>org.openemm:openemm-backend</include>
 			</includes>
 			<outputDirectory>/</outputDirectory>
 			<unpack>false</unpack>
