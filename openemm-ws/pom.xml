@@ -26,4 +26,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.openemm</groupId>
+			<artifactId>openemm-webapp</artifactId>
+			<version>2013.1-SNAPSHOT</version>
+			<classifier>classes</classifier>
+		</dependency>
+	</dependencies>
 </project>

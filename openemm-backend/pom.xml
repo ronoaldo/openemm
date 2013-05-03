@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>org.openemm</groupId>
 		<artifactId>openemm</artifactId>
@@ -16,6 +15,8 @@
 
 	<build>
 		<plugins>
+			<!-- This maven assembly plugin bundles the backend files
+					 and configurations into a single zip file -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -35,6 +36,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- The maven-antrun-plugin allows to migrate the ant build
+					 into the maven build lifecicle --> 
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.7</version>
@@ -56,21 +59,20 @@
 					<execution>
 						<id>compile-backend</id>
 						<phase>compile</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
 						<configuration>
 							<target name="compile-backend" unless="native.build.stamp">
+								<echo message="*** Building OpenEMM Backend - Native compilation ***" />
+								<!-- Configuration properties, shortcuts from maven property names -->
 								<property name="target" value="${project.build.directory}/build" />
 								<property name="native.src" value="${project.build.directory}/../src/main/native" />
 								<property name="generated.src" value="${project.build.directory}/generated-sources" />
 								<property name="resources" value="${project.build.directory}/../src/main/resources" />
 								<property name="scripts" value="${project.build.scriptSourceDirectory}" />
 
-								<echo message="Building backend ..." />
-								<echo message=" => target=${target}" />
-								<echo message=" => scripts=${scripts}" />
-								<echo message=" => resources=${resources}" />
-								<echo message=" => native.src=${native.src}" />
-								<echo message=" => generated.src=${generated.src}" />
-
+								<!-- Prepares bundled source for native compilation -->
 								<copy todir="${generated.src}">
 									<fileset dir="${resources}/contrib" />
 								</copy>
@@ -81,12 +83,16 @@
 									<fileset dir="${native.src}" />
 								</copy>
 
+								<!-- Filter make_backend.sh script -->
 								<replace file="${generated.src}/make_backend.sh" token="$OE_HOME" value="${target}" />
 								<replace file="${generated.src}/make_backend.sh" token="$SRC" value="${generated.src}" />
 								<replace file="${generated.src}/src/c/xmlback/GNUmakefile" token="$(HOME)" value="${target}" />
 								<chmod file="${generated.src}/make_backend.sh" perm="a+x" verbose="true" />
+
+								<!-- Compile all backend modules -->
 								<exec executable="./make_backend.sh" dir="${generated.src}" />
 
+								<!-- Move resulting files to target folder -->
 								<copy todir="${target}/bin">
 									<fileset  dir="${scripts}/control" />
 									<filelist dir="${generated.src}/src/c/bav" files="bav"/>
@@ -94,9 +100,6 @@
 									<filelist dir="${generated.src}/src/c/xmlback" files="xmlback"/>
 									<fileset  dir="${scripts}/tomcat/bin" />
 								</copy>
-								<delete>
-									<filelist dir="${target}/bin" files="config.bat,openemm.py,setup.bat,start.bat,update.bat" />
-								</delete>
 								<copy todir="${target}/bin/scripts">
 									<fileset dir="${scripts}/process" />
 									<filelist dir="${generated.src}/src/c/bav" files="bavwrap" />
@@ -115,22 +118,15 @@
 								<exec executable="ln" dir="${target}/bin/scripts">
 									<arg line="-s bavwrap scan_and_unsubscribe" />
 								</exec>
-								<delete dir="${target}/bin/scripts/upgrade" />
-
-								<delete>
-									<filelist dir="${target}/conf" files="context.xml,logging.properties,server.xml" />
-								</delete>
 								<copy todir="${target}/conf">
 									<fileset dir="${scripts}/tomcat/conf"/>
 								</copy>
-
 								<copy todir="${target}/conf/bav">
 									<fileset dir="${scripts}/data" />
 								</copy>
 								<copy todir="${target}/conf/upgrade">
 									<fileset dir="${scripts}/process/upgrade" />
 								</copy>
-
 								<mkdir dir="${target}/var/lock" />
 								<mkdir dir="${target}/var/log" />
 								<mkdir dir="${target}/var/run" />
@@ -143,14 +139,43 @@
 								<mkdir dir="${target}/var/spool/META" />
 								<mkdir dir="${target}/var/spool/QUEUE" />
 								<mkdir dir="${target}/var/spool/RECOVER" />
+								<mkdir dir="${target}/plugins" />
+								<mkdir dir="${target}/temp" />
 
-								<!-- Speed up repackaging build -->
+								<!-- Fixes permissions, users and groups to keep compatibility -->
+								<chgrp group="openemm" type="both" verbose="true">
+									<fileset dir="${target}" />
+								</chgrp>
+								<chown owner="openemm" type="both" verbose="true">
+									<fileset dir="${target}"/>
+								</chown>
+								<chgrp group="root" verbose="true">
+									<fileset dir="${target}">
+										<include name="bin/qctrl" />
+										<include name="bin/smctrl" />
+										<include name="bin/updater" />
+										<include name="conf/bav/bav.rc" />
+									</fileset>
+								</chgrp>
+								<chown owner="root" verbose="true">
+									<fileset dir="${target}">
+										<include name="bin/qctrl" />
+										<include name="bin/smctrl" />
+										<include name="bin/updater" />
+										<include name="conf/bav/bav.rc" />
+									</fileset>
+								</chown>
+								<chmod dir="${target}/bin" perm="a+x" includes="**/*" verbose="true" />
+								<chmod file="${target}/USR_SHARE/upgrade-postproc.sh" perm="a+x" verbose="true" />
+								<chmod file="${target}/conf/bav/bav.rc" perm="600" verbose="true" />
+								<exec executable="chmod" dir="${target}/bin">
+									<arg line="6755 qctrl smctrl updater" />
+								</exec>
+
+								<!-- Speed up repackaging build by touching a stamp file -->
 								<touch file="${target}/.build-stamp" />
 							</target>
 						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
 					</execution>
 				</executions>
 			</plugin>

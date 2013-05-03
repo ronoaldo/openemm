@@ -23,6 +23,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.openemm</groupId>
+			<artifactId>openemm-webapp</artifactId>
+			<version>2013.1-SNAPSHOT</version>
+			<type>zip</type>
+			<classifier>scripts</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.openemm</groupId>
 			<artifactId>openemm-ws</artifactId>
 			<version>2013.1-SNAPSHOT</version>
 			<type>war</type>
