@@ -306,6 +306,7 @@ typedef struct { /*{{{*/
 	bool_t		islocked;	/**< if we had the lock			*/
 	/*}}}*/
 }	lock_t;
+# ifndef	WIN32
 
 typedef struct { /*{{{*/
 	bool_t	background;	/* if we should run in background	*/
@@ -315,6 +316,7 @@ typedef struct { /*{{{*/
 	bool_t	pfvalid;	/* if pidfile is used by us		*/
 	/*}}}*/
 }	daemon_t;
+# endif		/* WIN32 */
 
 extern buffer_t		*buffer_alloc (int nsize);
 extern buffer_t		*buffer_free (buffer_t *b);
@@ -464,7 +466,7 @@ extern lock_t		*lock_alloc (const char *fname);
 extern lock_t		*lock_free (lock_t *l);
 extern bool_t		lock_lock (lock_t *l);
 extern void		lock_unlock (lock_t *l);
-
+# ifndef	WIN32
 
 extern daemon_t		*daemon_alloc (const char *prog, bool_t background, bool_t detach);
 extern daemon_t		*daemon_free (daemon_t *d);
@@ -472,6 +474,7 @@ extern void		daemon_done (daemon_t *d);
 extern bool_t		daemon_lstart (daemon_t *d, log_t *l, logmask_t lmask, const char *lwhat);
 extern bool_t		daemon_start (daemon_t *d, log_t *l);
 extern bool_t		daemon_sstart (daemon_t *d);
+# endif		/* WIN32 */
 
 extern int		tzdiff (time_t tim);
 extern bool_t		atob (const char *str);

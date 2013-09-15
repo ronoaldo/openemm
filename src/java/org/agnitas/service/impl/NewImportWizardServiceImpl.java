@@ -232,6 +232,23 @@ public class NewImportWizardServiceImpl implements NewImportWizardService {
 
 		invalidRecipients.clear();
 
+        //check for duplication in CSV file
+        if (importProfile.getImportMode() == ImportMode.TO_BLACKLIST.getIntValue()) {
+            List<String> emailList = new ArrayList<String>();
+            for (ProfileRecipientFields profileRecipientFields : validRecipients.keySet()) {
+                if(emailList.contains(profileRecipientFields.getEmail())){
+                    invalidRecipients.put(profileRecipientFields, null);
+                    status.addError(NewImportWizardServiceImpl.EMAILDOUBLE_ERROR);
+                    continue;
+                }
+                emailList.add(profileRecipientFields.getEmail());
+            }
+            for (ProfileRecipientFields profileRecipientFields : invalidRecipients.keySet()) {
+                validRecipients.remove(profileRecipientFields);
+            }
+            invalidRecipients.clear();
+        }
+
 		// check for blacklist
 		final Set<String> blackList = importRecipientsDao.loadBlackList(importProfile.getCompanyId());
 		for (ProfileRecipientFields profileRecipientFields : validRecipients.keySet()) {

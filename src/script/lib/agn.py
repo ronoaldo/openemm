@@ -163,7 +163,7 @@ changelog = [
 	('2.9.0', '2012-04-05', 'Added keyword query results', 'ud@agnitas.de'),
 	('2.9.8', '2012-07-09', 'Revised database interface', 'ud@agnitas.de'),
 ]
-version = (changelog[-1][0], '2013-02-05 16:54:23 CET', 'ma')
+version = (changelog[-1][0], '2013-09-06 21:01:29 CEST', 'ma')
 #
 verbose = 1
 system = platform.system ().lower ()
@@ -2011,7 +2011,7 @@ class DBCursor (object):
 			else:
 				if self.needReformat:
 					(req, parm) = self.reformat (req, parm)
-				if cleanup:
+				elif cleanup:
 					parm = self.cleanup (req, parm)
 				if self.log: self.log ('Query: %s using %s' % (req, parm))
 				self.curs.execute (req, parm)
@@ -2097,7 +2097,7 @@ class DBCursor (object):
 			else:
 				if self.needReformat:
 					(req, parm) = self.reformat (req, parm)
-				if cleanup:
+				elif cleanup:
 					parm = self.cleanup (req, parm)
 				if self.log: self.log ('Update: %s using %r' % (req, parm))
 				self.curs.execute (req, parm)

@@ -184,7 +184,7 @@ public class ProfileFieldAction extends StrutsActionBase {
                     break;
 
                 case ProfileFieldAction.ACTION_SAVE:
-                	if (req.getParameter("save") != null && req.getParameter("save").equals("save")) {
+                	if (req.getParameter("save") != null) {
                     	if (isReservedWord(aForm.getFieldname())) {
                 			destination = mapping.findForward("view");
                 			errors.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("error.profiledb.invalid_fieldname", aForm.getFieldname()));
@@ -205,7 +205,7 @@ public class ProfileFieldAction extends StrutsActionBase {
 
                 case ProfileFieldAction.ACTION_NEW:
                 	if (allowed("profileField.show", req)) {
-                        if (req.getParameter("save") != null && req.getParameter("save").equals("save")) {
+                        if (req.getParameter("save") != null) {
                     		if (!isReservedWord(aForm.getFieldname())) {
                         		if (newProfileField(aForm, req, errors)){
                         			aForm.setAction(ProfileFieldAction.ACTION_LIST);
@@ -280,7 +280,6 @@ public class ProfileFieldAction extends StrutsActionBase {
         // Report any errors we have discovered back to the original form
         if (!errors.isEmpty()) {
             saveErrors(req, errors);
-            destination = mapping.findForward("list");
         }
 
         // Report any message (non-errors) we have discovered
@@ -339,7 +338,10 @@ public class ProfileFieldAction extends StrutsActionBase {
 		} else  if (profileFieldDao.getProfileField(companyID, columnName) != null) {
 			errors.add("settings.NewProfileDB_Field", new ActionMessage("error.profiledb.exists"));
 			return false;
-		} else {
+		} else if (!DbUtilities.checkAllowedDefaultValue(aForm.getFieldType(), aForm.getFieldDefault())) {
+			errors.add("settings.NewProfileDB_Field", new ActionMessage("error.profiledb.invalidDefaultValue"));
+			return false;
+		}  else {
 			ProfileField field = profileFieldFactory.newProfileField();
             field.setCompanyID(companyID);
             field.setColumn(columnName);
