@@ -651,7 +651,7 @@ a.button-disabled span, a:hover.button-disabled span {
 
 .grey_box_container {
 	color:#5b5b5b;
-	fontsize:11px;
+	font-size:11px;
 }
 .grey_box_top {
 	background:url(../images/filterbox_top.png) no-repeat top left;

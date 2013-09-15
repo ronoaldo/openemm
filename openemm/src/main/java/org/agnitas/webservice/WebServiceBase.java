@@ -29,7 +29,6 @@
 package org.agnitas.webservice;
 
 import org.agnitas.util.AgnUtils;
-import org.agnitas.util.SafeString;
 import org.apache.axis.MessageContext;
 import org.apache.axis.components.logger.LogFactory;
 import org.apache.commons.logging.Log;
@@ -38,9 +37,10 @@ import org.springframework.remoting.jaxrpc.ServletEndpointSupport;
 import javax.servlet.GenericServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
+
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 /**
  *
@@ -80,42 +80,40 @@ public class WebServiceBase extends ServletEndpointSupport {
     }
     
     protected boolean authenticateUser(MessageContext msct, String user, String pwd, int companyID) {
-        boolean result=false;
-        Connection dbConn=this.getConnection(msct);
-        Statement agnStatement=null;
-        ResultSet rset=null;
-        
+
         try {
-            agnStatement=dbConn.createStatement();
-            rset=agnStatement.executeQuery("select a.ws_admin_id from ws_admin_tbl a where a.username='"+SafeString.getSQLSafeString(user)+"' and a.password='"+SafeString.getSQLSafeString(pwd)+"'");
-            if(rset!=null && rset.next()) {
-                result=true;
-            } else {
-                result=false;
-                HttpServletRequest req=(HttpServletRequest)msct.getProperty("transport.http.servletRequest");
-                log.info(req.getRemoteAddr()+" -0-l: login failed: "+user+" "+companyID);
-            }
-        } catch (Exception e) {
-            AgnUtils.logger().info("soap authentication: "+e);
-            result=false;
+	        Connection dbConn=this.getConnection(msct);
+	        try {
+	        	PreparedStatement statement = dbConn.prepareStatement( "SELECT ws_admin_id FROM ws_admin_tbl WHERE username=? AND password=?");
+	        	
+	        	try {
+	        		statement.setString( 1, user);
+	        		statement.setString( 2, pwd);
+	        		
+	        		ResultSet rs = statement.executeQuery();
+	        		
+	        		try {
+	        			if( rs.next()) {
+	        				return true;
+	        			} else {
+	                        HttpServletRequest req=(HttpServletRequest)msct.getProperty("transport.http.servletRequest");
+	                        log.info(req.getRemoteAddr()+" -0-l: login failed: "+user+" "+companyID);
+	                        
+	                        return false;
+	        			}
+	        		} finally {
+	        			rs.close();
+	        		}
+	        	} finally {
+	        		statement.close();
+	        	}
+	        } finally {
+	        	dbConn.close();
+	        }
+        } catch( Exception e) {
+        	logger.error( "Error authenticating user " + user, e);
+        	
+        	return false;
         }
-        
-        try {
-            rset.close();
-        } catch (Exception e) {
-            AgnUtils.logger().info("soap authentication: "+e);
-            result=false;
-        }
-        
-        try {
-            agnStatement.close();
-        } catch (Exception e) {
-            AgnUtils.logger().info("soap authentication: "+e);
-            result=false;
-        }
-        
-        this.freeConnection(dbConn);
-        
-        return result;
     }
 }

@@ -1,5 +1,43 @@
-OpenEMM 2013 (8.10.380.hf13.0.066)
-2013-01-22
+OpenEMM 2013_R2
+2013-09-10
+
+New features in release 2013_R2
+-------------------------------
+Other:
+- latest version of context sensitive online help
+- all JARs compatible with Java 7
+
+
+Bugfixes in release 2013_R2
+---------------------------
+Mailings:
+- the embedded HTML editor does not launch
+- after update to OpenEMM 2013 buttons are missing to edit target groups
+- defining delivery time for date-based mailings more than 3 hours in the future results in mails not sent
+
+Recipients:
+- custom profile fields can not be filled with times before 12:00:00
+- numeric profile fields can not be edited in the recipient detail view
+- recipient list shows error "Resource key ... not found in default bundle"
+- blacklist import mode does not accept duplicates in the import file
+- menu "blacklist" does not work if permission to view recipients is missing
+
+Actions:
+- action scripts lead to error forms even if they should not
+
+Webservices:
+- legacy webservices 1.0 are vulnerable to SQL injections
+- methods AddMailing and UpdateMailing of Webservice API 2.0 do not work
+- method SendMailing of Webservice API 2.0 does not send mails
+- method AddContentBlock of Webservice API 2.0 fails to include images
+
+Backend:
+- rule-based conversion of softbounces to hardbounces does not work
+
+Plugins:
+- extension "blacklist_wildcard_search" does not work
+
+
 
 New features in release 2013
 ----------------------------

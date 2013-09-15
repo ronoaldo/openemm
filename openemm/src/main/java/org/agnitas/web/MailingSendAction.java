@@ -733,7 +733,7 @@ public class MailingSendAction extends StrutsActionBase {
             genDate=tmpGen.getTime();
         }
 
-        if( !DateUtil.isDateForImmediateGeneration(genDate)) {
+        if(!DateUtil.isDateForImmediateGeneration(genDate) && ((aMailing.getMailingType() == Mailing.TYPE_NORMAL) || (aMailing.getMailingType() == Mailing.TYPE_FOLLOWUP))) {
             startGen=0;
         }
 

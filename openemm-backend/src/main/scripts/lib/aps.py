@@ -36,7 +36,7 @@ import	agn
 changelog = [
 	('1.0.0', '2011-08-30', 'Initial version', 'ud@agnitas.de'),
 ]
-version = (changelog[-1][0], '2013-02-05 16:54:23 CET', 'ma')
+version = (changelog[-1][0], '2013-09-06 21:01:29 CEST', 'ma')
 def require (checkversion):
 	agn.__require (checkversion, version, 'aps')
 #}}}
