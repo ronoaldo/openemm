@@ -3,3 +3,4 @@ syntax: regexp
 .*/build/.*
 .*.swp
 .*.swo
+.*/logs/.*
