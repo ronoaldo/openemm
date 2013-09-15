@@ -13,8 +13,24 @@
 
 	<name>OpenEMM Web Application</name>
 
-	<build>
+	<properties>
+		<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
+		<jdbc.dialect>org.hibernate.dialect.MySQLDialect</jdbc.dialect>
+		<jdbc.hostname>localhost</jdbc.hostname>
+		<jdbc.username>agnitas</jdbc.username>
+		<jdbc.password>openemm</jdbc.password>
 
+		<jdbc.emm.url>jdbc:mysql://localhost/openemm?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull</jdbc.emm.url>
+		<jdbc.cms.url>jdbc:mysql://localhost/openemm_cms?useUnicode=true&amp;characterEncoding=UTF8&amp;jdbcCompliantTruncation=false</jdbc.cms.url>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<!-- The maven-war-plugin allows to split the war/WEB-INF/classes into a 
 			     jar, with the "-classes" classifier. This jar is also used into the
@@ -55,6 +71,13 @@
 					<port>9090</port>
 					<path>/</path>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.h2database</groupId>
+						<artifactId>h2</artifactId>
+						<version>1.3.173</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
@@ -112,7 +135,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate</artifactId>
-			<version>3.1.3</version>
+			<version>3.2.7.ga</version>
 		</dependency>
 
 		<!-- Misc -->
