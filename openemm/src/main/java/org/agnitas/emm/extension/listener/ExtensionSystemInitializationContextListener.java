@@ -70,8 +70,11 @@ public class ExtensionSystemInitializationContextListener implements ServletCont
 			return "mysql";
 		} else if( AgnUtils.isOracleDB()) {
 			return "oracle";
-		} else
-			throw new RuntimeException( "unable to determine database name");
+		} else {
+			// TODO: Fix this by providing other database formats as backends
+			logger.warn("Unable to determine database backend. Make sure you're using a MySQL compatible database.");
+			return "mysql";
+		}
 	}
 	
 	@Override

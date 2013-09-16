@@ -33,8 +33,8 @@
 		</resources>
 		<plugins>
 			<!-- The maven-war-plugin allows to split the war/WEB-INF/classes into a 
-			     jar, with the "-classes" classifier. This jar is also used into the
-			     openemm-ws war. -->
+				 jar, with the "-classes" classifier. This jar is also used into the
+				 openemm-ws war. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -44,7 +44,7 @@
 				</configuration>
 			</plugin>
 			<!-- Since the SQL scripts are required to run the webapp, they are bundled
-			     with this as a .zip file with the -scripts classifier -->
+				 with this as a .zip file with the -scripts classifier -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.4</version>
@@ -63,6 +63,44 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Unit and integration tests database -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sql-maven-plugin</artifactId>
+				<version>1.5</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.h2database</groupId>
+						<artifactId>h2</artifactId>
+						<version>1.3.173</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<driver>org.h2.Driver</driver>
+					<url>jdbc:h2:file:target/db/openemm;MODE=MySQL</url>
+					<username>sa</username>
+					<password></password>
+					<autocommit>true</autocommit>
+					<skip>${maven.test.skip}</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-db</id>
+						<phase>process-test-resources</phase>
+						<goals>
+							<goal>execute</goal>
+						</goals>
+						<configuration>
+							<srcFiles>
+								<srcFile>src/main/scripts/sql-ansi/openemm-2013.sql</srcFile>
+								<srcFile>src/main/scripts/sql-ansi/openemm_cms-2013.sql</srcFile>
+							</srcFiles>
+							<onError>continue</onError>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Tomcat6 integration with the maven lifecicle management -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat6-maven-plugin</artifactId>
@@ -78,6 +116,15 @@
 						<version>1.3.173</version>
 					</dependency>
 				</dependencies>
+				<executions>
+					<execution>
+						<id>start-server</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

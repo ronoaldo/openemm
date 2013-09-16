@@ -1,0 +1,20 @@
+#!/bin/bash
+
+sed -e "/^--/d" -e 's/`//g' -e '/^SET/d' \
+	-e 's/bigint(20)/numeric(20)/g' \
+	-e 's/double\(([^(]*)\)/double/' \
+	-e 's/int(11)/integer/g' \
+	-e '/^\/\*.*\*\//d' \
+	-e '/^LOCK TABLES/d' \
+	-e '/^\/\*/,/\*\//c\;' \
+	-e 's/collate utf8_unicode_ci//g' \
+	-e 's/COLLATE=utf8_unicode_ci//g' \
+	-e 's/CHARSET=latin1/CHARSET=utf8/g' \
+	-e 's/\(UN\)\?LOCK .*//g' \
+	-e 's/on update CURRENT_TIMESTAMP//g' \
+	-e "s/\\\\'/''/g" \
+	-e "s/0x\([a-zA-Z0-9]*\)/'\1'/g" \
+	-e "/GRANT/d" -e "/TEMPORARY TABLE/d" \
+	-e "/FLUSH PRIVILEGES/d" -e "/IDENTIFIED BY/d" \
+	-e 's/),(/),\n\t(/g' |\
+awk '{ if ($1 ~ /KEY/) { print "  "$1,$2"_"count,$3,$4,$5 } else { print } count++ }' count=0
