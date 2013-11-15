@@ -1,0 +1,14 @@
+**/target/**
+**/build/**
+*.swp
+*.swo
+**/logs/**
+manual/.classpath
+manual/.project
+manual/.settings/
+openemm-ws/.classpath
+openemm-ws/.project
+openemm-ws/.settings/
+openemm/.classpath
+openemm/.project
+openemm/.settings/
