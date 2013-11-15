@@ -1,0 +1,16 @@
+# This file is a Java properties file, used to setup overrides
+# on your local development server
+# Any properties in the pom.xml can be overwritten here.
+
+# Credentials used to connect to the database
+jdbc.username=openemm
+jdbc.password=openemm
+
+# Usefull to change the database/hostname to connect to
+jdbc.emm.url=jdbc:mysql://localhost/openemm?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
+jdbc.cms.url=jdbc:mysql://localhost/openemm_cms?useUnicode=true&amp;characterEncoding=UTF8&amp;jdbcCompliantTruncation=false
+
+# Usefull if you want to test/port a different SQL backend
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.dialect=org.hibernate.dialect.MySQLDialect
+

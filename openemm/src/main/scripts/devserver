@@ -6,10 +6,4 @@ basedir="$(readlink -f "$basedir")"
 cd $basedir
 mkdir -p logs/openemm # TODO: Fix logging direcotry creation by log4j
 
-mvn -Djdbc.driver=org.h2.Driver \
-	-Djdbc.dialect=org.hibernate.dialect.H2Dialect \
-	-Djdbc.username=sa \
-	-Djdbc.password= \
-	-Djdbc.emm.url="jdbc:h2:$PWD/target/db/openemm;MODE=MySQL" \
-	-Djdbc.cms.url="jdbc:h2:$PWD/target/db/openemm;MODE=MySQL" \
-	process-test-resources tomcat6:run
+mvn pre-integration-test

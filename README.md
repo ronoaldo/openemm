@@ -47,10 +47,16 @@ git clone https://github.com/ronoaldo/openemm.git
 ## Running the development server
 
 To make testing and running a local copy of OpenEMM easier, we have setup
-H2 database support. This support is still experimental, and is integrated
-withing the maven build process. To run the local server you can run the
-script under ''openemm/src/main/scripts/devserver''. Hit CTRL+C to stop
-the server.
+some development server support. In order to run the server from your 
+maven project, follow those steps:
+
+1. Setup a database locally.
+2. Configure openemm/etc/dev.propertes. See openemm/etc/dev.properties.sample
+   as a starting point.
+3. Run the script openemm/src/main/scripts/devserver to launch the local
+   server. Alternatively, you can run it by calling mvn pre-integration-test
+
+To stop the server hit CTRL+C from the shell.
 
 Note: currently only the OpenEMM front-end server is launched from this
 script.
