@@ -36,6 +36,14 @@ This will generate Eclipse project files for each project, and configure
 the workspace to allow running  openemm and openemm-ws as a Dynamic Web
 Project under Tomcat.
 
+If you work with Git, you can also checkout the sources from Github:
+
+```
+#!bash
+
+git clone https://github.com/ronoaldo/openemm.git
+```
+
 ## Running the development server
 
 To make testing and running a local copy of OpenEMM easier, we have setup
