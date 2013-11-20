@@ -12,6 +12,7 @@
 		<dependencySet>
 			<includes>
 				<include>org.openemm:openemm-webapp:war</include>
+				<include>org.openemm:openemm-webapp:zip:scripts</include>
 				<include>org.openemm:openemm-ws:war</include>
 				<include>org.openemm:openemm-manual:war</include>
 			</includes>

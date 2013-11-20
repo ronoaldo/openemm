@@ -8,6 +8,16 @@
 
 	<includeBaseDirectory>false</includeBaseDirectory>
 
+	<fileSets>
+		<fileSet>
+			<directory>src/main/resources</directory>
+			<outputDirectory>./USR_SHARE</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
 	<dependencySets>
 		<dependencySet>
 			<includes>
@@ -18,7 +28,7 @@
 		</dependencySet>
 		<dependencySet>
 			<includes>
-				<include>org.openemm:openemm-webapp:scripts</include>
+				<include>org.openemm:openemm-webapp:zip:scripts</include>
 			</includes>
 			<outputDirectory>./USR_SHARE/</outputDirectory>
 			<unpack>true</unpack>
