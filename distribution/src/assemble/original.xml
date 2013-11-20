@@ -1,0 +1,48 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>original</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<dependencySets>
+		<dependencySet>
+			<includes>
+				<include>org.openemm:openemm-webapp:war</include>
+			</includes>
+			<outputDirectory>./webapps/openemm/</outputDirectory>
+			<unpack>true</unpack>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>org.openemm:openemm-webapp:scripts</include>
+			</includes>
+			<outputDirectory>./USR_SHARE/</outputDirectory>
+			<unpack>true</unpack>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>org.openemm:openemm-manual:war</include>
+			</includes>
+			<outputDirectory>./webapps/manual/</outputDirectory>
+			<unpack>true</unpack>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>org.openemm:openemm-ws:war</include>
+			</includes>
+			<outputDirectory>./webapps/openemm-ws/</outputDirectory>
+			<unpack>true</unpack>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>org.openemm:openemm-backend</include>
+			</includes>
+			<outputDirectory>./</outputDirectory>
+			<unpack>true</unpack>
+		</dependencySet>
+	</dependencySets>
+</assembly>

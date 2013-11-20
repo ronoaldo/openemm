@@ -91,15 +91,6 @@
 					<port>9090</port>
 					<path>/</path>
 				</configuration>
-				<executions>
-					<execution>
-						<id>start-server</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
