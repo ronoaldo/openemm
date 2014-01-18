@@ -51,7 +51,7 @@
 				</executions>
 			</plugin>
 
-			<!-- The maven-war-plugin allows to split the war/WEB-INF/classes into a 
+			<!-- The maven-war-plugin allows to split the war/WEB-INF/classes into a
 				 jar, with the "-classes" classifier. This jar is also used into the
 				 openemm-ws war. -->
 			<plugin>
