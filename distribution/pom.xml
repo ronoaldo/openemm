@@ -38,7 +38,7 @@
 			<groupId>org.openemm</groupId>
 			<artifactId>openemm-backend</artifactId>
 			<version>2013.1-SNAPSHOT</version>
-			<type>zip</type>
+			<type>tar.gz</type>
 			<classifier>bin</classifier>
 		</dependency>
 		<dependency>
@@ -56,7 +56,7 @@
 				<version>2.4</version>
 				<executions>
 					<execution>
-						<id>distro-assembly</id>
+						<id>default-assembly</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
@@ -65,6 +65,20 @@
 							<descriptors>
 								<descriptor>src/assemble/bin.xml</descriptor>
 							</descriptors>
+							<tarLongFileMode>gnu</tarLongFileMode>
+						</configuration>
+					</execution>
+					<execution>
+						<id>original-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/assemble/original.xml</descriptor>
+							</descriptors>
+							<tarLongFileMode>gnu</tarLongFileMode>
 						</configuration>
 					</execution>
 				</executions>

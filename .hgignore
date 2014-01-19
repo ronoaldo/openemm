@@ -4,3 +4,4 @@ syntax: regexp
 .*.swp
 .*.swo
 .*/logs/.*
+^openemm/etc/dev\.properties$
